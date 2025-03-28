@@ -1,0 +1,1 @@
+<body marginwidth="0" marginheight="0"><embed name="plugin" src="/techs/mi-ranchito/data/logos/yahoo.swf" type="application/x-shockwave-flash" height="100%" width="100%"></body>

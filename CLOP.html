@@ -1,0 +1,601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+<title>CLOP</title>
+
+ 
+<style type="text/css">/* ------------------------------------------------------------------
+---------- BASE LAYOUT ----------------------------------------------
+------------------------------------------------------------------ */
+
+body {
+	padding-left: 0;
+	padding-right: 0;
+	visibility: visible;
+	text-align: center;  /* centering the page container, 
+							text-align will be reset to left 
+							inside the container */
+	margin: 0;
+	font-family: verdana;
+	font-size: 13px;
+	line-height: 1.4;
+	color: #000000;
+	background: #ddd;
+	padding-top: 0px; padding-bottom: 0;
+	text-transform: uppercase;
+	letter-spacing: 2px;	
+
+}
+
+a:link, a:visited, a:active {
+	color: #D40000; 
+	font-weight: normal; 
+	text-decoration: none; 
+	}
+	
+a:hover {
+	color: #ED0000;
+	font-weight: normal; 
+	text-decoration: underline;
+	}
+
+/*
+h1 { font-size: 34px; line-height: 1.2; margin: 0.3em 0 10px; }
+h2 { font-size: 28px; line-height: 1.3; margin: 1em 0 .2em; }
+h3 { font-size: 24px; line-height: 1.3; margin: 1em 0 .2em; }
+h4 { font-size: 19px; margin: 1.33em 0 .2em; }
+h5 { font-size: 1.3em; margin: 1.67em 0; font-weight: bold; }
+h6 { font-size: 1.15em; margin: 1.67em 0; font-weight: bold; }
+*/
+
+
+
+/* use the body's font size in tables, too: */
+
+table {
+	font-size: 1em; 
+	}	
+
+#leftnav
+{
+clear: right;
+background-color: #dddddd;
+margin-top: 0px;
+
+z-index: 3;
+float: left;
+width: 160px;
+height: 638px;
+vertical-align: bottom;
+}
+
+#rightnav
+{
+clear: left;
+background-color: #dddddd;
+
+margin-top: 0px;
+z-index: 3;
+float: right;
+width: 160px;
+height: 638px;
+vertical-align: bottom;
+}
+
+
+#middle{
+background-color: #dddddd;
+}
+
+#topnav
+{
+background-position: center;
+background-color: #dddddd;
+text-align: center;
+z-index: 3;
+float: none;
+width: 728px;
+height: 91px;
+margin-top: 0px;
+margin-bottom:0px;
+margin-right: 0px;
+margin-left:0px;
+
+}
+
+	
+/* ------------------------------------------------------------------
+---------- WRAPPER, CONTAINER & LAYOUT ------------------------------
+------------------------------------------------------------------ */
+	
+
+/*-------------------- WRAPPER for MIN / MAX width --------*/
+
+div#wrapper {
+	width: 1048px;
+	min-width: 1048px;
+	text-align: center;  
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	max-width: 1600px;
+	z-index: 3;
+
+	}
+
+* html div#wrapper {
+<!--
+	width:expression(((document.compatMode && 
+	document.compatMode=='CSS1Compat') ? 
+	document.documentElement.clientWidth : 
+	document.body.clientWidth) 
+	> 1048.002 ? "1048.002px" : 
+		(((document.compatMode && 
+	document.compatMode=='CSS1Compat') ? 
+	document.documentElement.clientWidth : 
+	document.body.clientWidth) 
+	< 1601.002 ? "1600.002px" : 
+	"80%")); 
+-->
+	}
+
+/*-------------------- CONTAINER for VISUAL styles --------*/
+
+div#container {
+	margin-top: 0px;
+	padding: 0px; /*This effectively only affects top/bottom padding */
+background: #fff;
+
+box-shadow: 0 0 25px #333;
+-webkit-box-shadow: 0 0 25px #333;
+-moz-box-shadow: 0 0 25px #333;
+/* uncomment next block for round corners */
+/*
+-moz-border-radius:10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius:10px;
+border-radius: 10px;
+*/		padding-left: 0.001px;
+	padding-right: 0.001px;
+		width: auto;
+	margin-left: auto;
+	margin-right: auto;
+	
+	text-align: center; /* resetting the "text-align: center" of "wrapper" */
+
+	}
+
+/*-------------------- LAYOUT to keep it all together -----*/
+	
+table#layout {
+	font-size: 100%;
+	width: 100%;
+	table-layout: relative;
+	}
+	
+.colone {}
+.colone-inner {}
+.coltwo { }
+.colthree-inner {}
+.colthree {}
+
+/* ------------------------------------------------------------------
+---------- HEADER ---------------------------------------------------
+------------------------------------------------------------------ */
+
+
+/*-------------------- HEADER CONTAINER -------------------*/
+
+td#header {
+	width: auto;
+	padding: 0;
+	}
+
+
+/*-------------------- LOGO AREA --------------------------*/
+
+table#logoarea, 
+table#logoarea tr, 
+table#logoarea td {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: 0;
+	}
+
+table#logoarea {
+	width: 100%;
+	border-spacing: 0px;
+	border: solid 1px;	}
+	
+/*-------------------- LOGO -------------------------------*/
+
+img.logo {
+	display: block;
+	margin: 0 0px 0 0;	}
+
+td.logoarea-logo {
+	width: 1%;
+	}
+
+	
+/*-------------------- BLOG TITLE -------------------------*/
+
+h1.blogtitle,
+h2.blogtitle {
+    text-align: left;
+    display: block;
+	margin: 0;
+padding: 0;
+letter-spacing: 2px;
+line-height: 1.0em;
+font-size: 120%;
+text-transform: uppercase;	font-smooth: always;
+	}
+	
+h1.blogtitle a:link, 
+h1.blogtitle a:visited, 
+h1.blogtitle a:active,
+h2.blogtitle a:link, 
+h2.blogtitle a:visited, 
+h2.blogtitle a:active {
+    text-decoration: none;
+	color: #FFFFFF;
+	font-weight: normal;
+	font-smooth: always;
+	}
+	
+h1.blogtitle a:hover,
+h2.blogtitle a:hover {
+    text-decoration: none;
+	color: #AC161B;
+	font-weight: normal;
+	}
+
+/*-------------------- BLOG TAGLINE -----------------------*/
+
+
+
+
+div.header-image-container {
+	position: relative; 
+	margin: 0; 
+	padding: 0; 
+	height: 30px; 
+	}
+	
+div.titleoverlay {
+	z-index: 4;
+	position: relative;
+	float: left;
+	width: auto;
+	margin-top: 7px;
+margin-left: 14px;
+border: solid 0px
+
+padding: 4px
+filter: alpha(opacity=80);
+-moz-opacity:.80;
+opacity:.80;	}
+
+
+
+
+/*-------------------- CLICKABLE HEADER IMAGE -------------*/
+
+div.clickable {
+	position:absolute; 
+	top:0; 
+	left:0; 
+	z-index:3; 
+	margin: 0; 
+	padding: 0; 
+	width: 100%;
+	height: 30px; 
+	}
+		
+a.divclick:link, 
+a.divclick:visited, 
+a.divclick:active, 
+a.divclick:hover {
+	width: 100%; 
+	height: 100%; 
+	display: block;
+	text-decoration: none;
+	}
+
+	
+/* ------------------------------------------------------------------
+---------- FOOTER ---------------------------------------------------
+------------------------------------------------------------------ */
+
+td#footer {
+	width: 100%;
+	background-color: #dddddd;
+border-top: solid 0px #eee;
+padding: 00px;
+text-align: center;
+color: #888;
+font-size: 11px;	}
+
+td#footer a:link, td#footer a:visited, td#footer a:active {
+	text-decoration: none;
+color: #777777;
+font-weight: normal;	}
+
+td#footer a:hover {
+	text-decoration: none;
+color: #777777;
+font-weight: normal;	}
+	
+		
+
+/*-------------------- POST CONTAINER ---------------------*/
+div.post, div.page {
+	display: block;
+	margin: 0px 0px 0px 0px;
+border-top: solid 0px #eee;
+padding-top: 00px;	}
+/*-------------------- POST HEADLINE ----------------------*/
+
+div.post-headline {
+		}
+		
+div.post-body{
+	height: 524px;
+	background-color: #ffffff;
+}
+
+
+div.post-headline h1,
+div.post-headline h2 {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+	font-size: 1.2em;	
+	}
+
+div.post-headline h2 a:link, 
+div.post-headline h2 a:visited, 
+div.post-headline h2 a:active,
+div.post-headline h1 a:link, 
+div.post-headline h1 a:visited, 
+div.post-headline h1 a:active {
+	font-size: 1.2em;	}
+
+div.post-headline h2 a:hover,
+div.post-headline h1 a:hover {
+		}
+
+
+
+
+
+div#imagecontainer { 
+border-top: solid 5px #333; 
+border-bottom: solid 5px #333; 
+
+}
+
+/* Adjustments for the menu bars, which in their default 
+state have 1px borders plus -1px margins to avoid 1+1=2px 
+borders between neighbor items. */
+ul.rMenu-ver li { margin-top: 0xp; }
+
+/* round corners for page menu bar items */
+</style>
+
+
+<script type="text/javascript" src="swfobject.js"></script>
+<script type="text/javascript">
+    <!-- For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. --> 
+    var swfVersionStr = "10.1.0";
+    <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
+    var xiSwfUrlStr = "playerProductInstall.swf";
+    var flashvars = {};
+    var params = {};
+    params.quality = "high";
+    params.bgcolor = "#f5f5f5";
+    params.allowscriptaccess = "sameDomain";
+    params.allowfullscreen = "true";
+    var attributes = {};
+    attributes.id = "CLOP";
+    attributes.name = "CLOP";
+    attributes.align = "middle";
+    swfobject.embedSWF(
+        "CLOP.swf", "flashContent", 
+        "640", "480", 
+        swfVersionStr, xiSwfUrlStr, 
+        flashvars, params, attributes);
+	<!-- JavaScript enabled so display the flashContent div in case it is not replaced with a swf object. -->
+	swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+</script>
+
+
+<!--[if IE 6]>
+<script type="text/javascript" src="http://foddy.net/wp/wp-content/themes/atahualpa353/js/DD_roundies.js"></script>
+<script type="text/javascript">DD_roundies.addRule('a.posts-icon, a.comments-icon, a.email-icon, img.logo');</script>
+<![endif]-->
+</head>
+</head><meta name="keywords" content="game, games, arcade, flash games, online games, addicting, addictive, flash, fun, unicorn game, horse game, horse, QWOP, CLOP, kikstart">
+<meta name="description" content="Horse Game">
+<body>
+<div id="wrapper">
+
+
+
+<div id="container">
+<table id="layout" border="0" cellspacing="0" cellpadding="0">
+<colgroup>
+<col class="colthree" />
+
+</colgroup> 
+	<tr>
+
+		<!-- Header -->
+		<td id="header" colspan="3">
+
+
+
+		 <div id="imagecontainer" class="header-image-container" style="background: url('http://foddy.net/wp/wp-content/themes/atahualpa353/images/header/shade.png') top center no-repeat;"><div class="clickable"><a class="divclick" title="Foddy.net" href ="http://foddy.net/">&nbsp;</a></div><div class="titleoverlay"><h2 class="blogtitle"><a href="http://foddy.net/">Foddy.net</a></h2></div></div>
+
+		</td>
+		<!-- / Header -->
+
+	</tr>
+
+
+
+
+	<!-- Main Body -->	
+	<tr id="bodyrow">
+
+		<!-- Main Column -->
+</td>
+<!-- / Main Column -->
+
+
+
+
+
+</tr>
+<!-- / Main Body -->
+		<td id="left">
+<div id="leftnav">
+	
+
+</div></td>
+		
+		<td id="middle">
+
+
+		 
+
+		<div class="category-flash category-games tag-horse-game tag-flash-games tag-game tag-games-2 tag-online-game" id="post-78">
+
+
+
+	
+
+<div id="topnav" align="top" >
+		<script type="text/javascript">
+		    google_ad_client = "ca-pub-8783609410325228";
+		    google_ad_slot = "6480167599";
+		    google_ad_width = 728;
+		    google_ad_height = 90;
+		</script>
+		<!-- Leaderboard -->
+		<script type="text/javascript"
+		src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+		</script>
+</div>
+
+
+		
+
+
+<div class="post-headline">		
+<h1>CLOP</h1>
+</div>
+
+<div class="post-body">
+
+
+        <div id="flashContent">
+        	<p>
+	        	To view this page ensure that Adobe Flash Player version 
+				10.1.0 or greater is installed. 
+			</p>
+			<script type="text/javascript"> 
+				var pageHost = ((document.location.protocol == "https:") ? "https://" :	"http://"); 
+				document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
+								+ pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
+			</script> 
+        </div>
+	   	
+       	<noscript>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="640" height="480" id="CLOP">
+                <param name="movie" value="CLOP.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#f5f5f5" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="true" />
+                <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="CLOP.swf" width="640" height="480">
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#f5f5f5" />
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="allowFullScreen" value="true" />
+                <!--<![endif]-->
+                <!--[if gte IE 6]>-->
+                	<p> 
+                		Either scripts and active content are not permitted to run or Adobe Flash Player version
+                		10.1.0 or greater is not installed.
+                	</p>
+                <!--<![endif]-->
+                    <a href="http://www.adobe.com/go/getflashplayer">
+                        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+                    </a>
+                <!--[if !IE]>-->
+                </object>
+                <!--<![endif]-->
+            </object>
+	    </noscript>	
+
+
+
+<p>Follow <a href="https://www.twitter.com/bfod" title="bfod on twitter">@bfod</a> for news.</p>
+
+</div>
+
+<td id="right">
+<div id="rightnav">
+</div>
+
+</td>
+<tr>
+
+
+
+
+
+
+<!-- Footer -->
+
+<!-- / Footer -->
+
+</table><!-- / layout -->
+<table id="footer" border="0" cellspacing="0" cellpadding="0" width="100%">
+<td id="footer" colspan="3">
+
+    <p>
+    Copyright &copy; 2012 <a href="http://foddy.net/">Foddy.net</a> - All Rights Reserved.<br>Thanks to <a href="http://deltaluca.me.uk">Luca Deltodesco</a> for the NAPE physics engine, and to <a href="http://adamatomic.com">Adam Saltsman</a> for Flixel. </p>
+
+    
+    
+    
+</div>
+</table>
+</div><!-- / container -->
+</div><!-- / wrapper -->
+
+
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-15559835-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></body>
+</html>

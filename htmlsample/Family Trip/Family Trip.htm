@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<TITLE>Our Family Trip</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<center><H1>Our Family Trip</H1></center>
+This sample html page shows how you can include FutureSplash 
+Animator movies into your HTML pages. Use the View Source 
+command of your browser to see examples of the OBJECT and 
+EMBED tags.<BR>
+
+<center>
+<!-- The OBJECT tag is used for ActiveX and Microsoft Internet Explorer 3.0 -->
+<OBJECT
+  classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+  codebase="../fsplash.cab" 
+  width=200 height=200>
+ <PARAM NAME="Movie" VALUE="Family Trip.spl">
+ <PARAM NAME="Loop" Value="True">
+ <PARAM NAME="Play" Value="True">
+ <PARAM NAME="BGColor" Value="ffffff">
+ <PARAM NAME="Quality" Value="Autohigh">
+ <PARAM NAME="Scale" Value="Showall">
+ <PARAM NAME="SAlign" Value="">
+
+<!-- The EMBED tag is used for the Netscape Navigator Plug-in -->
+ <EMBED src="Family Trip.spl" width=200 height=200
+   Loop="True" Play="True" BGColor="ffffff" Quality="Autohigh" Scale="showall" SAlign=""
+   pluginspage="http://www.futurewave.com/downloadfs.htm">
+
+<!-- The IMG tag is used for for all other browsers -->
+  <NOEMBED>
+   <IMG src="Family Trip.gif" width=100 height=100>
+  </NOEMBED>       
+</OBJECT>
+</center>
+
+<br>
+For my summer vacation my family went on a long trip in our car. 
+Our trip was a very bumpy ride and we passed lots of signs.
+
+</BODY>
+</HTML>

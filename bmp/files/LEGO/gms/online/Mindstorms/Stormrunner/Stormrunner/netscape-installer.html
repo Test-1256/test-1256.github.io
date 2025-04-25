@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+	<title>NETSCAPE INSTALLER</title>
+<SCRIPT LANGUAGE="JavaScript">
+
+var display=false;
+
+function NetscapeSUInstall()
+{
+  if (navigator.javaEnabled())
+  {
+    trigger=netscape.softupdate.Trigger;
+    if (trigger.UpdateEnabled())
+    {
+      //alert("Java and SmartUpdate enabled, trying to install");
+      vi=new netscape.softupdate.VersionInfo(1,1,0,0);
+      // The following code dices up the location.href to get our document 
+      // base, since the ConditionalSoftwareUpdate method requires a
+      // fully-qualified URL.
+      if (trigger.ConditionalSoftwareUpdate(
+          location.href.substring(0,location.href.lastIndexOf("/") + 1) + "Netscape-Stormrunner.jar", 
+          "java/download/TemplarStudios/Stormrunner/",
+          vi,trigger.DEFAULT_MODE))
+      {
+        //alert("Updating.");
+      }
+      else
+      {
+        //alert("Update not necessary.");
+				location.href = "netscape-installed.html";
+      }
+    }
+    else
+      alert("Please enable SmartUpdate first.");
+  }
+  else
+    alert("Java must be enabled, or this must be Netscape");
+}
+
+</SCRIPT>
+
+</HEAD>
+<BODY onload="NetscapeSUInstall();" bgcolor="#3366cc" BACKGROUND="images/tile_snav.jpg" Text="#cccc00" alink="#ffff00" link="#cccc00" vlink="#999900">
+
+<table cellspacing="0" cellpadding="0" border="0" width="140" align="left" valign="top" background="">
+<tr>
+	<td width="17" rowspan="3"><img src="images/plain-pixel.gif" width=17 height=1 hspace=0 vspace=0 border=0 alt=""></td>	
+	<td height="112"><img src="images/sr-snav_hed.gif" width=105 height=112 hspace=0 vspace=0 border=0 align="left" alt=""></td>
+</tr>
+<tr>
+	<td height=10></td>
+</tr>
+<tr>
+	<td>
+
+<font face="arial black" size="1" color="#cccc00">Starting Stormrunner...</font><br>
+<font face="charcoal, geneva, arial narrow" size="1" color="#cccc00">
+Please wait, we are setting up Stormrunner in your Netscape browser.
+<br>
+<br>
+If Stormrunner is not already installed, it will begin installing now. 
+When asked, you should click "Grant" in the security dialog box, in 
+order to allow Stormrunner to install itself and begin playing. You 
+may need to restart your browser after the install and return to this 
+page. Don't worry, Stormrunner will only need to be downloaded and 
+installed once.
+</font>
+
+	</td>
+</tr>
+</table>
+
+</BODY>
+
+
+
+
+</HTML>

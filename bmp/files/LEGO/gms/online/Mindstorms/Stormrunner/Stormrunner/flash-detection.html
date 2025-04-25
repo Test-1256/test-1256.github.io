@@ -1,0 +1,98 @@
+
+
+<HTML>
+<HEAD>
+
+<SCRIPT language="javascript">
+
+<!--
+var ShockMode = false;
+
+// So is Netscape smart enough?
+function CheckBrowser()
+{
+  for (var prop in navigator)
+  {
+      if (prop == "plugins") return true
+  }
+  return false
+}
+
+//-->
+</script>
+</HEAD>
+<BODY bgcolor="#000033">
+
+<TABLE width=100% height=90%>
+<TR>
+<TD align=center valign=center>
+<IMG WIDTH=450 HEIGHT=24 SRC="images/pleasewait.gif">
+</td>
+</tr>
+</table>
+
+<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://active.macromedia.com/flash/cabs/swflash.cab#version=4,0,0,0"
+ ID=stubflash WIDTH=20 HEIGHT=20>
+  <PARAM NAME=movie VALUE="stubflash.swf"> 
+  <PARAM NAME=loop VALUE=false> 
+  <PARAM NAME=quality VALUE=high> 
+  <PARAM NAME=bgcolor VALUE=#000000> 
+
+<SCRIPT LANGUAGE=JavaScript>
+<!--
+if (CheckBrowser())
+{
+	for (i=0;i<navigator.plugins.length;i++)
+	{
+		pluginstring = navigator.plugins[i].description;
+		flashindex = pluginstring.indexOf("Flash");
+		if (flashindex != -1)
+		{
+			// Separate out the version digit
+			Version = parseInt(pluginstring.charAt(flashindex + 6));
+			if (!isNaN(Version))
+			{
+				if (Version >= 4)
+				{
+					ShockMode = true;
+				}
+			}
+			else
+			{
+				ShockMode = false;
+			}
+		}
+	}
+	ShockMode = true;
+}
+
+if (ShockMode == false)
+{
+	if (navigator.appName && navigator.appName.indexOf("Netscape") != -1)
+	{
+		// Alas, the user will have to upgrade themselves - there's Flash 4 autoinstaller code, 
+		// and it actually works (!), but obviously the pipe has been past a few too many times 
+		// out at  Macromedia headquarters, because it upgrades you to flash 3, not flash 4!
+		parent.window.self.frames['main'].location.href='flashfail.html';
+	}
+	else
+	{
+		// Just no telling what they've got.
+		parent.window.self.frames['main'].location.href='manual-flash-check.html';
+	}
+}
+else
+{
+document.writeln('<EMBED SRC="stubflash.swf"');
+document.writeln('swLiveConnect=FALSE WIDTH=20 HEIGHT=20');
+document.writeln('LOOP=false QUALITY=high BGCOLOR=#000000');
+document.writeln('TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">');
+document.writeln('</EMBED>');
+}
+//-->
+</SCRIPT>
+</OBJECT>
+</BODY>
+
+</HTML>

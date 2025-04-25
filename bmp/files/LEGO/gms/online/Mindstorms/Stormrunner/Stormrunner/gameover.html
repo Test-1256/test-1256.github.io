@@ -1,0 +1,42 @@
+<HTML>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function gameover_DoFSCommand(command,args)
+{
+	history.go(-1);
+}
+
+// -->
+</script>
+<SCRIPT LANGUAGE="VBScript">
+<!-- 
+// Map VB script events to the JavaScript method - Netscape will ignore this... 
+// Since FSCommand fires a VB event under ActiveX, we respond here 
+Sub gameover_FSCommand(ByVal command, ByVal args) 
+	call gameover_DoFSCommand(command, args) 
+end sub 
+-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#000000">
+
+<CENTER>
+<OBJECT CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ID="gameover"
+CODEBASE="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0" WIDTH=480 HEIGHT=360>
+<PARAM NAME="movie" VALUE="media/movies/losegame.swf">
+<PARAM NAME="quality" VALUE="high">
+<PARAM NAME="loop" VALUE="false">
+	<EMBED name="gameover" swLiveConnect="true" MAYSCRIPT src="media/movies/losegame.swf" quality=high loop=false width=480 height=360
+	pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+	</EMBED>
+	<NOEMBED>
+	Flash must be enabled to use the game.
+	</NOEMBED>
+</OBJECT
+</center><BR>
+</BODY>
+
+</HTML>

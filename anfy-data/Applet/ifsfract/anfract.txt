@@ -1,0 +1,170 @@
+
+      Anfy IFS-fractals - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet renders a type of fractals by recursivly calculating a 
+fractal-tree that morphs using sin and cos tabs. The applet is fully 
+configurable for fractal generation and colour palette.
+
+This applet is based on the original code by Martin Zettergren, and is used
+under a licence.
+
+*************************************************************************
+
+NECESSARY FILES.
+
+Apart from a background and/or a foreground images, the following 2 
+".class" files must be uploaded: 
+
+AnFract.class
+Lware.class
+
+Plus, AnFract.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code descriptions and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="AnFract.jar" code=AnFract.class width="200" height="200">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when the applet
+                                          is "clicked"
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank">; Name of new frame for reglink
+<param name="statusmsg" value="IFS fractals applet">  ; Statusbar message
+<param name="dimensions" value="8">       ; Number of of iterations each branch
+<param name="branches" value="2">         ; Branches per iteration
+<param name="morph_speed" value="3">      ; Speed of morphs through shapes
+<param name="rot_speed" value="5">        ; Rotation speed within iterations
+<param name="rot_speed2" value="-5">      ; Rotation speed of whole fractal
+<param name="decline" value="0.75">       ; Length decrease each iteration
+<param name="length" value="26">          ; Length of the starting line
+<param name="pensize" value="1">          ; Drawing pen size (1..3)
+<param name="progress" value="YES">       ; Progressive pen increase (YES,NO)
+<param name="progrinverse" value="NO">    ; Inverse progressive pen (YES,NO)
+<param name="progrstep" value="2">        ; Pen progression stepping
+<param name="iterskip" value="YES">       ; Half iter skipping ("YES" or "NO")
+<param name="backimage" value="NO">      ; Background image (img name or "NO")
+<param name="backR" value="0">           ; Background colour (red component)
+<param name="backG" value="0">           ; Background colour (green component)
+<param name="backB" value="0">           ; Background colour (blue component)
+<param name="ifsR1" value="255">         ; Fractal colour 1 (red component)
+<param name="ifsG1" value="255">         ; Fractal colour 1 (green component)
+<param name="ifsB1" value="180">         ; Fractal colour 1 (blue component)
+<param name="ifsR2" value="10">          ; Fractal colour 2 (red component)
+<param name="ifsG2" value="50">          ; Fractal colour 2 (green component)
+<param name="ifsB2" value="255">         ; Fractal colour 2 (blue component)
+<param name="overtext" value="YES">      ; Fractal over text? ("YES", "NO")
+<param name="overimg" value="NO">        ; Optional image over applet
+<param name="overimgX" value="0">        ; Over image X offset
+<param name="overimgY" value="0">        ; Over image Y offset
+<param name="memdelay" value="1000">     ; Memory deallocation delay
+<param name="priority" value="3">        ; Task priority (1..10)
+<param name="MinSYNC" value="10">        ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>                              ; End of applet tag
+
+***********************************************************************
+
+INSTRUCTIONS.
+
+The following instrcutions describe how to change parameters:
+
+Note: attempting to alter the "credits" parameter will disable the applet.
+
+To activate the "reg" parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from
+ the author. If the code is correct and the applet is run from the 
+registered domain name, you can use "link" parameters to link to a URL
+when the applet is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by width and height tags. Changing the
+width and height of the applet will make the visible area of the fractal
+larger. The fractal is always automatically placed in the middleof the
+applet's visible area.
+
+The "dimensions" parameter controls how many iterations are performed to
+generate the fractal.
+
+The "branches" paramer controls how many 'branches' are made from the starting
+point. It is multiplied by 2 for each iteration.
+
+NOTE: The formula used to calculate the fractal tree is based on the
+concept of: 2^dimensions * 2 * branches.
+Therefore, the number of dimensions and branches of complex
+fractals may affect memory usage and computer speed.
+Approximately 8 dimensions (iterations) and about 1-5 branches give the
+optimum results.
+
+The "morph_speed" param controls the speed the applet tree morphs through
+different shapes.
+
+The "rot_speed" param controls the speed of the rotation within each branch
+of the fractal tree.
+
+The "rot_speed2" param controls the speed of the rotation within the whole
+fractal tree.
+
+The "length" param control the length of the starting line of the fractal.
+
+The "decline" param controls the decline of the length of lines drawn for
+each iteration. This parameter can be an increase as well, if you make the
+value more than 1. For example 0.75 gives a 25% decrease of the length for
+each iteration. 1.25 gives a 25% increase of the length for each iteration.
+
+You can choose the pen size up to size 3 with the "pensize" parameter. Or,
+set the "progress" parameter to "YES" to enable the progressive pen size
+increase, controlled with the "progrstep" parameter. You can also invert the
+progression setting "progrinverse" parameter to "YES".
+
+To increase speed and have a different effect, set the "iterskip" parameter
+to "YES".
+
+You can change the colour for best results on your web page. The RGB
+values are same as in HTML tags, but in decimal values. Use backR,backG,backB
+to change background colour.
+
+If you want to display an image in the background, place it's name in the
+place of "NO" at backimage parameter (for example "back.jpg").
+The only requirement is that the background image must be same size as the
+applet to completely cover it.
+
+You can choose the first and last color of a gradient that will be spread
+ over all the fractals: ifsR1,ifsG1,ifsB1 for first colour, ifsR2,ifsG2,ifsB2
+ for last colour of gradient.
+
+Examples: to make ALL the fractals white, place 255 as value for all the
+ifsR1,ifsG1,ifsB1 and ifsR2,ifsG2,ifsB2.
+
+To make fractals coloured from black to white (all the intermediate grays),
+place a value of 255 for ifsR1,ifsG1,ifsB1 and a value of 0 for second
+color: ifsR2,ifsG2,ifsB2.
+
+You can also make rainbows (from red to blue, etc.).
+
+Finally, "overtext" determines if fractals can overwrite scrolltext.
+
+

@@ -1,0 +1,183 @@
+
+           Anfy Snow - Copyright (C) by Fabio Ciucci 1999-2002
+
+
+INTRODUCTION.
+
+This applet visualises realistic snow flakes as a layer over a selected 
+image, preferably the one with snow already present on the ground. This 
+looks more natural.
+
+*********************************************************************
+
+NECESSARY FUILES
+
+Apart from the background and overlay images, the following .class files
+ must be uploaded: 
+
+ansnow.class
+Lware.class
+
+Optionally, you may want to upload ansnow.jar for speedy loading on 
+recent browsers.
+
+**********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="ansnow.jar" code="ansnow.class" width="320" height="208">
+<param name=credits value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name=regcode value="NO">         ; Registration code (if you have it)
+<param name=reglink value="NO">         ; Optional URL link when the applet
+                                          is "clicked"
+<param name=regnewframe value="YES">    ; Reglink opened in new frame?
+<param name=regframename value="_blank">; Name of new frame for reglink
+<param name=statusmsg value="Snow">     ; Statusbar message
+<param name=flakes1 value="500">        ; Number of far flakes
+<param name=flakes2 value="300">        ; Number of middle flakes
+<param name=flakes3 value="100">        ; Number of near flakes
+<param name=flakes4 value="0">          ; Number of foreground big flakes
+<param name=windmax value="1">          ; Max speed attained by wind (0..3)
+<param name=windvariation value="7">    ; Wind variation frequency (0..10)
+<param name=speed value="7">              ; Snow fall speed (1..50)
+<param name=backimage value="ansnow.jpg"> ; Background image
+<param name=bgcolor value="000133">     ; Background colour in hex rrggbb format
+<param name=overtext value="NO">        ; Snow over text? ("YES", "NO")
+<param name=overimg value="NO">        ; Optional image over applet
+<param name=overimgX value="0">        ; Over image X offset
+<param name=overimgY value="0">        ; Over image Y offset
+<param name=memdelay value="1000">     ; Memory deallocation delay
+<param name=priority value="3">        ; Task priority (1..10)
+<param name=MinSYNC value="10">        ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>                              ; End of applet tag
+
+                             
+****************************************************************
+
+PARAMETER DESCRIPTIONS
+
+The following instructions describe the meaning of the available 
+parameters for this applet:
+
+[Specify the applet and its size]
+
+<applet archive="ansnow.jar" code="ansnow.class" width="320" height="208">
+
+The size of the applet is determined by width and height tags, which should
+be same as the background image size.
+
+[Credit parameter]
+
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+
+Attempting to alter the "credits" parameter will disable the applet.
+
+[Reglink parameters]
+
+<param name="regcode" value="NO">      ; Registration code (if you have it)
+<param name="reglink" value="NO">      ; Optional URL link when the applet
+                                         is "clicked"
+
+To activate the reg parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from us. If the code is correct and the applet is run from the registered
+domain name, "link" parameters will be enabled and the applet will be
+linked to an associated URL when it mouse-clicked.
+
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank">; Name of new frame for reglink
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+<param name="statusmsg" value="Snow">     ; Statusbar message
+
+Here, you set a message which will be displayed when you mouse-over
+the applet.
+
+[Snow layers]
+
+<param name="flakes1" value="500">        ; Number of far flakes
+<param name="flakes2" value="300">        ; Number of middle flakes
+<param name="flakes3" value="100">        ; Number of near flakes
+<param name="flakes4" value="0">          ; Number of foreground big flakes
+
+The snow flakes are animated on 4 separate layers: far, middle, near
+and foreground layers. Then, you can specify the number of flakes on
+each layer placing a number at flakes1, flakes2, flakes3 and flakes4 
+parameters, respectively.
+
+To make a more realistic snow, we suggest to produce more far flakes than
+near flakes.
+
+NOTE:
+
+You can set some layers without snow by placing "0" at respective parameter.
+However, it's not recommended.
+
+[Snow fall speed]
+
+<param name="speed" value="7">              ; Snow fall speed (1..50)
+
+With "speed" parameter, you can determine the snow falling speed; a good
+value is 7, but you can specify any value between 1 to 50.
+
+[Wind setting]
+
+<param name="windmax" value="1">        ; Max speed attained by wind (0..3)
+<param name="windvariation" value="7">  ; Wind variation frequency (0..10)
+
+Optionally, you can add wind, to control the snow fall direction. Two parameters
+are responsible for wind setting:
+
+The "windmax" determine the maximum speed of the wind. Placing the value 0
+in this parameter will disable the wind.
+
+The "windvariation" parameter determines how fast the wind direction changes.
+It can be set at 0 to make the wind blocked, or set a value up to 10 to make 
+the wind variable.
+
+[Background]
+
+<param name="backimage" value="ansnow.jpg"> ; Background image
+<param name="bgcolor" value="000133">     ; Background colour in hex rrggb format
+
+If you want to display a background image, replace "NO" by the image path.
+
+The background colour, if background image is absent, is determined by the
+"bgcolor" parameter, entering the value in hex RRGGBB, like html format,
+but without the prefix #.
+
+[Text over the snow]
+
+<param name="overtext" value="NO">        ; Snow over text? ("YES", "NO")
+
+The "overtext" determines if snow can overwrite scrolltext.
+
+[Overlay image]
+
+<param name="overimg" value="NO">           ; Optional image over applet
+<param name="overimgX" value="0">           ; Over image X offset
+<param name="overimgY" value="0">           ; Over image Y offset
+
+
+With the "overimg" parameter you can specify the name of an image that will
+be shown over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can position the image over the applet area.
+

@@ -1,0 +1,286 @@
+
+          Mad Text Applet - Copyright (C) Anfy Team 2001-2002
+
+
+This applet displays a scrolling text, using coloured fonts.
+The text can be display using different kind of effects,
+including falling, distortion, zoom rotator effects.
+You can optionally add blur effect.
+This applet contains code by Kevin LEVRON, used under licence.
+
+The coloured fonts are in AFT (Anfy Font) format.
+You can create your own aft fonts using a paint program, otherwise
+download freely the AFT fonts collection from here:
+
+  http://www.anfyteam.com/aft/
+
+***********************************************************************
+
+NECESSARY FILES.
+
+File to upload :
+- Anfy Font file (.aft) and its data gif image,
+- the ASCII file with your text,
+- the following 3 ".class" files : 
+
+anfy.class
+Lware.class
+madtext.class
+
+- Plus, madtext.jar for faster loading on recent browsers.
+
+***********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="madtext.jar" code="madtext.class" width="300" height="100">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="res" value="1">			; Resolution (1..8)
+<param name="regcode" value="NO">		; Registration code (if you have it)
+<param name="reglink" value="NO">		; Optional URL link when the applet
+						  is "clicked".
+<param name="regnewframe" value="YES">          ; Reglink opened in new frame?
+<param name="regframename" value="_blank">      ; Name of new frame for reglink
+<param name="statusmsg" value="MadText">        ; Statusbar message
+
+<param name="font" value="carebearr.aft"> ; AnfyFont filename
+<param name="text" value="madscr.txt">	; Ascii file with text
+<param name="texthspace" value="0">	; Horizontal space between letters
+<param name="background" value="no">	; Background image or "no" (working only if blureffect=false)
+<param name="blureffect" value="false">	; Blur effect ("true" or "false")
+<param name="blur" value="8">		; Blur (color subtraction) value (1..255)
+<param name="bgcolor" value="000000">	; Background color (working only if blureffect=false)
+<param name="effect" value="falling">	; Effect ("falling" or "distortion" or "rotozoomer" )
+
+<param name="spacechar" value=" ">	; Falling fx: String wich represent empty char
+<param name="accel" value="32">		; Falling fx: Acceleration value (1..256)
+<param name="delay" value="20">		; Falling fx: Frames to wait after text is all on bottom
+<param name="elasticity" value="0.8">	; Falling fx: Elasticity value (0.0 .. 1.0)
+
+<param name="type" value="sin">		; Distortion type ("sin" or "spiral" or "circle")
+<param name="nb" value="3">		; Distortion fx: Cycles number (0..8)
+<param name="xradius" value="0">	; Distortion fx: X Radius (0..256)
+<param name="yradius" value="0">	; Distortion fx: Y Radius (0..256)
+<param name="zradius" value="128">	; Distortion fx: Z Radius (0..256)
+<param name="fade" value="0">		; Distortion fx: Fade (color subtraction) value (0..255)
+
+<param name="speed" value="30">		; ZoomRot or Distortion fx: Speed value
+<param name="nbrotation" value="4">	; ZoomRot fx: Rotations (0..8)
+<param name="zoomMin" value="0.1">	; ZoomRot fx: Min zoom value (float)
+<param name="zoomMax" value="1">	; ZoomRot fx: Max zoom value, (float)
+<param name="delay" value="30">		; ZoomRot fx: Frames to wait after each string
+
+<param name="overimg" value="NO">	; Optional image over applet
+<param name="overimgX" value="0">	; Over image X offset
+<param name="overimgY" value="0">	; Over image Y offset
+<param name="memdelay" value="1000">	; Memory deallocation delay
+<param name="priority" value="3">	; Task priority (1..10)
+<param name="MinSYNC" value="10">	; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>				; End of applet tag
+
+
+*************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters, please read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from
+the author. If the code is correct and the applet is run from the registered
+domain name, you can use "link" parameters to link to a URL when the applet 
+is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+Applet size is determined by "res": "res=1" shows the graphic at original size,
+"res=2" shows it at double size, etc.
+So, If res=1, remember to place the exact size of image in "width" and "height" tags.
+If res=2, place double values, if res=3 place triple values etc. (In fact, res is
+a sort of zoomer).
+
+With the "statusmsg" parameter you can set a message which appear at the bottom
+of the browser window, when you mouse-over the applet. Enter any message here.
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on latest
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by width and height tags.
+
+With "font" parameter you can specify the AnfyFont file name (the .aft file).
+
+With "text" parameter you can specify the text file name.
+
+Note: Only characters present in the AFT font will be displayed.
+If the AFT font does not contain numbers, or special characters, those will 
+be simply ignored.
+
+With "texthspace" parameter you specify the horizontal space between letters.
+
+With "bgcolor" you can set the background color in RGB hex value.
+In the case you are using a "background" image and a spiral or circle
+distortion effect, the background color could be used to determine
+what color of background image have to be considered transparent.
+Please note, this parameter will have effect only if blureffect="no".
+In fact, with other modes the blur effect is activated and the background
+will be black, since the blur fades to black.
+
+With "background" parameter you can specify an image file if you want to use
+a background image, otherwise set it to "no".
+Please note, this parameter will have effect only if blureffect="false".
+
+With "blureffect" you can power on and off the blur, using "true"
+and "false" values respectively.
+Blur effect is not available if effect="distortion".
+
+With "blur" parameter you can set the blur value (0..255), which is the
+color component subtracted for each level of blur to reach the black of
+the background.
+Lower values gives soft and more propagated blurring, higher values gives
+stronger decadence of color, fading to black sooner.
+
+With the "effect" parameter you can specify the effect type:
+"falling" = FALLING EFFECT
+"distortion" = DISTORTION EFFECT
+"rotozoomer" = ZOOM ROTATOR EFFECT
+
+
+FALLING EFFECT Parameters :
+***************************
+
+With "spacechar" you can specify the char wich will complete the line of
+falling letters if your strings are too short.
+
+With "accel" you can set the acceleration value (1..256).
+
+With "delay" you can specify the number of frames strings will be
+still displayed after all the letters reached the bottom.
+
+With "elasticity" you can set the elacticity value (0.0 .. 1.0).
+This value represent the way ground reacts when letters
+falls on. Set this value near 1 for a bouncy ground.
+
+
+DISTORTION EFFECT Parameters :
+******************************
+
+With "type" parameter you can set the distortion path:
+"sin" = 3D sinusoidal scroll,
+"spiral" = 3D spiral scroll,
+"circle" = 3D circle scroll.
+
+If using spiral or circle, you can use the background image and
+background color to create an effect of planed with letters around
+it or similiar. In the background image you have to fill the area
+you want to be transparent with the color specified in "bgcolor"
+parameter.
+
+With "nb" you can specify the number of cycles (0..8).
+note: if type=circle, "nb" will have no effect.
+
+With "xradius", "yradius", "zradius", you can set the x,y and z radius value.
+If type=sin, xradius will have no effect.
+If type=spiral, yradius will have no effect.
+
+With "speed" you can set the speed of the scrolling.
+For left to right, or up to down scrolling set speed > 0.
+For right to left, or down to up scrolling set speed < 0.
+To calibrate speed, consider that speed="8" scrolls 1 pixel per frame.
+
+With "fade" you can set the fade value for background letters (0..255).
+
+
+ZOOM ROTATOR EFFECT Parameters :
+********************************
+
+With "speed" you can set the rotation's speed.
+
+With "nbrotation" you can set the number of rotations.
+If you set it to 0, zoom only without rotations will be performed.
+
+With "zoomMin" you can specify the minimal zoom value.
+
+With "zoomMax" you can specify the maximal zoom value.
+
+With "delay" you can set the number of frames strings will be displayed
+after zooming & rotating.
+
+
+***********************************************************************
+
+THE AFT FORMAT SPECIFICATIONS
+
+If you are interested in creating new fonts for your personal use, or
+to add those to the freely usable AFT fonts collection, you should
+know how the AFT format works.
+
+An AFT font comprises 2 files, with a single prefix + different suffixes,
+for example:
+
+myfont.aft
+myfont.gif
+
+The .aft file is an ascii text file, editable by hand, and the gif file
+is an image file editable with any paint program.
+
+Both files must have the same prefix, and the suffixes should be in 
+lowercase.
+
+Here an example of .aft:
+
+
+myfont
+32
+23
+0
+ !#%%%%'()%%,-./0123456789:;%=%?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%
+This is a comment... hello...
+
+
+The 1st line contains the name of the gif file, without .gif suffix.
+The 2nd line contains the font width.
+The 3rd line contains the font height.
+The 4th line contains the Y spacing between characters.
+The 5th line contains the characters index (its order in GIF image)
+
+For example, if a font is painted as:
+
+ABCDE
+FGHIJ
+KLMNO
+
+The fontindex will be: ABCDEFGHIJKLMNO
+
+But, if a font is painted as:
+
+AEIMQUY
+BFJNRVZ
+CGKOSW!
+DHLPTX#
+
+The fontindex will be: AEIMQUYBFJNRVZCGKOSW!DHLPTX#
+
+Note: the background of the gif image must be black (000000 in hex), and the
+black must be present only in the background, otherwise the background
+colour changes a function in the scroller applet and this will cause problems.
+

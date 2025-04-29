@@ -1,0 +1,386 @@
+
+          Anfy Button - Copyright (C) by Anfy Team 2000-2002
+
+This applet display buttons with some special effects, such as: water, blobs,
+warp and huerot. The buttons may have other features as: tooltip,
+lens pointer, highlights, etc.
+
+This applet contains code by Dolf van der Schaar which is used under
+license.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from the background image, the buttons plugins images and an optional
+overlay image, the following 4 ".class" files must be uploaded:
+
+anfybutton.class
+anfybuttonplugin.class
+mmblob.class
+Lware.class
+
+Plus, anfybutton.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<APPLET archive="anfybutton.jar" code="anfybutton.class" width=200 height=500>
+
+<!Applet parameters> 
+<PARAM NAME="credits" VALUE="Applet by Fabio Ciucci (www.anfyteam.com)">
+<PARAM NAME="regcode" VALUE="no">			; Registration code (if you have it)
+<PARAM NAME="statusmsg" VALUE="Buttons applet">		; Status bar message
+<PARAM NAME="regnewframe" VALUE="YES">			; Reglink opened in new frame?
+<PARAM NAME="regframename" VALUE="_blank">		; Name of new frame for reglink
+<PARAM NAME="overimg" VALUE="no">			; Optional image over applet
+<PARAM NAME="overimgX" VALUE="10">			; Over image X offset
+<PARAM NAME="overimgY" VALUE="10">			; Over image Y offset
+<PARAM NAME="memdelay" VALUE="1000">    		; Memory deallocation delay
+<PARAM NAME="priority" VALUE="3">       		; Task priority (1..10)
+<PARAM NAME="MinSYNC" VALUE="10">       		; Min. milliseconds/frame for sync
+
+<PARAM NAME="borderstyle" VALUE="2">			; The border size of the applet. 0 = no border
+<PARAM NAME="systemcolor" VALUE="7f7fff">               ; The color of the border
+<PARAM NAME="backgroundcolor" VALUE="00007f">		; The color of the background
+<PARAM NAME="backimage" VALUE="anfybutton.gif">		; The image on the background, or "no"
+<PARAM NAME="defaultButton" VALUE="no">			; The number of the default button, or "no"
+<PARAM NAME="highlightSelection" VALUE="yes">           ; Highlight button when selected (yes,no)
+<PARAM NAME="highlightFactor" VALUE="250">		; The multiply factor of the highlight
+<PARAM NAME="highlightSpeed" VALUE="40">                ; Highlight speed (flash when greater than 0)
+<PARAM NAME="animateOnlyWhenSelected" VALUE="no">       ; Set to "yes" to enable effect only when button is selected
+<PARAM NAME="lensPointer" VALUE="yes">                  ; Use a lens as mousepointer (yes,no)
+<PARAM NAME="lenswidth" VALUE="20">			; The size of the lens
+<PARAM NAME="lensZoomfactor" VALUE="5">                 ; The lens Zoom factor
+<PARAM NAME="lensDistort" VALUE="NO">                   ; Spherical lens (yes,no)
+<PARAM NAME="tooltip" VALUE="yes">                      ; Enable tooltips (yes/no)
+<PARAM NAME="tooltipHeight" VALUE="14">                 ; The tooltip size
+<PARAM NAME="tooltipBackgroundColor" VALUE="ffff7f">    ; The tooltip background color
+<PARAM NAME="tooltipTextColor" VALUE="000000">          ; The tooltip text and border color
+<PARAM NAME="tooltipFont" VALUE="Helvetica">            ; The tooltip font
+<PARAM NAME="tooltipX" VALUE="20">                      ; The tooltip horizontal distance from mouse pointer
+<PARAM NAME="tooltipY" VALUE="20">                      ; The tooltip vertical distance from mouse pointer
+<PARAM NAME="nButtonsW" VALUE="1">                      ; The number of buttons the applet has to show horizontally, or "auto"
+<PARAM NAME="nButtonsH" VALUE="auto">                   ; The number of buttons the applet has to show vertically, or "auto"
+<PARAM NAME="wOffset" VALUE="auto">                     ; The X offset from the top left inside corner, or "auto"
+<PARAM NAME="hOffset" VALUE="5">                        ; The Y offset from the top left inside corner, or "auto" 
+<PARAM NAME="wSpace" VALUE="3">                         ; The min number of horizontal pixels between 2 buttons
+<PARAM NAME="hSpace" VALUE="3">                         ; The min number of vertical pixels between 2 buttons
+<!Specific button parameters>
+<PARAM NAME="btn0width" VALUE="128">			; The width of the button
+<PARAM NAME="btn0height" VALUE="88">			; The height of the button
+<PARAM NAME="btn0borderstyle" VALUE="4">		; The border size of this button
+<PARAM NAME="btn0bordercolor" VALUE="ffff00">           ; The border color as RGB values
+<PARAM NAME="btn0backgroundColor" VALUE="0">            ; The background color as RBG values
+<PARAM NAME="btn0BackgroundImage" VALUE="img.jpg">      ; The image for background (and for border=back) or "NO"
+<PARAM NAME="btn0ForegroundImage" VALUE="images.gif">   ; The image over the button or "NO"
+<PARAM NAME="btn0SoundMouseOver" VALUE="no">		; Sound to play while over the button or "no"
+<PARAM NAME="btn0SoundClick" VALUE="dong.au">		; Sound to play while button is clicked or "no"
+<PARAM NAME="btn0Tooltip" VALUE="folder of images">     ; The text of button tooltip
+<PARAM NAME="btn0Text" VALUE="Images">			; The text and or name of this button
+<PARAM NAME="btn0TextSize" VALUE="30">			; The size of the text in this button
+<PARAM NAME="btn0TextStyle" VALUE="2">			; Style for the text of this button
+<PARAM NAME="btn0TextColor" VALUE="ff0000">		; The color of the text displayed in the button
+<PARAM NAME="btn0Font" VALUE="Courier">			; The font to use for this button
+<PARAM NAME="btn0Shadow" VALUE="4">			; The direction of the shadow
+<PARAM NAME="btn0ShadowDistance" VALUE="14">		; The distance of the shadow
+<PARAM NAME="btn0Link" VALUE="link0.html">		; The link to the new page that has to be opened
+<PARAM NAME="btn0target" VALUE="default">		; Target frame where load link, or "default"
+Example of plugin: blobs
+<PARAM NAME="btn0BackgroundApplet" VALUE="anfyplugin_blobs">	; Name of the plugin used for this button
+<PARAM NAME="anfyplugin0_blobs_nblobs" VALUE="8">		; number of blobs (2-8)
+<PARAM NAME="anfyplugin0_blobs_minspeed" VALUE="115">		; minimum speed (1-15)
+<PARAM NAME="anfyplugin0_blobs_bval1" VALUE="1080">		; Blob val 1
+<PARAM NAME="anfyplugin0_blobs_bval2" VALUE="34000">		; Blob val 2
+<PARAM NAME="anfyplugin0_blobs_bval3" VALUE="3600">		; Blob val 3
+<PARAM NAME="anfyplugin0_blobs_numpal" VALUE="6">		; Color palette (1-6)
+<PARAM NAME="anfyplugin0_blobs_sinemode" VALUE="NO">		; Sinus movements ("YES" or "NO")
+<PARAM NAME="anfyplugin0_blobs_starshape" VALUE="YES">		; Star shape ("YES" or "NO")
+<PARAM NAME="anfyplugin0_blobs_negative" VALUE="NO">		; Negative colours ("YES" or "NO")
+Sorry, your browser doesn't support Java.    			; Message for no Java browsers.
+</applet>							; End of applet tag
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use button link parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the button links:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+This will work for the buttons that have specified "default" as target link.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+With the "statusmsg" parameter you can set a message which appear at the bottom
+of the browser window, when you mouse-over the applet. Enter any message here.
+
+If you want, with "borderStyle" parameter you can choose the size in pixel of a
+border to use for Applet. For no borders use the value "0".
+
+Using "systemcolor" parameter you can set a color for the border (set it with an
+RRGGBB value. Es: ffffff for white, ff0000 for red, 00ff00 for green, 0000ff
+for blue etc.).
+
+The "backgroundcolor" parameter can be used to set a background color for the
+applet (set it with an RRGGBB value).
+
+If you need it, you can choose a background image for the applet, with the
+"backimage" parameter. Otherwise set it as "no" and background color will
+be used instead.
+
+With "defaultButton" parameter, you can also choose the number of a button;
+when the applet is loaded this will be selected as the active button.
+If you don't want an active button, write "no" in this parameter.
+
+Set to "yes" the "highlightSelection" parameter if you want the buttons
+highlighted when selected.
+
+You have also to set the "highlightFactor" parameter, which is the multiply
+factor of the highlight.
+This factor must be 100 or bigger. When 250 the color values will be 2.5
+times brighter than the original color values.
+With a value of 100, image will not change.
+
+Use the "highlightSpeed" parameter to se the speed of highlight flash.
+Flashing will happen with values greater than 0.
+The colours will go from the original colours to the highlighted factor
+and fade back.
+
+You may set the "animateOnlyWhenSelected" parameter to yes or no.
+When this option is "no" all the buttons will be animating.
+When this option is "yes" then only when a button is selected, it will
+animate.
+
+If you want, you can use, in addition to the mouse pointer, a lens effect
+switching on/off (with the yes/no values) the "lensPointer" parameter.
+The lens will be on the same place as the mouse pointer.
+
+Use the "lenswidth" parameter to set the size of the lens (the height is
+equal to width) and the "lensZoomfactor" parameter for the zoom factor.
+Higher zoom factor results in higher magnification.
+
+With the "lensDistort" parameter it's possible to choose between spherical
+and plain zooming for the lens. Use yes/no values.
+
+With "nButtonsW" parameter, you can choose the number of buttons the applet
+has to show horizontally. Specify "auto" to let the applet choose the number
+of buttons from nButtonsH parameter.
+
+Instead, with "nButtonsH" parameter, you can choose the number of buttons
+the applet has to show vertically.
+Specify "auto" to let the applet decide automatically from the "nButtonsW"
+parameter.
+
+If you want, you can use the "wOffset" parameter to set the X offset from the
+top left inside corner of the applet, where buttons are placed.
+If this parameter is set to "auto", the buttons are centered automatically.
+
+You can also use the "hOffset" parameter to set the Y offset from the top
+left inside corner of the applet of where the buttons have to begin to show.
+If this parameter is set to "auto", then the buttons are centered automatically.
+
+Using "wSpace" and "hSpace" parameters, you can choose respectively the
+minimum horizontal and vertical space between buttons, in pixels.
+
+Tooltips:
+
+With the "tooltip" parameter you can switch on/off (with the yes/no values)
+the tooltips for buttons.
+Choose the size of the tooltip, with the "tooltipHeight" parameter.
+Choose the background color of the tooltip with the "tooltipBackgroundColor"
+parameter.
+With "tooltipTextColor" parameter, you can choose a color for the text and
+border of the tooltip.
+Set the horizontal and vertical distance in pixels from the mouse pointer,
+with "tooltipX" and "tooltipY" parameters.
+
+Button(s) parameters:
+
+For every button, you can choose a lot of additional features.
+The reference is to button 0; when you write the parameters for the
+other buttons, change the "0" with the desired button number (1,2,3...).
+
+With "btn0width" and "btn0height" parameters, you set the width and height
+of the button (border size included).
+
+Use the "btn0borderstyle" parameter to set the border size of the button.
+For no borders use the value "0".
+
+With the "btn0bordercolor", you can set the color of the border in RGB values.
+If this parameter is set to "BACK", then the background image is used to fill
+this border. The border will be darker than the background image.
+
+You can choose the image for the background, using the "btn0BackgroundImage"
+parameter. Otherwise set it to "NO".
+
+You can choose the image for the foreground, using the "btn0ForegroundImage"
+parameter. Otherwise set it to "NO".
+
+You can choose the button background color with "btn0backgroundColor".
+
+With "btn0SoundMouseOver" you can set the sound to play while the mouse is
+moved over the button. You should specify a .au file, no other formats are
+accepted. You can convert from .wav to .au with an utility.
+Otheriwise set it to "no" to have no sounds.
+
+With "btn0SoundClick" you can set the sound to play while the button
+is clicked. You should specify a .au file, or "no" for no sound.
+
+With the "btn0Tooltip" parameter, you can set the text of button tooltip.
+
+With the "btn0Text" parameter, you can set the text and/or name of this button.
+This text is used, for the tooltip and, if used, for the written text in the
+button.
+
+Choose the size of the text of the button, with the "btn0TextSize" parameter
+(this is only the size of the text that is displayed in the button, not the
+tooltip text).
+
+If you want, you can choose a style for the button setting the "btn0TextStyle" parameter.
+Here are the valid values: "0" = Plain, "1" = Bold, "2" = Italic, "3" = Bold + Italic.
+
+Use the ="btn0TextColor" parameter to set the color (set it with an RRGGBB
+value) of the text displayed in the button.
+
+Choose with the "btn0Font" parameter the font to use for the button.
+
+Set the colours, for the text extrusion, using "btn3TextExtrusionColor0" and
+"btn3TextExtrusionColor1" parameters.
+The first color (extrusionColor0) defines the color of text background.
+The second color (extrusionColor1) defines the color at the front of the text.
+The pixels between those colours are faded from the first color to the second.
+
+With the "btn3TextDepth" parameter, you will set the extrusion size of the text.
+How many pixels in the text should extruded in height and width.
+
+You can also choose the direction of the shadow using the "btn0Shadow" parameter.
+Here are the valid values: "1" = upper left, "2" = upper right, "3" = bottom right,
+"4" = bottom left.
+Or, if you prefer: "1" = north-west, "2" = north-east, "3" = south-est,
+"4" = south-west.
+
+
+See the figure below for a visual explanation:
+
+		  1   2 
+		   \ /
+		  center
+		   / \
+		  4   3
+
+
+Using the "btn0ShadowDistance" parameter you can set the distance of the shadow
+from the text. With a value of "0", there is no shadow.
+
+You have to choose a link to a new page that will be opened clicking on the
+button, with "btn0Link" parameter. 
+
+If you want the link to be loaded in a different frame than the one specified
+with regframename parameter, you can write it in the "btn0target" parameter.
+Otherwise, se it as "default" to use the general regframename settings.
+
+Finally, you can choose if the button background have to contain an Anfy Plugin.
+To do this, type the name of the plugin in the "btn0BackgroundApplet" parameter.
+If you don't want the applet to have a plugin effect, just don't write the
+parameter.
+
+The valid values are:
+
+"anfyplugin_blobs", "anfyplugin_AnWater", "anfyplugin_warp" or "anfyplugin_huerot".
+
+After this, you have to set the parameter for the plugin.
+Parameters of the plugins must be entered as follows:
+
+AnfyPlugin + (button n.)  + _ + (plugin name) + _ + parameter name.
+
+The parameters are the same of the Anfy applets blobs, AnWater, warp and huerot.
+
+Follow some examples of parameters.
+
+A blobs plugin for the button 0:
+
+<PARAM NAME="btn0BackgroundApplet" VALUE="anfyplugin_blobs">
+<PARAM NAME=anfyplugin0_blobs_nblobs VALUE="8">
+<PARAM NAME=anfyplugin0_blobs_minspeed VALUE="15">
+<PARAM NAME=anfyplugin0_blobs_bval1 VALUE="1080">
+<PARAM NAME=anfyplugin0_blobs_bval2 VALUE="34000">
+<PARAM NAME=anfyplugin0_blobs_bval3 VALUE="3600">
+<PARAM NAME=anfyplugin0_blobs_numpal VALUE="6">
+<PARAM NAME=anfyplugin0_blobs_sinemode VALUE="NO">
+<PARAM NAME=anfyplugin0_blobs_starshape VALUE="YES">
+<PARAM NAME=anfyplugin0_blobs_negative VALUE="NO">
+
+A AnWAter plugin for the button 1:
+
+<PARAM NAME="btn1BackgroundApplet" VALUE="anfyplugin_AnWater">
+<PARAM NAME="anfyplugin1_AnWater_image" VALUE="raff.jpg">
+<PARAM NAME="anfyplugin1_AnWater_light" VALUE="YES">
+<PARAM NAME="anfyplugin1_AnWater_minlight" VALUE="-50">
+<PARAM NAME="anfyplugin1_AnWater_maxlight" VALUE="0">
+<PARAM NAME="anfyplugin1_AnWater_autodesign" VALUE="YES">
+<PARAM NAME="anfyplugin1_AnWater_density" VALUE="5">
+<PARAM NAME="anfyplugin1_AnWater_fishnum" VALUE="2">
+<PARAM NAME="anfyplugin1_AnWater_cross" VALUE="NO">
+<PARAM NAME="anfyplugin1_AnWater_crossfactor" VALUE="100"> 
+<PARAM NAME="anfyplugin1_AnWater_rainsize" VALUE="0">
+<PARAM NAME="anfyplugin1_AnWater_rainfactor" VALUE="10">
+<PARAM NAME="anfyplugin1_AnWater_srainsize" VALUE="0">
+<PARAM NAME="anfyplugin1_AnWater_srainfactor" VALUE="10">
+<PARAM NAME="anfyplugin1_AnWater_fixdrop" VALUE="YES">
+<PARAM NAME="anfyplugin1_AnWater_fixdropX" VALUE="62">
+<PARAM NAME="anfyplugin1_AnWater_fixdropY" VALUE="56">
+<PARAM NAME="anfyplugin1_AnWater_fixdropS" VALUE="3">
+<PARAM NAME="anfyplugin1_AnWater_fixdropF" VALUE="100">
+<PARAM NAME="anfyplugin1_AnWater_pressure" VALUE="600">
+<PARAM NAME="anfyplugin1_AnWater_fluidmode" VALUE="oil">
+<PARAM NAME="anfyplugin1_AnWater_interactive" VALUE="NO">
+
+A warp plugin for the button 2:
+
+<PARAM NAME="btn3BackgroundApplet" VALUE="anfyplugin_warp">
+<PARAM NAME="anfyPlugin3_Warp_image" VALUE="face1.gif">
+<PARAM NAME="anfyPlugin3_Warp_w1start" VALUE="-2000">
+<PARAM NAME="anfyPlugin3_Warp_w2start" VALUE="0">
+<PARAM NAME="anfyPlugin3_Warp_wadd1" VALUE="0">
+<PARAM NAME="anfyPlugin3_Warp_wadd2" VALUE="10">
+<PARAM NAME="anfyPlugin3_Warp_w1min" VALUE="-2000">
+<PARAM NAME="anfyPlugin3_Warp_w1max" VALUE="-2000">
+<PARAM NAME="anfyPlugin3_Warp_w2min" VALUE="-1500">
+<PARAM NAME="anfyPlugin3_Warp_w2max" VALUE="1500">
+<PARAM NAME="anfyPlugin3_Warp_warpmode" VALUE="1">
+
+A huerot plugin for the button 3:
+
+<PARAM NAME="btn3BackgroundApplet" VALUE="anfyplugin_huerot">
+<PARAM NAME="anfyPlugin3_huerot_image" VALUE="face1.gif">
+<PARAM NAME="anfyPlugin3_huerot_hueshift" VALUE="180">
+
+Please, read the documentation of the specific applets to see how the
+parameters works.
+

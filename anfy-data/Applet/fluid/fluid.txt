@@ -1,0 +1,116 @@
+
+          Anfy Fluid - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet simulates a surface with fluid wavings. This applet is fully
+ parameterized, so you can generate various kinds of fluid effects.
+
+****************************************************************************
+
+Apart from an optional overlay image, the following 3 ".class" files 
+must be uploaded: 
+
+flud.class
+anfy.class
+Lware.class
+
+Plus, fluid.jar for speedy loading on recent browsers.
+
+***************************************************************************
+
+EXAMPLE.
+
+Insert the <applet></applet> tag in your html document as follows to add
+ this applet to your page (Comments after the ";" symbol are code descriptions
+and acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="fluid.jar" code="fluid.class" width="200" height="200">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when applet
+                                          is "clicked".
+<param name="regnewframe" value="YES">       ; Reglink opened in new frame?
+<param name="regframename" value="_blank">   ; Name of new frame for reglink
+<param name="statusmsg" value="Fluid applet">  ; Statusbar message
+<param name="res" value="1">                 ; resolution (1 .. 8)
+<param name="autodesign" value="YES">        ; Auto design ("YES" or "NO")
+<param name="density" value="4">             ; Density of fluid (2 .. 6)
+<param name="fishnum" value="0">             ; Number of fishes (0 .. 2)
+<param name="rainsize" value="0">            ; Size of circular rain (0 = OFF)
+<param name="rainfactor" value="10">         ; Circular rain factor
+<param name="srainsize" value="0">           ; Size of square rain (0 = OFF)
+<param name="srainfactor" value="10">        ; Square rain factor
+<param name="volcano" value="NO">            ; Volcano's magma mode (YES, NO)
+<param name="overimg" value="NO">            ; Optional image over applet
+<param name="overimgX" value="0">            ; Over image X offset
+<param name="overimgY" value="0">            ; Over image Y offset
+<param name="memdelay" value="1000">         ; Memory deallocation delay
+<param name="priority" value="3">            ; Task priority (1..10)
+<param name="MinSYNC" value="10">            ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Message for no java browsers.
+</applet>                                  ; End of applet tag
+
+***************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from
+the author. If the code is correct and the applet is run from the registered
+domain name, you can use "link" parameters to link to a URL when the applet
+ is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest
+ browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+For optimum results, the height should be 200. You can change the width.
+("res" is a sort of zoomer).
+
+If you set the "autodesign" parameter to "YES", an automatic slideshow of the
+effects will be executed, and the next parameters are ignored. If you set to
+ "NO", you have to configure effects manually.
+
+The "density" parameter (2 .. 6) controls the density of fluid. Lower values
+mean more fluid liquid, so waves end quickly. Higher values cause a slower
+decadence of the waves.
+
+You can insert up to 2 fishes, with "fishnum" parameter.
+
+Other effects are: rain and srain.
+
+Set the parameter "rainsize" to more than 0 and activate the spheric rain.
+The "rainfactor" parameter works as "timer" between one drop and another.
+By setting "rainfactor" to 0, a new drop will appear in every frame.
+Higher values mean more distance between one drop and another.
+
+The "srainsize" determines a square rain. Well, a rain drop itself is not square,
+but its wave expands rather spherically; whereas spheric rain drops generates 
+normal radial waves. If the parameter is set to zero, no rain generates. Values
+ equal to or higher than 1 will generate rain. To control it, use "srainfactor"
+the same way as "rainfactor".
+
+The "volcano" parameter, if set to "YES", transforms the water into lavic
+magma, for inferno effect.
+
+You can enable more than one effect at the same time.
+
+

@@ -1,0 +1,100 @@
+
+          Anfy Life2d - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and simulate in realtime a popular Artificial Life,
+Conway algorythm. The result is a sort of unicellular life. This applet
+ is fully parametrized, so you can change many things to adapt the
+effect to your pages and purposes.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional overlay image, the following 3 ".class" files 
+must be uploaded: 
+
+life2d.class
+Lware.class
+anfy.class
+
+Plus, life2d.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="life2d.jar" code="life2d.class" width="200" height="180">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">         ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Life2d applet"> ; Statusbar message
+<param name="res" value="2">                   ; Resolution (1-8)
+<param name="backR" value="20">           ; RED comp. of backg. colour (0-255)
+<param name="backG" value="20">           ; GREEN comp. of backg. colour (0-255)
+<param name="backB" value="230">          ; BLUE comp. of backg. colour (0-255)
+<param name="foreR" value="250">          ; RED comp. of foregr. colour (0-255)
+<param name="foreG" value="250">          ; GREEN comp. of foregr. colour (0-255)
+<param name="foreB" value="60">           ; BLUE comp. of foregr. colour (0-255)
+<param name="ldensity" value="2">         ; Initial life density (1-9)
+<param name="overimg" value="NO">         ; Optional image over applet
+<param name="overimgX" value="0">         ; Over image X offset
+<param name="overimgY" value="0">         ; Over image Y offset
+<param name="memdelay" value="1000">      ; Memory deallocation delay
+<param name="priority" value="3">         ; Task priority (1..10)
+<param name="MinSYNC" value="10">         ; Min. milliseconds/frame for sync
+Your browser doesn't support Java.      ; Msg in no java browsers
+</applet>                               ; End of classtag
+
+****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by width and height tags.
+
+The "res" parameter determines the resolution: with res=1 pixels are small,
+but the effect is slow. With res=8 the pixels are too large but effect fast.
+The optimum choices are 2-4.
+
+You can change the background and foreground colour for best results on
+your web page. The RGB values are the same as HTML tags, but in decimal
+values.
+
+The "ldensity" parameter determines the amount of lifeforms at beginning.
+
+

@@ -1,0 +1,147 @@
+
+                  ZoomPan - Copyright (C) by Anfy Team 2000-2002
+
+
+This applet can show a part of GIF / JPG image. The user can use the mouse to
+zoom in an out and to move in any direction.
+This applet include a bilinear filtering made by Andrea Fasce.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from image, and an optional overlay image, the following 3 ".class"
+files must be uploaded: 
+
+zoompan.class
+Lware.class
+anfy.class
+
+Plus, zoompan.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="zoompan.jar" code="zoompan.class" width="400" height="200">
+<param name="credits" value="Applet by Anfy Team (www.anfyteam.com)">
+<param name="regcode" value="NO">		; Registration code (if you have it)
+<param name="reglink" value="NO">		; Reglink opened in new frame?
+<param name="regframename" value="_blank">	; Name of new frame for reglink
+<param name="statusmsg" value="ZoomPan applet">	; status bar message.
+<param name="image" value="zoom.jpg">		; Image to zoom/pan
+<param name="zoomspeed" value="10">		; Zooming speed
+<param name="xmovespeed" value="5">		; X Panning speed
+<param name="ymovespeed" value="5">		; Y Panning speed
+<param name="xborder" value="50">		; X pan border
+<param name="yborder" value="50">		; Y pan border
+<param name="autodesign" value="YES">		; Enable the automatic zoom/pan (YES/NO)
+<param name="maxzoom" value="100">		; Max zoom when in autodesign mode
+<param name="movex" value="5">			; X speed in autodesign mode
+<param name="movey" value="10">			; Y speed in autodesign mode
+<param name="rightclick" value="YES">		; Switch on/off the right mouse button (YES/NO)
+<param name="xaccelerate" value="10">		; X Acceleration while panning
+<param name="yaccelerate" value="10">		; Y Acceleration while panning
+<param name="stretch" value="NO">		; Switch on/off the picture stretching (YES/NO)
+<param name="overimg" value="NO">		; Optional image over applet
+<param name="overimgX" value="0">		; Over image X offset
+<param name="overimgY" value="0">		; Over image Y offset
+<param name="memdelay" value="1000">		; Memory deallocation delay
+<param name="priority" value="3">		; Task priority (1..10)
+<param name="MinSYNC" value="10">		; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java 	; Msg in no java browsers
+</applet>
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The "width" and "height" tag can be equal to image width and height but if you
+want a panoramic panning effect you have to choose lower value for almost one of the
+two parameters.
+
+With the "statusmsg" parameter you can set a message which appear at the bottom of the
+browser window, when you mouse-over the applet. Enter any message here.
+
+The "zoomspeed" parameter is used to set the zooming speed of the image when you click on the
+mouse button. You can use integers values greater than 0.
+
+The "xmovespeed" parameter is used to set camera X movements speed.
+The "ymovespeed" parameter is used to set camera Y movements speed.
+You can use integers values greater than 0.
+
+Using the parameter "xborder" you can determine where to start the horizontal border sensibility
+for the mouse movements, from both left and right sides.
+The values ranges from 0 to width/2.
+As example, if your applet width is 500 you can choose a value between 0 and 250. 
+
+Using the parameter "yborder" you can determine where to start the vertical border sensibility
+for the mouse movements, from both top and bottom sides.
+The values ranges from 0 to height/2.
+As example, if your applet height is 300 you can choose a value between 0 and 150. 
+
+With the "maxzoom" parameter (value should be greater than 1) it's set mhe max zoom
+reachable in both interactive and autodesign modes. 
+
+If you want, you can switch on the autodesign feature using the "autodesign" parameter.
+If you set it to yes the applet will enable an automatic zoom/pan camera movement.
+
+If you switch on the autodesign parameter you have also to set the "movex" and "movey"
+parameters.
+They are used to set the horizontal and vertical speed for the panoramic movements.
+
+You can use the "rightclick" parameter to choose how to control the zoom out feature.
+If this parameter is set to "YES" you will need to click right mouse button to zoom out,
+else you will need to double-click on the left mouse button.
+Computers like Mac may have only one button and rightclick may not work.
+
+Using the "xaccelerate" parameter you can choose the speed acceleration to use while
+panning the picture horizontally.
+
+Using the "yaccelerate" parameter you can choose the speed acceleration to use while
+panning the picture vertically.
+
+Finally you can use the "stretch" parameter if the aspect-ratio of applet is different from
+the aspect-ratio of image.
+If you set it to "YES" the image will be stretched to fit the applet size, else the image
+will be adapted to the applet.
+ 
+NOTE: the pan movement is enabled if applet "width" and "height" value have different
+aspect ratio than image width and height.
+
+So, if the width is less than height you will have an horizontal pan movement (or the applet
+will stretch the picture if stretch=YES); otherwise, you will have a vertical pan
+movement (or vertical stretch if stretch=YES).
+If you set the same width and height ratio on applet and image, the image will be stretched
+to fit the applet size.
+

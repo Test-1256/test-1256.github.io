@@ -1,0 +1,107 @@
+
+         Anfy Stretch - Copyright (C) by Fabio Ciucci 2001-2002
+
+
+With this applet you can interactively stretch any GIF or JPG image.
+Additional "Undo" and "Reset" buttons can be added.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from an foreground image, the following 3 ".class" files
+must be uploaded: 
+
+anstretch.class
+Lware.class
+anfy.class
+
+Plus, anstretch.jar for speedy loading on recent browsers.
+
+**************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code descriptions and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="anstretch.jar" code="anstretch.class" width="140" height="177">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet is "clicked".
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="statusmsg" value="AnStretch applet"> ; Statusbar message
+<param name="image" value="girl.jpg">      ; Image to load
+<param name="undobutton" value="YES">      ; Undo button ("YES","NO")
+<param name="undolabel" value="Undo">      ; Label for undo button
+<param name="undox" value="20">            ; Undo button X position
+<param name="undoy" value="20">            ; Undo button Y position
+<param name="undow" value="45">            ; Undo button width
+<param name="undoh" value="25">            ; Undo button height
+<param name="resetbutton" value="YES">     ; Reset button ("YES","NO")
+<param name="resetlabel" value="Reset">    ; Label for reset button
+<param name="resetx" value="176">          ; Reset button X position
+<param name="resety" value="20">           ; Reset button Y position
+<param name="resetw" value="45">           ; Reset button width
+<param name="reseth" value="25">           ; Reset button height
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Msg in no java browsers
+</applet>
+
+*******************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is mouse-clicked.
+However, this feature is not much useful for this applet being interactive.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The GIF/JPG image can be of any size. Remember to place the exact
+size of image in "width" and "height" tags.
+
+In the "image" parameter you have to specify the GIF or JPG image to
+stretch. Centered frontal photos of faces are the most adapt ones.
+
+If you set the "undobutton" parameter to "YES", you can add an
+undo button.
+Then, you have to specify it's label with "undolabel" parameter, and it's
+position and size with "undox", "undoy", "undow" and "undoh" parameters.
+
+If you set the "resetbutton" parameter to "YES", you can add an
+reset button.
+Then, you have to specify it's label with "resetlabel" parameter, and it's
+position and size with "resetx", "resety", "resetw" and "reseth" parameters.
+
+

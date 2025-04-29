@@ -1,0 +1,285 @@
+
+                    SpiralStar - Copyright (C) Fabio Ciucci 2000-2002
+
+This applet shows some animations of a spiral and/or a star drawn in real-time
+with psychedelic backgrounds.
+It contains code by Vincent Zimmermann, used under license.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional background image, two foreground image and an optional
+overlay image, the following 3 ".class" files must be uploaded:
+
+spiralstar.class
+Lware.class
+anfy.class
+
+Plus, spiralstar.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<APPLET ARCHIVE="spiralstar.jar" CODE="spiralstar.class" WIDTH="200" HEIGHT="200">	; Name, Width, Height
+<PARAM NAME="credits" VALUE="Applet by Fabio Ciucci (www.anfyteam.com)">
+<PARAM NAME="regcode" value="no">		        ; Registration code (if you have it)
+<PARAM NAME="reglink" VALUE="http://www.anfyteam.com">	; Optional URL link when the applet is "clicked".
+<PARAM NAME="regnewframe" VALUE="YES">			; Reglink opened in new frame ?
+<PARAM NAME="regframename" VALUE="_blanck">		; Name of new frame for reglink
+<PARAM NAME="statusmsg" VALUE="SpiralStar">		; Statusbar message
+<PARAM NAME="type" VALUE="SPIRAL&STAR">		 ; Animation type ("spiral", "star", "spiral&star")
+<!-- Spiral params -->
+<PARAM NAME="precis" VALUE="250">		 ; Spiral precision (0..255)
+<PARAM NAME="xLapsInit" VALUE="10.0">		 ; Spiral initial X 'laps' number
+<PARAM NAME="yLapsInit" VALUE="10.0">		 ; Spiral initial Y 'laps' number
+<PARAM NAME="xLapsIncrement" VALUE="0.011">	 ; Spiral X laps increment
+<PARAM NAME="yLapsIncrement" VALUE="0.01">	 ; Spiral Y laps increment
+<PARAM NAME="xRotationInit" VALUE="0.0">	 ; Spiral initial X rotation
+<PARAM NAME="yRotationInit" VALUE="0.0">	 ; Spiral initial Y rotation
+<PARAM NAME="xRotationInc" VALUE="0.011">	 ; Spiral X rotation increment
+<PARAM NAME="yRotationInc" VALUE="0.01">	 ; Spiral Y rotation increment
+<PARAM NAME="spiralLeftInset" VALUE="10">	 ; Spiral left inset
+<PARAM NAME="spiralRightInset" VALUE="10">	 ; Spiral right inset
+<PARAM NAME="spiralTopInset" VALUE="10">	 ; Spiral top inset
+<PARAM NAME="spiralBottomInset" VALUE="10">	 ; Spiral bottom inset
+<PARAM NAME="spiralBgColor" VALUE="ffff00">	 ; Spiral fill color
+<PARAM NAME="spiralFocusBgColor" VALUE="00ffff"> ; Spiral fill color when mouse focus
+<PARAM NAME="spiralFgColor" VALUE="00ff00">	 ; Spiral outline color
+<PARAM NAME="spiralFocusFgColor" VALUE="ffffff"> ; Spiral outline color when mouse focus
+<PARAM NAME="cycleBgColor" VALUE="NO">		 ; Cycle fill color (YES/NO)
+<PARAM NAME="cycleFgColor" VALUE="NO">		 ; Cycle outline color (YES/NO)
+<PARAM NAME="spiralImage" VALUE="anlogoc.gif">   ; Optional Spiral Image or "NO"
+<!-- Star params -->
+<PARAM NAME="starBranchNb" VALUE="20">		; Number of branches
+<PARAM NAME="starRatio" VALUE="0.2">		; Ratio
+<PARAM NAME="starRatioInc" VALUE="-0.2">	; Ratio inc.
+<PARAM NAME="starBgColor" VALUE="ffaa00">	; Background color or "no"
+<PARAM NAME="starFgColor" VALUE="000000">	; foreground color or "no"
+<PARAM NAME="starLeftInset" VALUE="60">		; Star left inset
+<PARAM NAME="starRightInset" VALUE="60">	; Star right inset
+<PARAM NAME="starTopInset"  VALUE="60">		; Star top inset
+<PARAM NAME="starBottomInset" VALUE="60">	; Star bottom inset
+<PARAM NAME="starAnimType" VALUE="2">		; Type of animation (1..4)
+<!-- Background & foregournd images params -->
+<PARAM NAME="backEffect" VALUE="huerot">	; Background effect
+<PARAM NAME="hueimage" VALUE="bubbles.jpg">	; Huerot image name	
+<PARAM NAME="hueshift" VALUE="40">		; Huerot shift
+
+<PARAM NAME="bgColor" VALUE="000000">		; Background color (hex RGB)
+<PARAM NAME="bgImage" VALUE="no">		; Background image name
+<PARAM NAME="expandBgImage" VALUE="NO">		; Expand background image (to fit applet size)
+<PARAM NAME="textured" VALUE="YES">		; Textured background image
+<PARAM NAME="image" VALUE="img.gif">		; Foreground image name
+<PARAM NAME="focusImage" VALUE="imgOn.gif">	; Foreground image name when mouse focus
+
+<PARAM NAME="overimg" VALUE="no">		; Optional image over applet
+<PARAM NAME="overimgX" VALUE="0">		; Over image X offset
+<PARAM NAME="overimgY" VALUE="0">		; Over image Y offset
+<PARAM NAME="memdelay" value="1000">		; Memory deallocation delay
+<PARAM NAME="priority" value="3">		; Task priority (1..10)
+<PARAM NAME="MinSYNC" value="10">		; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.	; Message for no java browsers
+</APPLET>
+
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+With the "statusmsg" parameter you can set a message which appear at the bottom of the browser window,
+when you mouse-over the applet. Enter any message here.
+
+With the "type" parameter you choose if the applet will show a spiral, a star
+or both, respectively with the values "spiral", "star" and "spiral&star".
+
+*******************
+* Spiral settings:
+*******************
+
+With the "precis" parameter you set the spiral detail level (precision: 0..255).
+
+Use the "xlapsInit" and "ylapsInit" parameters to set the initial number of
+X and Y spiral laps.
+Then use the "xLapsIncrement" and "yLapsIncrement" parameters to set the spiral
+laps increment. The values are in floating point format.
+
+Use the "xRotationInit" and "yRotationInit" parameters to set the initial
+X and Y spiral rotation.
+Then use the "xRotationInc" and "yRotationInc" parameters to set the spiral
+rotation increment. The values are in floating point format.
+
+You can choose the spiral inset using the "spiralLeftInset", "spiralRightInset",
+"spiralTopInset" and "spiralBottomInset" parameters.
+
+With the "spiralBgColor" you choose a background color for the spiral, which
+is the filled internal part, and with "spiralFgColor" you can choose the
+foreground color, which is the outline.
+If color param equals 'no', the color is transparent (the part is not drawn).
+You can set spiralBgColor="no", and/or spiralFgColor="no", if you don't
+want to display the Spiral or parts of it.
+
+If required, you can set different colors to use when the mouse is over the
+applet area, using the "spiralFocusBgColor" and "spiralFocusFgColor" parameters.
+Otherwise, set these with same value as "spiralBgColor" and "spiralFgColor".
+
+There is the possibility to switch on/off (using "yes" or "no") the color cycling
+for the background and foreground using "cycleBgColor" and "cycleFgColor" parameters.
+Note: This option will affect both spiral and star.
+
+Finally, you can draw over the spiral vertexes an image, specified in the
+"spiralImage" parameter. It's suggested to use small images and to set a
+lower detail to hevitate slow-downs.
+
+*******************
+* Star settings:
+*******************
+
+The "starBranchNb" parameter can be used to set the starting number of branches of the star.
+Using "starRatio" and "starRatioInc" you can set the starting and the increment growing ratio
+of the star.
+
+Then you can choose a background and a foreground color for the start with "starBgColor"
+and "starFgColor" parameters.
+
+As for the spiral, you can choose the star inset using respectively "starLeftInset", "starRightInset",
+"starTopInset" and "starBottomInset" parameters.
+
+You can also choose between four different star animations using the "starAnimType" parameter.
+
+If you use the 3 and 4 cases you have to consider this:
+
+a) For case 3 you need some new parameters to add new colours:
+   You can add how many "starBgColorX" parameters you want (es: "starBgColor1", "starBgColor2",
+   "starBgColor3", "starBgColor4") but you have to balance them with the "starGap" parameter.
+   Use it to set how many pixels may be used to draw every new colour;	
+
+b) For case 4 you require only the "starBgColor1" extra parameter.
+
+Using "bgColor" parameter you can set a background color for the applet.
+
+There is the possibility to switch on/off (using "yes" or "no") the color cycling
+for the background and foreground using "cycleBgColor" and "cycleFgColor" parameters.
+Note: This option will affect both spiral and star.
+
+************************************
+* Background and Foreground images
+************************************
+
+If you want you can set a background image using the "bgImage" parameter.
+
+If you are using an image smaller than applet size you can also use the "expandBgImage" and 
+"textured" parameters. Switching on/off (using "yes" or "no") the first, you can
+fit the little image to the applet size. Otherwise, you can choose to use the small image as a tile, 
+setting yes or no the "textured" parameter.
+
+With the "image" parameter you can specify a central foreground image, otheriwse set it to "no".
+If you want to specify a different image to display when the mouse is over the
+applet area, use the "focusImage" parameter, or set it to "no".
+It's suggested to use transparent gifs for these parameters.
+
+**********************
+* Background effects
+**********************
+
+Instead of an image you can choose, with the "backeffect" parameter, from five different background
+effect. Be sure to set width and height of applet as even numbers, in the
+case a background effect is selected, to avoid problems.
+Use one of the following values for this parameter:
+
+"circles", "huerot", "plasma", "tunnel", "kaleid"
+
+
+When you choose the "circles" value, you can also set the following parameters:
+
+"backcircle1col" to set the color for the first circle;
+"backcircle2col" to set the color for the second circle;
+"backcircle3col" to set the color for the third circle;
+"backcirclespacing" to set the space between the circles;
+"backcirclesize" to set the size of the circles;
+"backcirclespeed" to set the speed of the circles;
+"backcirclebcolor" to set a background color.
+
+When you choose the "huerot" value, you can also set the following parameters:
+
+"hueimage" to set the huerot image name (image size should be same or greater than applet size)
+"hueshift" to set the huerot color rotation speed.
+
+When you choose the "plasma" value, you can also set the following parameters:
+
+"plasmazoom" to set the first plasma zoom value (float value; default "1.5");
+"plasmazoom1" to set the second plasma zoom value  (float value; default "1.5");
+"plasmaangle" to set the first plasma rotation angle (float value; default "0.01");
+"plasmaangle1" to set the second plasma rotation angle (float value; default "0.02");
+"plasmacolor" to set the color for the plasma.
+
+When you choose the "tunnel" value, you have also set the following parameters:
+
+"tunnelpalette" to set the palette to use for the tunnel (from 0 to 6);
+
+palette colors:
+
+0 = cyan
+1 = green
+2 = blue
+3 = gray
+4 = yellow
+5 = violet
+6 = red
+
+"tunnelplot" to set the plot value fort he tunnel(greater than 0);
+"tunnelmovX" to set the horizontal tunnel movement (from 0 to 20);
+"tunnelmovY" to set the vertical tunnel movement (from 0 to 20);
+"tungen1" to set the tunnel generator 1 (from 1 to 1000);
+"tungen2" to set the tunnel generator 2 (from 1 to 1000);
+"tungen3" to set the tunnel generator 3 (from 1 to 1000);
+"tungen4" to set the tunnel generator 4 (from 1 to 1000);
+"tungen5" to set the tunnel generator 5 (from 1 to 1000);
+"tungen6" to set the tunnel generator 6 (from 1 to 1000);
+
+The tunnel is based on a 512*512 image so when you make applet that have width and/or
+height greater than 400 the routine try to adjust them to the applet size so you
+can see approximations and black borders.
+
+When you choose the "kaleid" value, you can also set the following parameters:
+
+"kalimage" to set the kaleid image name;
+"kalspeed" to set the kaleid speed;
+
+With kaleid effect enabled, both the applet and kaleid image should be squared.
+If you use the kaleid as background effect remember to use images which are
+at least 145% of applet size (or set the applet size as 65% of kaleid image).
+Smaller images will make the applet lock.
+
+Note: If you use a back effect, se the "bgImage" to "no".
+

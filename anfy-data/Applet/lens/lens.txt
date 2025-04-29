@@ -1,0 +1,119 @@
+
+          AnfyLens - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can simulate a lens moving over any GIF or JPG image.This applet
+is fully parameterized, so you can generate all kinds of lens effects.
+
+*************************************************************************
+
+NECESSARY FILES.
+
+As well as an image to be animated and an optional overlay image, the
+following 3 ".class" files must be uploaded: 
+
+AnLens.class
+Lware.class
+anfy.class
+
+Plus, AnLens.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code descriptions and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="AnLens.jar" code="AnLens.class" width="320" height="256">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">       ; Reglink opened in new frame?
+<param name="regframename" value="_blank">   ; Name of new frame for reglink
+<param name="statusmsg" value="Lens applet"> ; Statusbar message
+<param name="image" value="facet.jpg">       ; Image to load
+<param name="lenswidth" value="35">          ; Size of lens
+<param name="distdval" value="10">           ; Diagonal distortion (5 .. 20)
+<param name="distoxy" value="0">             ; XY distortion (-40 .. 40)
+<param name="zoomfactor" value="5">          ; Zoom factor (0 .. 30)
+<param name="interactive" value="YES">       ; Interaction ("ON" .. "OFF")
+<param name="distort" value="YES">           ; Distortion ("ON" .. "OFF")
+<param name="spdx" value="2">                ; X speed (0 .. 8)
+<param name="spdy" value="1">                ; Y speed (0 .. 8)
+<param name="overimg" value="NO">            ; Optional image over applet
+<param name="overimgX" value="0">            ; Over image X offset
+<param name="overimgY" value="0">            ; Over image Y offset
+<param name="memdelay" value="1000">         ; Memory deallocation delay
+<param name="priority" value="3">            ; Task priority (1..10)
+<param name="MinSYNC" value="10">            ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Msg in no java browsers
+</applet>
+
+*************************************************************************
+
+INSTRUCTIONS.
+
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as an animated
+sequence only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+You can load any GIF or JPG image, but remember to write the exact image size in
+the width and height tags.
+
+You can choose the width of the lens with the parameter "lenswidth".
+Greater lens size  means slower movements.
+
+If you select "NO" to "distort" parameter, you will disable distortions, and
+the zoom will be plain (this is useful especially for applications where the
+image is zoomed to view it better).
+
+The "distdval" parameter determines the diagonal distortion.
+To have a perfect sphere, use the value 10. Smaller or higher
+values (the range is 5 .. 20) will change the lens distortion.
+
+The "distoxy" value (-40 .. 40) will distort X for negative values and Y
+for positive values. Choose 0 for normal spheric distortion.
+
+As you know, lens effects are useful for zooming images. With "zoomfactor"
+you will change the lens zooming ability. A value of 0 = no zooming,
+only distortion. Higher values = higher zooming.
+
+The interactive placement feature of the lens is the best way to test this
+applet, so it should be enabled to give optimum interactive ability using a
+mouse. Usually the lens is moved around the image automatically, but if you
+set to "YES" the "interactive" parameter, the user can move the lens with 
+the mouse when it is over the applet area. The automatic movements will 
+restart after 2 seconds of no user activity. If set to "NO", the user will
+ not be able to use the interactive feature.
+
+You can control the speed of automatic movement with the "spdx" and "spdy"
+parameters.
+
+

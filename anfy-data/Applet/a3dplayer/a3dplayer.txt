@@ -1,0 +1,511 @@
+
+              Anfy3d Player - Copyright (C) Anfy Team 2001-2002
+
+This applet is a complete 3d player. It's capable to display single objects
+to let visitors examine them, worlds where you can walk, or animations for
+presentations.
+To create the 3d scenes and objects you can use any program capable of
+saving in VRML (3d Studio Max, Lightwave, ...), then reload the VRML
+in the a3dWizard in order to convert and save it in .a3d format.
+If no Anfy regcode is provided, a "www.anfy3d.com" label will be
+displayed over the applet area, in addition to the credits window
+in the case the applet is clicked: a valid regcode will remove both.
+
+For more informations on a3dplayer and Anfy3dAPI visit:
+
+http://www.anfyteam.com/dev/a3d/
+
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional logo image, and the .a3d scene,
+the following ".jar" file must be uploaded: 
+
+a3dplayer.jar
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+    <applet archive="a3dplayer.jar" code="a3dplayer.class" width="400" height="300" MAYSCRIPT>  ; Name, Width, Height.
+    <PARAM NAME="credits" VALUE="Applet by Andrea Fasce (www.anfyteam.com)">	; Credits line.
+    <PARAM NAME="regcode" VALUE="no">			; Registration code (if you have it).
+    <PARAM NAME="reglink" VALUE="no">			; Optional URL link when the applet is "clicked".
+    <PARAM NAME="regnewframe" VALUE="yes">		; Reglink opened in new frame ?
+    <PARAM NAME="regframename" VALUE="_blank">		; Name of new frame for reglink.
+    <param name="scene" value="ship.a3d">       ; scene to load (a3d file)
+    <param name="illumination" value="off">     ; switch illumination on/off
+    <param name="navigation" value="walk">      ; interactive mode (walk/quake/examine/none)
+    <param name="xspeed" value="1">             ; rotation speed on x screen coords (y axis)
+    <param name="yspeed" value="1">             ; rotation speed on y screen coord (x axis)
+    <param name="zspeed" value="10">            ; walking speed (z)
+    <param name="distance" value="10">          ;  minimum distance with objects at which to stop
+    <param name="avatarheight" value="100">   ; height of the avatar currently walking
+    <param name="a3dobject" value="SCENEGRAPH">  ; object to rotate when in examine mode	
+    <param name="zoom" value="off">           ; zoom mode (on/off) to switch zoom on-off
+                                            ; (also available antialias/hardware modes
+                                            ;  in full anfy3d API)
+    <param name="forcetime" value="on">     ; force the animation speed. Works better
+	                                   ; with very complex scenes, or big size.
+    <param name="near" value="0.1">        ; sets the near camera plane
+    <param name="far" value="10000">       ; sets the far camera plane
+    <param name="dynamic" value="off">     ; sets the dynamic loading for a3d files
+	                                   ; (textures are loaded dynamically while
+                                           ; the scene is already playing.
+                                           ; This value can be "on" or "off".
+    <param name="bgcolor" value="555555">         ; Loading background color
+    <param name="loadbarcolor" value="ffffff">    ; Loading bar color
+    <param name="loadbarbgcolor" value="999999">  ; Loading bar background color
+    <param name="logo" value="no">                ; Image file to display while loading, or "no"
+
+    Sorry, your browser doesn't support Java.		; Message for no java browsers.
+  </APPLET> 
+
+
+*********************************************************************
+
+JAVASCRIPT FUNCTIONS - remember to add MAYSCRIPT within the <applet> TAG.
+
+through the document.a3dplayer.move(v) and document.a3dplayer.camera(v) you can
+control anfy3d via javascript.
+IMPORTANT: you must specify MAYSCRIPT into the applet tag if you want
+javascript be able to access java applets and you must specify the
+name of the applet into the applet tag.
+
+a3dplayer.move(v)
+v can be:
+0 walk forward
+1 walk backward
+2 move left
+3 move right
+4 head up
+5 head down
+please consider that these movements also depends if you're
+in walk or examine or quake mode
+
+a3dplayer.camera(v)
+v can be
+-1 switch to next camera
+-2 switch to previous camera
+this is useful to switch between cameras
+
+
+
+
+*********************************************************************
+       vrml97 support inside a3x and a3d file formats
+*********************************************************************
+
+vrml97 supported nodes with supported fields and aNodes:
+
+Group - aTransform
+Transform - aTransform
+Switch (by now it works like as Group node) - aTransform
+Anchor - aTransform+aTouch
+DirectionalLight (color direction intensity on) - aLightDirectional
+PointLight (color source attenuation intensity radius on) - aLightOmni
+Viewpoint (position orientation fov) - aCamera
+Background (skyColor)
+TouchSensor (isActive isOver touchTime) - aTouch
+TimeSensor (enabled loop startTime stopTime cycleInterval fraction_changed) - aTimer
+OrientationInterpolator (keyTime keyValue value_changed) - aRotationLinear
+PositionInterpolator (keyTime keyValue value_changed) - aPositionLinear
+ColorInterpolator (keyTime keyValue value_changed) - aPositionLinear
+ScalarInterpolator (keyTime keyValue value_changed) - aFloatLinear
+CoordinateInterpolator (keyTime keyValue value_changed) - aVertexLinear
+Shape (appearance geometry) - aMesh
+Material (transparency diffuse emissive) - aMaterial
+Texture (image) - aTexture
+IndexedFaceSet (ccw crease vertex vertexIndex texCoord texCoordIndex color colorPerVertex
+ colorIndex normal normalIndex) - aMesh
+
+To better understand the conversion just look into the a3x formats:
+
+
+*********************************************************************
+      Technical data: A3X Format
+*********************************************************************
+
+a3x format v.0.2 by Andrea Fasce (andreaf@anfyteam.com)
+
+This ASCII format will be used as Anfy3D eXchange format
+
+*Types:
+NODE	- means that there's a single node declaration
+ANODE	- an array of node
+FLOAT3	- a x,y,z vector
+FLOAT4	- a x,y,z,w vector
+AFLOAT3	- an array of FLOAT3
+INT		- a 32 bit integer
+AINT	- an array of INT
+STRING	- a string (may be used for textures etc)
+FLOAT	- a float number
+DOUBLE	- a double number
+BOOL	- a boolean value: may be TRUE or FALSE
+
+*Arrays:
+arrays start with a "[" and ends with a "]"
+
+*Field types:
+IN	Can be used as destination of an event
+OUT	Can be used as generator of an event
+EXPOSED	Can be used as a generator and/or as a destination
+
+All fields that don't have a field-type are EXPOSED
+
+Usually when a node receives an IN event, a routine is called, some
+of the fields of the node may be changed and one or more OUT events
+may be generated. An IN event can be tought as a function that belongs
+to a node: it's a fuction that can be called also from other events
+
+*Bindable nodes:
+bindable nodes are nodes like cameras, backgrounds etc: there may be
+only one of the active at any time. They contain the "bind" field
+
+
+*Keywords:
+USE - means we're using an already defined node
+LINK a b - connect an OUT to an IN: values are copied directly and
+then the the handling routine is called.
+
+*Names
+Nodes may be named. They MUST be named if you want to use them with
+the USE keyword
+
+*Default values:
+The values specified near the various field names are the default
+values that will be used if fields are not specified.
+
+IN and OUT fields cannot be assigned a value at loading time,
+but can only be used to handle events
+
+*Comments:
+Comments inside a file can be expressed using the standard c/c++
+notation (so with // and with /* */ )
+
+*Numbers:
+decimal numbers can be expressed either with a "." or with a ","
+Examples:
+1.143   1,143   (they represent the same number)
+
+*Separator character
+You can use only space as a separator character. Newline is
+treated as a space
+
+*Path
+All addictional files that can be loaded (like textures etc)
+should be in the same directory of the scene file or you can
+also specify a complete path
+
+*Format ID:
+THE FIRST 3 BYTES INSIDE AN a3x FILE MUST BE THE ASCII-CODE
+"A3X"
+
+*Nodes:
+
+aCopyright
+{
+	STRING	description		""
+}
+copyright string, cannot be accessed in any way
+There can be only one aCopyright node into a scene
+
+aTransform
+{
+	ANODE	children		[]
+	FLOAT3	center			0 0 0
+	FLOAT4	rotation		0 0 1 0	
+	FLOAT3	scale			1 1 1
+	FLOAT4	scaleRotation	0 0 1 0
+	FLOAT3	position		0 0 0
+	INT		choice			-2			// which node to draw (-2 all nodes, -1 no nodes, otherwise which node)
+}
+transformation matrix
+This node can also be used as a switch node if you modify the
+default value of the field "choice"
+
+
+aTouch
+{
+	STRING	touch			""	// used to directly call external commands
+	BOOL	enabled			TRUE
+OUT	BOOL	pressed
+OUT	BOOL	isOver
+OUT	DOUBLE	touchTime
+	STRING	description		""	// used to show tooltips
+	STRING	url			""	// used to perform a link to an html page
+}
+touch sensor
+
+aLight
+{
+	BOOL	on				TRUE		// light is active
+	INT		type			0			//0=directional,1=omni
+	FLOAT3	color			1 1 1		// r g b
+	FLOAT	intensity		1		// o multiplier (ti mando la pipeline di illuminazione ke uso io al piu' presto)
+	FLOAT3	source			0 0 0		// used only for omni
+	FLOAT3	attenuation		1 0 0		// used only for omni
+	FLOAT	radius			100			// used only for omni
+	FLOAT3	direction		0 0 -1		// used only for directional
+}
+they illuminate like in vrml97.. omni lights illuminate all objects,
+directional lights illuminate all objects
+
+aLightOmni
+{
+	BOOL	on				TRUE		// light is active
+	FLOAT3	color			1 1 1		// r g b
+	FLOAT	intensity		1		// o multiplier (ti mando la pipeline di illuminazione ke uso io al piu' presto)
+	FLOAT3	source			0 0 0		// used only for omni
+	FLOAT3	attenuation		1 0 0		// used only for omni
+	FLOAT	radius			100			// used only for omni
+}
+
+aLightDirectional
+{
+	BOOL	on				TRUE		// light is active
+	FLOAT3	color			1 1 1		// r g b
+	FLOAT	intensity		1		// o multiplier (ti mando la pipeline di illuminazione ke uso io al piu' presto)
+	FLOAT3	direction		0 0 -1		// used only for directional
+}
+
+aCamera
+{
+IN	BOOL	bind						// bind
+	FLOAT3	source			0 0 10
+	FLOAT4	orientation		0 0 1 0		// default
+	FLOAT	fov				48		//degrees
+	FLOAT	near			0.1		// near plane
+	FLOAT	far				-1		// infinity
+}
+source and orientation only in type 0
+target and roll only in type 1
+	
+
+
+aTimer
+{
+	DOUBLE	startTime		0
+	DOUBLE	stopTime		0
+	BOOL	loop			FALSE
+	DOUBLE	cycleInterval	1
+	BOOL	enabled			TRUE
+OUT	DOUBLE	cycleTime
+OUT	FLOAT	alpha
+OUT BOOL	isActive
+OUT DOUBLE	time
+}
+works just like in vrml97
+
+
+The linear interpolation keys are used to linearly interpolate values for animation etc
+Depending on the values you need to interpolate, you need to have different keys
+
+aRotationLinear
+{
+IN	FLOAT	alpha
+OUT	FLOAT4	value		[]	// output rotation
+	AFLOAT	keyTime		[]	// the alpha (time normalized between 0 and 1) of every key
+	AFLOAT	keyValue	[]	// FLOAT4 for every key
+}
+
+aPositionLinear
+{
+IN	FLOAT	alpha
+OUT	FLOAT3	value		[]	// output position
+	AFLOAT	keyTime		[]	// the alpha (time normalized between 0 and 1) of every key
+	AFLOAT	keyValue	[]	// FLOAT3 for every key
+}
+
+aVertexLinear
+{
+IN	FLOAT	alpha
+OUT	AFLOAT	value		[]	// output position
+	AFLOAT	keyTime		[]	// the alpha (time normalized between 0 and 1) of every key
+	AFLOAT	keyValue	[]	// AFLOAT for every key
+}
+
+aFloatLinear
+{
+IN	FLOAT	alpha
+OUT	FLOAT	value		[]	// output position
+	AFLOAT	keyTime		[]	// the alpha (time normalized between 0 and 1) of every key
+	AFLOAT	keyValue	[]	// FLOAT for every key
+}
+
+aColorLinear
+{
+IN	FLOAT	alpha
+OUT	FLOAT3	value		[]	// output color
+	AFLOAT	keyTime		[]	// the alpha (time normalized between 0 and 1) of every key
+	AFLOAT	keyValue	[]	// FLOAT3 for every key
+}
+
+
+aMaterial
+{
+	INT		shading		1		// 0-none 1-gouraud
+	FLOAT	transparency	0	// range: [0.0 1.0]
+	FLOAT3	emissive	0 0 0	// r g b range for every component: [0.0 1.0]
+	FLOAT3	diffuse		0 0 0	// r g b
+}
+when shading is 0, if there's a texture only the texture will
+be used, if there's not a texture only the emissive will be used.
+When shading is 1 the diffuse will be used to calculate the color
+and added to the emissive and to the texture(if there's a texture).
+actually lights are not used.
+
+aTexture
+{
+	STRING	image		""		// filename of a texture
+	BOOL	bilinear	false	// bilinear filtering on/off
+}
+texture path is relative to the path of the scene
+
+aMesh
+{
+	STRING	touch		""		// used as a rapid shortcut for touchsensor
+	BOOL	on			TRUE	// object is visible
+	BOOL	ccw			TRUE	// counter clock wise
+	FLOAT	crease		0		// creaseAngle
+	NODE	material	NULL	// default material for this Mesh
+	NODE	texture		NULL	// default texture for this Mesh
+	AFLOAT3	vertex		[]		// vertices
+	AFLOAT3	normal		[]		// normals (if NULL calculate with crease)
+	AFLOAT2	map			[]		// mapcoords
+	AFLOAT3	color		[]		// colors
+	AINT	vertexIndex	[]		// faces
+	AINT	mapIndex	[]		// maps (if NULL takes vertexIndex)
+	AINT	normalIndex	[]		// normals (if NULL takes vertexIndex)
+	AINT	colorIndex	[]		// normals (if NULL takes vertexIndex)
+	ANODE	materialIndex []	// this specify a material for every face of an object
+}
+the crease (expressed in degrees) is used to automatically calculate
+normals if no normals are used. vertexIndex mapIndex normalIndex and
+colorIndex are specified like in VRLM97 that is they are indices
+inside the vertex/normal/map/color arrays with -1 that identify the
+end of a face. If materialIndex is not specified the Mesh will be
+rendered using the default material.
+touch is used to call some external commands when you click on that object
+
+aExtern
+{
+IN	BOOL	sendBool
+IN	DOUBLE	sendTime
+	STRING	command			""
+}
+used to execute an external command (calling an html page, playing
+a sound, calling a javascript, starting an event on the scene etc).
+It's activated either by sending it a bool or a time event.
+This node can be used for example to call routines that does something
+on the scene, like generating an event on a node, or loading an
+external scene that will substitute the actual one and things like
+that. Actually the syntax of the "command" field still have to be
+defined. We can use something like:
+"EVENT nodename.fieldname eventvalue"
+  to send an event with the eventvalue to the field "fieldname"
+  of the node "nodename"
+"SCRIPT functionname"
+  to call a javascript or vbscript function called "functionname"
+  on the current html page
+"AUDIO samplename loopenable"
+  to play a sample called "samplename"
+"SCENE newscene"
+  to load a new scene over the actual one
+"SUBSCENE newscene"
+  to load a new scene over the actual one saving the old scene
+  into a special scene-stack
+"RETSCENE"
+  to return to the previous scene from a subscene
+  (subscene and retscene can be very useful for e-commerce)
+"FILTER ON/OFF"
+  to switch filtering
+"LABELS ON/OFF"
+  to switch labels on/off
+"COPYRIGHT msg"
+  to setup a copyright message
+"COPYRIGHTSHOW ON/OFF"
+  to show the copyright message on the screen
+"BGCOLOR 1.0 1.0 1.0"
+  to set background color
+"BGIMAGE pippo.jpg"
+  to set a background image
+"URL document_url destination_frame"
+  to show a new html page on the destination_frame frame
+  
+
+	by now only filter,url,bgcolor,showcopyright,showlabels are used (the other will
+	be added soon)
+
+aParameter
+{
+	STRING	parameter	""	// global scene effects
+}
+commands that are called at the start of the scene
+
+
+
+Example of a little scene with a red square:
+----- cuts here -----
+
+A3X // this is the first thing that there should be into the file
+
+ /* Now we will define a Material for later use and we call it
+    mat0. We only specify the diffuse color leaving the other
+    fields to their default values */
+ aMaterial "mat0"
+ {
+  diffuse 255 0 0
+ }
+
+ // we can also define node without a name like this one
+ aTransform
+ {
+  rotation 1 0 0 0
+  children [
+  // nodes can also be defined inside other nodes like in this case
+  aMesh "obj1" 
+  {
+   vertex [10 10 0 10 -10 0 -10 -10 0 -10 10 0]
+   vertexIndex [0 1 2 3 -1]
+   material USE "mat0"
+  } // ends of "obj1"
+  ] // ends of aTransform.children
+ } // ends of aTransform
+ 
+----- cuts here -----
+
+This is an example of a multi-material Mesh
+
+----- cuts here -----
+A3X // this is the first thing that there should be into the file
+
+ aMaterial "mat0"
+ {
+  diffuse 255 0 0
+ }
+ aMaterial "mat1"
+ {
+  diffuse 0 255 0
+ }
+ aTransform
+ {
+  rotation 1 0 0 0
+  children [
+  // nodes can also be defined inside other nodes like in this case
+  aMesh "obj1" 
+  {
+   vertex [10 10 0 10 -10 0 -10 -10 0 -10 10 0]
+   vertexIndex [0 1 2 -1 2 3 0 -1]
+   materialIndex [ USE "mat0" USE "mat1" ]
+  } // ends of "obj1"
+  ] // ends of aTransform.children
+ } // ends of aTransform
+----- cuts here -----
+

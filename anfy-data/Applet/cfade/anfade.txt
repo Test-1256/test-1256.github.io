@@ -1,0 +1,139 @@
+
+          AnfyFade - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can execute a cross-fade between any identically sized GIF or 
+JPG images.
+
+The transparent image spider2.gif is a courtesy of Lone Star Posse Prod. Inc.
+
+Thanks to Ibon Tolosana for progressive fading.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from image files to fade, and an optional overlay image, the 
+following 3 ".class" files must be uploaded: 
+
+AnFade.class
+Lware.class
+anfy.class
+
+Plus, AnFade.jar for speedy loading on recent browsers.
+
+***************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="AnFade.jar" code="AnFade.class" width="186" height="207">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="image1" value="imfad1.gif">   ; Image 1 to load
+<param name="image2" value="imfad2.gif">   ; Image 2 to load
+<param name="image3" value="imfad3.gif">   ; Image 3 to load
+<param name="link1" value="http://www.anfyteam.com">   ; link 1
+<param name="link2" value="NO">                        ; link 2
+<param name="link3" value="NO">                        ; link 3
+<param name="statusmsg1" value="anfy 1">   ; statusbar msg on image 1
+<param name="statusmsg2" value="anfy 2">   ; statusbar msg on image 2
+<param name="statusmsg3" value="anfy 3">   ; statusbar msg on image 3
+<param name="res" value="1">               ; resolution (1-8)
+<param name="speed" value="8">             ; speed of fade (1-255)
+<param name="pause" value="1500">          ; pause (value = milliseconds).
+<param name="progressivefade" value="YES"> ; Progresive fading ("YES" or "NO")
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java ; Msg in no java browsers
+</applet>
+
+************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+The images (GIF and/or JPG) can be of any size, but all image dimensions must
+be identical.
+
+Attempting to change the credits parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+Applet size is determined by "res": "res=1" shows the graphic at natural size,
+"res=2" shows it at double size, etc.
+
+It is important to update the width and height tags, otherwise the applet will
+not display properly on browsers.
+
+The number of images to have in the crossfading slideshow is unlimited, but
+the minimum is 2.
+
+If you want to fade between just 2 images, type:
+
+<param name=image1 value="imfad1.gif">
+<param name=image2 value="imfad2.gif">
+
+If you want to fade between 3 images, type:
+
+<param name=image1 value="imfad1.gif">
+<param name=image2 value="imfad2.gif">
+<param name=image3 value="imfad3.gif">
+
+Repeat the code for each image. 
+
+You can change the displayed message for each image in the "statusmsg" 
+code. "Statusmsg1" is the message displayed with the first image,
+"statusmsg2" the second image, etc.
+
+When you purchase and register the applet, the "link1","link2", etc.
+parameters will be enabled and this applet can become a crossfade banner as
+follows:
+
+<param name=link1 value="http://(name of link">
+<param name=link2 value="http://(name of link">
+You can place a URL link related to each image.
+
+The speed parameter determines the speed of fade between images. This value
+determines the number of frame as 256/speed. A good value is 8, which gives
+you 32 frames. This has shown to be the optimum resolution for 65000 colour
+displays, and shows quite fast. Values under 8 are applicable for a 24bit
+video mode (16 million colors), but show the images slower.
+
+The pause, in milliseconds, determines the "hold" time for images between
+the fades.
+
+You can optionally enable the "progressivefade" option, setting it to "YES".
+This will fade the image pixels not at same time, but with some nice steps.
+
+

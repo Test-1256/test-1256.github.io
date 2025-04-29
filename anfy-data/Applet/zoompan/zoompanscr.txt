@@ -1,0 +1,3 @@
+Anfy ZoomPan
+applet
+is running

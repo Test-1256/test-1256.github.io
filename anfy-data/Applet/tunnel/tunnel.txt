@@ -1,0 +1,114 @@
+
+          AnfyTunnel - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet can generate a texture mapped tunnel from any GIF/JPG image.
+This applet is fully parametrized, so you can generate various kinds of tunnel
+effects.
+
+*****************************************************************************
+
+NECESSARY FILES.
+
+As well as the tunnel texture image and an optional overlay image, the
+ following 3 ".class" files must be uploaded: 
+
+tunnel.class
+Lware.class
+anfy.class
+
+Plus, tunnel.jar for speedy loading on recent browsers.
+
+*****************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="tunnel.jar" code="tunnel.class" width="250" height="180">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">          ; Reglink opened in new frame?
+<param name="regframename" value="_blank">      ; Name of new frame for reglink
+<param name="statusmsg" value="Tunnel applet">  	; Statusbar message
+<param name="image" value="stone.jpg">    	; Tunnel texture image
+<param name="res" value="1">              	; resolution (1-8)
+<param name="startx" value="100">         	; X start
+<param name="starty" value="100">         	; Y start
+<param name="conex" value="215">          	; X aspect ratio
+<param name="coney" value="150">          	; Y aspect ratio
+<param name="conez" value="1200">         	; Z aspect ratio
+<param name="movement" value="5">         	; Type of movement (1..8)
+<param name="effect" value="1">           	; Type of effect (1..2)
+<param name="overimg" value="NO">                 ; Optional image over applet
+<param name="overimgX" value="0">                 ; Over image X offset
+<param name="overimgY" value="0">                 ; Over image Y offset
+<param name="memdelay" value="1000">        	; Memory deallocation delay
+<param name="priority" value="3">           	; Task priority (1..10)
+<param name="MinSYNC" value="10">            ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Message for no java browsers.
+</applet>                                  ; End of applet tag
+
+****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter, you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The applet can be of any size. If res=1, remember to place the exact
+size of the image in "width" and "height" tags. If res=2, insert doubleed 
+values, if res=3 insert tripled values, etc.
+(In fact, res is a sort of zoomer).
+
+The image used as the tunnel texture can be of any size, but the best results
+are shown with textures bigger than the applet area.
+
+The startx, starty, conex, coney, conez parameter values can be varied to 
+change the tunnel's appearance, making it deformed, but the values suggested
+are the optimum ones.
+
+You can select the type of movement with the "movement" parameter:
+
+1) advance
+2) back
+3) anticlockwise rotation
+4) clockwise rotation
+5) advance + clockwise rotation
+6) advance + anticlockwise rotation
+7) back + clockwise rotation
+8) back + anticlockwise rotation
+
+You can select between 2 kind of effects: with "1" you are in
+a tunnel, with "2"  you are outside the tunnel.
+
+

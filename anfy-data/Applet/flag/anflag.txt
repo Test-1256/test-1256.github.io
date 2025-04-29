@@ -1,0 +1,165 @@
+
+          Anfyflag - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and animate a waving flag in realtime, and
+the flags of 34 nations are supported.
+
+If the flag you are searching for is not supported by this applet,
+please check the FlagLoad applet which loads any GIF/JPG flag.
+
+This applet is fully parametrized, so you can change the nation flag and
+change the intensity and speed of wind.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional foreground image, the following 3 ".class" files 
+must be uploaded: 
+
+AnFlag.class 
+Lware.class
+anfy.class
+
+Plus, AnFlag.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet></applet> tag in your html document as follows to add 
+this applet to your page (Comments after the ";" symbol are code descriptions
+ and acceptable min/max values. They are not part of the applet language):
+
+<applet archive="AnFlag.jar" code="AnFlag.class" width="167" height="117">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; URL of optional link when clicked
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank">   ; Name of new frame for reglink
+<param name="statusmsg" value="flag applet"> ; Statusbar message
+<param name="res" value="1">                 ; Resolution (1-8)
+<param name="backR" value="0">            ; RED comp. of backg. colour (0-255)
+<param name="backG" value="0">            ; GREEN comp. of backg. colour (0-255)
+<param name="backB" value="60">           ; BLUE comp. of backg. colour (0-255)
+<param name="pattern" value="8">          ; Type of drawing pattern (1-8)
+<param name="speed" value="3">            ; Speed of wind
+<param name="curve" value="3">            ; Curve level (1-5)
+<param name="wind" value="8">             ; Wind intensity (0-20)
+<param name="nation" value="1">           ; Nation (1-34)
+<param name="pixdensity" value="3">       ; Pixel density (1-20)
+<param name="overimg" value="NO">         ; Optional image over applet
+<param name="overimgX" value="0">         ; Over image X offset
+<param name="overimgY" value="0">         ; Over image Y offset
+<param name="memdelay" value="1000">      ; Memory deallocation delay
+<param name="priority" value="3">         ; Task priority (1..10)
+<param name="MinSYNC" value="10">           ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>                                 ; End of applet tag
+
+**************************************************************************
+
+INSTRUCTIONS.
+
+
+The following instructions describe how to change parameters:
+
+Note: Attempting to change the crdits parameter will disable the applet.
+
+To activate the "reg" parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from
+ the author. If the code is correct and the applet is run from the registered
+ domain name, you can use "link" parameters to link to a URL when the applet
+ is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a unique frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+You can determine the width and height of the applet with the "width" and
+"height" parameters in the <applet> tag.
+
+The parameter "res" is the resizer and with any integer, you can strech
+the applet image. However, we have found that the best value is 1, because
+ enlarging the screen causes poor display.
+
+You can change the background colour for best results on your web page.
+The RGB values are the same as those in HTML tags, but in purely decimal 
+values without the "#" symbol.
+
+The style of painting may differ according to the value for the parameter
+ "pattern":
+
+1 = small dots
+2 = double dots
+3 = stars
+4 = stars with center hole
+5 = triangles
+6 = triple dots
+7 = triple dots dithered 1
+8 = triple dots dithered 2
+
+The "speed" parameter will control the speed of the animation.
+
+The "curve" level will change the intensity of vertical waving.
+
+The "wind" value will change the meteorologic condition: 0 = no waving,
+and 20 = typhoon.
+
+The most important parameter is: "nation". The applet supports 34 flags
+of 34 nations, which you specify with a number as follows:
+
+ 1 = Italy
+ 2 = Spain
+ 3 = France
+ 4 = Ireland
+ 5 = Austria
+ 6 = Germany
+ 7 = Netherlands (Holland)
+ 8 = Belgium
+ 9 = Luxembourg
+10 = Sweden
+11 = Norway
+12 = Iceland
+13 = Groenland
+14 = Denmark
+15 = Finland
+16 = Poland
+17 = Hungary
+18 = Switzerland
+19 = South Africa
+20 = Russia
+21 = Japan
+22 = Israel
+23 = Greece
+24 = Usa
+25 = Canada
+26 = Australia
+27 = New Zealand
+28 = United Kingdom
+29 = Argentina
+30 = Peru'
+31 = Venezuela
+32 = Mexico
+33 = Brazil
+34 = Colombia
+
+
+The "pixdensity" parameter (1-20) determines the distance between plotted points.
+So, this works as another resolution parameter.
+

@@ -1,0 +1,150 @@
+
+         Anfy BumpMap - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet shows a lightsource over a "bumpy" surface which casts shadow
+over a selected screen image, which can be the same image as the bumpy map.
+
+This applet is based on original code by Martin Zettergren that is used 
+under the licence.
+
+The transparent image sun.gif is a courtesy of Lone Star Posse Prod. Inc.
+
+The applet can use any picture in any size and it can optionally have a
+separate bump-image, which must be the same size as the screen picture. 
+
+***********************************************************************
+
+NECESSARY FILES.
+
+Together with a screen image and an optional bump map image, you need to
+upload the following files: 
+
+anfybump.class
+Lware.class
+anfy.class
+
+Plus, anfybump.jar for speedy loading on recent browsers.
+
+**********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code descriptions and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="anfybump.jar" code=anfybump.class width="256" height="256">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="statusmsg" value="Bumpmap applet">  	; Statusbar message
+<param name="res" value="1">              ; resolution (1-8)
+<param name="picture" value="Symb256.jpg">; Screen image
+<param name="bump" value="NO">            ; Optional bump map image
+<param name="bump_height" value="1">      ; Bump Height
+<param name="angle_x" value="3">         ; Light x-dir movement    
+<param name="angle_y" value="4">         ; Light y-dir movement
+<param name="lightsize" value="9">       ; size of lightsource
+<param name="lightpower" value=95>       ; Light power (1..100)
+<param name="lightmin" value=10>         ; Light min power (1..511)
+<param name="lightmax" value=500>        ; Light max power (1..511)
+<param name="interactive" value="YES">   ; Interaction ("ON" .. "OFF")
+<param name="overimg" value="NO">        ; Optional image over applet
+<param name="overimgX" value="0">        ; Over image X offset
+<param name="overimgY" value="0">        ; Over image Y offset
+<param name="memdelay" value="1000">     ; Memory deallocation delay
+<param name="priority" value="3">        ; Task priority (1..10)
+<param name="MinSYNC" value="10">        ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers
+</applet>                                ; End of applet tag
+
+
+***************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+Changing the width and height of the applet will make the visible area of
+the bumpmap larger. You can set a width and height that are smaller than
+the picture to display, however we recommend that you set the applet width
+and height at the same size as the bump map image. 
+
+If res=1, remember to place the exact size of image in "width" and "height"
+tags. If res=2, place double values, if res=3 place triple values etc.
+(In fact, res is a sort of zoomer).
+
+The "picture" param is the filename of the picture to display. Make sure that
+this picture is available, or the applet will not work. Remember that using
+the correct upper and lower case is very important, or the applet will not
+run on non-P.C. machines. Example: Symb256.jpg should be written exactly as
+it appears, NOT SYMB256.JPG nor sYmB256.jPG.
+
+The "bump" parameter decides if you want to use a separate bump-image
+ or if you want to calculate it from the screen picture. The latter is 
+recommended since it takes up less bandwidth, and the calculated bump-image
+ is run through some advanced filters to make it look realistic. Simply set
+ this parameter to "NO", if you want to use a calculated image, or to the 
+filename of the bump-image if you want to use that option.
+
+Example: SymbBump.jpg or whatever your bump-image is called.
+
+The "bump_height" parameter controls the height of the bump. If set high, 
+the shadow will be cast so that it appears to be higher bumps in the picture.
+
+The "angle_x" parameter controls the movement of the lightsource in the
+horizontal direction. A higher value will make the lightsource go faster per
+frame horizontally.
+
+The "angle_y" parameter controls the movement of the lightsource in the
+vertical direction. A higher value will make the lightsource go faster per
+frame vertically.
+
+The "lightsize" param controls the size of the lightsource, ranging from 3 to
+whatever you would like. The size is calculated as 2^n, where n stands for the
+lightsize.
+
+A "lightsize" of 9 would give a lightsize that is 512x512 pixels in size.
+The minimum lightsize is 8x8. There is no maximum limit, but due to memory
+aspects, the lightsize shouldn't exceed 512x512 pixels (9).
+
+With "lightpower" you can choose a light intensity from 1 to 100.
+With lightmin and lightmax parameters, you can choose darker and lighter
+tolerances between 1 and 511.
+
+The best test of this effect is with mouse movements, with the
+feature of interactive placement of the light enabled. Usually the light is
+moved around the image automatically, but if you set the "interactive" 
+parameter to YES, you can move the light with the mouse when it is over the
+ applet area. The automatic movements will restart after 2 seconds of no 
+user intervention. If you set to "NO", the user interaction option will be
+disabled.

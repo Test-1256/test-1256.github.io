@@ -1,0 +1,41 @@
+
+Copyright and distribution notices
+
+
+Fabio Ciucci is the author and owner of all the applets included in
+Anfy program and package.
+You can use the applets freely to enhance your web pages. However, I placed 
+a secret linkware window that will appear if the applet is clicked with a
+mouse when the applet is online on a site.
+If you wish to remove the credits window, you may register the applets for a
+nominal cost. Please read the registration info for details.
+
+Java(tm) and all Java-based marks are trademarks or registered trademarks
+of Sun Microsystems, Inc. in the United States and other countries.
+
+NOTE: You can include the Anfy archive on CD-ROMS, shareware collections
+or shareware sites without my permission, but only if you leave the archive(s)
+unchanged.
+
+                             ---------
+
+
+Warranty and limitation of liability.
+
+This software and the accompanying files are provided "AS IS," without a
+warranty of any kind.
+In no event will the authors of Anfy or its suppliers be liable for any
+lost revenue, profit, or for direct, special, indirect, consequential,
+incidental or punitive damages how ever caused and regardless of theory of
+liability, arising out of the use of or inability to use software, even if
+Anfy authors have been advised of the possibility of such damages.
+
+
+                             ---------
+
+
+For more infos and contact information visit:
+
+
+http://www.anfyteam.com
+

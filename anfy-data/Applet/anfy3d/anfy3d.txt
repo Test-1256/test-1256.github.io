@@ -1,0 +1,448 @@
+
+       Anfy 3d Light - Copyright (C) by F. Ciucci & A. Fasce 1998-2002
+
+
+INTRODUCTION.
+
+This applet animate 3D scenes in realtime with shading, texture mapping,
+transparency, motion blur, and fog effects.
+
+Anfy 3D is a series of applets which work together with 3D Studio Max
+plugin to visualise Max's 3D scenes. We provide Anfy 3D full version at our
+site: 
+
+http://www.anfyteam.com/panfy3d.html 
+
+You need this full version in order to import your original objects. For
+3D novices, we have provided ready-made objects (sphere, cone, waving sheet, 
+labyrinth) in this version. So, you can manipulate these objects without
+need of 3D modelling skills.
+
+NOTE:
+
+If you are interested in professional 3D visualisation, check out the
+Anfy 3D Full version. Even if you are non 3D specialist, we can produce 3D
+scenes for you. This may include 3D company logos, banners, etc.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from texture images you specify, you need to upload the following
+.class files. 
+
+For Anfy 3D rendering engine:
+
+anfy3d.class
+anfy3ds0.class
+anfy3ds1.class
+Lware.class
+anfy.class
+
+For objects:
+
+Box01.class
+Cone01.class
+Sphere01.class
+Sphere02.class
+
+Optionally, you may want to upload anfy3d.jar for speedy loading on 
+recent browsers. 
+
+NOTE:
+
+You must always upload .class files, even if you choose to use .jar file.
+Otherwise, visitors who use old browsers can't see the applet.
+
+**************************************************************************
+
+EXAMPLE.
+
+Insert the <applet></applet> tag in your html document as follows to add 
+the applet to your page (Comments after semicolon ";" are code explanations
+ and acceptable values. They are not part of the applet language):
+
+<applet archive="anfy3d.jar" code="anfy3d.class" width="320" height="200">
+<param name="credits" value="Applet by Andrea Fasce (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (For registered users)
+<param name="reglink" value="NO">         ; Optional URL link when the applet
+                                          is "clicked".
+<param name="regnewframe" value="YES">      ; Linked page opened in new frame?
+<param name="regframename" value="_blank">  ; Name of new frame for the link
+<param name="statusmsg" value="Anfy 3d applet"> ; Statusbar message
+<param name="real_width" value="320">         ; Internal calculation width
+<param name="real_height" value="200">        ; Internal calculation height
+<param name="texture0" value="texture.gif">  ; Texture 0 (GIF image 128x128)
+<param name="texture1" value="fire.gif">     ; Texture 1 (GIF image 128x128)
+<param name="texture2" value="texture2.gif"> ; Texture 2 (GIF image 128x128)
+<param name="phongmap" value="light2.gif">   ; Phong light (GIF image 128x128)
+<param name="gaussmap" value="light.gif">    ; Gphong light (GIF image 128x128)
+<param name="interactive" value="NO">        ; Interactive mode ("YES", "NO")
+<param name="script" value="0">           ; Script (0 .. 1) 0 = OFF
+<param name="shadow" value="0">           ; Shadow (0 .. 2) 0 = OFF
+<param name="mirror" value="1">           ; Mirror (0 .. 1) 0 = OFFa
+<param name="lightballs" value="6">       ; Light balls (0 .. 6)
+<param name="main_type" value="1">        ; Main object (0 .. 2)
+<param name="main_render" value="2">      ; Main render (0 .. 14)
+<param name="main_texture" value="0">     ; Main texture (0 .. 2)
+<param name="rot_x" value="0.1">          ; X rotation (0.0 .. 2.0)
+<param name="rot_y" value="0.07">         ; Y rotation (0.0 .. 2.0)
+<param name="rot_z" value="0.04">         ; Z rotation (0.0 .. 2.0)
+<param name="sheet_x" value="100">        ; Sheet height
+<param name="sheet_y" value="100">        ; Sheet width
+<param name="sheet_numx" value="10">      ; Sheet height faces subdivisions
+<param name="sheet_numy" value="10">      ; Sheet width faces subdivisions
+<param name="sheet_add" value="0.2">      ; Sheet anim add (0 .. 3.14)
+<param name="sheet_h" value="28">         ; Sheet waving amplitude
+<param name="sheet_period1" value="6.28"> ; Sheet period for height sine
+<param name="sheet_period2" value="6.28"> ; Sheet period for width sine
+<param name="sheet_function" value="2">   ; Sheet waving function (0 .. 2)
+<param name="animlight" value="NO">     ; Anim light in script 1 ("YES", "NO")
+<param name="child_type" value="2">     ; Child objects (0 .. 3)
+<param name="child_render" value="4">   ; Child render (0 .. 14)
+<param name="child_texture" value="1">  ; Child texture (0 .. 2)
+<param name="back_type" value="1">      ; Background type (0 .. 2)
+<param name="back_render" value="7">    ; Background render (0 .. 14)
+<param name="back_texture" value="2">   ; Background texture (0 .. 2)
+<param name="back_r" value="50">        ; Background colour red component
+<param name="back_g" value="30">        ; Background colour green component
+<param name="back_b" value="0">         ; Background colour blue component
+<param name="fog" value="0">            ; Fog (0 .. 1)
+<param name="fog_near" value="300">     ; Fog distance start (0 .. 1000)
+<param name="fog_far" value="340">      ; Fog distance stop (0 .. 1000)
+<param name="blur_motion" value="0">    ; Motion blur (0 .. 1)
+<param name="overimg" value="NO">        ; Optional image over applet
+<param name="overimgX" value="0">        ; X position of overlay image
+<param name="overimgY" value="0">        ; Y position of overlay image
+<param name="memdelay" value="1000">      ; Memory de-allocation delay
+<param name="priority" value="3">         ; Task priority (1..10)
+<param name="MinSYNC" value="10">         ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Message for non Java browsers.
+</applet>                                  ; End of applet tag
+
+
+****************************************************************
+
+PARAMETER DESCRIPTIONS
+
+
+The following instructions describe the meaning of the available 
+parameters for this applet:
+
+[Specify the applet and its size]
+
+<applet archive="anfy3d.jar" code="anfy3d.class" width="320" height="200">
+
+Here, you specify the applet name and its width and height in pixels.
+Since, this applet distinguishes the internally calculated image size (ICIS)
+and the actually output image size (OIS), you may want to set the internal
+ size smaller than the output size.
+
+<param name="real_width" value="320">       ; Internal calculation width
+<param name="real_height" value="200">      ; Internal calculation height
+
+In this example, ICIS = OIS. If you choose to set ICIS < OIS, the result 
+is an expanded image. This reduces the required calculation.
+
+[Credit parameter]
+
+<param name="credits" value="Applet by Andrea Fasce (www.anfyteam.com)">
+
+Attempting to change the credit parameter will disable the applet.
+
+[Registration parameters]
+
+<param name="regcode" value="NO">         ; Registration code 
+
+To activate the reg parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from us. If the code is correct and the applet is run from the registered
+ domain name, "link" parameters will be enabled and the applet will be
+linked to an associated URL when it mouse-clicked.
+
+<param name="reglink" value="NO">         ; Optional URL link
+<param name="regnewframe" value="YES">      ; Linked page opened in new frame?
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate parent frame.
+"_top"    : To load the link into the top body of the window.
+
+<param name="regframename" value="_blank">  ; Name of new frame for the link
+
+You can also set a custom frame name, such as "mainpage".
+
+<param name="statusmsg" value="Anfy 3d applet"> ; Statusbar message
+
+Here, you set the statusbar message, which is displayed at the bottom
+of a browser window, when you mouse-over the applet.
+
+[Textures]
+
+<param name="real_width" value="320">        ; Internal calculation width
+<param name="real_height" value="200">       ; Internal calculation height
+<param name="texture0" value="texture.gif">  ; Texture 0 (GIF image 128x128)
+<param name="texture1" value="fire.gif">     ; Texture 1 (GIF image 128x128)
+<param name="texture2" value="texture2.gif"> ; Texture 2 (GIF image 128x128)
+<param name="phongmap" value="light2.gif">  ; Phong light (GIF image 128x128)
+<param name="gaussmap" value="light.gif">   ; Gphong light (GIF image 128x128)
+
+Each of "texture0", "texture1", "texture2", "phongmap", "gaussmap" must 
+address a 64x64 or 128x128 GIF image. No other sizes or image formats are 
+accepted.
+
+"texture0", "texture1", "texture2" are general use texture maps.
+If you need only one texture, use "texture0" and delete parameters "texture1"
+and "texture2", so these textures won't be loaded. If you need 2 textures, 
+use "texture0" and "texture1". If you need 3 textures, use "texture0", 
+"texture1" and "texture2".
+
+"phongmap" is a special texture used to obtain realtime phong rendering.
+If you don't use phong rendering, delete this parameter and the texture 
+won't be loaded.
+
+NOTE: If you enable lightballs, this phongmap texture is required, even if
+ phong rendering isn't selected.
+
+"gaussmap" is a special texture used to obtain Gaussian phong rendering.
+If you don't use it, just delete this parameter.
+
+[Interactive mode]
+
+<param name="interactive" value="NO">       ; Interactive mode ("YES", "NO")
+
+If you set "interactive" parameter to "YES", the objects rotation can be
+controlled with a mouse pointer.
+
+[Select a Script]
+
+The most important parameter is "script": with a value of "0" you choose the
+script 0, with a value of "1" you choose the script 1.
+
+Each script has its own corresponding parameters:
+
+
+------------------------------
+- SCRIPT 0: ROTATING OBJECTS -
+------------------------------
+
+You can choose the main object with "main_type" parameter as follows:
+
+main_type :
+
+ 0  sphere    (require sphere01.class)
+ 1  sheet
+ 2  cone      (require cone01.class)
+
+
+Like background object, we have:
+
+main_render:  render technique (0 .. 14)
+main_texture: texture for main object (0 = texture0, 1 = texture1 etc.)
+
+ 0  Plain texture
+ 1  Gouraud shading
+ 2  Phong shading          ** NOTE: "phongmap" must be loaded
+ 3  Gaussian phong shading ** NOTE: "gaussmap" must be loaded
+ 4  Transparent (light)
+ 5  Transparent (medium)
+ 6  Liquid texture
+ 7  Liquid gouraud shading
+ 8  Liquid phong shading    ** NOTE: "phongmap" must be loaded
+ 9  Liquid transparent
+ 10 Reflects mirror view    ** NOTE: texture is ignored, a mirror must exists
+ 11 Particles               ** NOTE: texture is ignored
+ 12 Darker plain texture
+ 13 Metal shading           ** NOTE: "phongmap" must be loaded
+ 14 Environment mapping
+
+
+If you have selected the sheet object, here are the sheet parameters:
+
+sheet_x	:       Height
+sheet_y	:       Width
+sheet_numx:     Number of height faces subdivisions
+sheet_numy:     Number of width faces subdivisions
+sheet_add:      Value to add for anim (0 .. 3.14)
+sheet_h:        Amplitude of waves
+sheet_period1:  Period for height sine, in radiants (3.14 = 1 period)
+sheet_period2:  Period for width sine, in radiants (3.14 = 1 period)
+sheet_function:	Function used to calculate waving (0 .. 2)
+
+
+You can change the rotation speed of object with these parameters:
+
+rot_x :	  rotation increment around x axis
+rot_y :	  " " y axis
+rot_z :	  " " z axis
+
+
+You can optionally enable a child object with "child_type" parameter:
+
+child_type :
+
+ 0  Off
+ 1  Toroids
+ 2  Stretching spheres   (require sphere01.class)
+ 3  Cones                (require cone01.class)
+
+Like main object, we have:
+
+child_render:  render technique (0 .. 14)
+child_texture: texture for child object (0 = texture0, 1 = texture1 etc.)
+
+
+You can optionally enable projected shadow, but then the render will be
+forced to use plain texture mapping. The parameter is "shadow":
+
+shadow :
+
+ 0  No projected shadows
+ 1  Hires projected shadows  ** Note: render forced to mode "0": Plain texture
+ 2  Lores projected shadows  ** Note: render forced to mode "0": Plain texture
+
+
+You can enable a mirror on left side, that will reflect the scene, using the
+"mirror" parameter:
+
+mirror :
+
+ 0  no mirror
+ 1  mirror      (require box01.class)
+
+Note: If shadow and mirror are enabled altogether, the mirror will not work as
+mirror, but displayed as a box.
+
+
+Another option is "lightballs". If you set it to "0", any lightball will be
+displayed. But, placing a value from "1" to "6", the flying lightballs
+will appear.
+
+If lightballs are enabled, the "phongmap" is required, even if no phong
+shading render is used.
+
+
+-----------------------
+- SCRIPT 1: LABYRINTH -
+-----------------------
+
+In the labyrinth, the main object is a floor and the child object is 
+a wall, and you can't modify them (main_type and child_type are disabled).
+Instead, you can choose the rendering technique and texture:
+
+main_render:  render technique (0 .. 14)
+main_texture: texture for main object (0 = texture0, 1 = texture1 etc.)
+
+child_render:  render technique (0 .. 14)
+child_texture: texture for child object (0 = texture0, 1 = texture1 etc.)
+
+Note: Not all the rendering techniques work well on this script.
+
+
+For a metallic lightning effect, set the "animlight" effect to "YES", and the
+lightsource will be moved continously.
+
+
+[Background]
+
+<param name=back_type value="1">         ; Background type (0 .. 2)
+<param name=back_render value="7">       ; Background render (0 .. 14)
+<param name=back_texture value="2">      ; Background texture (0 .. 2)
+<param name=back_r value="50">           ; Background color red component
+<param name=back_g value="30">           ; Background color green component
+<param name=back_b value="0">            ; Background color blue component
+
+Regarding background, you can disable it (black colour) placing a value of "0"
+in "back_type" parameter. This is useful only if you want to enable motion 
+blur effect or if you need a black background. Otherwise, setting it to "1" 
+and enable the background, including the scene into a big sphere, that become
+ the background.
+
+If you like to have a custom uniform colour as background, set "back_type" to
+the value "2", and then set the desired colour with the "back_r", "back_g",
+"back_b" parameters, specifying the Red, Green, Blue components (0 .. 255).
+
+If you have set "back_type" to "1", you must choose the render technique used
+in background object, and the relative texture to use.
+
+To choose the render technique, set the "back_render" parameter with a render 
+type number. Here is the list of available rendering techniques:
+
+ 0  Plain texture
+ 1  Gouraud shading
+ 2  Phong shading          ** NOTE: "phongmap" must be loaded
+ 3  Gaussian phong shading ** NOTE: "gaussmap" must be loaded
+ 4  Transparent (light)
+ 5  Transparent (medium)
+ 6  Liquid texture
+ 7  Liquid gouraud shading
+ 8  Liquid phong shading    ** NOTE: "phongmap" must be loaded
+ 9  Liquid transparent
+ 10 Reflects mirror view    ** NOTE: texture is ignored, a mirror must exists
+ 11 Particles               ** NOTE: texture is ignored
+ 12 Darker plain texture
+ 13 Metal shading           ** NOTE: "phongmap" must be loaded
+ 14 Environment mapping
+
+Gouraud, Phong and Gaussian Phong are 3 ways to calculate the shading on
+objects.
+
+Liquid modes are like normal modes, except the fact that the texture is waving
+like a liquid one.
+
+The mode 10 is usable only with script=0, and mirror=1, in fact, it maps on the
+object what is "seen and reflected" by the mirror.
+
+All the rendering techniques require textures, except mode 10 and 11.
+
+To specify the texture, use "back_texture" parameter, choosing a a number
+from 0 to 2. These numbers correspond to the textures loaded with "texture0",
+"texture1" and "texture2" parameters.
+
+[Fog effect]
+
+<param name="fog" value="0">               ; Fog (0 .. 1)
+<param name="fog_near" value="300">        ; Fog distance start (0 .. 1000)
+<param name="fog_far" value="340">         ; Fog distance stop (0 .. 1000)
+
+Only the objects that use Gouraud shading can be fogged. To enable fog, 
+set the "fog" parameter to "1". The value "0" disables fog.
+
+The fog intensity can be changed using "fog_near" and "fog_far" parameters. 
+The former decides when the fog effect starts, while the latter controls 
+the diminishing point of the fog. Values for both represent length from
+the camera to fog start point or end point.
+
+NOTE:
+
+fog_near < fog_far.
+
+[Motion blur effect]
+
+<param name="blur_motion" value="0">       ; Motion blur (0 .. 1)
+
+You can optionally enable a motion blur effect; just set "blur_motion"
+parameter to "1". Use "0" to disable it.
+
+NOTE: 
+
+There will be blur_motion ONLY if background is disabled, in other
+words, if "back_type" parameter is set to value "0".
+
+[Overlay image]
+
+<param name="overimg" value="NO">           ; Optional image over applet
+<param name="overimgX" value="0">           ; Over image X offset
+<param name="overimgY" value="0">           ; Over image Y offset
+
+
+With the "overimg" parameter you can specify the name of an image that will
+be shown over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can position the image over the applet area.
+

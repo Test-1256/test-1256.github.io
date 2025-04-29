@@ -1,0 +1,28 @@
+
+                  Domain Detect Utility by Fabio Ciucci
+
+
+Usage:
+
+
+Copy the domain.class and domain.html files to the web site where you
+plan to place the Anfy applets. Then, load domain.html with your 
+Java-capable browser.
+
+You can have one of those 3 responses from the applet:
+
+1) Sorry, your browser doesn't support Java
+
+   Literally, your browser doesn't support Java(tm)!!
+
+
+2) NO DOMAIN DETECTED! NO REGCODE REQUIRED!
+
+   This means that the applet is run locally and no regcodes are required.
+
+
+3) You will see the name of the domain, and you are required to purchase
+the appropriate regcode from us.
+
+
+

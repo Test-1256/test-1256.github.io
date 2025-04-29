@@ -1,0 +1,107 @@
+
+          Anfy Deform - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can deform any GIF or JPG image. This applet is fully 
+parametrized, so you can generate all kinds of warpers.
+
+************************************************************************
+
+NECESSARY FILES.
+
+As well as the image you want to deform and an optional overlay image,
+you need to upload the following files:
+
+Deform.class
+Lware.class
+anfy.class
+
+Plus, Deform.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this 
+applet to your page (Comments after the ";" symbol are code descriptions
+ and acceptable min/max values. They are not part of the applet language):
+ 
+
+<applet archive="Deform.jar" code="Deform.class" width="230" height="159">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when applet
+                                          is "clicked".
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Deform applet"> ; Statusbar message
+<param name="image" value="imfad1.gif">        ; Image to deform
+<param name="res" value="1">                   ; resolution (1 .. 8)
+<param name="distval" value="130">             ; Distortion value (0 .. 500)
+<param name="dfact" value="35">                ; Distort factor (1 .. 100)
+<param name="dspeed" value="2">                ; Speed (1 .. 50)
+<param name="doffset" value="146">             ; X mixing offset (0 .. width)
+<param name="xv1" value="10">                  ; X1 offset (1 .. 19)
+<param name="yv1" value="12">                  ; Y1 offset (1 .. 19)
+<param name="xv2" value="15">                  ; X2 offset (1 .. 19)
+<param name="yv2" value="18">                  ; Y2 offset (1 .. 19)
+<param name="overimg" value="NO">              ; Optional image over applet
+<param name="overimgX" value="0">              ; Over image X offset
+<param name="overimgY" value="0">              ; Over image Y offset
+<param name="memdelay" value="1000">           ; Memory deallocation delay
+<param name="priority" value="3">              ; Task priority (1..10)
+<param name="MinSYNC" value="10">           ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Msg in no java browsers
+</applet>
+
+*********************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you have purchased
+ from us. If the code is correct and the applet is run from the registered
+ web site, you can use "link" parameters to point to a URL when the applet 
+is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest
+ browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The GIF/JPG image can be of any size. If res=1, remember to place the exact
+size of the image in "width" and "height" tags. If res=2, place doubled values,
+if res=3 place tripled values etc. (In fact, res is a sort of zoomer).
+
+The "distval" parameter (0 .. 500) changes the kind of waves: smaller
+values will create many small waves, higher values will create fewer but
+bigger waves.
+
+The "dfact" parameter (1 .. 100) controls the distortion factor.
+Smaller values cause more distortion, higher values cause less distortion.
+
+The "dspeed" parameter (1 .. 50) determines the speed of waves.
+
+The "doffset" parameter gives best results with values near the width of
+the image.
+
+With xv1,yv1,xv2,yv2 (1 .. 19) you can control the offset between the two
+radial waves that are combined to generate the distortion.
+
+

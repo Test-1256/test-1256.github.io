@@ -1,0 +1,172 @@
+
+                  Anfy Panorama - Copyright (C) by Anfy Team 2001-2002
+
+This applet displays a 360 degrees panoramic image with some special
+features.
+The panoramic system is fully spherical and not simply cylindrical.
+It contains code by Andrea Fasce used under license, and the sample
+panoramic image is a courtesy of panoptic vision.
+
+For more informations about how to create panoramic images, visit:
+
+http://www.anfyteam.com/pano/
+
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional splash image and an optional overlay image,
+the following 3 ".class" files must be uploaded: 
+
+anpanorama.class
+Lware.class
+anfy.class
+
+Plus, anpanorama.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="anpanorama.jar" code="anpanorama.class" width="400" height="300">	; Name, Width, Height.
+<param name="credits" 	value="Applet by Anfy Team (www.anfyteam.com)">	; Credits line.
+<param name="regcode" 	value="no">		; Registration code (if you have it).
+<param name="reglink" 	value="no">		; Optional URL link when the applet is "clicked".
+<param name="regnewframe"  value="no">		; Reglink opened in new frame ?
+<param name="regframename" value="no">		; Name of new frame for reglink.
+<param name="statusmsg" value="AnPanorama applet"> ; Statusbar message.
+<param name="panimage" 	value="panor2.jpg">	; Panoramic image to load.
+<param name="quality" 	value="1">	; Image quality (1 .. 3)
+<param name="loadingimg" value="no">	; Optional loading/splash image or "no"
+<param name="bgcolor"	value="0099CC">	; Background color (used while loading image)
+<param name="autopan"	value="0.0">	; Auto pan movement, or "0.0" for no movement.
+<param name="fov"	value="80.0">	; Starting field of view (10 .. 170)
+<param name="fovmax"	value="90.0">	; Max field of view (10 .. 170)
+<param name="fovmin"	value="40.0">	; Min field of view (10 .. 170)
+<param name="fovmode"	value="leftright"> ; Mousebuttons usage for fov ("leftright","onebutton")
+<param name="tilt"	value="0.0">	; Starting image tilt (-90 .. 90)
+<param name="tiltmin"	value="-85.0">	; Min image tilt (-90 .. 0)
+<param name="tiltmax"	value="90.0">	; Max image tilt (0 .. 90)
+<param name="pan"	value="-45.0">	; Starting pan value (-180 .. 180)
+<param name="panmin"	value="-180.0">	; Min panoramic value (-180 .. 0)
+<param name="panmax"	value="180.0">	; Max panoramic value (0 .. 180)
+<param name="overimg" 	value="no">	; Optional image over applet.
+<param name="overimgX" 	value="0">	; Over image X offset
+<param name="overimgY" 	value="0">	; Over image Y offset
+<param name="memdelay" 	value="1000">	; Memory deallocation delay.
+<param name="priority" 	value="3">	; Task priority (1..10).
+<param name="MinSYNC" 	value="10">	; Min. milliseconds/frame for sync.
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+With the "statusmsg" parameter you can set a message which appear at the
+bottom of the browser window, when you mouse-over the applet.
+Enter any message here.
+
+Using the "panimage" parameter set the name of the panoramic image to load.
+The format supported is: spherical equirectangular images with 2:1 size ratio.
+The cylindrical panoramas (like QuickTimeVR ones) could be loaded as well,
+just be sure to make them of right width/height ratio and to decrease the
+range of "tiltmin" and "tiltmax", to avoid bad results while looking up
+and down.
+Even if only panoramic images produced with special optical cameras are
+perfect, also normal images will be loaded and "panoramized": results will
+be not most realistic, but you may try.
+Otherwise visit http://www.anfyteam.com/pano/ for infos on how to make
+panoramic views with standard cameras, and a list of panoramic cameras
+and hardware.
+
+If you want, you can set a picture to display when the panoramic image is
+loading, using the "loadingimg" parameter: this could be useful for panoramic
+images of big resolution taking minutes to load.
+If the loading image is smaller than applet area, it will be centered and
+plotted over the background color.
+Otherwise, set "loadingimg" to "no".
+
+If you do not use the "loadingimg" parameter, you can set a background color
+during loading, with the "bgcolor" parameter (RRGGBB hex format).
+
+The "quality" parameter is used to set the precision of the panoramic rendering.
+With value = 1, there is no bilinear filtering (faster but less detail).
+With value = 2, there is bilinear filtering only when the image is not moving.
+With value = 2, there is bilinear filtering all the time (suggested).
+
+
+ZOOM PARAMETERS:
+
+The "fov" parameter is used to set the zoom start position of the image.
+You have then to set the range of the fov, from a minimun value ("fovmin" parameter)
+to a maximum value ("fovmax" parameter).
+The admitted values range from 10.0 to 170.0, including float precision.
+Additionally, with the "fovmode" parameter you can decide if the zoom in/out
+will be done using both the left and right mouse buttons, setting it to "leftright",
+or using only the left button, setting it to "onebutton".
+The "onebutton" may improve compatibility with the computers like the Mac which
+does not have a right mouse button.
+
+
+VERTICAL VIEW PARAMETERS:
+
+With the "tilt" parameter (-90 .. 90) you set the starting vertical orientation.
+Then you have to set the available range from a minimum value with "tiltmin"
+parameter (-90 .. 0), to a maximum value with "tiltmax" parameter (0 .. 90).
+Please note, with spherical panoramic images the suggested values are tiltmin=-90
+and tiltmax=90, but for cylndrical panoramic images it's suggested to decrease
+these values (example: -20 and 20) or even set them to 0 to remove vertical tilt.
+
+
+HORIZONTAL VIEW PARAMETERS:
+
+Using the "pan" parameter you can set the starting horizontal viewpoint for the
+panoramic image, choosing an angle between -180 and 180.
+Then you have to set the available range from a minimum value with "panmin"
+parameter (-180 .. 0) to a maximum value with "panmax" parameter (0 .. 180).
+
+
+If the "autopan" parameter is different than 0.0, the panorama will move
+automatically. Use positive values to move the image to the right, negative
+values to move these to the left.
+
+
+MOUSE AND KEYBOARD NAVIGATION:
+
+Move the mouse over the applet area to move the panoramic picture and
+hold the left and right mouse buttons to zoom in/out.
+
+You can also use the arrow keys to scroll the image.
+To zoom in/out with keyboard, use respectively the "+" and "-" keys.
+

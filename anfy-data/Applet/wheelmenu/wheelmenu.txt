@@ -1,0 +1,247 @@
+
+          Wheel Menu - Copyright (C) by Fabio Ciucci 1998-2002
+
+
+This applet is a 3D navigational menu: it can display up to 8 menu's, 
+with 8 items in each menu. 
+
+Note: the labels can't contain numbers or special characters, and will
+be considered all as uppercase.
+
+The link feature works only when you are registered by paying for the 
+shareware. 
+
+This applet contains code by Dolf van der Schaar & Andrea Fasce which 
+is used under a licence.
+
+***********************************************************************
+
+NECESSARY FILES.
+
+As well as a font file, and a background and/or a foreground and/or a 
+texture images, the following 3 ".class" files must be uploaded: 
+
+wheelmenu.class
+Lware.class
+anfy.class
+
+Plus, wheelmenu.jar for speedy loading on recent browsers.
+
+***********************************************************************
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="wheelmenu.jar" code="wheelmenu.class" width="240" height="180">
+<param name="credits" value="Applet by Anfy Team (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="filter" value="1">          ; Filter (0=none, 1=smooth, 2=colorize)
+<param name="font" value="1">            ; Font (0=font0.class, 1=font1.class)
+<param name="background" value="image">  ; backgr. mode ("color","blur","image")
+<param name="backimage" value="back.jpg"> ; Background image (in "image" mode)
+<param name="bgcolor" value="ffffff">    ; Background colour (hex rrggbb)
+<param name="wheelcolor" value="0000ff"> ; Wheel colour (only in gouraud mode)
+<param name="textcolor" value="880000">  ; Text colour (only in gouraud mode)
+<param name="selectcolor" value="ff0000"> ; Selection colour (gouraud only)
+<param name="flat" value="no">           ; Remove extrusion ("yes" or "no")
+<param name="mouseSens" value="200">   ; Up/Down Mouse sensivity (-1000 .. 1000)
+<param name="YRotation" value="3">     ; Left/Right mouse sensivity (0 .. 20)
+<param name="offsetStep" value="10">   ; Speed of submenu change (1 .. 100)
+<param name="statusbar_y" value="10">  ; Optional link-statusbar y position
+<param name="mode" value="texture">     ; Mode ("gouraud" or "texture")
+<param name="texture" value="fire.jpg"> ; Texture to use (only if mode=texture)
+<param name="extrudediff" value="2">    ; Darkness of extrusion (mode=texture)
+<param name="textdiff" value="1">       ; Darkness of text (mode=texture)
+<param name="floatmode" value="NO">       ; Float mode ("YES" or "NO")
+<param name="floatw" value="200">         ; Float window width
+<param name="floath" value="280">         ; Float window height
+<param name="floatx" value="100">         ; Float window x position start
+<param name="floaty" value="100">         ; Float window y position start
+<param name="floatitle" value="Wheel Menu"> ; Float window title
+<param name="floatinfront" value="NO">    ; Float win. always on top (YES,NO)
+
+<param name="MenuText00" value="SUB ONE">   ; Text menu 0 item 0
+<param name="MenuLink00" value="1">         ; Menu Link menu 0 item 0: submenu 1
+
+<param name="MenuText01" value="HELLO">     ; Text menu 0 item 1
+                                          ; No links for menu 0 item 1
+                                          ; No Target for Url link menu 0 i. 1
+
+<param name="MenuText02" value="LINK ONE">  ; Text menu 0 item 2
+<param name="MenuUrl02" value="test1.html"> ; Url Link menu 0 item 2
+                                          ; No Target for Url link menu 0 i. 2
+
+<param name="MenuText03" value="LINK TWO">  ; Text menu 0 item 3
+<param name="MenuUrl03" value="test2.html"> ; Url link menu 0 item 3
+<param name="MenuTarget03" value="mypage">  ; Target for url link menu 0 item 3
+
+<param name="MenuText10" value="BACK">      ; Text menu 1 item 0
+<param name="MenuLink10" value="0">         ; Menu link menu 1 item 0: go back
+
+<param name="MenuText12" value="ITEM ONE">  ; Text menu 1 item 2
+<param name="MenuUrl12" value="test1.html"> ; Url link menu 1 item 2
+                                          ; No Target for Url link menu 1 i. 2
+
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+******************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from the author. If the code is correct and the applet is run from the 
+registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame 
+location for the menu links:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+Note: you can specify a specific target for a selected menu item, using the
+parameter called "MenuTargetXX". If no "MenuTargetXX" is specified, 
+regnewframe is used. Here, XX represents a numeric symbol. You need to set
+this parameter for each item.
+
+With "filter" parameter, you can activate a smoothing/antialiasing filter; 
+the values are 0=none, 1=smooth, 2=colorize.
+
+With "font" parameter you can choose a font. Actually, only 2 fonts are 
+available with the values "0" = font0.class (5 Kb), and 1 = font1.class 
+(10 Kb). Remember to copy the font you use, together with other datas, on 
+the site.
+
+With "background" parameter, you can choose the background mode: the "color"
+mode requires to set the parameter "bbcolor" parameter.
+The "blur" mode sets the background as black, and adds a motion blur effect.
+The "image" parameter requires to specify an image in "backimage" parameter.
+This image must be equal to the applet size.
+
+You can choose to "extrude" the letters, or not, with the "flat" parameter.
+With flat=yes, the letters are not extruded. With "no", letters are extruded.
+
+You can control the Up/Down and Left/Righ Mouse sensivity with "mouseSens"
+and "YRotation" parameters respectively.
+
+With "offsetStep" you decide the speed of sub-menu appearances.
+
+With "statusbar_y" you can decide the position of the text link statusbar.
+If you place here a value bigger than the height of the applet, the
+text will not be displayed. This line will be printed with the colour 
+specified at "textcolor" parameter.
+
+With the "mode" parameter you choose between "gouraud" and "texture".
+
+With "gouraud" mode, you activate the shading, and you have to choose
+the colour of wheels, with "wheelcolor", "textcolor" and "selectcolor".
+
+With "texture" mode, you disable the shading and use a texture, with 
+a specified gif or jpg file in the parameter "texture": this image must 
+be exactly 256x256 in pixels.
+
+Then, you can specify how the unselected text is darker with "textdiff"
+parameter, and how the extrusion is darker, with "extrudediff" parameter.
+
+
+*****
+
+[The floating mode:]
+
+Optionally, you can enable the "floating window" mode.
+The treemenu applet, then, will appear in a floating external window, and will
+leave free all the other frame space on the web site.
+But, you still have to create a small horizontal or vertical frame (maybe
+1 or 2 pixels large), containing the applet, 1 pixel large.
+
+To enable this mode:
+
+1) Set "floatmode" to "YES"
+2) Copy the applet width in the "floatw" parameter
+3) Copy the applet height in the "floath" parameter
+4) Set the applet width=1 and height=1
+
+At this point, you just have to customize it using those parameters:
+
+The window title must be written in the "floatitle" parameter.
+
+The starting X and Y position where window should apper, must be written
+in the "floatx" and "floaty" parameters. Note: the coordinates are relative
+to user screen, so result can change depending on screen resolution.
+
+If you want the window to be always on top and visible, set the "floatinfront"
+parameter to "YES". This could be useful for someone, and annoying for others.
+
+Note: the "floatinfront" option will have no effect on some versions of
+Internet Explorer.
+
+
+*****
+
+[Menu System:]
+
+This menu applet can display up to 8 items in each wheel, and up to 8 wheels.
+Each item is defined with a menu identifier + an item identifier.
+
+For example, 00 means menu 0, item 0; 10 means menu 1, item 0; 22 means
+menu 2, item 2, and so on.
+
+The numeration starts from 0, so the max item is 7, and the max menu is 7.
+
+Each item should have a Text label:
+
+<param name=MenuText00 value="SUB ONE">   ; Text menu 0 item 0
+
+The text can't contain numbers or special characters.
+
+Each menu item can have (or not have) a link.
+The link can be of 2 types: MenuLinkXX or MenuUrlXX:
+
+<param name=MenuLink00 value="1">        ; Menu Link menu 0 item 0: submenu 1
+<param name=MenuLink10 value="0">        ; Menu link menu 1 item 0: go back
+
+A MenuLink indicates either to go to next sub wheel menu, or to go back
+to previous menu.
+
+To specify the submenu, you simply set: 0,1,2,3,4,5,6... and you can go
+more than one step deeper, if you want.
+
+For instance, when you are on menu 2, you can go to submenu 3, or even to 
+submenu 4 or 5, etc. To go back to previous menu, just specify the number 
+of the menu from where you were linked to the current one.
+
+NOTE: since you can go to the previous menu clicking on the left of the
+applet window, you aren't obliged to specify a "BACK" item.
+
+When an item is a MenuUrl, you should specify a http:// or relative link 
+to a file:
+
+<param name=MenuUrl02 value="test1.html"> ; Url Link menu 0 item 2
+
+And, optionally, you can specify a target frame:
+
+<param name=MenuTarget02 value="mypage">  ; Target for url link menu 0 item 3
+
+If no target frame is specified, the "regframename" will be used.
+
+

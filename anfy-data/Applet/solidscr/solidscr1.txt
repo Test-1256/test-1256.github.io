@@ -1,0 +1,5 @@
+[] Solid Scroller is Out !!
+Welcome to the |Anfy| Solid Scroller #
+It is a graphical scrolltext. You can choose your own fonts,
+speed, wavetype, wavespeed ...
+Have fun.

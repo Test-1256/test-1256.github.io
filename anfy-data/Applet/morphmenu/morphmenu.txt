@@ -1,0 +1,367 @@
+
+          Morph Menu - Copyright (C) by Fabio Ciucci 1998-2002
+
+
+This applet is a navigational menu: it can display up to 20 submenu's, with
+max 20 items each menu, but consider even the limit of the phisical space
+where the items are displayed.
+
+The link feature works only when you are registered by paying for the shareware.
+This applet contains code by Dolf van der Schaar & Andrea Fasce which is used 
+under a licence.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from the background image and an optional overlay image, the 
+following 5 ".class" files must be uploaded: 
+
+morphmenu.class
+morphmenub.class
+morphmenuc.class
+Lware.class
+anfy.class 
+
+If you use a background animation effect, you have to add the respective 
+class file too:
+
+mmgalaxy.class or mmblobs.class.
+
+Plus, morphmenu.jar for speedy loading on recent browsers.
+
+************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="morphmenu.jar" code="morphmenu.class" width="160" height="140">
+<param name="credits" value="Applet by Anfy Team (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="menu_fx" value="none">       ; Optional fx ("none" or "random")
+<param name="menu_y" value="10">          ; Y offset from top where menu starts
+<param name="statusbar_y" value="200">    ; Optional link-statusbar y position
+<param name="fontName" value="Heivetica"> ; Font used to paint characters
+<param name="font_h" value="25">          ; Font size
+<param name="textalign" value="center">   ; Alignment ("left","center","right")
+<param name="textcolor" value="ffffff">     ; Colour or unselected text
+<param name="selectedcolor" value="00ff00"> ; Colour of selected text
+<param name="backcolor" value="000000">     ; Background colour
+<param name="back_fx" value="mmgalaxy">     ; B. Fx ("color","image","...other")
+<param name="floatmode" value="NO">       ; Float mode ("YES" or "NO")
+<param name="floatw" value="200">         ; Float window width
+<param name="floath" value="280">         ; Float window height
+<param name="floatx" value="100">         ; Float window x position start
+<param name="floaty" value="100">         ; Float window y position start
+<param name="floatitle" value="Morph Menu"> ; Float window title
+<param name="floatinfront" value="NO">    ; Float win. always on top (YES,NO)
+
+; If back_fx = "image":
+
+<param name="back_image" value="back.jpg">  ; Background image
+
+; If back_fx = "mmgalaxy":
+
+<param name="mmgalaxy_fx" value="rings">    ; Galaxy shape ("ring" or "vortex)
+<param name="mmgalaxy_scol" value="7e7e7e"> ; Random seed for effect generation
+<param name="mmgalaxy_clr" value="fire">   ; Back fx ("none","blur","fire")
+<param name="mmgalaxy_r" value="1">        ; Fire fade red colour (0..255)
+<param name="mmgalaxy_g" value="4">        ; Fire fade green colour (0..255)
+<param name="mmgalaxy_b" value="2">        ; Fire fade blue colour (0..255)
+<param name="mmgalaxy_filter" value="yes"> ; Smooth filter ("yes" or "no")
+<param name="mmgalaxy_bcol" value="no">    ; Back colour visible ("yes" or "no")
+
+; If back_fx = "mmblobs":
+
+<param name="mmblobs_nblobs" value="8">     ; number of blobs (2-8)
+<param name="mmblobs_minspeed" value="15">  ; minimum speed (1-15)
+<param name="mmblobs_bval1" value="1080">   ; Blob val 1
+<param name="mmblobs_bval2" value="34000">  ; Blob val 2
+<param name="mmblobs_bval3" value="3600">   ; Blob val 3
+<param name="mmblobs_numpal" value="6">     ; Colour palette (1-6)
+<param name="mmblobs_sinemode" value="NO">   ; Sinus movements ("YES" or "NO")
+<param name="mmblobs_starshape" value="YES"> ; Star shape ("YES" or "NO")
+<param name="mmblobs_negative" value="NO">   ; Negative colours ("YES" or "NO")
+
+; Menu structure example
+
+<param name="MenuText00" value="SUB ONE"> ; Text menu 0 item 0
+<param name="MenuLink00" value="1">         ; Menu Link menu 0 item 0: submenu 1
+
+<param name="MenuText01" value="HELLO">   ; Text menu 0 item 1
+                                          ; No links for menu 0 item 1
+                                          ; No Target for Url link menu 0 i. 1
+
+<param name="MenuText02" value="LINK ONE">  ; Text menu 0 item 2
+<param name="MenuUrl02" value="test1.html"> ; Url Link menu 0 item 2
+                                          ; No Target for Url link menu 0 i. 2
+
+<param name="MenuText03" value="LINK TWO">  ; Text menu 0 item 3
+<param name="MenuUrl03" value="test2.html"> ; Url link menu 0 item 3
+<param name="MenuTarget03" value="mypage">  ; Target for url link menu 0 item 3
+
+<param name="MenuText10" value="<---">      ; Text menu 1 item 0 (back arrow)
+<param name="MenuLink10" value="0">         ; Menu link menu 1 item 0: go back
+
+<param name="MenuText12" value="ITEM ONE">  ; Text menu 1 item 2
+<param name="MenuUrl12" value="test1.html"> ; Url link menu 1 item 2
+                                          ; No Target for Url link menu 1 i. 2
+
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+***************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the menu links:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+Note: you can specify specific target for specific menu items, using the
+parameters MenuTargetXX. If no MenuTargetXX is specified, regnewframe is
+used.
+
+With "statusbar_y", you can decide the postion of the text link statusbar.
+If you place here a value bigger than the height of the applet, the
+text will be not displayed.
+
+This line will be printed with the colour specified in the "textcolor".
+
+With the "menu_fx" parameter, you can enable a random flickering of the
+text, specifying "random" in it. Otherwise, specify "none".
+
+You can decide the y offset from top where start to draw the menu items
+with the "menu_y" parameter.
+
+You can control the style and size of a font using the "fontName" and
+"font_h" parameters, respectively.
+
+The usable fonts are "Courier", "Dialog", "Helvetica" and "TimesRoman".
+
+The text alignment can be controlled with "textalign" parameter, which can
+be "left","center", or "right".
+
+The colour of selected and unselected text is determined by the "textcolor"
+and "selectedcolor" parameters, and s in RRGGBB hex format, same as the
+html colour format, without the leading #.
+
+With "back_fx", you choose a type of background effect from colour, image,
+galaxy animation to blobs animation.
+
+If you choose "color", a filled colour determined by "backcolor" will be used.
+If you choose "image", a gif/jpg image, specified in "back_image", will be
+used.
+
+Otherwise, you can specify one of the background effects plugins available,
+and in this case you have to copy the necessary .class too.
+
+
+; If back_fx = "mmgalaxy", here the extra parameters:
+
+mmgalaxy_fx:     Galaxy shape ("ring" or "vortex)
+mmgalaxy_scol:   Random seed color for effect generation
+mmgalaxy_clr:    Backround burning ("none","blur","fire")
+mmgalaxy_r:      Fire fade red colour (0..255)
+mmgalaxy_g:      Fire fade green colour (0..255)
+mmgalaxy_b:      Fire fade blue colour (0..255)
+mmgalaxy_filter: Smooth filter ("yes" or "no")
+mmgalaxy_bcol:   Background colour visible ("yes" or "no")
+
+Remember to upload to site mmgalaxy.class.
+
+
+; If back_fx = "mmblobs", here the extra parameters:
+
+mmblobs_nblobs:    number of blobs (2-8)
+mmblobs_minspeed:  minimum speed (1-15)
+mmblobs_bval1:     Blob val 1
+mmblobs_bval2:     Blob val 2
+mmblobs_bval3:     Blob val 3
+mmblobs_numpal:    Colour palette (1-6)
+mmblobs_sinemode:  Sinus movements ("YES" or "NO")
+mmblobs_starshape: Star shape ("YES" or "NO")
+mmblobs_negative:  Negative colorus ("YES" or "NO")
+
+Remember to upload to site mmblobs.class and mmblob.class.
+
+*****
+
+[The floating mode:]
+
+Optionally, you can enable the "floating window" mode.
+The treemenu applet, then, will appear in a floating external window, and will
+leave free all the other frame space on the web site.
+But, you still have to create a small horizontal or vertical frame (maybe
+1 or 2 pixels large), containing the applet, 1 pixel large.
+
+To enable this mode:
+
+1) Set "floatmode" to "YES"
+2) Copy the applet width in the "floatw" parameter
+3) Copy the applet height in the "floath" parameter
+4) Set the applet width=1 and height=1
+
+At this point, you just have to customize it using those parameters:
+
+The window title must be written in the "floatitle" parameter.
+
+The starting X and Y position where window should apper, must be written
+in the "floatx" and "floaty" parameters. Note: the coordinates are relative
+to user screen, so result can change depending on screen resolution.
+
+If you want the window to be always on top and visible, set the "floatinfront"
+parameter to "YES". This could be useful for someone, and annoying for others.
+
+Note: the "floatinfront" option will have no effect on some versions of
+Internet Explorer.
+
+
+*****
+
+[Menu System:]
+
+This menu applet can display up to 20 submenu's, with any number of items
+within each menu, the only limitation is the physical space where display
+ the items. 
+
+Each item is defined with a menu identifier + an item identifier.
+
+For example, 00 means menu 0, item 0; 10 means menu 1, item 0; 22 means
+menu 2, item 2, and so on.
+
+If you need more than 10 menus or items, use character instead of numbers,
+for example:
+
+<param name="MenuText0a" value="ITEM10">
+<param name="MenuText0b" value="ITEM10">
+
+The numeration starts from 0, so the max menu is letter j.
+
+Please note that you are limited to 20 menus and 20 items per menu (so
+item/menu identifies can be in the range 0..9/a..j)
+
+Each item should have a Text label:
+
+<param name=MenuText00 value="SUB ONE">   ; Text menu 0 item 0
+
+The text can contain numbers or special characters, too.
+
+Note: If you use "<---" as the name of a menu item, it will be drawn as a
+back arrow, useful for back menu items.
+
+Each menu item can have (or not have) a link.
+The link can be of 2 types: MenuLinkXX or MenuUrlXX:
+
+<param name="MenuLink00" value="1">        ; Menu Link menu 0 item 0: submenu 1
+<param name="MenuLink10" value="0">        ; Menu link menu 1 item 0: go back
+
+When it's a MenuLink, it indicates to go to next sub menu, or to go back
+to previous menu.
+
+To specify the submenu, you simply specify: 0,1,2,3,4,5,6... and you can go
+more than one step deeper, if you want: when you are on menu 2, you can go to
+submenu 3, or even to submenu 4 or 5, etc.
+
+To go back to previous menu, just specify the number of menu from which you
+were linked to the current one.
+
+NOTE: you are obliged to specify a "BACK" item, otherwise users can't go back
+to the upper level.
+
+When it's a MenuUrl, you should specify a http:// or relative link to a file:
+
+<param name=MenuUrl02 value="test1.html"> ; Url Link menu 0 item 2
+
+And, optionally, you can specify a target frame:
+
+<param name="MenuTarget02" value="mypage">  ; Target for url link menu 0 item 3
+
+If no target frame is specified, the "regframename" will be used.
+
+Let's see a complex example, with more than one sub-menu each screen:
+
+    (0)
+     |
+     |_ (1) Image Gallery            (MenuText00) Link: 1
+     |       |_ <--                  (MenuText10) Link: 0
+     |       |_ (2) GIF Images       (MenuText11) Link: 2
+     |       |       |_ <--          (MenuText20) Link: 1
+     |       |       |_ Flower.gif   (MenuText21) Url
+     |       |       |_ Portrait.gif (MenuText22) Url
+     |       |
+     |       |_ (3) JPG Images       (MenuText12) Link: 3
+     |               |_ <--          (MenuText30) Link: 1
+     |               |_ Flower.jpg   (MenuText31) Url
+     |               |_ Portrait.jpg (MenuText32) Url
+     |
+     |_ (4) Audio Files              (MenuText01) Link: 4
+     |       |_ <--                  (MenuText40) Link: 0
+     |       |_ Dance.wav            (MenuText41) Url
+     |       |_ Classic.wav          (MenuText42) Url
+     |
+     |_ E-Mail                       (MenuText02) Url
+
+
+Here how to build it:
+
+<param name="MenuText00" value="Image Gallery">
+<param name="MenuLink00" value="1">
+<param name="MenuText01" value="Audio Files">
+<param name="MenuLink01" value="4">
+<param name="MenuText02" value="E-Mail">
+<param name="MenuUrl02" value="mailto:test@test.com">
+<param name="MenuText10" value="<---">
+<param name="MenuLink10" value="0">
+<param name="MenuText11" value="GIF Images">
+<param name="MenuLink11" value="2">
+<param name="MenuText12" value="JPG Images">
+<param name="MenuLink12" value="3">
+<param name="MenuText20" value="<---">
+<param name="MenuLink20" value="1">
+<param name="MenuText21" value="Flower.gif">
+<param name="MenuUrl21" value="test1.html">
+<param name="MenuText22" value="Portrait.gif">
+<param name="MenuUrl22" value="test2.html">
+<param name="MenuText30" value="<---">
+<param name="MenuLink30" value="1">
+<param name="MenuText31" value="Flower.jpg">
+<param name="MenuUrl31" value="test3.html">
+<param name="MenuText32" value="Portrait.jpg">
+<param name="MenuUrl32" value="test5.html">
+<param name="MenuText40" value="<---">
+<param name="MenuLink40" value="0">
+<param name="MenuText41" value="Dance.wav">
+<param name="MenuUrl41" value="test6.html">
+<param name="MenuText42" value="Classic.wav">
+<param name="MenuUrl42" value="test7.html">
+
+

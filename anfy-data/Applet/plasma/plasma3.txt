@@ -1,0 +1,133 @@
+
+          AnfyPlasma - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and animate a realtime "plasma" effect, well known
+in contest scenes. This applet is fully parametrized, so you can generate
+various kinds of plasma effects.
+
+The transparent image gun.gif is a courtesy of Lone Star Posse Prod. Inc.
+
+*************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional foreground image, the following 3 ".class" files
+must be uploaded: 
+
+Plasma3.class
+Lware.class
+anfy.class
+
+Plus, Plasma3.jar for speedy loading on recent browsers.
+
+*************************************************************************
+
+EXAMPLE.
+
+Insert the <applet></applet> tag in your html document as follows to add 
+this applet to your page (Comments after the ";" symbol are code descriptions
+and acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="Plasma3.jar" code="Plasma3.class" width="192" height="192">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when the applet
+                                          is "clicked'.
+<param name="regnewframe" value="YES">       ; Reglink opened in new frame?
+<param name="regframename" value="_blank">    ; Name of new frame for reglink
+<param name="statusmsg" value="Plasma applet">; Statusbar message
+<param name="res" value="3">                  ; resolution (1-8)
+<param name="gen1" value="43">                ; generator1 (8-2000)
+<param name="gen2" value="31">                ; generator2 (3-256)
+<param name="gen3" value="36">                ; generator3 (3-256)
+<param name="red1" value="0">                 ; Red1 (0-255)
+<param name="red2" value="127">               ; Red2 (0-255)
+<param name="red3" value="1">                 ; Red3 (1-8)
+<param name="green1" value="127">             ; Green1 (0-255)
+<param name="green2" value="127">             ; Green2 (0-255)
+<param name="green3" value="2">               ; Green3 (1-8)
+<param name="blue1" value="127">              ; Blue1 (0-255)
+<param name="blue2" value="127">              ; Blue2 (0-255)
+<param name="blue3" value="1">                ; Blue3 (1-8)
+<param name="speed" value="1">                ; Speed (1-8)
+<param name="overimg" value="NO">             ; Optional image over applet
+<param name="overimgX" value="0">             ; Over image X offset
+<param name="overimgY" value="0">             ; Over image Y offset
+<param name="memdelay" value="1000">      ; Memory deallocation delay
+<param name="priority" value="3">         ; Task priority (1..10)
+<param name="fixnetscape" value="NO">     ; Fix Netscape 3.0 bug ("YES","NO")
+<param name="MinSYNC" value="10">         ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>                                 ; End of applet tag
+
+
+***************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+from the author. If the code is correct and the applet is run from the
+registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by the width and height tags.
+
+The "res parameter determines the resolution: with res=1 pixels are small,
+but the effect is slow. With res=8 pixels are too big but the effect isfast.
+The optimum choices are 2-4.
+
+About the plasma generators: (gen1,gen2,gen3)- I can say that gen1 is a
+rather smooth value: the min is 8 (very smooth, like fog), and the max is
+2000, where all is psychedelic (too much, I think). Gen2 and Gen3 are x and y
+stretchers... they can go from 3 (many small curves) to 256 (one great curve).
+
+About the palette: there are 3 parameters for each Red Green Blue (RGB)
+component. This is more complex, but can give you much flexibility (and
+also the power to do many bugged palettes).
+
+The red1,green1,blue1 values (0-255) are the multipliers of totality.
+The red2,green2,blue2 values (0-255) are fixed added values of totality.
+The red3,green3,blue3 values (1-8) are "smoothing" values of totality.
+This means that if red1=0, then the green3 value is totally disabled and
+all the 256 colors will have the "red2" red component.
+
+You can experiment with these values, but some combinations make ugly
+palettes. For those who understand palettes, consider the formula used to
+make a palette (r steps from 0 to 255):
+
+      red =  (sin(r*PI*2/(256/red3  ))*red1  )+red2
+      green= (sin(r*PI*2/(256/green3))*green1)+green2
+      blue = (sin(r*PI*2/(256/blue3 ))*blue1 )+blue2
+
+In any case, a component value must exceed 255.
+
+The speed from 1 to 8 is useful, only when you make really large plasmas.
+In this case you can increase this value a bit, but the plasma will not 
+really be faster: it will simply skip some frames.
+
+This also adds flickering and loose smoothing effects (in faster machines).
+Please use speed = 1 when possible, and don't exceed speed=4.

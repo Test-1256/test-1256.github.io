@@ -1,0 +1,154 @@
+
+             AnfyChat - Copyright (C) by Anfy Team & 12Planet 2002
+
+
+The AnfyChat is a client/server solution to provide an IRC-like chat on
+web pages.
+Unlike other Anfy applets, you have not to copy the .class files on your
+site, but instead place only the html parameters to load the chat from
+our server.
+Also, this is an add-on applet, so the regcode is not required and
+does not change the way the free anfychat is running.
+
+If you want a customized AnfyChat to enable admin control, private rooms,
+changeable text scroll and background image, you have to check our chat
+hosting options here:
+
+http://www.anfyteam.com/chat/
+
+
+************************************************************************
+
+NECESSARY FILES.
+
+Any file is required, except the html parameters in your page.
+
+*********************************************************************
+
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<APPLET MAYSCRIPT CODE="ChatClient.class" CODEBASE="http://www.anfychat.com/anfychat/bin/" WIDTH="600" HEIGHT="500">
+<PARAM NAME="credits" VALUE="Applet by Anfy Team (www.anfyteam.com)">      ; Do not change
+<PARAM NAME="classPath" VALUE="onetoplanet.client.ui.anfychat.floatGuts">  ; Do not change
+<PARAM NAME="archive" VALUE="fchaplet.jar">                 ; Do not change
+<PARAM NAME="cabbase" VALUE="fchaplet.cab">                 ; Do not change
+<PARAM NAME="skinInterface" VALUE="../conf/skin1.txt">      ; Skin (interface style)
+<PARAM NAME="sessionLanguage" VALUE="english">              ; Interface language
+<PARAM NAME="sessionGroupValue" VALUE="computers_internet"> ; Group (theme) of chat-room
+<PARAM NAME="roomValue" VALUE="anfy">                       ; Chat-room name
+Sorry, your browser doesn't support Java                    ; Msg in no java browsers
+</APPLET>
+
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+
+Attempting to change the credit parameter will disable the applet.
+You haven't to change "classPath", "archive" and "cabbase" too.
+
+
+With the "skinInterface" you can change the visual appearance of
+the chat. Please note, then you have to set the applet to the
+same width x heigh specified for the skin:
+
+"../conf/skin1.txt" = Darkness (600x500)
+"../conf/skin2.txt" = Lightness (600x500)
+"../conf/skin3.txt" = Gold (600x500)
+"../conf/skin4.txt" = Future (600x500)
+"../conf/skin5.txt" = Palm (700x500)
+"../conf/skin6.txt" = Mac (600x473)
+
+
+With the "sessionLanguage" parameter you set the interface language.
+Available languages are:
+
+"arabic", "brazilian", "chinese", "chingb", "danish", "dutch"
+"english", "french", "greenlandic", "german", "italian", "japanese"
+"lithuanian", "norsk", "portuguese", "russian", "serbian",
+"spanish", "swedish", "turkish"
+
+Note: If you find errors of translations, or you want to help to
+provide new languages translations, feel free to contact us.
+
+
+With the "sessionGroupValue" parameter you decide the group (theme) of
+the chat-room. Available groups are:
+
+"arts_humanities", "business_economy", "computers_internet", "education",
+"entertainment", "government", "health", "news_media", "recreation_sports",
+"reference", "regional", "science", "social_science", "society_culture".
+"PUBLIC"       (for other topics not covered)
+"restricted"   (for adult sites)
+
+
+Finally, with the "roomValue" parameter you decide the starting chat-room name.
+If the chat-room does not exist within the chat-group, then it will be created,
+in similiar way to the "#channel name" on IRC.
+
+
+CHAT COMMANDS:
+
+While chatting, you can issue that commands:
+
+/web URL       ; Open a site page, example: /web http://www.anfyteam.com
+/nick newname  ; Change nick name, example: /nick anfyfan
+
+Other commands for administering (/kick , /whois, /banip) are available
+only on custom anfychat hostings for site owners.
+
+NOTE: During chat, you can display nice icons writing *1, *2, *3 and so on.
+Here the list of icons:
+
+http://www.anfychat.com/anfychat/icons.html
+
+*1  = smile :)
+*2  = worried :(
+*3  = eye closed ;)
+*4  = stand :|
+*5  = happy
+*6  = not happy
+*7  = funny
+*8  = surprised
+*9  = desperate
+*10 = crying
+*11 = love
+*12 = broken love
+*13 = letter
+*14 = phone
+*15 = male
+*16 = female
+*17 = flower
+*18 = gift
+*19 = arrow -> blue
+*20 = arrow -> yellow
+*21 = arrow -> red
+*22 = arrow > blue
+*23 = star
+*24 = clock
+*25 = time
+*26 = cup
+*27 = hotdog
+*28 = computer
+*29 = house
+*30 = trashcan
+*31 = car
+*32 = carebear
+*33 = bird
+*34 = fish
+*35 = cow
+*36 = music
+*37 = Zzzz
+*38 = W.C.
+*39 = space
+*40 = access denied
+
+

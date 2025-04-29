@@ -1,0 +1,123 @@
+
+            AnfyFire - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and animate a realtime "fire" effect. This applet
+ is fully parametrized, so you can generate various kinds of fire effects.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional foreground image, the following 3 ".class" files must
+ be uploaded: 
+
+fire.class
+Lware.class
+anfy.class
+
+Plus, fire.jar for speedy loading on recent browsers.
+
+*************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+ 
+<applet archive="fire.jar" code="fire.class" width="140" height="256">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when applet
+                                          is "clicked".
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Fire applet">   ; Statusbar message
+<param name="fwidth" value="70">               ; width (1-1024)
+<param name="fheigth" value="64">              ; height (1-1024)
+<param name="resx" value="2">                  ; horizontal resolution (1-8)
+<param name="resy" value="4">                  ; vertical resolution (1-8)
+<param name="fcut" value="7">                  ; fire cut start position (1-127)
+<param name="fsub" value="4">                  ; fire cut value position (1-127)
+<param name="deflight" value="30">          ; minimal lightning at base (0-127)
+<param name="fmode" value="2">              ; fire mode (1=rectangle 2=convex)
+<param name="rndrep" value="4">             ; random gen. repeating (1-9)
+<param name="paletteR" value="5">           ; red value (0-8)
+<param name="paletteG" value="3">           ; green value (0-8)
+<param name="paletteB" value="1">           ; blue value (0-8)
+<param name="overimg" value="NO">           ; Optional image over the applet
+<param name="overimgX" value="0">           ; Over image X offset
+<param name="overimgY" value="0">           ; Over image Y offset
+<param name="memdelay" value="1000">        ; Memory deallocation delay
+<param name="priority" value="3">           ; Task priority (1..10)
+<param name="fixnetscape" value="NO">       ; Fix Netscape 3.0 bug ("YES","NO")
+<param name="MinSYNC" value="10">           ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java. ; Message for no java browsers.
+</applet>                                 ; End of applet tag
+
+
+*****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change the parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from the
+ registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The parameters "fwidth" and "fheight" determine the "internal" width and
+heigth of the fire, but will be identical to the "real" size only if resx=1 
+and resy=1.
+
+In fact, resx and resy are sort of "scalers", "zoomers", or "stretchers",
+so to speak: if fwidth and fheigth are set to 8 and 10, and resx=2 & resy=2,
+you will have a "real" size of 16 x 20. The real size is fwidth*resx X
+pheight*resy.
+
+This effect looks nicer when resy is greater than resx.
+
+Regarding the fire cutting values, fcut and fsub: fcut must be higher
+than fsub, and some values will generate wrong effects. Optimum range
+ is 1-127.
+
+The deflight (0-127) determines the minimal light at the base of fire. 
+With the value of 0, the fire will have more black holes than the fire of 
+the value 127.
+
+If you like the fire as a rectangular block, set fmode=1. If you like the
+fire as a convex (conical) flame, set it to 2.
+
+You can determine the smoothing of random generator with rndrep (1-9). 
+With lower values you will have less smoothed flames, and vice versa.
+
+In the palette, there are 3 valuables for Red Green Blue (RGB). Each of 
+them can take a value from 0 (none) to 8 (full), and they are named 
+paletteR, paletteG, paletteB.
+
+You can generate red (fire), green (magic), blue (gas) flames... there
+are 700 combinations possible.
+

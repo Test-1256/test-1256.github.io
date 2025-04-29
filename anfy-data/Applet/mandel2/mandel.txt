@@ -1,0 +1,112 @@
+
+          Anfy Mandel - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and animate a realtime Mandelbrot fractal. This
+applet is fully parametrized, so you can generate all kinds of Mandelbrot
+fractal effects.
+
+**********************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional overlay image, the following 3 ".class" files 
+must be uploaded: 
+
+mandel.class
+Lware.class
+anfy.class
+
+Plus, mandel.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="mandel.jar" code="mandel.class" width="300" height="300">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Mandel applet"> ; Statusbar message
+<param name="res" value="1">                   ; resolution (1-8)
+<param name="xstart" value="0">                ; X start
+<param name="ystart" value="7000">             ; Y start
+<param name="xmin" value="60">                 ; X min
+<param name="xmax" value="-120">               ; X max
+<param name="ymin" value="60">                 ; Y min
+<param name="ymax" value="-120">               ; Y max
+<param name="numpal" value="1">                ; Palette number (1-27)
+<param name="overimg" value="NO">              ; Optional image over applet
+<param name="overimgX" value="0">              ; Over image X offset
+<param name="overimgY" value="0">              ; Over image Y offset
+<param name="memdelay" value="1000">           ; Memory deallocation delay
+<param name="priority2 value="3">              ; Task priority (1..10)
+<param name="MinSYNC" value="10">           ; Min. milliseconds/frame for sync
+Your browser doesn't support Java.        ; Msg in no java browsers
+</applet>                                 ; End of classtag
+
+
+***********************************************************************
+
+INSTRUCTIONS.
+
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by the width and height tags.
+
+The "res" parameter determines the resolution: with res=1 pixels are small,
+but effect is slow. With res=8 pixels are too big but the effect is fast.
+The optimum choices are 2-4.
+
+Parameters for fractal generation: I don't place limits to values, and 
+they can be positive or negative. Place values at your own risk.
+
+The following parameters affect the applet actions depending on the positive
+or negative values:
+
+ XMin:  + scroll right,  - scroll left
+ XMax:  + less width X,  - enlarge width X
+ YMin:  + more height Y, - less height Y
+ YMax:  + scroll down,   - scroll up
+
+These descriptions are generalizations. You are free to experiment with 
+a variety of values.
+
+27 different palettes are available, just select the one you prefer for
+your web page.
+
+

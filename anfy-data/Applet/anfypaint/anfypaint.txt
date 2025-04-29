@@ -1,0 +1,168 @@
+
+          Anfy Paint - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+INTRODUCTION.
+
+This applet is a complete paint program, with freehand and geometric
+drawing tools. It is possible to save painted images to the web space
+where you placed the applet, via the mailserver (smtp, port 25).
+The images will be sent to a specified e-mail address, as attacched JPG
+files.
+
+Alternatively, you can save via FTP, on the same host of www page.
+
+This will allow everyone to receive paintings from their visitors,
+to build graphical bookmarks, or interactive virtual galleries.
+
+The JPG saver is based on the work of JPEG group.
+
+If a background image is specified, the applet becomes a colouring book.
+
+*****************************************************************
+
+NECESSARY FILES
+
+The following 7 ".class" files must be uploaded: 
+
+anfypaint.class
+anfypaintb.class
+anfypaintc.class 
+anfypaintd.class
+anfypainte.class
+anfypaintf.class
+Lware.class
+
+Plus, anfypaint.jar for speedy loading on recent browsers.
+
+**********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="anfypaint.jar" code="anfypaint.class" width="580" height="350">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="jpgquality" value="75">      ; Jpeg saving quality (1..100)
+<param name="savebutton" value="YES">     ; Save button (YES / NO)
+<param name="sendtomail" value="mypaint@mysite.com">  ; Mail where send image
+<param name="backcolor" value="e0e0e0">   ; Background color (hex RRGGBB format)
+<param name="backimage" value="NO">       ; Background image (it's name or "NO")
+<param name="pencolor" value="000000">    ; Start pen color (hex RRGGBB format)
+<param name="startmsg" value="Click here."> ; Starting screen message
+<param name="savemode" value="mail">     ; save mode ("mail" or "ftp")
+<param name="ftpport" value="21">        ; FTP port
+<param name="ftpname" value="user">      ; FTP user name
+<param name="ftppass" value="pass">      ; FTP password
+<param name="ftppath" value="imgsaved"> ; FTP file name prefix
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+                          
+****************************************************************
+
+PARAMETER DESCRIPTIONS
+
+The following instructions describe the meaning of the available 
+parameters for this applet:
+
+[Specify the applet and its size]
+
+<applet archive="anfypaint.jar" code="anfypaint.class" width="580" height="350">
+
+The size of the applet is determined by width and height tags.
+The minimum width is 580 ,while the minimum height is 150.
+
+NOTE:
+
+You can make larger paint areas but not smaller.
+
+[Credit parameter]
+
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+
+Attempting to change the credit parameter will disable the applet.
+
+[Registration parameters]
+
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+
+To activate the reg parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from us. If the code is correct and the applet is run from the registered
+ domain name, "link" parameters will be enabled and the applet will be
+linked to an associated URL when it mouse-clicked.
+
+[Image save options]
+
+<param name="savebutton" value="YES">     ; Save button (YES / NO)
+
+When the applet has a regcode, you can set "YES" at the "savebutton" parameter
+so as to enable the send button.
+
+<param name="jpgquality" value="75">      ; Jpeg saving quality (1..100)
+
+Remember you can change compression level of the saved images, with the
+"jpgquality" parameter. Higher values result in high quality as well as
+bigger file sizes. The range goes from 1 to 100, and best results are around 75.
+
+<param name="sendtomail" value="mypaint@mysite.com">  ; Mail where send image
+
+The registered applet will send the output images using smtp port of the server
+as mail attachments. You can specify the e-mail with the "sendtomail" parameter.
+With some CGI programming, you can automatically upload the saved images to your
+site.
+
+NOTE:
+
+Due to security limitations, the applet can connect only to the same server 
+from which it is loaded. This means, if your applet is running on server.com 
+(port 80; www server), it will connect to the server.com port 25 (smtp mail 
+server port), and try to send the images as mail attachments. However, if the
+ mail server is absent, or does not allow public access, your anfypaint can't
+send the images.
+
+[Background]
+
+<param name="backcolor" value="e0e0e0">   ; Nackground colour (hex RRGGBB format)
+<param name="backimage" value="NO">       ; Background image (it's name or "NO")
+
+Use "backcolor" to change background colour. The format is same as the html
+colour format, without the leading #.
+
+If you want to display an image in the background, place its name in the
+place of "NO" at backimage parameter (for example "colorbook.jpg").
+This can transform the anfypaint in a coloring book for kids, for example.
+
+NOTE: If you select the background image smaller than the paint area, it cannont
+fully cover the are, however this is acceptable. 
+
+[Pen colour]
+
+<param name="pencolor" value="000000">    ; Start pen color (hex RRGGBB format)
+<param name="startmsg" value="Click here."> ; Starting screen message
+
+You can decide the default pen colour with "pencolor", while the default message
+printed on screen with "startmsg".
+
+With "savemode" parameter you decide if the save mode have to
+be via "mail" or "ftp".
+
+If "ftp" is choosen, you have to specify the port (usually 21), the user name
+and password, using the parameters "ftpport", "ftpname" and "ftppass".
+It may also be anonymous login; if not, please note that these parameters are
+placed in the html, so everyone can see them and login in FTP, be careful to
+don't disclose special accesses, but only restricted accounts for anfypaint.
+In any case the host (IP) server must be the same of www server from which
+the html file that contains the applet is loaded.
+
+Finally, you must specify the path and file name with "ftppath": this
+is a prefix, in fact each file saved will start with filename but include
+other random characters and finally the .jpg suffix. This, to prevent
+the overwriting of previously saved files.
+You can include relative or absolute path like "dir1/dir2/file" or
+file name alone to store in the login default directory.

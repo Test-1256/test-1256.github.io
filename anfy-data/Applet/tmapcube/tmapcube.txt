@@ -1,0 +1,151 @@
+
+    Anfy Texturemapped 3d Cube - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet can map on the faces of a cube with any GIF/JPG image, used 
+as texture. This applet contains the code by Cristiano Tagliamonte and 
+Martin Zettergren, used under a licence.
+
+The animation jnn.gif is a courtesy of mstanya@bigfoot.com
+
+This applet is fully parameterized, so you can change the size and movements
+of the cube.
+
+**************************************************************************
+
+NECESSARY FILES.
+
+As well as images for the faces and optional background and/or foreground 
+images, the following 3 ".class" files must be uploaded: 
+
+TmapCube.class
+Lware.class
+anfy.class
+
+Plus, TmapCube.jar for speedy loading on recent browsers.
+
+**************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="TmapCube.jar" code="TmapCube.class" width="256" height="256">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">           ; Reglink opened in new frame?
+<param name="regframename" value="_blank">       ; Name of new frame for reglink
+<param name="statusmsg" value="Tmapcube applet">  ; Statusbar message
+<param name="res" value="1">                 ; Resolution (1 .. 8)
+<param name="image1" value="face1.gif">      ; Face 1
+<param name="image2" value="face1.jpg">      ; Face 2
+<param name="image3" value="face2.gif">      ; Face 3
+<param name="image4" value="face2.jpg">      ; Face 4
+<param name="image5" value="face3.jpg">      ; Face 5
+<param name="image6" value="face3.jpg">      ; Face 6
+<param name="interactive" value="YES">      ; Interactive mode ("YES" - "NO")
+<param name="lightsourced" value="YES">     ; Lightning ("YES" - "NO")
+<param name="lightpower" value=95>          ; Light power (1..100)
+<param name="lightmin" value="10">          ; Light min power (1..511)
+<param name="lightmax" value="500">         ; Light max power (1..511)
+<param name="rotx" value="4">               ; X Rotation speed
+<param name="roty" value="6">               ; Y Rotation speed
+<param name="rotz" value="8">               ; Z Rotation speed
+<param name="backimage" value="NO">         ; Optional background image
+<param name="backr" value="64">             ; Red in background (0 .. 255)
+<param name="backg" value="96">             ; Green in background (0 .. 255)
+<param name="backb" value="160">            ; Blue in background (0 .. 255)
+<param name="clearback" value="YES">        ; Clear the background ("YES" - "NO")
+<param name="overimg" value="NO">           ; Optional image over applet
+<param name="overimgX" value="0">           ; Over image X offset
+<param name="overimgY" value="0">           ; Over image Y offset
+<param name="memdelay" value="1000">        ; Memory deallocation delay
+<param name="priorityL" value="3">          ; Loading task priority (1..10)
+<param name="priority" value="3">           ; Task priority (1..10)
+<param name="MinSYNC" value="10">           ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.   ; Message for no java browsers.
+</applet>                                   ; End of applet tag
+
+*****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest
+ browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+You can load up to 6 different images to map on the faces of the cube.
+If you place the same image on all 6 face parameters, all faces will
+display the same image. Otherwise, you can display 2, 3, 4, 5, 6 different
+images. The best choices are 3 and 6. 
+
+With 3 different images placed in the same order of the example above, there
+are no duplicate images shown in a frame, and you have to load only 3 images.
+If you want to fill all the faces with different images, it can be done but
+loading time will increase greatly.
+
+The GIF/JPG images MUST either be ALL 256*256 pixels in size, or ALL 128*128
+in size. No other sizes are allowed, and  you can't mix 128*128 images with
+256*256 images in the same cube applet. (Using 256*256 images is useful only when
+applet size is greater than 150).
+
+You can mix GIF and JPG formats in the same cube; what you can't mix is image
+size.
+
+"Res" is a sort of fine resolution. Res=1 equates to normal pixel size, res=2
+means doubled pixels etc. With res = 1, the image is best quality but slow;
+with res = 2 or 3, the speed will be increased but image quality suffers.
+
+You can activate or deactivate the interactive mode with "interactive"
+parameter: if set to "YES", users can control the cube movements with a mouse
+pointer.
+
+Setting the "lightsourced" parameter to "YES" will enable the lightsourcing; 
+setting it to "NO", shading will be displayed.
+
+With "lightpower" you can choose a light intensity from 1 to 100.
+With "lightmin" and "lightmax" parameters, you can choose the darker and lighter
+values allowed, between 1 and 511.
+
+With the "rotx", "roty" and "rotz" parameters, you can control the rotation
+speed of the cube.
+
+With "backr", "backg" and "backb" parameters, you can control the RED, GREEN
+and BLUE components of the background colour.
+
+You can load a background image by placing its name in the "backimage" 
+parameter. This image must be the same size as that of the applet if res=1,
+half the size of the applet if res=2, and so on.
+
+You can disable the background clear routine if desired by setting "NO" to "
+clearback" parameter.
+
+

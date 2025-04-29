@@ -1,0 +1,216 @@
+
+          Solid Scroller - Copyright (C) by Fabio Ciucci 1999-2002
+
+
+This applet displays a scrolling text, using colourful fonts.
+The text can jump, and wave, and you may even be able to add a mirror 
+effect on bottom area.
+
+This effect contains the code by Eric Benhamou, used under a licence.
+
+The coloured fonts are in AFT (AnFy FonT) format.
+
+You can create your own aft fonts using a paint program, otherwise
+download freely the AFT fonts collection from here:
+
+  http://www.anfyteam.com/aft/
+
+***********************************************************************
+
+NECESSARY FILES.
+
+As well as your selection font file (.aft) and its data gif image, the 
+following 2 ".class" files must be uploaded: 
+
+solidscr.class
+Lware.class
+
+Plus, solidscr.jar for speedy loading on recent browsers.
+
+***********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="solidscr.jar" code="solidscr.class" width="460" height="80">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">          ; Reglink opened in new frame?
+<param name="regframename" value="_blank">      ; Name of new frame for reglink
+<param name="statusmsg" value="Solid Scroller"> ; Statusbar message
+<param name="textscroll" value="solidscr1.txt">   ; Ascii file with text
+<param name="texttype" value="waving">   ; Text effect mode
+                                       ; (waving,jumping,horizontal, vertical)
+<param name="speed" value="2">           ; Scrolling speed
+<param name="wavemode" value="vertical"> ; waving mode (horizontal, vertical)
+<param name="wavetype" value="swing">    ; Wave type
+                                       ; (swing, short, long, classic, smooth, halfsmooth)
+<param name="wavespeed" value="4">       ; Wave speed
+<param name="reversefx" value="yes">     ; Reverse wave fx (yes,no)
+<param name="TextJumpAmp" value="0">     ; Jumping Amplitude
+<param name="TextJumpSpd" value="0">     ; Jumping Speed
+<param name="textoffset" value="0">      ; Y Text offset in horizontal mode
+<param name="textvspace" value="10">     ; Text Vertical Spacing
+<param name="mirrormode" value="normal"> ; Mirror (disabled,normal,perspective)
+<param name="mirrorheight" value="20">   ; Mirror height from the bottom.
+<param name="fontindex" value="bar2font.aft">  ; Anfy Font file to load
+<param name="bgcolor" value="000133">    ; Background colour in hex format
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+
+*************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters, please read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from
+the author. If the code is correct and the applet is run from the registered
+domain name, you can use "link" parameters to link to a URL when the applet 
+is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on latest
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by width and height tags.
+
+The "textscroll" parameter specifies an ascii text file which will be displayed.
+
+Note: only characters present in the AFT font will be displayed.
+
+If the AFT font does not contain numbers, or special characters, those will 
+be simply ignored.
+
+With "texttype", you can specify the text effect mode:
+
+horizontal : One line of text will scroll horizontally
+vertical   : Multiple lines of text will scroll vertically
+waving     : One line of text will scroll waving
+jumping    : One line of text will scroll jumping
+
+With "speed" you specify the scrolling speed.
+
+
+If texttype=waving, you can set "wavemode" to "horizontal" or "vertical",
+and "wavetype" to one of the following:
+
+swing      : long regular sinus 
+short      : much irregular sinus
+long       : a bit irregular sinus
+classic    : short regular sinus
+smooth     : fast irregular sinus
+halfsmooth : very fast irregular sinus
+
+The waving speed is determined by "wavespeed". 0 = frozen wave.
+
+The waving effect can be reversed, placing "yes" to the "reversefx" parameter.
+
+
+If texttype=jumping, you can set "TextJumpAmp" to control the jumping amplitude,
+and "TextJumpSpd" to control the Jumping speed.
+
+If texttype=horizontal, you can set the Y Text offset with "textoffset".
+
+If texttype=vertical, you can set Vertical Spacing with "textvspace".
+
+With "mirrormode" you determine the mirror status. With "disabled" the
+mirror is disabled, with "normal" it is reflecting line by line, with
+"perspective" it reflects in a perspective-like way.
+
+The mirror starts from bottom, up to the height you want, entering the
+desired one in the "mirrorheight" parameter.
+
+The background colour is determined by the "bgcolor" parameter, entering
+the value in hex RRGGBB, like html format, but without the prefix "#".
+
+The .aft font file must be specified in the "fontindex" parameter.
+
+***********************************************************************
+
+THE AFT FORMAT SPECIFICATIONS
+
+If you are interested in creating new fonts for your personal use, or
+to add those to the freely usable AFT fonts collection, you should
+know how the AFT format works.
+
+An AFT font comprises 2 files, with a single prefix + different suffixes,
+for example:
+
+myfont.aft
+myfont.gif
+
+The .aft file is an ascii text file, editable by hand, and the gif file
+is an image file editable with any paint program.
+
+Both files must have the same prefex, and the suffixes should be in 
+lowercase.
+
+Here an example of .aft:
+
+
+myfont
+32
+23
+0
+ !#%%%%'()%%,-./0123456789:;%=%?@ABCDEFGHIJKLMNOPQRSTUVWXYZ%
+This is a comment... hello...
+
+
+The 1st line contains the name of the gif file, without .gif suffix.
+The 2nd line contains the font width.
+The 3rd line contains the font height.
+The 4th line contains the Y spacing between characters.
+The 5th line contains the characters index (its order in GIF image)
+
+For example, if a font is painted as:
+
+ABCDE
+FGHIJ
+KLMNO
+
+The fontindex will be: ABCDEFGHIJKLMNO
+
+But, if a font is painted as:
+
+AEIMQUY
+BFJNRVZ
+CGKOSW!
+DHLPTX#
+
+The fontindex will be: AEIMQUYBFJNRVZCGKOSW!DHLPTX#
+
+Note: the background of the gif image must be black (000000 in hex), and the
+black must be present only in the background, otherwise the background
+colour changes a function in the scroller applet and this will cause problems.
+
+

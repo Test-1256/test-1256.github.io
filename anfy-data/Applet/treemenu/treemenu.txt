@@ -1,0 +1,317 @@
+
+          Tree Menu - Copyright (C) by Fabio Ciucci 1998-2002
+
+
+This applet is a navigational menu, which emulates the windows tree 
+scructures. It can display unlimited menus and submenus, with any kind
+of icons. The link feature works only when you are registered by paying
+for the shareware. 
+
+This applet contains code by Dolf van der Schaar who is used under a 
+licence.
+
+*************************************************************************
+
+NECESSARY FILES
+
+As well as icon images, and optional background and/or foreground images,
+the following 3 ".class" files must be uploaded: 
+
+treemenu.class
+Lware.class
+anfy.class
+
+Plus, treemenu.jar for speedy loading on recent browsers.
+
+**************************************************************************
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="treemenu.jar" code="treemenu.class" width="200" height="280">
+<param name="credits" value="Applet by Anfy Team (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="scrollSpeedInGoing" value="150">  ; Closing tree speed
+<param name="scrollSpeedOutGoing" value="118">  ; Opening tree speed
+<param name="numberOfBouncesInGoing" value="0">  ; Closing tree bounces
+<param name="numberOfBouncesOutGoing" value="2"> ; Opening tree bounces
+<param name="bounceGravity" value="20">       ; Bounce gravity percentage
+<param name="bounceAmplitude" value="40">     ; Bounce amplitude percentage
+<param name="treeFont" value="Helvetica">     ; Text Font name
+<param name="treeFontSize" value="14">        ; Tree font size
+<param name="treeBold" value="YES">           ; Text Bold ("YES" or "NO")
+<param name="treeItalic" value="NO">          ; Text Italic ("YES" or "NO")
+<param name="systemColor" value="ffff7f">     ; Scrollbars colour (hex rgb)
+<param name="filterColor" value="ffffff">     ; Colour considered transparent
+<param name="foregroundColor" value="000000"> ; Text Colour (hex rgb)
+<param name="backgroundColor" value="efefef">  ; Background colour (hex rgb)
+<param name="foregroundColorSelection" value="ffff00"> ; Selected text colour
+<param name="backgroundColorSelection" value="00007f"> ; Sel. txt. background
+<param name="autoHighLight" value="yes">  ; Mouse highlights? ("yes","no")
+<param name="borderStyle" value="0">      ; Border style (0=no borders,1,2)
+<param name="scrollBarStyle" value="0">   ; Scrollbars style (0 , 1)
+<param name="backImage" value="NO">       ; Background image name or "NO"
+<param name="floatmode" value="NO">       ; Float mode ("YES" or "NO")
+<param name="floatw" value="200">         ; Float window width
+<param name="floath" value="280">         ; Float window height
+<param name="floatx" value="100">         ; Float window x position start
+<param name="floaty" value="100">         ; Float window y position start
+<param name="floatitle" value="Tree Menu"> ; Float window title
+<param name="floatinfront" value="NO">    ; Float win. always on top (YES,NO)
+<param name="Icon0" value="fo_win1.gif">  ; Icon 0 image name
+<param name="Icon1" value="fo_win3.gif">  ; Icon 1 image name
+<param name="Icon2" value="ic_anfy.gif">  ; Icon 2 image name
+<param name="Icon3" value="ic_audio.gif"> ; Icon 3 image name
+...
+
+; Menu example:
+
+<param name="config0" value="0,Main,0,u">           ; Root folder
+                                       ; Icon: 0, link: "u" (none)
+
+<param name="config1" value="0,Image Gallery,0,u">  ; Folder on level 0
+<param name="config2" value="0,Audio Files,0,u">    ; Folder on level 0
+<param name="config3" value="0,E-Mail,12,mailto:test@test.com">  ; Link l. 0
+                                      ; Icon: 0, link: mailto:test@test.com
+
+<param name="config4" value="1,GIF Images,1,u">  ; Sub-folder, under config1
+                                      ; Icon: 1, link: "u" (none)
+
+<param name="config5" value="1,JPG Images,1,u">  ; Sub-folder, under config1
+
+<param name="config6" value="4,Flower.gif,7,test1.html">  ; Link under conf4
+                                      ; Icon: 7, link: test1.html
+
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+***********************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the menu links:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the parameters "scrollSpeedInGoing" and "scrollSpeedOutGoing" you can
+determine the speed of tree branches closing and opening.
+
+If you want, you can enable a bouncing effect when you open and close
+the branches of a tree. To control this, you set the "numberOfBouncesInGoing"
+and the "numberOfBouncesOutGoing", and if those are more than "0", the
+relative "bounceGravity" and "bounceAmplitude" have to be set. 
+
+If you set "bounceGravity" to 50, for example, when bouncing the second time
+the amplitude will be 50% of the first bounce, and the third time it will
+be 50% of the second time, or you can say 25% of the first bounce.
+
+The "bounceAmplitude" is the amplitude in percentages of the original
+bounce size. When it is set to 200, the bounce will result in twice
+as big as the original size.
+
+The visual aspect of the tree can be altered determining the text font
+name, with "treeFont" parameter, and the style with "treeBold" and
+"treeItalic" parameters, which can be set to "YES" or "NO".
+
+The font size can be changed using "treeFontSize".
+
+The colour of the scroll bars and borders can be set with "systemColor"
+parameter, using an hexadecimal 0x00rrggbb format, like the one used for
+html, but without the leading "#".
+
+Using same format, the background colour is controlled with "backgroundColor"
+parameter, the text colour with "foregroundColor" parameter.
+
+If a background image is loaded, the "backgroundColor" parameter is ignored.
+
+When the text is selected, "foregroundColorSelection" is the colour to be 
+displayed, and "backgroundColorSelection" will be the one under the
+selected text (if a background image is present, it will be in transparency).
+
+An iportant parameter is "filterColor": this colour is used to filter the
+icon images (all them), to decide what is the TRANSPARENT COLOUR.
+
+On the sample icons included, the transparency filter colour is "ffffff",
+in other terms the full white (red=255, green=255, blue=255).
+
+Darker whites will not be considerer transparent, only this one. You can
+change the transparency colour filter, but then be sure to provide
+icon images where the selected colour has to be the transparent one.
+
+Note: if you load transparent gif images as icons, the transparency of
+gif will should be considered transparent.
+
+If you want an image as background, place it's name in the "backImage"
+parameter. Note: the image can be of any size, and if smaller than menu
+applet area, it will be TILED to fill it.
+
+The "borderStyle" parameter determine the borders presence and style.
+With a value of "0", no borders are displayed.
+With a value of "1", the border is 1 pixel wide.
+With a value of "3", the border is 3 pixels wide.
+
+The "scrollBarStyle" determine the size of scrollbars (who appears when
+the menu items become bigger than applet area).
+With a value of "0", the scrollbars are 11  pixels wide.
+With a value of "1", the scrollbars are 16  pixels wide.
+
+Setting "autoHighLight" parameter to "yes", the items will be highlighted
+simply when mouse is over them. Setting it to "no", a click will be required
+to highlight an item.
+
+
+*****
+
+The floating mode:
+
+Optionally, you can enable the "floating window" mode.
+The treemenu applet, then, will appear in a floating external window, and will
+leave free all the other frame space on the web site.
+But, you still have to create a small horizontal or vertical frame (maybe
+1 or 2 pixels large), containing the applet, 1 pixel large.
+
+To enable this mode:
+
+1) Set "floatmode" to "YES"
+2) Copy the applet width in the "floatw" parameter
+3) Copy the applet height in the "floath" parameter
+4) Set the applet width=1 and height=1
+
+At this point, you just have to customize it using those parameters:
+
+The window title must be written in the "floatitle" parameter.
+
+The starting X and Y position where window should apper, must be written
+in the "floatx" and "floaty" parameters. Note: the coordinates are relative
+to user screen, so result can change depending on screen resolution.
+
+If you want the window to be always on top and visible, set the "floatinfront"
+parameter to "YES". This could be useful for someone, and annoying for others.
+
+Note: the "floatinfront" option will have no effect on some versions of
+Internet Explorer.
+
+
+*****
+
+Menu System:
+
+Each item needs an icon. You load all the required icons with the Icon
+parameters, just increase the index, there are no limitations:
+
+<param name="Icon0" value="fo_win1.gif">  ; Icon 0 image name
+<param name="Icon1" value="fo_win3.gif">  ; Icon 1 image name
+<param name="Icon2" value="ic_anfy.gif">  ; Icon 2 image name
+...
+
+Icons can be of 2 types: FOLDER ICONS or ITEM ICONS.
+
+The Folder Icons should be 32x16 pixels wide, made of 2 icons: the folder
+open and the folder closed. Just take a look at the fo_win1.gif, and
+other fo_*.gif samples included.
+
+The Item Icons should be 16x16 pixels wide. Just take a look at the ic_*.gif
+samples included. It is possible (even if looks bad) to assign to a folder 
+a 16x16 Item Icon. It is not possible to assign a 32x16 Folder Icon to an 
+item.
+
+The accepted formats are GIf and JPG, but GIF is more adaptable.
+
+If you want transparent parts, assign to these the colour specified in
+the "filterColor" parameter.
+
+Note: GIF transparency information should work too.
+
+
+Tree Structure:
+
+Each config. line contains 4 parameters, separated by "," characters:
+
+-parentId:  This value represents the number of its direct parent. Every item 
+            has its own Id. This Id is identical to the config line number.
+
+-Name:      This is the Text (name)label for the item/menu.
+
+-iconId:    The number of the icon to be used. This number is the
+            same number specified when loadind icons (icon0, icon1 etc.).
+
+-Link:      The link to be opend when this item/menu is pressed.
+            If the item has no links, or it's a folder, specify "u", which
+            stands for "unlinked" (no links).
+
+The menu has to start with "config0", the main parent, or the root.
+All the config parameters are sequential to this, ie.: config1, config2, etc.
+
+Look at this example:
+
+Main
+ |
+ |_ Image Gallery
+ |     |_ GIF Images
+ |     |     |_ Flower.gif
+ |     |     |_ Portrait.gif
+ |     |
+ |     |_ JPG Images
+ |           |_ Flower.jpg
+ |           |_ Portrait.jpg
+ |
+ |_ Audio Files
+ |     |_ Dance.wav
+ |     |_ Classic.wav
+ |
+ |_ E-Mail
+
+
+It should be written as:
+
+<param name="config0" value="0,Main,0,u">           ; Root folder
+                                       ; Icon: 0, link: "u" (none)
+
+<param name="config1" value="0,Image Gallery,0,u">  ; Folder on level 0
+<param name="config2" value="0,Audio Files,0,u">    ; Folder on level 0
+<param name="config3" value="0,E-Mail,12,mailto:test@test.com">  ; Link l. 0
+                                      ; Icon: 0, link: mailto:test@test.com
+
+<param name="config4" value="1,GIF Images,1,u">  ; Sub-folder, under config1
+                                      ; Icon: 1, link: "u" (none)
+
+<param name="config5" value="1,JPG Images,1,u">  ; Sub-folder, under config1
+
+<param name="config6" value="4,Flower.gif,7,test1.html">  ; Link under conf4
+                                      ; Icon: 7, link: test1.html
+
+<param name="config7" value="4,Portrait.gif,7,test2.html">; Link under conf4
+
+<param name="config8" value="5,Flower.jpg,11,test6.html">  ; Link under conf5
+<param name="config9" value="5,Portrait.jpg,11,test7.html">; Link under conf5
+
+<param name="config10" value="2,Dance.wav,3,test1.html">  ; Link under conf2
+<param name="config11" value="2,Classic.wav,3,test2.html">; Link under conf2
+
+

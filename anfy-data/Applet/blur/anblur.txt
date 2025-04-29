@@ -1,0 +1,146 @@
+
+          AnfyBlur - Copyright (C) by Fabio Ciucci 1997-2002
+
+INTRODUCTION.
+
+This is an applet that can animate a sequence of GIF/JPG images (like
+other animators) but it also calculates the motion blur effect between
+frames. The appearance is that of a blur effect caused by speed in cameras.
+
+Note: The GIF/JPG frames in the applet must be identical in size.
+
+*****************************************************************
+
+Apart from image files you specify, and an optional overlay image, the 
+following 2 ".class" files must be uploaded: 
+
+anblur.class 
+Lware.class
+
+Plus, anblur.jar for speedy loading on recent browsers.
+
+******************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="anblur.jar" code="anblur.class" width="200" height="226">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">            ; Register code (if you have it)
+<param name="reglink" value="NO">            ; URL link(optional) when clicked
+<param name="regnewframe" value="YES">       ; Reglink opened in new frame?
+<param name="regframename" value="_blank">   ; Name of new frame for reglink
+<param name="statusmsg" value="Blur applet"> ; Statusbar message
+<param name="imgs" value="anim/ani">         ; Animation to load
+<param name="format" value=".gif">           ; Suffix of frames
+<param name="nimgs" value="5">               ; Number of frames
+<param name="pingpong" value="YES">          ; Cyclic or Ping-Pong mode
+<param name="doublesize" value="YES">        ; Normal or double size.
+<param name="speed" value="100">             ; Play speed
+<param name="pingpause" value="1000">        ; Ping Pause
+<param name="pongpause" value="100">         ; Pong Pause
+<param name="audioping" value="audio/piccon.au"> ; Audio effect on Ping
+<param name="audiopong" value="NO">           ; Audio effect on Pong
+<param name="overimg" value="NO">             ; Optional image over applet
+<param name="overimgX" value="0">             ; Over image X offset
+<param name="overimgY" value="0">             ; Over image Y offset
+<param name="priority" value="3">             ; Task priority (1..10)
+Sorry, your browser doesn't support Java.     ; Msg in no java browsers
+</applet>
+
+***********************************************************************
+
+CODE DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Note: attempting to alter the "credits" parameter will disable the applet.
+
+To activate the "reg" parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The GIF and/or JPG images must all be the same size, however unlimited 
+dimensions. You can animate them at the original size, or zoom them *2,
+with "doublesize" parameter set to "YES". To do this, set the "width" 
+and "height" tags  with the doubled size of the frames.
+
+For example, if frames are 100x113, you have to make width=200, height=223.
+Setting "doublesize" to "NO", will maintain the original size. (Enter the
+original size in "width" and "height" tags).
+
+Note: when the format is .gif, DO NOT save any transparency coloru information.
+
+The frames of animation can start with any prefix, but must end with the
+framenum (1,2,3,4...).
+
+You can manually select the suffix (".gif" or ".jpg") with the "format"
+parameter.
+
+The "imgs" parameter needs the prefix name of images, with an eventual
+path. For example, if images are named ani1.gif, ani2.gif, ani3.gif,
+and are placed in the anim/ subdirectory, you have to set parameters as
+follows:
+
+<param name="imgs" value="anim/ani">
+<param name="format" value=".gif">
+
+The "nimgs" parameter needs to know the number of frames.
+
+There are two replay modes: "CYCLIC" and "PING PONG".
+
+The cyclic mode simply plays the frames starting from the 1st to the
+last one, then restarts from the 1st one again: 1,2,3,4,5,1,2,3,4,5,1,2,3,4..
+
+The ping pong mode plays from 1st to the last, then goes backwards to
+the first image, then reverses the direction of play. In other words: 
+1,2,3,4,5,4,3,2,1,2,3,4,5,4,3,2,1,2,3,4.....
+
+This mode is useful for some kind of movements, like the one in the
+animation example included.
+
+Setting "pingpong" to "YES" enables ping pong mode, setting it to "NO"
+enables cyclic mode.
+
+You can determine the speed of play with "speed" parameter. The value is
+expressed in microseconds. Usually the animation goes slower than the
+parameter to allow for drawing time.
+
+The "pingpause" and "pongpause" parameters are the speed of the first and
+the last frames, and setting one or both of them higher than "speed" 
+parameter will cause a pause. This can be a creative effect; experiment 
+with it.
+
+You can add sounds at the ping (first) and pong (last) frames by using
+"audioping" and "audiopong" parameters. To select a sound, place the name 
+of .au sample with the path. Otherwise enter "NO", this will disable the 
+audio feature.
+
+Note: sounds can be only in Sun's .au format. If your program saves sound
+files only in .voc, .waw, or .iff formats, search for programs like Goldwave
+to convert them.
+
+Remember to save sound files as 8000 Hz mono .au samples.
+
+

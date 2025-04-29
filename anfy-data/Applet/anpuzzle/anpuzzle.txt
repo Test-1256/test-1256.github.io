@@ -1,0 +1,150 @@
+			
+                Anfy Puzzle - Copyright (C) by Fabio Ciucci 2000-2002
+
+This applet is a game where the user has to recompose a picture,
+divided into tiles like a puzzle within a certain time.
+this applet containts code by Tonny espeset used under license.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional background image, one intro image, the puzzle
+images and an optional overlay image, the following 3 ".class" files
+must be uploaded:
+
+anpuzzle.class
+Lware.class
+Tile.class
+
+Plus, anpuzzle.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="anpuzzle.jar" code="anpuzzle.class" width="300" height="200">
+<PARAM NAME="credits" VALUE="Applet by Fabio Ciucci (www.anfyteam.com)">
+<PARAM NAME="regcode" value="no">                   ; Registration code (if you have it)
+<PARAM NAME="reglink" VALUE="no">                   ; Optional URL link when the applet is "clicked".
+<PARAM NAME="regnewframe" VALUE="YES">              ; Reglink opened in new frame ?
+<PARAM NAME="regframename" VALUE="_blank">          ; Name of new frame for reglink
+<PARAM NAME="statusmsg" VALUE="Puzzle applet">      ; Statusbar message
+<PARAM NAME="res" value="1">                        ; resolution (1-8)
+<PARAM NAME="loadingMessage" value="Loading...">    ; Message ti display while loading
+<PARAM NAME="fontSize" value="14">                  ; Size of font for game messages
+<PARAM NAME="fontType" value="Helvetica">           ; Type of font for game messages
+<PARAM NAME="introImage" value="intro.jpg">         ; Name of presentation screen image, or "no"
+<PARAM NAME="bgImage" value="back.jpg">             ; Name of image to use as a background, or "no"
+<PARAM NAME="bgColor" value="000000">               ; Background color, format rrggbb hex
+<PARAM NAME="tilesX" value="4">                     ; How many horizontal tiles
+<PARAM NAME="tilesY" value="4">                     ; How many vertical tiles
+<PARAM NAME="puzzleImage1" value="image1.jpg">      ; Name of image to use for level 1
+<PARAM NAME="puzzleImage2" value="image2.jpg">      ; Name of image to use for level 2
+<PARAM NAME="puzzleImage3" value="image3.jpg">      ; Name of image to use for level 3
+<PARAM NAME="puzzleImage4" value="image4.jpg">      ; Name of image to use for level 4
+<PARAM NAME="puzzleImage5" value="image5.jpg">      ; Name of image to use for level 5
+<PARAM NAME="puzzleImage6" value="image6.jpg">      ; Name of image to use for level 6
+... (puzzleImages could range from 2 to infinite)
+<PARAM NAME="totalSeconds" value="100">             ; Number of seconds to complete the first image
+<PARAM NAME="randomOrder" value="true">             ; Random order of images, true or false
+<param name="shadow" value="true">                  ; Tiles shadow (true or false)
+<param name="xOffset" value="30">                   ; Distance of puzzle from left side, or "center"
+<param name="yOffset" value="30">                   ; Distance of puzzle from top, or "center"
+<PARAM NAME="overimg" value="no">                   ; Optional image over applet
+<PARAM NAME="overimgX" value="10">                  ; Over image X offset
+<PARAM NAME="overimgY" value="150">                 ; Over image Y offset
+<PARAM NAME="memdelay" value="1000">                ; Memory deallocation delay      
+<PARAM NAME="priority" value="3">                   ; Task priority (1..10)
+<PARAM NAME="MinSYNC" value="10">                   ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.           ; Message for no java browsers
+</applet>
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+With the "statusmsg" parameter you can set a message which appear at the
+bottom of the browser window, when you mouse-over the applet.
+Enter any message here.
+
+Applet size is determined by "res": "res=1" shows the graphic at original
+size, "res=2" shows it at double size, etc.
+So, If res=1, remember to place the exact size of image in "width" and
+"height" tags.
+If res=2, place double values, if res=3 place triple values etc. (In fact,
+res is a sort of zoomer).
+
+Using the "introImage" parameter you can set an image to use as presentation
+screen. Otherwise set it to "no".
+Suggested size is the applet size, otherwise image will be centered.
+
+If you want, with the "bgImage" parameter,  you can also choose an image to
+use as a background while playing. Otherwise set it to "no".
+Suggested size is the applet size, otherwise image will be centered.
+
+The "puzzleImageX" parameters contains the name of the images used as levels
+for the game. So, if you want, for example, use three pictures set the
+following parameters: "puzzleImage1", "puzzleImage2", "puzzleImage3".
+You can specify as much images as you want, 2 minimum.
+
+You can also set the number of horizontal and vertical tiles you want to use
+for the puzzled images, with the "tilesX" and "tilesY" parameters, minimum 2.
+
+With the "shadow" parameter you have the possibility to choose a shadow (set
+true or false) for the tiles (false speeds up rendering on slow systems).
+
+Using the "xOffset" and "yOffset" parameters, you can choose the co-ordinates
+where to place the puzzle images.
+Otherwise, specify "center" to center the puzzle automatically.
+	
+You can also choose a background color for the applet using the "bgColor"
+(It accepts an RRGGBB value). It affects also the lines between tiles.
+
+With the "loadingMessage" parameter you can set a loading message while
+the applet is loading the first image.
+
+The "color" parameters is used to set a color for all the drawing operations
+as text, score, etc).
+
+With "fontSize" parameter you can choose the size of the font used to draw
+on the screen the game messages.
+
+With "fontType" parameter you can choose the type of font.
+
+Set the number of seconds, which user has to complete the first image,
+with the "totalSeconds" parameter.
+
+Finally using the "randomOrder" you can choose if the images must be placed
+in random order or as specified order.
+

@@ -1,0 +1,136 @@
+
+          Tunnel 3d - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet can generate a texture-mapped tunnel from any GIF/JPG image, but
+different in looks from another tunnel applet.
+Thanks for M. Kalms for his useful hints.
+
+This applet is fully parametrized, so you can generate various kinds of tunnel
+effects.
+
+*************************************************************************
+
+NECESSARY FILES
+
+Together with the tunnel texture and an optional foreground image, the 
+following 3 ".class" files must be uploaded: 
+
+tunnel3d.class
+Lware.class
+anfy.class
+
+Plus, tunnel3d.jar for speedy loading on recent browsers.
+
+*************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="tunnel3d.jar" code="tunnel3d.class" width="320" height="192">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="reglink" value="NO">         ; Optional URL link when the applet
+                                          is "clicked".
+<param name="regnewframe" value="YES">         ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Tunnel3d applet">  ; Statusbar message
+<param name="image" value="stone.jpg">       ; Tunnel texture image
+<param name="res" value="1">                 ; resolution (1-8)
+<param name="lightmin" value="1">            ; Min. lightsoucing (1-127)
+<param name="lightmax" value="127">          ; Max. lightsoucing (1-127)
+<param name="lightdec" value="18">           ; Light decrementing
+<param name="tunnelradius" value="20">       ; Radius of tunnel
+<param name="shade" value="YES">             ; Shading ("YES" or "NO")
+<param name="lightinv" value="NO">           ; Inverse lightning ("YES" or "NO")
+<param name="squared" value="NO">            ; Square instead of spheric (YES-NO)
+<param name="tunrot" value="1">           	; Tunnel rotation value
+<param name="tunadvance" value="2">       	; Tunnel advancing value
+<param name="xrot" value="30">            	; Observer X rotation
+<param name="yrot" value="30">            	; Observer Y rotation
+<param name="zrot" value="5">                  ; Observer Z rotation
+<param name="interactive" value="YES">       ; Interactive mode ("YES" or "NO")
+<param name="bends" value="YES">               ; Bends ("YES" or "NO")
+<param name="numbends" value="3">              ; Number of bends
+<param name="bendoffset" value="0">            ; Bends offset
+<param name="bendsizemin" value="0">           ; Bends size min.
+<param name="bendsizemax" value="60">          ; Bends size max.
+<param name="bendoffsetinc" value="10">        ; Bends offset increment
+<param name="bendsizeinc" value="2">           ; Bends size increment
+<param name="overimg" value="NO">              ; Optional image over applet
+<param name="overimgX" value="0">              ; Over image X offset
+<param name="overimgY" value="0">              ; Over image Y offset
+<param name="memdelay" value="1000">           ; Memory deallocation delay
+<param name="priority" value="3">              ; Task priority (1..10)
+<param name="MinSYNC" value="10">              ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.    ; Message for no java browsers.
+</applet>                                    ; End of applet tag
+
+*****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credits parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The applet can be of any size. If res=1, remember to place the exact
+size of the image in "width" and "height" tags. If res=2, place doubled 
+values, if res=3 place triple values etc.
+(In fact, res is a sort of zoomer).
+
+The image used as the texture can be of any size, but the preferred size is
+256*256. Try to use GIF or JPG images with a size close to 256*256.
+
+The "tunnelradius" determines the size of the tunnel.
+
+You can change the lightning/shading of the tunnel with "lightmin", "lightmax",
+and "lightdec" parameters.
+
+Yes can disable/enable shading with the "shade" parameter, and invert the
+shading with "lightinv".
+
+You can enable a "square" mode, replacing the cylindrical one, with the
+parameter "squared".
+
+The movement of the tunnel is determined by "tunrot" and "tunadvance"; whereas
+the movement of the observer is determined by "xrot","yrot","zrot".
+
+You can enable interactive mode with "interactive" parameter: if set to
+"yes", users will be able to control the tunnel movements with a mouse pointer.
+
+You can enable the tunnel morphing function by setting the "bends" parameter to
+"yes". 
+
+You can control the bends with "bendoffset", "bendsizemin", "bendsizemax",
+"bendoffsetinc", and "bendsizeinc".
+
+

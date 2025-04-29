@@ -1,0 +1,102 @@
+
+          Anfy WormHole - Copyright (C) by Fabio Ciucci 1996-2002
+
+
+This applet can generate and animate in realtime a wormhole effect, or a
+dot-tunnel as it is also known. This applet is fully parametrized, so you 
+can change many things to adapt the effect to your pages and purposes.
+
+****************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional overlay image, the following 3 ".class" files 
+must be uploaded: 
+
+wormhole.class
+Lware.class
+anfy.class.
+
+Plus, wormhole.jar for speedy loading on recent browsers.
+
+****************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="wormhole.jar" code="wormhole.class" width="170" height="170">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="statusmsg" value="Wormhole applet"> ; Statusbar message
+<param name="dotden" value="10">           ; Dot Density (1-23)
+<param name="backR" value="0">             ; RED comp. of backg. colour (0-255)
+<param name="backG" value="0">             ; GREEN comp. of backg. colour (0-255)
+<param name="backB" value="60">            ; BLUE comp. of backg. colour (0-255)
+<param name="xspeed" value="3">            ; X scrolling speed (0-20)
+<param name="yspeed" value="4">            ; Y scrolling speed (0-20)
+<param name="negative" value="YES">        ; Image=negative (YES or NO)
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters, please read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from 
+the author. If the code is correct and the applet is run from the registered 
+domain name, you can use "link" parameters to link to a URL when the applet 
+is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can set a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on 
+latest browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by the width and height tags.
+
+The "dotden" parameter determines the density of dots: A value of
+1=full circles, then increasing the division of circles up to a value of 23.
+
+You can change the background colour for the best results on your web page.
+The RGB values are the same as HTML tags, but in decimal values without the
+"#" symbol.
+
+The "xspeed" and "yspeed" parameters control the speed of X and Y scrolling.
+
+If you want the effect to appear in black with a lighter background, simply 
+set "negative" as "NO" and change back R/G/B to 255,255,255 or similar. With 
+a value of "YES", the effect is painted in white under your desired background 
+(this time it must be darker to have enough contrast).
+
+

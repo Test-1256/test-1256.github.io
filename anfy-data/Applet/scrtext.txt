@@ -1,0 +1,145 @@
+
+Optional Scrolltext parameters:
+
+
+You can optionally activate a scrolltext that will scroll over an applet.
+If you don't need the scrolltext, deactivate this feature by placing "NO" 
+in the "textscroll" parameter.
+
+If you want textscrolling, write a text you want scrolled in an ASCII text 
+file. Only one line of a text is supported in "horizontal" mode, but it can 
+be as long as you want.
+
+In "vertical" mode, be sure not to exceed the width of the applet with the 
+single lines of text. 
+
+Remember to upload the text file to your site if you activate the scrolltext;
+otherwise you will get a message like "<HTML>404 not found"!
+
+If activated, here are the available parameters:
+
+
+<param name="textscroll" value="myscr.txt"> ; File for scrolltext or "NO"
+<param name="texttype" value="horizontal">  ; Tetxscroll mode
+<param name="textvspace" value="0">         ; Vertical spacing in "vertical"
+<param name="textminfont" value="8">        ; Min fontsize in "zooming"
+<param name="textmaxfont" value="172">      ; Max fontsize in "zooming"
+<param name="textoffset" value="140">       ; Txtscroll y offset in "horizontal"
+<param name="textspeed" value="1">          ; Txtscroll speed
+<param name="textfont" value="Helvetica">   ; Txtscroll font name
+<param name="textbold" value="NO">          ; Txtscroll bold ("YES" or "NO")
+<param name="textitalic" value="NO">        ; Txtscroll italic ("YES" or "NO")
+<param name="textsize" value="24">          ; Txtscroll font size
+<param name="textshadow" value="YES">       ; Txtscroll shadow ("YES" or "NO")
+<param name="TextColR" value="200">         ; Txtscroll colour (red component)
+<param name="TextColG" value="255">         ; Txtscroll colour (green component)
+<param name="TextColB" value="190">         ; Txtscroll colour (blue component)
+<param name="TextSColR" value="20">         ; Txtscroll shadow col. (red c.)
+<param name="TextSColG" value="20">         ; Txtscroll shadow col. (green c.)
+<param name="TextSColB" value="50">         ; Txtscroll shadow col. (blue c.)
+<param name="TextJumpAmp" value="0">        ; Txtscroll jump amplitude
+<param name="TextJumpSpd" value="0">        ; Txtscroll jump speed
+<param name="TextSineAmp" value="0">        ; Txtscroll sineshape amplitude
+<param name="TextSineSpd" value="0">        ; Txtscroll sineshape movement
+<param name="TextSineAngle" value="0">      ; Txtscroll sineangle / pixel
+
+*****************************************************************************
+
+Detailed instructions:
+
+                    PART 1: TEXTTYPE PARAMETERS
+
+The "texttype" parameter determines the scrolltext mode.
+There are 4 modes:
+
+"horizontal" -> This scroller is a horizontal line sliding right to left.
+
+"vertical" -> This scroller is made by lines that scroll upward,
+              like the final credits on movies.
+
+"zooming" -> Text zooms in the center from far away to very close.
+
+"invzooming" -> Text zooms in the center from very close to far away.
+
+
+ - TEXTTYPE = VERTICAL
+
+If texttype="vertical", you can determine the vertical spacing between
+lines with the "textvspace" parameter.
+
+
+ - TEXTTYPE = ZOOMING or INVZOOMING
+
+If texttype="zooming" or "invzooming", you can determine both the maximum
+and minimum text font size with "textminfont" and "textmaxfont" parameters.
+
+
+ - TEXTTYPE = HORIZONTAL
+
+If texttype="horizontal", with "textoffset" you can choose the Y offset
+from the top. Placing it at 0, the scroll will be placed on the top, and
+placing a value near the height of the applet will scroll the text at the 
+bottom.
+
+Optionally, you can activate the text jumping function, or the text sine
+function, but you can't activate both effects simultaneously. You have to 
+choose between jumping or sine curve for the best effect on your page.
+
+If "TextJumpAmp" is set to "0", no jumping will be shown. Increasing the 
+value will result in text jumping: more amplitute, or say, more high jumps.
+With the "TextJumpSpd" parameter you can select the jumping speed.
+
+The alternative function is to activate the sine scroll function.
+If "TextSineAmp" is set to 0, no sine distortion will be generated.
+Increasing the value will result in a text waving effect. The higher the 
+amplitude, the more waving.
+
+With the "TextSineSpd" parameter you can select the speed of the wave.
+With the "TextSineAngle" parameter you set how many degrees in a sinewave
+the text will be deformed for each pixel. A higher value gives more
+distortion.
+
+
+                    PART 2: COMMON PARAMETERS
+
+
+The "textspeed" parameter determines the scrolling speed.
+
+With "textfont" you choose a font of the text. Don't choose a strange or 
+non-standard font which is not common to all systems.
+
+The usable fonts are "Courier", "Dialog", "Helvetica" and "TimesRoman".
+If the required font is not present, the most "near" will be used.
+
+Setting "textbold" to "YES"  will enlarge the font a bit. Set it to "NO" 
+for normal contours. With "textspeed" parameter you decide the scrolling 
+speed.
+
+Setting "textitalic" to "YES" will apply italic style to the font.
+Set to "NO" to disable this feature.
+
+With "textsize" you can change the size of text font.
+The most common sizes are: 8,9,10,11,12,14,16,18,20,22,24,26,28,36,48,72.
+Intermediate values will be scaled to the nearest available size.
+
+Setting "textshadow" to "YES" will add shadow to the textscroll.
+Otherwise, setting it to "NO" will make shadow "projected".
+
+You can choose the colour of text with:
+
+TextColR = Red component of colour (0-255)
+TextColG = Green component of colour (0-255)
+TextColB = Blue component of colour (0-255)
+
+For example, 0,0,0 is black, 255,255,255 is white, 255,0,0 is red,
+255,255,0 is yellow, 128,128,128 is grey.
+You can compose any colour you want. Try manually experimenting,
+or use any paint program's colour selector to find the Red Green Blue
+components of your desired colour.
+
+With "TextSColR", "TextSColG", "TextSColB", you can select the colour 
+for the text shadow.
+
+NOTE: If you want to display special characters, such as Japanese,
+Chinese or Korean, this will work only from versions 4 of Netscape and
+Explorer, not on releases 3 and older.

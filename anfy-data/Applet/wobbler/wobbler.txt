@@ -1,0 +1,234 @@
+
+
+          Anfy Wobbler - Copyright (C) by Fabio Ciucci 1998-2002
+
+
+This applet can wobble any GIF or JPG image of any size.
+
+It is based on original code by Jetro Lauha, which is used under a licence.
+
+Due to particular optimisations, the applet size must be a multiple of 8,
+in both width and height.
+
+Regarding image size, any size is allowed, but there are particular sizes:
+32x32 , 64x64, 128x128 or 256x256 which are the best ones, because applet will
+run a lot faster. We strongly suggest to load an image with one of the sizes
+listed.
+
+****************************************************************************
+
+NECESSARY FILES.
+
+The following 3 ".class" files must be uploaded: 
+
+wobbler.class
+Lware.class
+anfy.class.
+
+Plus, wobbler.jar for speedy loading on recent browsers.
+
+***************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="wobbler.jar" code="wobbler.class" width="200" height="200">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">         ; Reglink opened in new frame?
+<param name="regframename" value="_blank">     ; Name of new frame for reglink
+<param name="statusmsg" value="Rotator applet"> ; Statusbar message
+<param name="image" value="dossi.jpg">         ; Image to load
+<param name="res" value="1">                   ; resolution (1-8)
+<param name="initialdistance" value="3.0">     ; Initial distance (0.01 .. 500)
+<param name="zoomspeed" value="0.1">           ; Zoom speed (0.0 .. 50.0)
+<param name="mindistance" value="5.0">         ; Min Distance (0.01 .. 500)
+<param name="maxdistance" value="20.0">        ; Max Distance (0.01 .. 500)
+<param name="radius" value="400.0">            ; Radius in pixels
+<param name="wavestrength" value="8.0">        ; Wave Strength
+<param name="spd1" value="40.0">               ; Speed 1
+<param name="spd2" value="30.0">               ; Speed 2
+<param name="spd3" value="50.0">               ; Speed 3
+<param name="spd4" value="40.0">               ; Speed 4
+<param name="xmove" value="200">               ; X speed (0 .. 1000)
+<param name="ymove" value="200">               ; Y speed (0 .. 1000)
+<param name="variationstart" value="0">        ; Starting sine variation
+<param name="variationmove" value="10">        ; Variation speed (0 .. 1000)
+<param name="precision" value="high">          ; Precision ("high" or "low")
+<param name="overimg" value="NO">              ; Optional image over applet
+<param name="overimgX" value="0">              ; Over image X offset
+<param name="overimgY" value="0">              ; Over image Y offset
+<param name="memdelay" value="1000">         ; Memory deallocation delay
+<param name="priority" value="3">            ; Task priority (1..10)
+<param name="MinSYNC" value="10">            ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Message for no java browsers.
+</applet>                                  ; End of applet tag
+
+******************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters, please read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased from 
+the author. If the code is correct and the applet is run from the registered 
+domain name, you can use "link" parameters to link to a URL when the applet 
+is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest 
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The GIF or JPEG image can be of any size, but we strongly suggest these:
+32x32 , 64x64, 128x128 or 256x256, because applet will run a lot faster.
+
+The size of the applet is determined by the width and height tags, and can be
+different from the size of the image. Just remember to choose a multiple of 8 
+for both width and height values, or applet will have problems and black borders.
+
+The "res" parameter determines the resolution: with res=1 pixels are small,
+but effect is slow. With res=8 pixels are too big but the effect is faster.
+Optimum choices are 1-3.
+
+To configure the wobbler in order to display different effects, you have
+to change the many parameters it has, but unfortunately there is not a way
+to explain how all behave, because of the non-linear math behind this applet
+and the unpredictable results.
+
+The best option is to experiment yourself, starting from some of the examples
+provided:
+
+*********************************************************************************
+
+SAMPLE VALUES.
+
+The default wobbler:
+
+ initialdistance = 3.0
+ zoomspeed =       0.1
+ mindistance =     5.0
+ maxdistance =    20.0
+ radius =        400.0
+ wavestrength =    8.0
+ spd1 =           40.0
+ spd2 =           30.0
+ spd3 =           50.0
+ spd4 =           40.0
+ xmove =         200
+ ymove =         200
+ variationstart =  0
+ variationmove =  10
+
+
+Concentric waves (water like):
+
+ initialdistance = 5.0
+ zoomspeed =       0.0
+ mindistance =     5.0
+ maxdistance =     5.0
+ radius =        400.0
+ wavestrength =  102.0
+ spd1 =          120.0
+ spd2 =          140.0
+ spd3 =            0.4
+ spd4 =           10.0
+ xmove =           0
+ ymove =           0
+ variationstart =  0
+ variationmove = 200
+
+
+Something like a star:
+
+ initialdistance = 80.0
+ zoomspeed =        0.0
+ mindistance =     80.0
+ maxdistance =     80.0
+ radius =          40.0
+ wavestrength =     0.0
+ spd1 =            10.0
+ spd2 =        100000.0
+ spd3 =            10.0
+ spd4 =            10.0
+ xmove =          200
+ ymove =          200
+ variationstart =   0
+ variationmove =  100
+
+
+Mapping over a sphere:
+
+ initialdistance = 12.0
+ zoomspeed =        0.0
+ mindistance =     12.0
+ maxdistance =     12.0
+ radius =         220.0
+ wavestrength =     0.0
+ spd1 =          1000.0
+ spd2 =          1000.0
+ spd3 =            10.0
+ spd4 =            10.0
+ xmove =          200
+ ymove =          200
+ variationstart =   0
+ variationmove =   30
+
+
+A breathing surface:
+
+ initialdistance = 10.0
+ zoomspeed =        0.3
+ mindistance =      2.0
+ maxdistance =     20.0
+ radius =         380.0
+ wavestrength =     0.0
+ spd1 =            10.0
+ spd2 =            10.0
+ spd3 =            10.0
+ spd4 =            10.0
+ xmove =            0
+ ymove =          200
+ variationstart =   0
+ variationmove =   10
+
+
+Metallic reflection:
+
+ initialdistance = 6.0
+ zoomspeed =       0.4
+ mindistance =     2.0
+ maxdistance =    22.0
+ radius =       4000.0
+ wavestrength =   16.0
+ spd1 =            5.8
+ spd2 =           20.0
+ spd3 =            1.4
+ spd4 =          100.0
+ xmove =         140
+ ymove =         140
+ variationstart =  0
+ variationmove =  10
+
+

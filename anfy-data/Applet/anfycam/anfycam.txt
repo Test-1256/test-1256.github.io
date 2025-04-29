@@ -1,0 +1,199 @@
+
+          Anfy Cam - Copyright (C) by Fabio Ciucci 1999-2002
+
+
+INTRODUCTIONS.
+
+This applet reloads an image from a given URL location every a specified
+number of seconds. In other words, it can display the frames generated
+by a webcam. Well, what is a webcam? For those who are not familiar
+with this technology, I will give you a brief description.
+
+Webcam is a set of software and a camera, which broadcast any sequences
+to the web in realtime. Some of the most popular webcam software may be
+found here:
+
+http://www.surveyor.com/index_webcam32.html
+http://www.easysnap.com/
+
+These software with cameras automatically take pictures in jpeg format
+and ftp them to your desired site.
+Since, the software snaps pictures continuously, your cameras can be
+virtually "live". 
+
+Usually, the timing of reloading the image file, which your webcam software
+ftp to your site, is determined by the <meta> tag.
+
+For instance, <META HTTP-EQUIV="refresh CONTENT=10"> orders your browser
+to reload the page every 10 seconds. This is simple, but effective.
+
+So, what AnfyCam does?
+
+AnfyCam works as an enhanced <META> tag in above use. It can not only load
+images in selected timing, but apply cross-fade effect, handles zooming
+and even allows you to set an overlay transparent gif image over the Cam
+image.
+
+Note: 
+
+The anfycam applet must be loaded from the same machine where the 
+target image is loaded; otherwise it will not work due to Java(tm) security
+restrictions.
+
+*****************************************************************
+
+NECESSARY FILES
+
+The following 3 ".class" files must be uploaded to the site: 
+
+anfycam.class 
+Lware.class
+anfy.class
+
+Plus, for speedy loading on recent browsers, you may want to upload:
+
+anfycam.jar 
+
+NOTE:
+
+You must always upload .class files, even if you choose to use .jar file.
+Otherwise, visitors who use old browsers can't see the applet.
+
+**********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="anfycam.jar" code="anfycam.class" width="260" height="243">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; URL link(optional) when clicked
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+<param name="res" value="1">               ; resolution (1-8)
+<param name="interval" value="25">         ; Delay between frames reload
+<param name="url" value="mycam.jpg">         ; WebCam image location
+<param name="statusmsg" value="Cam applet">  ; Statusbar message
+<param name="fadespeed" value="8">         ; speed of fade (1 - 255)
+<param name="progressivefade" value="YES"> ; Progresive fading ("YES" or "NO")
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java ; Msg in no java browsers
+</applet>
+
+
+****************************************************************
+
+PARAMETER DESCRIPTIONS
+
+The following instructions describe the meaning of the available 
+parameters for this applet:
+
+[Specify the applet and its size]
+
+<applet archive="anfycam.jar" code="anfycam.class" width=260 height=243>
+
+Here, you specify the applet name and its width and height in pixels.
+
+[Credit parameter]
+
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+
+Attempting to change the credit parameter will disable the applet.
+
+[Registration parameters]
+
+<param name="regcode" value="NO">         ; Registration code 
+
+To activate the reg parameters, read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from us. If the code is correct and the applet is run from the registered
+ domain name, "link" parameters will be enabled and the applet will be
+linked to an associated URL when it mouse-clicked.
+
+<param name="reglink" value="NO">          ; URL link(optional) when clicked
+<param name="regnewframe" value="YES">     ; Reglink opened in new frame?
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+<param name="regframename" value="_blank"> ; Name of new frame for reglink
+
+You can also set a custom frame name, such as "myframe1".
+
+[Resolution]
+
+<param name="res" value="1">               ; resolution (1-8)
+
+Resolution parameter decides how bigger the actual image is displayed.  
+ 
+For example, the value 3 gives three times as big image size as the actual image
+has. So, it works as a zooming parameter. Do not set too high value, unless you
+love terrible picture! 
+
+[WebCam image settings]
+
+<param name="url" value="mycam.jpg">         ; WebCam image location
+
+Here, you set the image url for WebCam. The path can be either absolute or
+relative.
+
+NOTE:
+
+You must place the anfycam.class at the directory where WebCam image reside.
+
+<param name="interval" value="25">         ; Delay between frames reload
+
+Next, set the timing between frames in seconds.
+Please note, if you place values less than 1 second pause, for
+example 0.1, 0.2 etc., it will work, but applet will not display
+frames so fast if the internet connection is not fast enough.
+
+<param name="fadespeed" value="8">         ; speed of fade (1-255)
+
+This parameter determines the image fade speed. The actual speed is given 
+by 256/(the number entered in this field). We recommend a value 8, which 
+gives 32 frames per second.
+Entering a value of 255 will disable the fading.
+
+<param name="progressivefade" value="YES"> ; Progresive fading ("YES" or "NO")
+
+You can optionally set progressive fade mode. This will fade the image pixels
+not at same time, but with some steps.
+
+<param name="statusmsg" value="Cam applet">  ; Statusbar message
+
+A status message is a message which appear at the bottom of a browser window,
+when you mouse-over the applet. Enter any message here.
+
+Note: 
+
+this message is followed by the interval countdown for next frame.
+
+[Overlay image]
+
+<param name="overimg" value="NO">           ; Optional image over applet
+<param name="overimgX" value="0">           ; Over image X offset
+<param name="overimgY" value="0">           ; Over image Y offset
+
+
+With the "overimg" parameter you can specify the name of an image that will
+be shown over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can position the image over the applet area.
+

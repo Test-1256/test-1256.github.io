@@ -1,0 +1,95 @@
+
+          Text Scroller - Copyright (C) by Fabio Ciucci 1998-2002
+
+
+This is simply the scrolltext routine present in most of the applets, without
+any effect in the background.
+
+In fact, the only parameters are background colour, and an optional background
+image.
+
+*******************************************************************************
+
+NECESSARY FILES
+
+As well as an optional background image, the following 2 ".class" files 
+must be uploaded: 
+
+txtscroll.class
+Lware.class
+
+Plus, txtscroll.jar for speedy loading on recent browsers.
+
+******************************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+
+<applet archive="txtscroll.jar" code=txtscroll.class width="250" height="50">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet
+                                           is "clicked".
+<param name="regnewframe" value="YES">          ; Reglink opened in new frame?
+<param name="regframename" value="_blank">      ; Name of new frame for reglink
+<param name="statusmsg" value="TxtScroll applet">  ; Statusbar message
+<param name="backimage" value="NO">        ; Background image (it's name or "NO")
+<param name="backR" value="0">             ; Background colour (red component)
+<param name="backG" value="0">             ; Background colour (green component)
+<param name="backB" value="0">             ; Background colour (blue component)
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+*****************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased 
+from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is mouse-clicked.
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be animated only on latest
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The size of the applet is determined by "width" and "height" tags.
+
+Use "backR", "backG", "backB" to change background colour.
+
+If you want to display an image in the background, place its name in the
+place of "NO" at backimage parameter (for example "back.jpg").
+
+The only requirement is that the background image must be the same size as
+the applet to completely cover it.
+
+For scrolltext parameters, refer to general scrolltext instructions.
+

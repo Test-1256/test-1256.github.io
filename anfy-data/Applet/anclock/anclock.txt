@@ -1,0 +1,257 @@
+
+              AnfyClock - Copyright (C) Anfy Team 2001-2002
+
+This applet shows a clock on the applet area. The user can choose from three
+display modes: 2d, 3d and "old" style clock.
+
+************************************************************************
+
+NECESSARY FILES.
+
+Apart from an optional background image, an optional overlay image,
+the following 2 ".class" files must be uploaded: 
+
+anclock.class
+Lware.class
+
+Plus, anclock.jar for speedy loading on recent browsers.
+
+*********************************************************************
+
+EXAMPLE.
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<APPLET ARCHIVE="anclock.jar" CODE="anclock.class" WIDTH="200" HEIGHT="200">	; Name, Width, Height.
+    <PARAM NAME="credits" VALUE=Applet by Anfy Team (www.anfyteam.com)">	; Credits line.
+    <PARAM NAME="regcode" VALUE="no">			; Registration code (if you have it).
+    <PARAM NAME="reglink" VALUE="no">			; Optional URL link when the applet is "clicked".
+    <PARAM NAME="regnewframe" VALUE="yes">		; Reglink opened in new frame ?
+    <PARAM NAME="regframename" VALUE="_blank">		; Name of new frame for reglink.
+    <PARAM NAME="statusmsg" VALUE="Go to AnfyTeam">	; Statusbar message.
+
+    <PARAM NAME="mode" VALUE="3d">		; Clock mode ("3d","2d","old")
+    <PARAM NAME="backimg" VALUE="friedrich.jpg"> ; Background image name (or "no")
+    <PARAM NAME="startx" VALUE="100">		; Horizontal position for the clock
+    <PARAM NAME="starty" VALUE="70">		; Vertical position for the clock
+    <PARAM NAME="centerx" VALUE="no">		; Horizontally centered (yes/no)
+    <PARAM NAME="centery" VALUE="no">		; Vertically centered (yes/no)
+    <PARAM NAME="fgcolor" VALUE="ff2200">	; Foreground color (clock color)
+    <PARAM NAME="bgcolor" VALUE="001166">	; Background color
+
+    <PARAM NAME="shadow" VALUE="no">		; Shadow ("yes","no") for 2d and old clocks
+    <PARAM NAME="shadowcolor" VALUE="bbbbbb">	; Shadow color for 2d and old clocks
+
+    <PARAM NAME="modepm" VALUE="12">		; 12h (am and pm) or 24h mode ("12","24") for 2d and 3d clocks
+
+    <PARAM NAME="vd" VALUE="16000">		; Virtual distance between the screen and the 3d clock.
+    <PARAM NAME="pixd" VALUE="40">		; The distance between pixels of the 3d clock. 
+    <PARAM NAME="pixangle" VALUE="6">		; Angle between pixels of the 3d clock.
+    <PARAM NAME="radius" VALUE="32">		; Radius of circle for the 3d clock.
+    <PARAM NAME="rotx" VALUE="0">		; The speed of rotation around the x-axis for the 3d clock.
+    <PARAM NAME="roty" VALUE="-3">		; The speed of rotation around the y-axis for the 3d clock.
+    <PARAM NAME="rotz" VALUE="0">		; The speed of rotation around the z-axis for the 3d clock.
+    <PARAM NAME="srotx" VALUE="0">		; The initial angle of rotation around the x-axis for the 3d clock.
+    <PARAM NAME="sroty" VALUE="0">		; The initial angle of rotation around the y-axis for the 3d clock.
+    <PARAM NAME="srotz" VALUE="0">		; The initial angle of rotation around the z-axis for the 3d clock.
+    <PARAM NAME="stopmouse" VALUE="yes">	; Stop the animation on applet click (yes, no) on clock 3d.
+
+    <PARAM NAME="c2d_font" VALUE="Dialog">      ; Clock2d font name
+    <PARAM NAME="c2d_fontstyle" VALUE="plain">  ; Clock2d font style ("plain", "bold", "italic", "bolditalic")
+    <PARAM NAME="c2d_fontsize" VALUE="18">      ; Clock2d font size
+    <PARAM NAME="c2d_day" VALUE="yes">          ; Clock2d day number display ("yes","no")
+    <PARAM NAME="c2d_dayname" VALUE="yes">      ; Clock2d day name display ("yes","no")
+    <PARAM NAME="c2d_month" VALUE="name">       ; Clock2d month display ("no","number","name")
+    <PARAM NAME="c2d_year" VALUE="4digit">      ; Clock2d year display ("no","4digit","2digit")
+    <PARAM NAME="c2d_hour" VALUE="yes">         ; Clock2d hour display (yes/no)
+    <PARAM NAME="c2d_minutes" VALUE="yes">      ; Clock2d minutes display (yes/no)
+    <PARAM NAME="c2d_seconds" VALUE="yes">      ; Clock2d seconds display (yes/no)
+    <PARAM NAME="c2d_order1" VALUE="monthday">  ; Clock2d order 1 display ("daymonth","monthday")
+    <PARAM NAME="c2d_order2" VALUE="datehour">  ; Clock2d order 2 display ("datehour","hourdate")
+    <PARAM NAME="c2d_hourseparator" VALUE=":">  ; Clock2d Separator string between time digits
+    <PARAM NAME="c2d_months" VALUE="January,February,March,April,May,June,July,August,September,October,November,December">
+    <PARAM NAME="c2d_days" VALUE="Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday">
+    <PARAM NAME="c2d_ampm" VALUE="AM,PM">
+
+    <PARAM NAME="oldc_ticks" VALUE="yes">       ; Old clock ticks display (yes/no)
+    <PARAM NAME="oldc_radius" VALUE="70">       ; Old clock radius size
+
+    <PARAM NAME="memdelay" value="1000">		; Memory deallocation delay.
+    <PARAM NAME="priority" value="3">			; Task priority (1..10).
+    <PARAM NAME="MinSYNC" value="10">			; Min. milliseconds/frame for sync.
+    Sorry, your browser doesn't support Java.		; Message for no java browsers.
+  </APPLET> 
+
+
+*********************************************************************
+
+PARAMETER DESCRIPTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you
+purchased from the author. If the code is correct and the applet is run from
+the registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+NOTE: Animated GIF images are supported, but will be displayed as animated
+only on latest browsers (Netscape 4 and Explorer 4 or newer).
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+With the "statusmsg" parameter you can set a message which appear at the bottom
+of the browser window, when you mouse-over the applet. Enter any message here.
+
+With the "mode" parameter you choose the display mode for the clock.
+You can choose one of these:
+
+"3d" : display a 3d clock
+"2d" : display a 2d clock
+"old": display an old style clock
+
+There are common parameters to the 3 modes: "backimg", "startx", "starty",
+"centerx", "centery", "fgcolor" and "bgcolor".
+
+With the "backimg" parameter you can specify an image to display as background,
+otherwise set it to "NO".
+
+To center the clock horizontally set "centerx" to "yes".
+To center the clock vertically set "centery" to "yes".
+Otherwise set one or both to "no" to enable manual positioning via
+"startx" and/or "starty" parameters".
+
+With "startx" and "starty" parameters you decide the exact position for the
+clock on the applet area, in the case you have set "centerx" and/or "centery"
+to "no".
+If one of both the "ceterx" and "centery" parameters are set to "yes", the
+"startx" and/or "starty" parameter(s) are ignored.
+
+With "fgcolor" you choose a color for the clock, in RRGGBB format.
+
+If you don't use a background image, be sure to set a color for the
+background with the "bgcolor" parameter.
+NOTE: In the "3d" mode, bgcolor is also used for the "far" clock parts
+color. It can simulate fog or darkness.
+
+There is a common parameter to 2d and 3d modes:
+
+Set to "yes" or "no" the "modepm" parameter to switch from 12 to 24 hours
+modality.
+
+
+****************
+*   3D CLOCK
+****************
+
+The "3d" clock intruduce these parameters: "vd", "pixd", "pixangle",
+"radius", "rotx", "roty", "rotz", "srotx", "sroty", "srotz" and "stopmouse".
+
+The "vd" parameter is used to set the virtual distance between the screen
+and the 3d clock.
+
+The "pixd" parameter is used to set the distance between the pixels of the
+3d clock.
+
+Instead, the "pixangle" parameter set the angle between the pixels of the
+3d clock.
+
+Use the "radius" parameter to set the radius of the circle for the 3d clock.
+
+With the "rotx", "roty" and "rotz" parameters you can choose the speed
+rotation around the x,y and z axis.
+
+If you want, you can also set the start angle of rotation around the
+x,y and z axis using the "srotx", "sroty" and "srotz" parameters.
+
+A "stopmouse" parameter is present to stop/start the animation when the
+user click with the mouse on the applet area (the accepted values are "yes"
+or "no"). 
+
+
+****************
+*   2D CLOCK
+****************
+
+With the "2d" clock you can use these additional parameters:
+"shadow", "shadowcolor", "c2d_font", "c2d_fontstyle", "c2d_fontsize",
+"c2d_days", "c2d_months", "c2d_ampm", "c2d_day", "c2d_dayname", "c2d_month",
+"c2d_year", "c2d_hour", "c2d_minutes", "c2d_seconds", "c2d_order1",
+"c2d_order2", "c2d_hourseparator".
+
+With the "shadow" parameter you can enable shadow (set it to "yes" or "no").
+If you choose "yes", you have also to set the color using the "shadowcolor"
+parameter (use a RRGGBB format).
+
+You can also choose a font, for the text displayed, with the "c2d_font",
+"c2d_fontstyle" and "c2d_fontsize" parameters.
+
+With the "c2d_font" parameter, you can set the name of the font you want to
+use (values: Helvetica, TimesRoman, Courier, Dialog).
+
+Use the "c2d_fontstyle" to set a style for the font you want to display.
+The valid values are: "plain", "bold", "italic" and "bolditalic".
+
+The size for the font is set with the "c2d_fontsize" parameter.
+
+You can translate the days and months names into other languages just
+writing the list separated by "," in "c2d_days" and "c2d_months" parameters.
+Also, there's a "c2d_ampm" to define the strings for AM (anti meridian)
+and PM (post meridian) if required.
+
+Then, you have to decide how display the dame and/or time, here's
+the list of parameters to use:
+
+"c2d_day" Display day number (yes/no)
+
+"c2d_dayname" Display day name too before day number (yes/no)
+
+"c2d_month" Display month ("no","number","name") use "number" to display
+the month number, or "name" ti display month name according to "c2d_months".
+
+"c2d_year" Display year ("no","4 digit","2 digit")
+
+"c2d_hour" Display hour number (yes/no)
+
+"c2d_minutes" Display minutes (yes/no)
+
+"c2d_seconds" Display seconds (yes/no)
+
+"c2d_order1" Display order 1 ("daymonth","monthday")
+
+"c2d_order2" Display order 2 ("datehour","hourdate")
+
+"c2d_hourseparator" Separator string between time digits (suggested ":")
+
+
+****************
+*   OLD CLOCK
+****************
+
+With the "old" style clock you can use these additional parameters: "shadow",
+"shadowcolor", "oldc_radius", "oldc_ticks"
+
+With the "shadow" parameter you can enable shadow (set it to "yes" or "no").
+If you choose "yes", you have also to set the color using the "shadowcolor"
+parameter (use a RRGGBB format).
+
+The radius of the old style clock is set with the "oldc_radius" parameter.
+
+With the "oldc_ticks" parameters, you can choose if display or not the ticks
+of the clock ("yes" or "no").
+
+

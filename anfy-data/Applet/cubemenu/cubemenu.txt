@@ -1,0 +1,183 @@
+
+          Cube Menu - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet is a modified version of TmapCube that can work as a selector
+menu, where each face of a cube is a selectable link. This applet is fully
+parametrized, so you can change the size and movements of the cube.
+
+This feature works only when you register the applet and receive a unique
+code.
+
+******************************************************************
+
+NECESSARY FILES.
+
+As well as image files for the faces and optional background and/or 
+foreground images, the following 3 ".class" files must be uploaded: 
+
+CubeMenu.class
+Lware.class
+anfy.class
+
+Plus, CubeMenu.jar for speedy loading on recent browsers.
+
+*******************************************************************
+
+EXAMPLE
+
+Insert the <applet> tag in your html document as follows to add this applet
+to your page (Comments after the ";" symbol are code explanations and
+acceptable min/max values. They are not part of the applet language):
+
+<applet archive="CubeMenu.jar" code="CubeMenu.class" width="180" height="180">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">         ; Registration code (if you have it)
+<param name="regnewframe" value="YES">    ; Reglink opened in new frame?
+<param name="regframename" value="_blank">; Name of new frame for reglink
+<param name="res" value="1">              ; Resolution (1 .. 8)
+<param name="image1" value="face1.gif">   ; Image 1 to load
+<param name="image2" value="face1.jpg">   ; Image 2 to load
+<param name="image3" value="face2.gif">   ; Image 3 to load
+<param name="image4" value="face2.jpg">   ; Image 4 to load
+<param name="image5" value="face3.jpg">   ; Image 5 to load
+<param name="image6" value="face3.jpg">   ; Image 6 to load
+<param name="link1" value="http://www.yahoo.com">    ; Link for face 1
+<param name="link2" value="http://www.yahoo.com">    ; Link for face 2
+<param name="link3" value="http://www.eff.org">      ; Link for face 3
+<param name="link4" value="http://www.eff.org">      ; Link for face 4
+<param name="link5" value="http://www.anfyteam.com"> ; Link for face 5
+<param name="link6" value="http://www.anfyteam.com"> ; Link for face 6
+<param name="statusmsg1" value="site 1">     ; Statusbar message for face 1
+<param name="statusmsg2" value="site 1">     ; Statusbar message for face 2
+<param name="statusmsg3" value="site 2">     ; Statusbar message for face 3
+<param name="statusmsg4" value="site 2">     ; Statusbar message for face 4
+<param name="statusmsg5" value="site 3">     ; Statusbar message for face 5
+<param name="statusmsg6" value="site 3">     ; Statusbar message for face 6
+<param name="rotx" value="4">                ; X Rotation speed
+<param name="roty" value="6">                ; Y Rotation speed
+<param name="rotz" value="8">                ; Z Rotation speed
+<param name="backimage" value="NO">          ; Optional background image
+<param name="backr" value="64">              ; Red in background (0 .. 255)
+<param name="backg" value="96">              ; Green in background (0 .. 255)
+<param name="backb" value="160">             ; Blue in background (0 .. 255)
+<param name="clearback" value="YES">       ; Clear the background ("YES" - "NO")
+<param name="floatmode" value="NO">       ; Float mode ("YES" or "NO")
+<param name="floatw" value="200">         ; Float window width
+<param name="floath" value="280">         ; Float window height
+<param name="floatx" value="100">         ; Float window x position start
+<param name="floaty" value="100">         ; Float window y position start
+<param name="floatitle" value="Cube Menu"> ; Float window title
+<param name="floatinfront" value="NO">    ; Float win. always on top (YES,NO)
+<param name="overimg" value="NO">          ; Optional image over applet
+<param name="overimgX" value="0">          ; Over image X offset
+<param name="overimgY" value="0">          ; Over image Y offset
+<param name="memdelay" value="1000">       ; Memory deallocation delay
+<param name="priorityL" value="3">         ; Loading task priority (1..10)
+<param name="priority" value="3">          ; Task priority (1..10)
+<param name="MinSYNC" value="10">          ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.; Message for no java browsers.
+</applet>                                ; End of applet tag
+
+********************************************************************
+                   
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the credit parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+ from the author. If the code is correct and the applet is run from the
+ registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame location
+for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on latest
+ browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+This applet CAN'T WORK AS A MENU without a registration code.
+
+You can load up to 6 different images to map on the faces of a cube.
+If you place the same image name on all 6 image parameters, all faces will
+display the same image. Otherwise you can display 2, 3, 4, 5, or 6 different
+images. The best choices are 3 and 6, because with 3 different images
+placed in the same order of the example above, you will see no duplicate
+images in the same frame.
+
+Filling all the faces of the cube with 6 different images can be done,
+but loading time will increase.
+
+The GIF/JPG images MUST all be 256*256 pixels OR all be 128 X 128 pixels in
+size. No other sizes are allowed, and you can't mix 128*128 images with
+256*256 images in the same cube applet.  
+
+NOTE:
+
+Using 256*256 images is useful only when the applet size is greater than 150.
+
+You can mix GIF and JPG formats in the same cube but not the image size.
+
+"Res" is a sort of zoomer. Res=1 is normal size, res=2 is double size, etc.
+Remember to multiply "width" and "height" tags to coincide the value for "res".
+ If this is 1, the multiplication is unnecessary. 
+
+With the "rotx", "roty" and "rotz" parameters you can control the rotation
+speed of the cube.
+
+With "backr", "backg" and "backb" parameters you can control the RED, GREEN
+and BLUE components of the background colour.
+
+You can optionally load a background image, placing its name on the
+"backimage" parameter. This image must be the same size as the applet if
+res=1. If it is res=2, it must be half the size of the applet, and so on.
+
+You can disable the background clear routine by setting "NO" to "clearback"
+parameter.
+
+
+*****
+
+The floating mode:
+
+Optionally, you can enable the "floating window" mode.
+The treemenu applet, then, will appear in a floating external window, and will
+leave free all the other frame space on the web site.
+But, you still have to create a small horizontal or vertical frame (maybe
+1 or 2 pixels large), containing the applet, 1 pixel large.
+
+To enable this mode:
+
+1) Set "floatmode" to "YES"
+2) Copy the applet width in the "floatw" parameter
+3) Copy the applet height in the "floath" parameter
+4) Set the applet width=1 and height=1
+
+At this point, you just have to customize it using those parameters:
+
+The window title must be written in the "floatitle" parameter.
+
+The starting X and Y position where window should apper, must be written
+in the "floatx" and "floaty" parameters. Note: the coordinates are relative
+to user screen, so result can change depending on screen resolution.
+
+If you want the window to be always on top and visible, set the "floatinfront"
+parameter to "YES". This could be useful for someone, and annoying for others.
+
+Note: the "floatinfront" option will have no effect on some versions of
+Internet Explorer.

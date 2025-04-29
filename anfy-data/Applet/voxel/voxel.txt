@@ -1,0 +1,148 @@
+
+           AnfyVoxel - Copyright (C) by Fabio Ciucci 1997-2002
+
+
+This applet can generate a lightsourced voxel landscape in realtime.
+Thanks to A. Griffini for his help.
+The applet is interactive, in fact you can control it with the mouse.
+
+The animation superman.gif is a courtesy of mstanya@bigfoot.com
+
+This applet is fully parametrized, so you can generate all kinds of
+interactive tunnel effects.
+
+****************************************************************************
+
+The following 3 ".class" files must be uploaded: 
+
+voxel.class
+Lware.class
+anfy.class
+
+Plus, voxel.jar for speedy loading on recent browsers.
+
+Optionally, upload an overlay image file.
+
+***************************************************************************
+
+INSTRUCTIONS.
+
+Insert the <applet> tag in your html document as follows to add this 
+applet to your page (Comments after the ";" symbol are code explanations 
+and acceptable min/max values. They are not part of the applet language):
+
+ 
+<applet archive="voxel.jar" code="voxel.class" width="320" height="180">
+<param name="credits" value="Applet by Fabio Ciucci (www.anfyteam.com)">
+<param name="regcode" value="NO">          ; Registration code (if you have it)
+<param name="reglink" value="NO">          ; Optional URL link when the applet is "clicked".
+<param name="regnewframe" value="YES">          ; Reglink opened in new frame?
+<param name="regframename" value="_blank">      ; Name of new frame for reglink
+<param name="statusmsg" value="Voxel applet">   ; Statusbar message
+<param name="res" value="1">                    ; resolution (1-8)
+<param name="shadow" value="4">                 ; Shadow factor
+<param name="roughness" value="130">            ; Ground roughness (50..200)
+<param name="numpal" value="2">                 ; Colour palette (1..27)
+<param name="backr" value="0">             ; RED comp. of backg. colour (0-255)
+<param name="backg" value="0">             ; GREEN comp. of backg. colour (0-255)
+<param name="backb" value="60">            ; BLUE comp. of backg. colour (0-255)
+<param name="horizon" value="50">          ; Horizon limit (0 .. 500)
+<param name="mapimg" value="symbmp.gif">   ; Land Map (image name or "NO")
+<param name="overimg" value="NO">            ; Optional image over applet
+<param name="overimgX" value="0">            ; Over image X offset
+<param name="overimgY" value="0">            ; Over image Y offset
+<param name="memdelay" value="1000">         ; Memory deallocation delay
+<param name="priority" value="3">            ; Task priority (1..10)
+<param name="fixnetscape" value="NO">        ; Fix Netscape 3.0 bug ("YES","NO")
+<param name="MinSYNC" value="10">            ; Min. milliseconds/frame for sync
+Sorry, your browser doesn't support Java.  ; Message for no java browsers.
+</applet>                                  ; End of applet tag
+
+***************************************************************************
+
+INSTRUCTIONS.
+
+The following instructions describe how to change parameters:
+
+Attempting to change the "credits" parameter will disable the applet.
+
+To activate the reg parameters read the shareware registration notes.
+In the "regcode" parameter, place the registration code you purchased
+from the author. If the code is correct and the applet is run from the
+registered domain name, you can use "link" parameters to link to a URL
+when the applet is "clicked".
+
+If you set "regnewframe" to "YES", you can specify a specific frame 
+location for the reglink:
+
+"_blank"  : To load the link in a new blank unnamed browser window.
+"_self"   : To load the link into the same window the applet occupies.
+"_parent" : To load the link into the immediate FRAMESET parent.
+"_top"    : To load the link into the top body of the window.
+
+You can also set a custom frame name, such as "myframe1".
+
+With the "overimg" parameter you can specify the name of an image that will
+be painted over the applet. The best options are transparent GIF images.
+
+NOTE: Animated GIF images are supported, but will be animated only on latest
+browsers (Netscape 4 and Explorer 4 or newer).
+
+With "overimgX" and "overimgY" you can center the image over the applet area.
+
+The applet can be of any size. The "res" parameter determines the resolution:
+with res=1 pixels are small, but the effect is slow. With res=8, pixels are
+too big but the effect is faster. 
+
+Optimum choices are 1-3. (In fact, res is a sort of zoomer).
+
+With the "shadow" parameter, you can calibrate the light intensity: low
+values mean less shadows, whereas high values mean high contrasts and 
+light-shadow.
+
+With "roughness" you can change the roughness of the ground: low values
+make soft desert, while high values make tall mountains.
+
+You can select the colour palette with "numpal" parameter:
+
+
+1) red     -> blue
+2) orange  -> green
+3) green   -> blue
+4) blue    -> green
+5) green   -> red
+6) blue    -> red
+7) yellow
+8) yellow  -> blue
+9) violet
+10) red
+11) violet -> green
+12) pink   -> green
+13) blue
+14) blue2
+15) azzure
+16) green
+17) green2
+18) gray
+19) blue    -> yellow
+20) yellow
+21) azzure  -> red
+22) green   -> violet
+23) red
+24) violet
+25) gray
+26) gray2
+27) gray3
+
+As you can see, there are enough palettes to simulate the moon's surface,
+Mars surface, and so on.
+
+With the horizon parameter you can increase the horizon calculated, with
+a value from "0" to "500". Higher horizon means slower effect.
+
+If you want, you can load a heights map, but it must be a 256*256 pixels 
+wide grayscale image (GIF or JPG); darker grays are lower altitues, ligher 
+grays are higher altitudes.
+
+View the included example voxmap.gif to understand this concept.
+

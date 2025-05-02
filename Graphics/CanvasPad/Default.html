@@ -1,0 +1,1344 @@
+﻿<!DOCTYPE html>
+<html id="demohtml" xmlns="http://www.w3.org/1999/xhtml" class="testdrive">
+<head>
+    <!-- Copyright © Microsoft Corporation. All Rights Reserved. -->    
+    <title>Canvas Pad</title>
+    <meta name="description" content="Learn and play with HTML5 Canvas!" />
+    <link rel="Stylesheet" type="text/css" href="../../Includes/Styles/OldTestDrive.css" />
+    <link rel="stylesheet" type="text/css" href="../../Includes/Styles/ReturnAndShareControls.css" />
+    <link rel="shortcut icon" href="../../Includes/Image/FavIcon.ico" />
+    <style id="inlinecss" title="democss" type="text/css">
+        /*<![CDATA[*/
+        .titleCanvas
+        {
+            text-align: center;
+            font-family: Segoe UI, Verdana, Arial, Sans-Serif;
+            font-size: 11pt;
+            color: black;
+        }
+        div.hiddencode
+        {
+            display: none;
+        }
+        .controlButton
+        {
+            text-align: right;
+        }
+        .controlsList
+        {
+            width: 100px;
+        }
+        .controls
+        {
+            margin-right: 1em;
+            text-decoration: underline;
+        }
+        .controls_title
+        {
+            text-align: center;
+            font-family: Segoe UI, Verdana, Arial, Sans-Serif;
+            font-size: 11pt;
+        }
+        pre
+        {
+            font-family: Courier;
+            color: White;
+        }
+        #description
+        {
+            padding: 0.5em 1em 0.7em;
+            border: 1px solid #e0e0e0;
+            clear: both;
+            border-radius-top-left-x: 9px;
+            border-radius-top-left-y: 9px;
+            border-radius-top-right-x: 9px;
+            border-radius-top-right-y: 9px;
+            border-radius-bottom-left-x: 9px;
+            border-radius-bottom-left-y: 9px;
+            border-radius-bottom-right-x: 9px;
+            border-radius-bottom-right-y: 9px;
+        }
+        .controls_bullet1, .controls_bullet2, .controls_bullet3, .controls_bullet4
+        {
+            display: none;
+            padding-left: 1px;
+        }
+        .controls_bullet0
+        {
+            padding-left: 1px;
+            display: list-item;
+        }
+        canvas
+        {
+            border: 1px solid #000;
+        }
+        @media (min-width:0px) and (max-width:1024px)
+        {
+            textarea
+            {
+                width: 350px;
+                height: 500px;
+                overflow: auto;
+                border: 1px solid #000;
+                background-color: #005E8A;
+                color: White;
+                font-family: Courier;
+            }
+        }
+        @media (min-width:1025px)
+        {
+            textarea
+            {
+                width: 500px;
+                height: 500px;
+                overflow: auto;
+                border: 1px solid #000;
+                background-color: #005E8A;
+                color: White;
+                font-family: Courier;
+            }
+        }
+        
+        /*]]>*/
+    </style>
+    <meta name="t_omni_demopage" content="1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body id="demobody" onload="initGlobals()">
+    <div id="fullbodywrap">
+        <div id="ReturnAndShareControls"></div>
+        <table id="headertable" border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td class="heading">
+                    <h1 id="demobodyh1">
+                        Canvas Pad</h1>
+                </td>
+            </tr>
+        </table>
+        <div id="demointro">
+            The &lt;canvas&gt; element is a part of the HTML5 Standards specification and allows for dynamic scriptable rendering of 2D graphics. This demo allows you to play with the Canvas element! Update the code and press the 'Ctrl+Enter' key to update the Canvas real-time!
+        </div>
+        <div id="demoactions">
+        </div>
+        <div id="demoContentCenterer">
+            <div id="demoContentWrapper">
+                <table id="displayTable">
+                    <tr>
+                        <td>
+                            <div class="titleCanvas">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="titleCanvas">
+                                <strong>Script console</strong> (editable)</div>
+                        </td>
+                        <td>
+                            <div class="titleCanvas">
+                                <strong>Canvas</strong></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="controlsList">
+                            <ul>
+                                <a name="shapes" class="controls_title" onclick="showList(0);" href="javascript:void(0);">Shapes</a></ul>
+                            <li class="controls_bullet0"><a name="rectangle" style="color: #808080;" onclick="runTest('idRectDescription', 'idRectTest');" href="javascript:void(0);">Rectangles</a></li>
+                            <li class="controls_bullet0"><a name="arc" style="color: #808080;" onclick="runTest('idArcDescription', 'idArcTest');" href="javascript:void(0);">Arcs</a></li>
+                            <li class="controls_bullet0"><a name="quadratic" style="color: #808080;" onclick="runTest('idQuadraticDescription', 'idQuadraticTest');" href="javascript:void(0);">Quadratic</a></li>
+                            <li class="controls_bullet0"><a name="bezier" style="color: #808080;" onclick="runTest('idBezierDescription', 'idBezierTest');" href="javascript:void(0);">Bezier</a></li>
+                            <li class="controls_bullet0"><a name="clipping" style="color: #808080;" onclick="runTest('idClipDescription', 'idClippingTest');" href="javascript:void(0);">Clipping</a></li>
+                            <ul>
+                                <a name="colors" class="controls_title" onclick="showList(1);" href="javascript:void(0);">Colors / styles</a></ul>
+                            <li class="controls_bullet1"><a name="fillStyle" style="color: #808080;" onclick="runTest('idFillStyleDescription', 'idFillStyleTest');" href="javascript:void(0);">fillStyle</a></li>
+                            <li class="controls_bullet1"><a name="strokeStyle" style="color: #808080;" onclick="runTest('idStrokeStyleDescription', 'idStrokeStyleTest');" href="javascript:void(0);">strokeStyle</a></li>
+                            <li class="controls_bullet1"><a name="gradient" style="color: #808080;" onclick="runTest('idGradientsDescription', 'idGradientTest');" href="javascript:void(0);">Gradients</a></li>
+                            <li class="controls_bullet1"><a name="patterns" style="color: #808080;" onclick="runTest('idPatternsDescription', 'idWallpaperTest');" href="javascript:void(0);">Patterns</a></li>
+                            <ul>
+                                <a name="lines" class="controls_title" onclick="showList(2);" href="javascript:void(0);">Line styles</a></ul>
+                            <li class="controls_bullet2"><a name="lineWidth" style="color: #808080;" onclick="runTest('idLineWidthDescription', 'idLineWidthTest');" href="javascript:void(0);">lineWidth</a></li>
+                            <li class="controls_bullet2"><a name="lineCap" style="color: #808080;" onclick="runTest('idLineCapDescription', 'idLineCapTest');" href="javascript:void(0);">lineCap</a></li>
+                            <li class="controls_bullet2"><a name="lineJoin" style="color: #808080;" onclick="runTest('idLineJoinDescription', 'idLineJoinTest');" href="javascript:void(0);">lineJoin</a></li>
+                            <ul>
+                                <a name="shadows" class="controls_title" onclick="showList(-1); runTest('idShadowsDescription', 'idShadowTest');" href="javascript:void(0);">Shadows</a></ul>
+                            <ul>
+                                <a name="text" class="controls_title" onclick="showList(-1); runTest('idTextDescription', 'idFontTest');" href="javascript:void(0);">Text</a></ul>
+                            <ul>
+                                <a name="imagesandvideo" class="controls_title" onclick="showList(3);" href="javascript:void(0);">Images / video</a></ul>
+                            <li class="controls_bullet3"><a name="image" style="color: #808080;" onclick="runTest('idImagesDescription', 'idImageTest');" href="javascript:void(0);">Image</a></li>
+                            <li class="controls_bullet3"><a name="video" style="color: #808080;" onclick="runTest('idImagesDescription', 'idVideoTest');" href="javascript:void(0);">Video</a></li>
+                            <ul>
+                                <a name="transformations" class="controls_title" onclick="showList(4);" href="javascript:void(0);">Transformations</a></ul>
+                            <li class="controls_bullet4"><a name="rotate" style="color: #808080;" onclick="runTest('idTransformationDescription', 'idRotateTest');" href="javascript:void(0);">Rotate</a></li>
+                            <li class="controls_bullet4"><a name="scale" style="color: #808080;" onclick="runTest('idTransformationDescription', 'idScaleTest');" href="javascript:void(0);">Scale</a></li>
+                            <li class="controls_bullet4"><a name="setTransform" style="color: #808080;" onclick="runTest('idTransformationDescription', 'idSetTransformTest');" href="javascript:void(0);">setTransform</a></li>
+                            <li class="controls_bullet4"><a name="stroke" style="color: #808080;" onclick="runTest('idTransformationDescription', 'idStrokeTransformTest');" href="javascript:void(0);">Stroke transform</a></li>
+                            <ul>
+                                <a name="animation" class="controls_title" onclick="showList(-1); runTest('idAnimationDescription', 'idBezierScribbleTest');" href="javascript:void(0);">Animation</a></ul>
+                            <ul>
+                                <a name="mouse" class="controls_title" onclick="showList(-1); runTest('idMouseDescription', 'idMouseTest');" href="javascript:void(0);">Mouse</a></ul>
+                        </td>
+                        <td>
+                            <textarea id="idTextArea" onkeydown="checkAndExec(event)" spellcheck="false" wrap="hard"></textarea>
+                        </td>
+                        <td>
+                            <canvas id="canvas1" width="400" height="500"></canvas>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <div style="text-align: left">
+                                <a class="controls" onclick="doExec();" href="javascript:void(0);">Execute (Ctrl+Enter)</a> <a class="controls" onclick="resetCanvas();" href="javascript:void(0);">Reset</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="mousePosition">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <div id="description">
+                </div>
+                <video id="vid" src="fish.mp4" width="640" height="360" loop style="display: none"></video>
+                <img id="ie_small" src="images/ie_small.png" style="display: none" />
+                <img id="ie_logo" src="images/ie_logo.png" style="display: none" />
+                <img id="ie" src="images/ie.png" style="display: none" />
+                <div id="idRectTest" class="hiddencode">
+                    <pre>
+ // Draw black rect
+ ctx.fillRect(50, 20, 145, 145);
+
+ // Draw blue rect
+ ctx.fillStyle = "rgb(0, 162, 232)";
+ ctx.fillRect(135, 85, 125, 125);
+
+ // Increase line width
+ ctx.lineWidth = 5;
+  
+ // Draw black rect outline
+ ctx.strokeStyle = "rgb(0, 0, 0)";
+ ctx.strokeRect(50, 335, 145, 145);
+
+ // Draw blue rect outline
+ ctx.strokeStyle = "rgb(0, 162, 232)";
+ ctx.strokeRect(135, 275, 125, 125);
+
+ // Draw transparent yellow rect
+ ctx.fillStyle = "rgba(255, 255, 0, 0.75)";
+ ctx.fillRect(210, 180, 125, 125);
+            </pre>
+                </div>
+                <div id="idFontTest" class="hiddencode">
+                    <pre>
+ // Set text settings
+ ctx.textBaseline = "top";
+ ctx.textAlign = "left";
+
+ // Simple text example
+ ctx.fillText("IE9 supports HTML5 Canvas", 0, 0);
+
+ // Transparent black text
+ ctx.font = '24px "Segoe UI"';
+ ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
+ ctx.fillText("IE9 supports HTML5 Canvas", 0, 30);  
+
+ // Stroke text with shadow
+ ctx.save();
+ ctx.shadowOffsetX = 5;  
+ ctx.shadowOffsetY = 5; 
+ ctx.shadowBlur = 5;  
+ ctx.shadowColor = "rgba(0, 0, 0, 1)";
+ ctx.font = '72px "Segoe UI" bold';
+ ctx.strokeText("IE9 supports HTML5 Canvas", 0, 70);
+
+ // Gradient text with shadow
+ var gradient = ctx.createLinearGradient(0,160,0,300);
+ gradient.addColorStop(0, "#0080FF"); 
+ gradient.addColorStop(1, "#FFFFFF");
+ ctx.fillStyle = gradient;
+ ctx.font = '127px "Segoe UI" bold';
+ ctx.fillText("IE9 supports HTML5 Canvas", 0, 160);
+ ctx.strokeText("IE9 supports HTML5 Canvas", 0, 160);
+ ctx.restore();
+
+ // Pattern text
+ var image = document.getElementById("ie_small");
+ var pattern = ctx.createPattern(image, "repeat");
+ ctx.fillStyle = pattern;
+ ctx.font = '254px "Segoe UI" bold';
+ ctx.fillText("IE9 supports HTML5 Canvas", 0, 275);
+ ctx.strokeText("IE9 supports HTML5 Canvas", 0, 275);
+            </pre>
+                </div>
+                <div id="idArcTest" class="hiddencode">
+                    <pre>
+ // Draw black circle
+ ctx.beginPath();
+ ctx.fillStyle = "rgb(0 ,0 ,0)";
+ ctx.arc(123, 93, 80, 0, 2*Math.PI, true);
+ ctx.fill();
+
+ // Draw blue circle
+ ctx.beginPath();
+ ctx.fillStyle = "rgb(0, 162, 232)";
+ ctx.arc(198, 158, 70, 0, 2*Math.PI, true);
+ ctx.fill();
+
+ // Increase line width
+ ctx.lineWidth = 5;
+  
+ // Draw black stroke circle
+ ctx.beginPath();
+ ctx.strokeStyle = "rgb(0, 0, 0)";
+ ctx.arc(123, 408, 80, 0, 1.5*Math.PI, false);
+ ctx.stroke();
+
+ // Draw partial blue stroke circle
+ ctx.beginPath();
+ ctx.strokeStyle = "rgb(0, 162, 232)";
+ ctx.arc(198, 328, 70, 0, 0.5*Math.PI, true);
+ ctx.stroke();
+
+ // Draw transparent yellow circle
+ ctx.beginPath();
+ ctx.fillStyle = "rgba(255, 255, 0, 0.75)";
+ ctx.arc(273, 243, 70, 0, 2*Math.PI, true);
+ ctx.fill();
+            </pre>
+                </div>
+                <div id="idQuadraticTest" class="hiddencode">
+                    <pre>
+ // Draw the "e"  
+ ctx.beginPath();
+ ctx.moveTo(194, 104);
+ ctx.quadraticCurveTo(54, 104, 54, 246);
+ ctx.quadraticCurveTo(54, 371, 194, 371);
+ ctx.quadraticCurveTo(324, 371, 338, 272);
+ ctx.lineTo(240, 272);
+ ctx.arc(197, 272, 47, 0, Math.PI, false);
+ ctx.lineTo(150, 256);
+ ctx.lineTo(338, 256);
+ ctx.quadraticCurveTo(338, 104, 194, 104);
+ ctx.moveTo(154, 207);
+ ctx.fillStyle = "rgb(9, 126, 196)";
+ ctx.fill();
+ ctx.closePath();
+
+ // Inner arc of e
+ ctx.beginPath();
+ ctx.fillStyle = "rgb(255, 255, 255)";
+ ctx.lineTo(240, 211);
+ ctx.arc(197, 211, 47, 0, Math.PI, true);
+ ctx.fill();
+ ctx.closePath();
+            </pre>
+                </div>
+                <div id="idBezierTest" class="hiddencode">
+                    <pre>
+ // Draw eye
+ ctx.lineWidth = 20;
+ ctx.beginPath();
+ ctx.moveTo(230, 130);
+ ctx.bezierCurveTo(230, 130, 230, 130, 230, 210);
+ ctx.stroke();
+ 
+ // Draw eye
+ ctx.beginPath();
+ ctx.moveTo(170, 130);
+ ctx.bezierCurveTo(170, 130, 170, 130, 170, 210);
+ ctx.stroke();
+
+ // Draw smile
+ ctx.beginPath();
+ ctx.moveTo(100, 230);
+ ctx.bezierCurveTo(100, 230, 200, 380, 300, 230);
+ ctx.stroke();
+
+ // Draw tongue
+ ctx.beginPath();
+ ctx.moveTo(219, 298);
+ ctx.bezierCurveTo(278, 351, 315, 315, 277, 258);
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idImageTest" class="hiddencode">
+                    <pre>
+  // Draw image
+  var image = document.getElementById("ie");
+  ctx.drawImage(image, -10, 45, 400, 400);
+            </pre>
+                </div>
+                <div id="idFillStyleTest" class="hiddencode">
+                    <pre>
+  // Set initial alpha
+ var a = 1;
+
+ for (j = 0; j < 100; j++) 
+ {
+   // Initial values for color
+   var r = 255, g = 0, b = 0;
+   
+   // Fill row with colors
+   for (i = 0; i < 150; i++)
+   {
+     // Yellow - increase G
+     if(i < 25) g += 10.2;
+        
+     // Green - decrease R
+     else if( i >= 25 && i < 50) r -= 10.2;
+       
+     // Blue - increase B, decrease G
+     else if(i >= 50 && i < 75) 
+     {
+       g -= 10.2;
+       b += 10.2;
+     }
+
+     // Purple - increase B, decrease G
+     else if(i >= 75 && i < 100) r += 10.2;
+       
+     // Red - decrease B
+     else b -= 10.2;
+       
+     // Draw rect
+     ctx.fillStyle = "rgba(" + Math.floor(r) + "," + 
+                      Math.floor(g) + "," + 
+                      Math.floor(b) + "," + a + ")";
+     ctx.fillRect(3*i, 5*j, 3, 5);
+   }
+   
+   // Reduce alpha
+   a -= 0.01;
+}
+            </pre>
+                </div>
+                <div id="idStrokeStyleTest" class="hiddencode">
+                    <pre>
+  // Set initial alpha
+ var a = 1;
+
+ for (j = 0; j < 100; j++) 
+ {
+   // Initial values for color
+   var r = 255, g = 0, b = 0;
+   
+   // Fill row with colors
+   for (i = 0; i < 150; i++)
+   {
+     // Yellow - increase G
+     if(i < 25) g += 10.2;
+        
+     // Green - decrease R
+     else if( i >= 25 && i < 50) r -= 10.2;
+       
+     // Blue - increase B, decrease G
+     else if(i >= 50 && i < 75) 
+     {
+       g -= 10.2;
+       b += 10.2;
+     }
+
+     // Purple - increase B, decrease G
+     else if(i >= 75 && i < 100) r += 10.2;
+       
+     // Red - decrease B
+     else b -= 10.2;
+       
+     // Draw rect
+     ctx.strokeStyle = "rgba(" + Math.floor(r) + "," + 
+                        Math.floor(g) + "," + 
+                        Math.floor(b) + "," + a + ")";
+     ctx.strokeRect(3 * i, 5 * j, 3, 5);
+   }
+   
+   // Reduce alpha
+   a -= 0.01;
+}
+            </pre>
+                </div>
+                <div id="idLineWidthTest" class="hiddencode">
+                    <pre>
+ // Draw lines with decreasing widths
+ for (i = 20; i > 0; i--)
+ {
+   ctx.strokeStyle = "black";
+   ctx.lineWidth = i;
+   ctx.beginPath();
+   ctx.moveTo(55, 20 + (20 - i) * 24);
+   ctx.lineTo(335, 20 + (20 - i) * 24);
+   ctx.stroke();
+}
+            </pre>
+                </div>
+                <div id="idLineCapTest" class="hiddencode">
+                    <pre>
+ // Set text
+ ctx.textBaseline = "top";
+ ctx.textAlign = "left";
+ ctx.font = '24px "Segoe UI"';
+
+ // Create array with lineCap style names
+ var styles = ["round", "square", "butt"]; 
+ 
+ for(i = 0; i < styles.length; i++) 
+ {
+   ctx.fillStyle = "rgb(0, 89, 187)";
+   ctx.fillText(styles[i], 10, 75 + i * 125);
+
+   // Draw the lineCaps
+   ctx.strokeStyle = "black";
+   ctx.lineWidth = 50;
+   ctx.lineCap = styles[i];
+   ctx.beginPath();
+   ctx.moveTo(125, 125 + i * 125);
+   ctx.lineTo(350, 125 + i * 125);
+   ctx.stroke();
+
+   // Draw horizontal guidelines
+   ctx.strokeStyle = "red";
+   ctx.lineWidth = 1;
+   ctx.beginPath();
+   ctx.moveTo(60, 125 + i * 125);
+   ctx.lineTo(390, 125 + i * 125);
+   ctx.stroke();
+ }
+
+ // Draw vertical guidelines
+ ctx.beginPath();
+ ctx.moveTo(125, 75);
+ ctx.lineTo(125, 425);
+ ctx.stroke();
+ 
+ ctx.beginPath();
+ ctx.moveTo(350, 75);
+ ctx.lineTo(350, 425);
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idLineJoinTest" class="hiddencode">
+                    <pre>
+ // Set text
+ ctx.textBaseline = "top";
+ ctx.textAlign = "left";
+ ctx.font = '24px "Segoe UI"';
+ 
+ // Create array with lineJoin style names
+ var styles = ["bevel", "round", "miter"];
+ for (i = 0; i < styles.length; i++)
+ {
+   ctx.fillStyle = "rgb(0, 89, 187)";
+   ctx.fillText( styles[i], 40, 50 + i * 150);
+
+   ctx.lineJoin = styles[i];
+   ctx.lineWidth = 75;
+   ctx.strokeStyle = "black";
+
+   // Draw the lineJoins
+   ctx.beginPath();
+   ctx.moveTo(155, 90 + i * 150);
+   ctx.lineTo(225, 90 + i * 150);
+   ctx.lineTo(225, 150 + i * 150);
+   ctx.stroke();
+
+   // Draw the horizonal guidelines
+   ctx.strokeStyle = "red";
+   ctx.lineWidth = 1;
+   ctx.beginPath();
+   ctx.moveTo(100, 90 + i * 150);
+   ctx.lineTo(300, 90 + i * 150);
+   ctx.stroke();
+ }
+
+ // Draw the vertical guidelines
+ ctx.strokeStyle = "red";
+ ctx.lineWidth = 1;
+
+ ctx.beginPath();
+ ctx.moveTo(155, 30);
+ ctx.lineTo(155, 470);
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.moveTo(225, 30);
+ ctx.lineTo(225, 470);
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idGradientTest" class="hiddencode">
+                    <pre>
+ // Define gradients
+ var gradient1 = ctx.createLinearGradient(0, 0, 0, 500);
+ gradient1.addColorStop(0, "#00ABEB");
+ gradient1.addColorStop(1, "white");
+
+ var gradient2 = ctx.createLinearGradient(0, 25, 0, 450);
+ gradient2.addColorStop(0, "red");
+ gradient2.addColorStop(0.4, "white");
+ gradient2.addColorStop(1, "red");
+
+ var gradient3 = ctx.createRadialGradient(0, 0, 50, 0, 0, 100);
+ gradient3.addColorStop(0, "#F4F201");
+ gradient3.addColorStop(0.8, "#E4C700");
+ gradient3.addColorStop(1, "rgba(228,199,0,0)");
+
+ var gradient4 = ctx.createRadialGradient(250, 1, 1, 250, 1, 225);
+ gradient4.addColorStop(0, "white");
+ gradient4.addColorStop(1, "gray");
+
+ // Draw sky
+ ctx.fillStyle = gradient1;
+ ctx.fillRect(0,0,400,500);
+
+ // Draw sun
+ ctx.fillStyle = gradient3;
+ ctx.fillRect(0,0,100,100);
+
+ // Draw clouds
+ ctx.fillStyle = gradient4;
+ ctx.beginPath();
+ ctx.arc(310, 50, 25, 9, Math.PI, true);
+ ctx.fill();
+ ctx.beginPath();
+ ctx.arc(340, 50, 30, 9, Math.PI, true);
+ ctx.fill();
+ ctx.beginPath();
+ ctx.arc(370, 50, 25, 9, Math.PI, true);
+ ctx.fill();
+
+ // Draw kite
+ ctx.beginPath();
+ ctx.moveTo(200, 25);
+ ctx.lineTo(50, 200);
+ ctx.lineTo(200, 450);
+ ctx.lineTo(350, 200);
+ ctx.lineTo(200, 25);
+ ctx.fillStyle = "rgb(255, 0, 0)";
+ ctx.fill();
+
+ // Draw divisions
+ ctx.lineWidth = 2;
+ ctx.beginPath();
+ ctx.moveTo(200, 25);
+ ctx.lineTo(200, 200);
+ ctx.lineTo(350,200);
+ ctx.fillStyle = gradient2;
+ ctx.fill();
+ ctx.stroke();
+
+ ctx.beginPath();
+ ctx.moveTo(50, 200);
+ ctx.lineTo(200, 200);
+ ctx.lineTo(200,450);
+ ctx.fillStyle = gradient2;
+ ctx.fill();
+ ctx.stroke();
+
+ // Draw tail
+ ctx.lineWidth = 2;
+ ctx.beginPath();
+ ctx.moveTo(200, 450);
+ ctx.bezierCurveTo(75, 460, 155, 350, 36, 290);
+ ctx.stroke();
+
+ // Draw bow
+ ctx.beginPath();
+ ctx.moveTo(8, 290);
+ ctx.lineTo(62, 290);
+ ctx.lineTo(58, 270);
+ ctx.lineTo(12, 310);
+ ctx.lineTo(8, 290);
+ ctx.fillStyle = gradient2;
+ ctx.fill();
+ ctx.stroke();
+            
+ // Draw kite outline
+ ctx.lineWidth = 5;
+ ctx.lineCap = "round";
+ ctx.beginPath();
+ ctx.moveTo(200, 25);
+ ctx.lineTo(50, 200);
+ ctx.lineTo(200, 450);
+ ctx.lineTo(350, 200);
+ ctx.lineTo(200, 25);
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idWallpaperTest" class="hiddencode">
+                    <pre>
+ // Create pattern
+ var image = document.getElementById("ie_small");
+ var pattern = ctx.createPattern(image, "repeat");
+ ctx.fillStyle = pattern;
+ 
+ // Draw the "e"  
+ drawClearCenteredE();
+ 
+ function drawClearCenteredE()
+ {
+   ctx.beginPath();
+   ctx.moveTo(194, 104);
+   ctx.quadraticCurveTo(54, 104, 54, 246);
+   ctx.quadraticCurveTo(54, 371, 194, 371);
+   ctx.quadraticCurveTo(324, 371, 338, 272);
+   ctx.lineTo(240, 272);
+   ctx.arc(197, 272, 47, 0, Math.PI, false);
+   ctx.lineTo(150, 256);
+   ctx.lineTo(338, 256);
+   ctx.quadraticCurveTo(338, 104, 194, 104);
+   ctx.moveTo(154, 207);
+   ctx.fill();
+   ctx.closePath();
+ 
+   // Inner arc of e
+   ctx.beginPath();
+   ctx.fillStyle = 'rgb(255, 255, 255)';
+   ctx.lineTo(240, 211);
+   ctx.arc(197, 211, 47, 0, Math.PI, true);
+   ctx.fill();
+   ctx.closePath();
+ }
+            
+            </pre>
+                </div>
+                <div id="idShadowTest" class="hiddencode">
+                    <pre>
+// Set shadow styles
+ctx.shadowOffsetX = 10;  
+ctx.shadowOffsetY = 10; 
+ctx.shadowBlur = 10;  
+ctx.shadowColor = "rgba(0, 0, 0, 1)";
+
+// Set text
+ctx.fillStyle = "black";
+ctx.font = "72px Segoe UI";  
+ctx.fillText("Canvas", 90, 60);
+
+// Add IE logo 
+var image = document.getElementById("ie");
+ctx.drawImage(image, 70, 70, 250, 250);
+
+// Create gradient
+var gradient = ctx.createLinearGradient(0, 0, 250, 0);
+gradient.addColorStop(0, "#0080FF");
+gradient.addColorStop(1, "#FFFFFF");
+
+// Add gradient fill to a rectangle
+ctx.fillStyle = gradient;
+ctx.fillRect(25, 330, 340, 20);
+
+// Draw transparent blue circles
+ctx.beginPath();
+ctx.fillStyle = "rgba(30, 144, 255, 0.25)";
+ctx.arc(50, 420, 30, 0, 2 * Math.PI, true);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "rgba(30, 144, 255, 0.5)";
+ctx.arc(150, 420, 30, 0, 2 * Math.PI, true);
+ctx.fill();
+
+ctx.beginPath();
+ctx.fillStyle = "rgba(30, 144, 255, 0.75)";
+ctx.arc(250, 420, 30, 0, 2 * Math.PI, true);
+ctx.fill();
+
+// Draw opaque blue circle
+ctx.beginPath();
+ctx.fillStyle = "rgba(30, 144, 255, 1)";
+ctx.arc(350, 420, 30, 0, 2 * Math.PI, true);
+ctx.fill();
+            </pre>
+                </div>
+                <div id="idRotateTest" class="hiddencode">
+                    <pre>
+ // Draw to center of the screen
+ ctx.translate(200, 250);
+
+ // Rotate
+ for (i = 0; i < 10; i++)
+ {
+    ctx.rotate(0.2 * Math.PI);
+
+    ctx.fillStyle = "rgba(0, 128, 255, 0.5)";
+    ctx.fillRect(10, 0, 150, 50);
+  }
+              </pre>
+                </div>
+                <div id="idScaleTest" class="hiddencode">
+                    <pre>
+ // Draw transparent yellow circle
+ ctx.lineWidth = 2;
+ ctx.beginPath();
+ ctx.fillStyle = "rgba(255, 255, 0, 0.75)";
+ ctx.arc(80, 80, 70, 0, 2 * Math.PI, true);
+ ctx.fill();
+ ctx.stroke();
+
+ // Scale
+ ctx.translate(75,100);
+ ctx.scale(2,2);
+
+ // Draw transparent yellow circle
+ ctx.beginPath();
+ ctx.fillStyle = "rgba(255, 255, 0, 0.75)";
+ ctx.arc(80, 80, 70, 0, 2 * Math.PI, true);
+ ctx.fill();
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idSetTransformTest" class="hiddencode">
+                    <pre>
+ // Center to screen
+ ctx.translate(200, 250);
+
+ // Control the rotation (try changing it)
+ var x = 6;
+ var sine = Math.sin(1 / (x - 1) * Math.PI);
+ var cose = Math.cos(1 / x * Math.PI);
+  
+ for (i = 0; i <= 2 * x; i++) 
+ {  
+   var color = 255 / (2 * x) * i;  
+   ctx.fillStyle = "rgba(" + color + "," + color + "," + color + ", 0.9)";  
+   
+   // Draw the "e" without a fillStyle
+   drawClearE();
+   
+   // Using the rotation transformation matrix
+   ctx.transform(cose, sine, -sine, cose, 0, 0);  
+ }  
+          
+
+function drawClearE()
+{
+  // e  
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(70, 0);
+  ctx.quadraticCurveTo(0, 0, 0, 71);
+  ctx.quadraticCurveTo(0, 133.5, 70, 133.5);
+  ctx.quadraticCurveTo(135, 133.5, 142, 84);
+  ctx.lineTo(93, 84);
+  ctx.arc(71.5, 84, 21.5, 0, Math.PI, false);
+  ctx.lineTo(50, 76);
+  ctx.lineTo(142,76);
+  ctx.quadraticCurveTo(142, 0, 70, 0);
+  ctx.moveTo(50, 53.5);
+  ctx.fill();
+  ctx.closePath();
+  ctx.strokeStyle = "black";
+  ctx.stroke();
+  
+  // inner arc of e
+  ctx.beginPath();		
+  ctx.fillStyle = "white";
+  ctx.lineTo(93, 53.5);
+  ctx.arc(71.5, 53.5, 21.5, 0, Math.PI,true);
+  ctx.fill();
+  ctx.closePath();
+  ctx.strokeStyle = "black";
+  ctx.stroke();
+  ctx.restore();
+ }
+            </pre>
+                </div>
+                <div id="idClippingTest" class="hiddencode">
+                    <pre>
+ // Create a timer
+ var index = 0;
+ timer1 = setInterval(renderLoop, 16);
+
+ function renderLoop() 
+ {
+   if (index > 600) index = 0;
+   index += 4;
+   draw(index);
+ }
+
+ function draw(x) 
+ {
+   ctx.fillStyle = "black";
+   ctx.fillRect(0, 0, 400, 500);
+
+   // Create a clipping region
+   ctx.save();
+   ctx.beginPath();
+   ctx.arc(x, x, 200, 0, Math.PI * 2, true);
+   ctx.clip();
+
+   // Create a white background
+   ctx.fillStyle = "white";
+   ctx.fillRect(0, 0, 400, 500);
+ 
+   // Draw smiley
+   drawSmiley();
+  
+   // Restore state
+   ctx.restore();
+ }         
+
+ function drawSmiley()
+ {
+   // Draw eye
+   ctx.lineWidth = 20;
+   ctx.beginPath();
+   ctx.moveTo(230, 130);
+   ctx.bezierCurveTo(230, 130, 230, 130, 230, 210);
+   ctx.stroke();
+ 
+   // Draw eye
+   ctx.beginPath();
+   ctx.moveTo(170, 130);
+   ctx.bezierCurveTo(170, 130, 170, 130, 170, 210);
+   ctx.stroke();
+
+   // Draw smile
+   ctx.beginPath();
+   ctx.moveTo(100, 230);
+   ctx.bezierCurveTo(100, 230, 200, 380, 300, 230);
+   ctx.stroke();
+
+   // Draw tongue
+   ctx.beginPath();
+   ctx.moveTo(219, 298);
+   ctx.bezierCurveTo(278, 351, 315, 315, 277, 258);
+   ctx.stroke();
+ }                     
+            </pre>
+                </div>
+                <div id="idBezierScribbleTest" class="hiddencode">
+                    <pre>
+ var lastX = WIDTH * Math.random();
+ var lastY = HEIGHT * Math.random();
+ function line() {
+   ctx.save();
+   ctx.translate(WIDTH / 2, HEIGHT / 2);
+   ctx.scale(0.9, 0.9);
+   ctx.translate(-WIDTH / 2, -HEIGHT / 2);
+   ctx.beginPath();
+   ctx.lineWidth = 5 + Math.random() * 10;
+   ctx.moveTo(lastX, lastY);
+   lastX = WIDTH * Math.random();
+   lastY = HEIGHT * Math.random();
+   ctx.bezierCurveTo(WIDTH * Math.random(),
+                         HEIGHT * Math.random(),
+                         WIDTH * Math.random(),
+                         HEIGHT * Math.random(),
+                         lastX, lastY);
+
+   var r = Math.floor(Math.random() * 255) + 70;
+   var g = Math.floor(Math.random() * 255) + 70;
+   var b = Math.floor(Math.random() * 255) + 70;
+
+   var s = 'rgba(' + r + ',' + g + ',' + b +', 1.0)';
+   ctx.shadowColor = 'white';
+   ctx.shadowBlur = 10;
+   ctx.strokeStyle = s;
+   ctx.stroke();
+   ctx.restore();
+ }
+ timer1 = setInterval(line, 50);
+
+ function blank() {
+   ctx.fillStyle = 'rgba(0,0,0,0.1)';
+   ctx.fillRect(0, 0, WIDTH, HEIGHT);
+ }
+ timer2 = setInterval(blank, 40);
+            </pre>
+                </div>
+                <div id="idStrokeTransformTest" class="hiddencode">
+                    <pre>
+ // Increase line width
+ ctx.lineWidth = 10;
+ 
+ // Draw outer circle
+ ctx.beginPath();
+ ctx.arc(145, 225, 50, 0, Math.PI, true);
+ ctx.moveTo(95, 225);
+ ctx.lineTo(195, 330);
+
+ // Set a shear transform matrix
+ ctx.setTransform(1, 4, 0, 1, 0, 0);
+ ctx.stroke();
+
+ // Reset to identity matrix
+ ctx.setTransform(1, 0, 0, 1, 0, 0);
+ 
+ // Draw outer circle
+ ctx.beginPath();
+ ctx.arc(245, 225, 50, 0, Math.PI, true);
+ ctx.moveTo(295, 225);
+ ctx.lineTo(195, 330);
+
+ // Set a shear transform matrix
+ ctx.setTransform(1, -4, 0, 1, 0, 0);
+ ctx.stroke();
+            </pre>
+                </div>
+                <div id="idVideoTest" class="hiddencode">
+                    <pre>
+ // Create a timer to draw the video
+ timer1 = setInterval(drawVideo, 16);
+ 
+ function drawVideo() 
+ {
+    if (!isNaN(video.duration))
+    {
+      // Play the video
+      video.play();
+      
+      // Draw the video
+      ctx.drawImage(video, 0, 0, 400, 500);
+    }
+ } 
+            </pre>
+                </div>
+                <div id="idMouseTest" class="hiddencode">
+                    <pre>
+var lastX = 0, lastY = 0, count = 0;
+var r = Math.floor(Math.random()*255)+70;
+var g = Math.floor(Math.random()*255)+70;
+var b = Math.floor(Math.random()*255)+70;
+
+timer1 = setInterval(drawLoop, 16);
+            
+function drawLines(x, y) 
+{
+ ctx.lineWidth = 40;
+ ctx.lineCap = "round";
+ ctx.beginPath();
+ ctx.moveTo(lastX, lastY);
+ ctx.lineTo(x, y);
+ ctx.strokeStyle = "rgba(" + r + "," + g + "," + b + ", 1)";
+ ctx.stroke();
+}
+
+function drawLoop() 
+{
+  // Clear first
+  ctx.fillStyle = "rgba(0,0,0,0.05)";
+  ctx.fillRect(0, 0, WIDTH, HEIGHT);
+ 
+  // Draw lines
+  drawLines(currentX, currentY);
+  
+  // Change up color
+  if (count++ > 50) 
+  {
+    count = 0;
+    r = Math.floor(Math.random() * 255) + 70;
+    g = Math.floor(Math.random() * 255) + 70;
+    b = Math.floor(Math.random() * 255) + 70;
+  }
+  
+  // Update coordinates 
+  lastX = currentX;
+  lastY = currentY;
+}
+            </pre>
+                </div>
+                <div id="idRectDescription" class="hiddencode">
+                    <strong>Rectangles (simple shapes)</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#simple-shapes-rectangles'>Section 8 Simple shapes (rectangles)</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.clearRect(x, y, w, h)</code></p>
+                    <p>
+                        Clears all pixels on the canvas in the given rectangle to transparent black.</p>
+                    <br />
+                    <p>
+                        <code>context.fillRect(x, y, w, h)</code></p>
+                    <p>
+                        Paints the given rectangle onto the canvas, using the current fill style.</p>
+                    <br />
+                    <p>
+                        <code>context.strokeRect(x, y, w, h))</code></p>
+                    <p>
+                        Paints the box that outlines the given rectangle onto the canvas, using the current stroke style.</p>
+                </div>
+                <div id="idArcDescription" class="hiddencode">
+                    <strong>Arcs (complex shapes)</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#complex-shapes-paths'>Section 9 Complex shapes (paths)</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.arc(x, y, radius, startAngle, endAngle, anticlockwise)</code></p>
+                    <p>
+                        Adds points to the subpath such that the arc described by the circumference of the circle described by the arguments, starting at the given start angle and ending at the given end angle, going in the given direction, is added to the path, connected to the previous point by a straight line. Throws an INDEX_SIZE_ERR exception if the given radius is negative.</p>
+                    <br />
+                    <p>
+                        <code>context.arcTo(x1, y1, x2, y2, radius)</code></p>
+                    <p>
+                        Adds a point to the current path, connected to the previous one by a straight line, then adds a second point to the current path, connected to the previous one by an arc whose properties are described by the arguments. Throws an INDEX_SIZE_ERR exception if the given radius is negative.</p>
+                    <br />
+                </div>
+                <div id="idQuadraticDescription" class="hiddencode">
+                    <strong>Quadratic curve (complex shapes)</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#complex-shapes-paths'>Section 9 Complex shapes (paths)</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.quadraticCurveTo(cpx, cpy, x, y)</code></p>
+                    <p>
+                        Adds the given point to the current path, connected to the previous one by a quadratic Bézier curve with the given control point.</p>
+                </div>
+                <div id="idBezierDescription" class="hiddencode">
+                    <strong>Bézier curve (complex shapes)</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#complex-shapes-paths'>Section 9 Complex shapes (paths)</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)</code></p>
+                    <p>
+                        Adds the given point to the current path, connected to the previous one by a cubic Bézier curve with the given control points.</p>
+                </div>
+                <div id="idClipDescription" class="hiddencode">
+                    <strong>Clipping path (complex shapes)</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#complex-shapes-paths'>Section 9 Complex shapes (paths)</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.clip()</code></p>
+                    <p>
+                        Further constrains the clipping region to the given path.</p>
+                </div>
+                <div id="idFillStyleDescription" class="hiddencode">
+                    <strong>Fill Styles</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#colors-and-styles'>Section 5 Colors and styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.fillStyle [ = value ]</code></p>
+                    <p>
+                        Returns the current style used for filling shapes. Can be set, to change the fill style. The style can be either a string containing a CSS color, or a CanvasGradient or CanvasPattern object. Invalid values are ignored.</p>
+                </div>
+                <div id="idStrokeStyleDescription" class="hiddencode">
+                    <strong>Stroke Styles</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#colors-and-styles'>Section 5 Colors and styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.strokeStyle [ = value ]</code></p>
+                    <p>
+                        Returns the current style used for stroking shapes. Can be set, to change the stroke style. The style can be either a string containing a CSS color, or a CanvasGradient or CanvasPattern object. Invalid values are ignored.</p>
+                </div>
+                <div id="idGlobalAlphaDescription" class="hiddencode">
+                    <strong>Alpha</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#dom-context-2d-globalalpha'>Section 4 Compositing</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.globalAlpha [ = value ]</code></p>
+                    <p>
+                        Returns the current alpha value applied to rendering operations. Can be set, to change the alpha value. Values outside of the range 0.0 .. 1.0 are ignored.</p>
+                </div>
+                <div id="idGradientsDescription" class="hiddencode">
+                    <strong>Linear and radial gradients </strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#colors-and-styles'>Section 5 Colors and styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>gradient.addColorStop(offset, color)</code></p>
+                    <p>
+                        Adds a color stop with the given color to the gradient at the given offset. 0.0 is the offset at one end of the gradient, 1.0 is the offset at the other end. Throws an INDEX_SIZE_ERR exception if the offset it out of range. Throws a SYNTAX_ERR exception if the color cannot be parsed.</p>
+                    <br />
+                    <p>
+                        <code>gradient = context.createLinearGradient(x0, y0, x1, y1)</code></p>
+                    <p>
+                        Returns a CanvasGradient object that represents a linear gradient that paints along the line given by the coordinates represented by the arguments. If any of the arguments are not finite numbers, throws a NOT_SUPPORTED_ERR exception.</p>
+                    <br />
+                    <p>
+                        <code>gradient = context.createRadialGradient(x0, y0, r0, x1, y1, r1)</code></p>
+                    <p>
+                        Returns a CanvasGradient object that represents a radial gradient that paints along the cone given by the circles represented by the arguments. If any of the arguments are not finite numbers, throws a NOT_SUPPORTED_ERR exception. If either of the radii are negative throws an INDEX_SIZE_ERR exception.</p>
+                </div>
+                <div id="idPatternsDescription" class="hiddencode">
+                    <strong>Patterns</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#colors-and-styles'>Section 5 Colors and styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>pattern = context.createPattern(image, repetition)</code></p>
+                    <p>
+                        Returns a CanvasPattern object that uses the given image and repeats in the direction(s) given by the repetition argument. The allowed values for repeat are repeat (both directions), repeat-x (horizontal only), repeat-y (vertical only), and no-repeat (neither). If the repetition argument is empty or null, the value repeat is used. If the first argument isn't an img, canvas, or video element, throws a TYPE_MISMATCH_ERR exception. If the image has no image data, throws an INVALID_STATE_ERR exception. If the second argument isn't one of the allowed values, throws a SYNTAX_ERR exception. If the image isn't yet fully decoded, then the method returns null.</p>
+                </div>
+                <div id="idLineWidthDescription" class="hiddencode">
+                    <strong>Line width</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#line-styles'>Section 6 Line styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.lineWidth [ = value ]</code></p>
+                    <p>
+                        Returns the current line width. Can be set, to change the line width. Values that are not finite values greater than zero are ignored.</p>
+                </div>
+                <div id="idLineCapDescription" class="hiddencode">
+                    <strong>Line cap</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#line-styles'>Section 6 Line styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.lineCap [ = value ]</code></p>
+                    <p>
+                        Returns the current line cap style. Can be set, to change the line cap style. The possible line cap styles are butt, round, and square. Other values are ignored.</p>
+                </div>
+                <div id="idLineJoinDescription" class="hiddencode">
+                    <strong>Line join</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#line-styles'>Section 6 Line styles</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.lineJoin [ = value ]</code></p>
+                    <p>
+                        Returns the current line join style. Can be set, to change the line join style. The possible line join styles are bevel, round, and miter. Other values are ignored.</p>
+                </div>
+                <div id="idShadowsDescription" class="hiddencode">
+                    <strong>Shadows</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#shadows'>Section 7 Shadows</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.shadowColor [ = value ]</code></p>
+                    <p>
+                        Returns the current shadow color. Can be set, to change the shadow color. Values that cannot be parsed as CSS colors are ignored.</p>
+                    <br />
+                    <p>
+                        <code>
+                            <p>
+                                context.shadowOffsetX [ = value ]</p>
+                            <p>
+                                context.shadowOffsetY [ = value ]</p>
+                        </code></p>
+                    <p>
+                        Returns the current shadow offset. Can be set, to change the shadow offset. Values that are not finite numbers are ignored.</p>
+                    <br />
+                    <p>
+                        <code>context.shadowBlur [ = value ]</code></p>
+                    <p>
+                        Returns the current level of blur applied to shadows. Can be set, to change the blur level. Values that are not finite numbers greater than or equal to zero are ignored.</p>
+                </div>
+                <div id="idTextDescription" class="hiddencode">
+                    <strong>Text</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#text'>Section 11 Text</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.font [ = value ]</code></p>
+                    <p>
+                        Returns the current font settings. Can be set, to change the font. The syntax is the same as for the CSS 'font' property; values that cannot be parsed as CSS font values are ignored. Relative keywords and lengths are computed relative to the font of the canvas element.</p>
+                    <br />
+                    <p>
+                        <code>context.textAlign [ = value ]</code></p>
+                    <p>
+                        Returns the current text alignment settings. Can be set, to change the alignment. The possible values are start, end, left, right, and center. Other values are ignored. The default is start.</p>
+                    <br />
+                    <p>
+                        <code>context.textBaseline [ = value ]</code></p>
+                    <p>
+                        Returns the current baseline alignment settings. Can be set, to change the baseline alignment. The possible values and their meanings are given below. Other values are ignored. The default is alphabetic.</p>
+                    <br />
+                    <p>
+                        <code>
+                            <p>
+                                context.fillText(text, x, y [, maxWidth ] )</p>
+                            <p>
+                                context.strokeText(text, x, y [, maxWidth ] )</p>
+                        </code></p>
+                    <p>
+                        Fills or strokes (respectively) the given text at the given position. If a maximum width is provided, the text will be scaled to fit that width if necessary.</p>
+                    <br />
+                    <p>
+                        <code>metrics = context.measureText(text)</code></p>
+                    <p>
+                        Returns a TextMetrics object with the metrics of the given text in the current font.</p>
+                    <br />
+                    <p>
+                        <code>metrics.width</code></p>
+                    <p>
+                        Returns the advance width of the text that was passed to the measureText() method.</p>
+                </div>
+                <div id="idImagesDescription" class="hiddencode">
+                    <strong>Images</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#images'>Section 12 Images</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>
+                            <p>
+                                context.drawImage(image, dx, dy)</p>
+                            <p>
+                                context.drawImage(image, dx, dy, dw, dh)</p>
+                            <p>
+                                context.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)</p>
+                        </code></p>
+                    <p>
+                        Draws the given image onto the canvas. If the first argument isn't an img, canvas, or video element, throws a TYPE_MISMATCH_ERR exception. If the image has no image data, throws an INVALID_STATE_ERR exception. If the second argument isn't one of the allowed values, throws a SYNTAX_ERR exception. If the image isn't yet fully decoded, then nothing is drawn.</p>
+                </div>
+                <div id="idTransformationDescription" class="hiddencode">
+                    <strong>Transformations</strong>
+                    <br />
+                    HTML Canvas 2D Context specification: <a href='http://www.w3.org/TR/2dcontext/#transformations'>Section 3 Transformation</a>
+                    <br />
+                    <br />
+                    <p>
+                        <code>context.scale(x, y)</code></p>
+                    <p>
+                        Changes the transformation matrix to apply a scaling transformation with the given characteristics.</p>
+                    <br />
+                    <p>
+                        <code>context.rotate(angle)</code></p>
+                    <p>
+                        Changes the transformation matrix to apply a rotation transformation with the given characteristics. The angle is in radians.</p>
+                    <br />
+                    <p>
+                        <code>context.translate(x, y)</code></p>
+                    <p>
+                        Changes the transformation matrix to apply a translation transformation with the given characteristics.</p>
+                    <br />
+                    <p>
+                        <code>context.transform(m11, m12, m21, m22, dx, dy)</code></p>
+                    <p>
+                        Changes the transformation matrix to apply the matrix given by the arguments.</p>
+                    <br />
+                    <p>
+                        <code>context.setTransform(m11, m12, m21, m22, dx, dy)</code></p>
+                    <p>
+                        Changes the transformation matrix to the matrix given by the arguments.</p>
+                    <br />
+                </div>
+                <div id="idAnimationDescription" class="hiddencode">
+                    <strong>Animation</strong>
+                    <br />
+                    Here is a modified example from the <a href='http://www.w3.org/TR/2dcontext/#examples'>HTML Canvas 2D Context specification</a> of a script that uses canvas to draw pretty glowing lines.
+                </div>
+                <div id="idMouseDescription" class="hiddencode">
+                    <strong>Mouse movement</strong>
+                    <br />
+                    This demo uses glowing lines to follow your mouse movement. The glowing lines are a modified version from the Animation demo.
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../Includes/Script/FeatureDetectCanvas.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+    <script type="text/javascript" src="../../includes/script/TestDriveCommon.js"></script>
+    <script type="text/javascript" src="../../Includes/Script/ReturnAndShareControls.js"></script>
+</body>
+</html>

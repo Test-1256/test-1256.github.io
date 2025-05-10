@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <!-- 
+		Static version of chapter control XML
+		can be used as a reference for the current required format
+	-->
+  <chapters>
+    <!-- Each chapter must be listed in order -->
+    <!-- Each chapter should contain these values
+		
+			id : NOTE: this should not be changed, this is for Millipede Creative Development to change only! It links the settings to a particular chapter.
+		
+			title : chapter name (not actually used in game, it's just to make it easier to see which chapter you're editing, this should not be changed either)
+		
+			status : open|closed|timed  (lower case, exact match)
+					open means open at all times (as long as the player has also completed the chapters preceding it)
+					closed means closed at all times (regardless of the players progression)
+					timed means open or closed depending on the time (but also depends on whether the player has completed the chapters preceding it)
+				
+			time: if the status is timed, specify the opening time
+					this value will be parsed by System.DateTime.Parse(string)
+					specify the desired UTC with +/-
+					eg. Mar 4, 2013 19:30:00 +10:00
+	
+		-->
+    <chapter>
+      <id>1</id>
+      <title>Earth</title>
+      <status>timed</status>
+      <time>Nov 7, 2013 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>2</id>
+      <title>Air</title>
+      <status>timed</status>
+      <time>Nov 21, 2013 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>3</id>
+      <title>Water</title>
+      <status>timed</status>
+      <time>Dec 5, 2013 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>4</id>
+      <title>Fire</title>
+      <status>timed</status>
+      <time>Dec 19, 2013 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>5</id>
+      <title>Spirit</title>
+      <status>timed</status>
+      <time>Jan 2, 2014 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>6</id>
+      <title>Finale</title>
+      <status>timed</status>
+      <time>Jan 23, 2014 18:45:00 +11:00</time>
+    </chapter>
+    <chapter>
+      <id>7</id>
+      <title>Resolve Video</title>
+      <status>timed</status>
+      <time>Jan 30, 2014 18:55:00 +11:00</time>
+    </chapter>
+  </chapters>
+</data>

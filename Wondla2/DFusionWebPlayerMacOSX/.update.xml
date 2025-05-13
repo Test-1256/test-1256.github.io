@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DFusionUpdate version="1" type="2" package_version="3.20.20224.0">
+	<directory name="DFusionWebPlayer.bundle">
+		<directory name="Contents">
+			<directory name="Frameworks">
+				<directory name="Cg.framework">
+					<directory name="Versions">
+						<directory name="1.0">
+							<file name="Cg" check="3G1hdTLhoLCkowfeMuE5hA==" size="28145988" csize="4368016" />
+							<directory name="Resources">
+								<file name="Info.plist" check="2FfcsyGbSOgXlAd5jVZNTA==" size="1185" csize="506" />
+							</directory>
+						</directory>
+					</directory>
+				</directory>
+				<directory name="Ogg.framework">
+					<directory name="Versions">
+						<directory name="A">
+							<file name="Ogg" check="Ww/78VzHz2JOWTrkm4SeAA==" size="23708" csize="6464" />
+							<directory name="Resources">
+								<directory name="English.lproj">
+									<file name="InfoPlist.strings" check="C/wrFvELFIPvHwr5qcbVxg==" size="136" csize="117" />
+								</directory>
+								<file name="Info.plist" check="TeuwDAgIeCgfpcf8zDqX9g==" size="934" csize="433" />
+							</directory>
+						</directory>
+					</directory>
+				</directory>
+				<directory name="Ogre.framework">
+					<directory name="Versions">
+						<directory name="1.7.0">
+							<file name="Ogre" check="WNp2Ia6QQIhbcTVmP9AlKw==" size="8715368" csize="1848281" />
+							<directory name="Resources">
+								<file name="Info.plist" check="OAtLTYjOQSmQQjA1lRnPKg==" size="968" csize="421" />
+								<file name="ogrelogo.png" check="YBd2neuOIQnKTRPo62cmQw==" size="31621" csize="31622" />
+							</directory>
+						</directory>
+					</directory>
+				</directory>
+				<directory name="OpenCV.framework">
+					<directory name="Versions">
+						<directory name="A">
+							<directory name="Documentation">
+								<file name="license.txt" check="p0CRwQ2zV+6kEdoJWB6flw==" size="1891" csize="958" />
+							</directory>
+							<file name="OpenCV" check="uyTHBC5Gb1hNxwela56msw==" size="6535292" csize="1837914" />
+							<directory name="Resources">
+								<directory name="English.lproj">
+									<file name="InfoPlist.strings" check="pBEUvtu3iF7f0e0IbB5/kw==" size="204" csize="154" />
+								</directory>
+								<file name="Info.plist" check="ttMTyAnywMBCxOB9wjFJww==" size="655" csize="327" />
+							</directory>
+						</directory>
+					</directory>
+				</directory>
+				<directory name="Vorbis.framework">
+					<directory name="Versions">
+						<directory name="A">
+							<directory name="Resources">
+								<directory name="English.lproj">
+									<file name="InfoPlist.strings" check="hcTOnwmvq6t+ISx+4tsN2w==" size="142" csize="121" />
+								</directory>
+								<file name="Info.plist" check="yWK6Hg2V1nrIz/+vL3oZaA==" size="944" csize="430" />
+							</directory>
+							<file name="Vorbis" check="1SdIM1mVy2iVCi5fTPJRmg==" size="1355328" csize="149279" />
+						</directory>
+					</directory>
+				</directory>
+			</directory>
+			<file name="Info.plist" check="nNez5Aw/XnTBX3RyvLAyzA==" size="1088" csize="459" />
+			<directory name="MacOS">
+				<file name="DFusionWebPlayer" check="eOpPkux7olWtMMSP8QQeTw==" size="15598652" csize="2706864" />
+			</directory>
+			<directory name="Plugins">
+				<file name="Plugin_CgProgramManager.dylib" check="UcBYMtoQ8Y183gFueMWQNQ==" size="295440" csize="49433" />
+				<file name="Plugin_ParticleFX.dylib" check="4zm7pUoT7vxeRkmCi0jeEQ==" size="226292" csize="38234" />
+				<file name="RenderSystem_GL.dylib" check="2tdF73c5NNme1GNsWnTI4w==" size="1097708" csize="229713" />
+			</directory>
+			<directory name="Resources">
+				<directory name="English.lproj">
+					<file name="InfoPlist.strings" check="DgnSAK4/v9zbsuRLpzHxRg==" size="90" csize="88" />
+				</directory>
+				<directory name="resources">
+					<file name="default.ttf" check="N9iv8Sns19P8SVtyOfg02w==" size="49224" csize="25107" />
+					<file name="DFusion.fontdef" check="HMYQDzbQxm5KcTsHcjCC4A==" size="126" csize="125" />
+					<file name="DFusionYUV.cg" check="7RbdglSIWI8M/GimHVXigQ==" size="717" csize="370" />
+					<file name="DFusionYUV.glsl" check="w81As8s5FleqWNBorAM9Aw==" size="713" csize="386" />
+					<file name="DFusionYUV.program" check="s9mNDkI4id211yYcFvDkgQ==" size="534" csize="245" />
+					<file name="msgPoolAR2.xml" check="iMeHa1tLQNriA9V0Z7EzLQ==" size="10078" csize="2720" />
+					<file name="msgPoolCoeur.xml" check="iuXZ3n4go5hewDUjIzhzJQ==" size="38142" csize="6338" />
+					<file name="msgPoolMLT.xml" check="oKdBlnAq6Iv1RZ6WHaHXJA==" size="3202" csize="1176" />
+					<file name="splash.jpg" check="sXJyM0SZ0PKU1/e8amZ5oA==" size="25718" csize="14074" />
+					<file name="splash.ssc" check="DzmHgUIyD2vs7N7Q5dlakQ==" size="2584" csize="528" />
+				</directory>
+				<file name="splash.jpg" check="sXJyM0SZ0PKU1/e8amZ5oA==" size="25718" csize="14074" />
+				<file name="splash.ssc" check="DzmHgUIyD2vs7N7Q5dlakQ==" size="2584" csize="528" />
+			</directory>
+		</directory>
+	</directory>
+<links>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Cg" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/Current/Cg">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/1.0"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Resources" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/Current/Resources">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/1.0"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Cg.framework/Versions/1.0"/>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Ogg" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/Current/Ogg">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/A"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Resources" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/Current/Resources">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/A"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogg.framework/Versions/A"/>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Ogre" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/Current/Ogre">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/1.7.0"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Resources" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/Current/Resources">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/1.7.0"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Ogre.framework/Versions/1.7.0"/>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/OpenCV" target = "DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/Current/OpenCV">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/A"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Resources" target = "DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/Current/Resources">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/A"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/OpenCV.framework/Versions/A"/>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Resources" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/Current/Resources">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/A"/>
+</link>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/A"/>
+<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Vorbis" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/Current/Vorbis">
+	<link name="DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/Current" target = "DFusionWebPlayer.bundle/Contents/Frameworks/Vorbis.framework/Versions/A"/>
+</link>
+</links>
+</DFusionUpdate>

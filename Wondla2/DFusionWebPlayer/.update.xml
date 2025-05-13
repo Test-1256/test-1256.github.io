@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DFusionUpdate version="1" type="2" package_version="3.20.20164.0">
+	<file name="cg.dll" check="idfNzOpnzE5ccSFgBnSXhw==" size="5615616" fileversion="2.2.0.10" csize="1077342" />
+	<file name="cv100.dll" check="lNZqIXb/glhFzqVGwo81Lw==" size="724992" fileversion="1.0.0.1" csize="287388" />
+	<file name="cxcore100.dll" check="b3UeLWRM4T73JBiRypUPLg==" size="937984" fileversion="1.0.0.1" csize="320831" />
+	<file name="D3DCompiler_42.dll" check="szsh22EBFiYtkGMFzmXDVA==" size="1974616" fileversion="9.27.952.3022" csize="682846" />
+	<file name="D3DX9_42.dll" check="xqRPw88vWAFWGAQnIhexTQ==" size="1892184" fileversion="9.27.952.3001" csize="668111" />
+	<file name="DFusionWebPlayer.dll" check="kvgJImbQc8SFyhdF4ahAVA==" size="6455296" fileversion="3.20.20164.0" csize="1802331" />
+	<file name="glut32.dll" check="rh9NrKy0Y0UN3kIMB1hmbQ==" size="237568" csize="78185" />
+	<file name="highgui100.dll" check="aFv3qt41Oh0KpFyqsYwqlQ==" size="610304" fileversion="1.0.0.1" csize="253438" />
+	<file name="inpout32.dll" check="BW8TwYIpbb1vSCKbvzHJNQ==" size="32768" fileversion="1.0.0.1" csize="10945" />
+	<file name="OgreMain.dll" check="eHPBcqVwtBsSkV4oiNRExA==" size="5664768" csize="1437538" />
+	<file name="OpenAL32.dll" check="QzseVkoBOeJ0eONF2+rHnA==" size="110592" fileversion="6.14.357.23" csize="43390" />
+	<file name="Plugin_CgProgramManager.dll" check="rdWjHqj1VWC6r2oqq0v+LA==" size="122880" csize="33419" />
+	<file name="Plugin_ParticleFX.dll" check="QztCTq81mZO+/U/Os2IV4Q==" size="110592" csize="25312" />
+	<file name="RenderSystem_Direct3D9.dll" check="4CXOUMSusAWzhkUWWPvcJA==" size="471040" csize="119628" />
+	<file name="RenderSystem_GL.dll" check="6e1bIv/kAGxR9XvUz1A2Zw==" size="626688" csize="172414" />
+	<directory name="resources">
+		<file name="default.ttf" check="N9iv8Sns19P8SVtyOfg02w==" size="49224" csize="25107" />
+		<file name="DFusion.fontdef" check="HMYQDzbQxm5KcTsHcjCC4A==" size="126" csize="125" />
+		<file name="DFusionYUV.cg" check="7RbdglSIWI8M/GimHVXigQ==" size="717" csize="370" />
+		<file name="DFusionYUV.glsl" check="w81As8s5FleqWNBorAM9Aw==" size="713" csize="386" />
+		<file name="DFusionYUV.program" check="s9mNDkI4id211yYcFvDkgQ==" size="534" csize="245" />
+		<file name="helpers.material" check="kYzG/SSKhTC9g62Dor2eGg==" size="3135" csize="485" />
+		<file name="msgPoolAR2.xml" check="iMeHa1tLQNriA9V0Z7EzLQ==" size="10078" csize="2720" />
+		<file name="msgPoolCoeur.xml" check="iuXZ3n4go5hewDUjIzhzJQ==" size="38142" csize="6338" />
+		<file name="msgPoolMLT.xml" check="oKdBlnAq6Iv1RZ6WHaHXJA==" size="3202" csize="1176" />
+		<file name="splash.jpg" check="sXJyM0SZ0PKU1/e8amZ5oA==" size="25718" csize="14074" />
+		<file name="splash.ssc" check="DzmHgUIyD2vs7N7Q5dlakQ==" size="2584" csize="528" />
+		<file name="TI_Frame.material" check="9jn+bwN8UFsuzBVjBS5N+Q==" size="1017" csize="189" />
+		<file name="TI_Frame.mesh" check="qMqgZtWcFC7ucbj/f5LTqA==" size="10072" csize="2044" />
+		<file name="TI_Grid.material" check="iCd2jVbC3VEND7aXMu+XZg==" size="406" csize="200" />
+		<file name="TI_Grid.mesh" check="KNy0TMtb1CApur1aV0f6Tg==" size="586" csize="295" />
+		<file name="TI_GridTex.tga" check="ebPLlAol1uKqawJklwCtew==" size="1944" csize="76" />
+	</directory>
+	<file name="wrap_oal.dll" check="1EUkVqC3gX589uwsarJ3tQ==" size="188416" fileversion="0.0.0.0" csize="81642" />
+<links>
+</links>
+</DFusionUpdate>

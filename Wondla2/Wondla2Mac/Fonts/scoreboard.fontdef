@@ -1,0 +1,8 @@
+SCOREBOARD
+{
+	type 		truetype
+	source 		scoreboard.ttf
+	size 		32
+	resolution 	170
+	code_points 33-255
+}

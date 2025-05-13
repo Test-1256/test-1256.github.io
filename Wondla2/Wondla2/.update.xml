@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DFusionUpdate version="1" type="2" package_version="0.0.0.0">
+	<directory name="2D">
+		<directory name="Book">
+			<file name="book.jpg" check="iRcA2TPKGz5YRBZsubYvyw==" size="854752" csize="854753" />
+			<file name="book.material" check="S9P8h9DEZ7U2DfSdErgo6A==" size="154" csize="123" />
+			<file name="book.overlay" check="X683324N+eS2dk1AjrO/IA==" size="88" csize="82" />
+		</directory>
+		<directory name="CockpitText">
+			<file name="cockpitText.overlay" check="OLzRxBfhJULc1xBvvAAWwQ==" size="109" csize="90" />
+			<file name="countdown.material" check="iLYnxEK8hbP3LAA/WXgDag==" size="175" csize="141" />
+			<file name="Level_1_Panel_Text.png" check="uiRGNwHzW3immvZ11MMxsA==" size="8326" csize="5891" />
+			<file name="Level_2_Panel_Text.png" check="AwTQGAfRkaMQ17OhLxRTrQ==" size="8359" csize="5938" />
+			<file name="Level_3_Panel_Text.png" check="xB6Oap2gBbqgbXVEDNvmtQ==" size="8501" csize="6078" />
+		</directory>
+		<file name="countdown.material" check="mC6h9190nfj9pAqNnfPTzA==" size="166" csize="131" />
+		<file name="countdown.overlay" check="oRSWalKrSE8uEL4z2kM4ZQ==" size="101" csize="90" />
+		<file name="Countdown_1.png" check="WGhOXEQn7jc3OZxrAzSD0A==" size="10644" csize="10041" />
+		<file name="Countdown_2.png" check="mxUBdRQXDXzK7vMjG9nQsw==" size="22418" csize="21707" />
+		<file name="Countdown_3.png" check="vkQ1r1IXjk1GKUAJMNIiIw==" size="22548" csize="21812" />
+		<file name="Countdown_GO.png" check="uKiC0zGxRhNfVIwtRzssrg==" size="19709" csize="19229" />
+		<directory name="FinalCopy">
+			<file name="finalCopy.material" check="uWAplIS5SL9kfO6pj05VCg==" size="188" csize="152" />
+			<file name="finalCopy.overlay" check="cwKZ6OWzNrHFxBFSMLwEiQ==" size="101" csize="90" />
+			<file name="Level_3_End_Text.png" check="v0DIKrDEZAfMBdNHqnFL1A==" size="57065" csize="54857" />
+		</directory>
+		<directory name="UserInfo">
+			<file name="GameOver.png" check="u7+Ts39kt47N8YccrmfEvQ==" size="56505" csize="55341" />
+			<file name="Place_Tracker.png" check="kSJ3InqF4zrZACz8x9Hxnw==" size="26009" csize="25307" />
+			<file name="userInfo.material" check="nUi1FG6qPhIC9Uo5nqFjRw==" size="167" csize="137" />
+			<file name="userInfo.overlay" check="0Cgh+YNs17s2s+264JJA1Q==" size="98" csize="88" />
+		</directory>
+	</directory>
+	<directory name="3D">
+		<directory name="Bijou">
+			<file name="Bijou.material" check="OkwiB1K4xRFWUpHEWrOPKg==" size="1130" csize="338" />
+			<file name="Bijou.scene" check="2QDRYr4L0YOUReIBkyLXVQ==" size="93163" csize="9686" />
+			<file name="BijouBodyTex.jpg" check="uR1SxEUHWYqvmhds7HZQfg==" size="299849" csize="281703" />
+			<file name="Bijou_EngineGlow.png" check="hgdVsaWy6aOb1CBZjwYInQ==" size="21195" csize="21167" />
+			<file name="Bijou_Headlight_LF1.mesh" check="P8ELTYjLjj/lRJ4EfrcL2g==" size="5548" csize="3238" />
+			<file name="Bijou_Headlight_RT1.mesh" check="PplwD1fn9VEeBcxvkPLAlw==" size="5548" csize="3105" />
+			<file name="Bijou_MainBody_hi.mesh" check="ruEprKlAtVw6iOLavBPqeA==" size="540560" csize="291562" />
+			<file name="EngineLF_SmokeLoc.mesh" check="fkl6/vO+6PNs3h47r6y2uw==" size="3349" csize="871" />
+			<file name="EngineRT_SmokeLoc.mesh" check="wt2BdY9i7Kly55NOK98h8Q==" size="3349" csize="884" />
+			<file name="Engine_LF_Glow.mesh" check="md8Fu1uUclxje3Hs7hkTIQ==" size="362" csize="233" />
+			<file name="Engine_RT_Glow.mesh" check="fZ4PAItqKuSWNcA6M8Sntg==" size="362" csize="230" />
+			<file name="JetEngine_LF.mesh" check="DZV7VmVnAB7KsPqUE3u4Tw==" size="23227" csize="10191" />
+			<file name="JetEngine_RT.mesh" check="CqcipyuDNnXr35EIuVDKvg==" size="28219" csize="10518" />
+			<file name="LightLF_btm.mesh" check="kwpXpbAWOYhc01UdZR2W4w==" size="7124" csize="2803" />
+			<file name="LightRT_btm.mesh" check="5e+WnVBeGWrSfqH39HtSNg==" size="7124" csize="2808" />
+			<file name="LightsGlass_LF.mesh" check="okffuiNYXtv+d0obyuB7aQ==" size="1207" csize="908" />
+			<file name="LightsGlass_RT.mesh" check="msVd7wlwwiX2MBG2vbG+eg==" size="1207" csize="908" />
+			<file name="Light_LF_01.mesh" check="3/dW2A1dCYAXgbz82ejecg==" size="7860" csize="3830" />
+			<file name="Light_LF_02.mesh" check="ufqcxShKq9VXQk6NYbb43w==" size="7860" csize="3775" />
+			<file name="Light_LF_03.mesh" check="tParwR1K67yHwI3gY+fsVA==" size="7860" csize="3810" />
+			<file name="Light_RT_01.mesh" check="/7NKz7LPcd43LIT/cY+rxQ==" size="7860" csize="3962" />
+			<file name="Light_RT_02.mesh" check="P+Cbvm7HFrud9WW5oCx+rg==" size="7860" csize="3883" />
+			<file name="Light_RT_03.mesh" check="2RFqN2d2lL+Wd6/3aAMLMw==" size="7860" csize="3980" />
+		</directory>
+		<directory name="BonusCoin">
+			<file name="BonusCoin.material" check="VCOGEZNrClmfV6vHHsZYdg==" size="1956" csize="283" />
+			<file name="BonusCoin.scene" check="W2N81gPHg3eLO5ThVxjPfg==" size="366" csize="241" />
+			<file name="BonusInvincible.mesh" check="Nr4dVoqPR/zBKma31WBrSg==" size="23327" csize="7859" />
+			<file name="BonusNegInvincible.mesh" check="t0XBwi4dYytYbqSs28rF1g==" size="23330" csize="7850" />
+			<file name="BonusNegScore.mesh" check="jk6V6EofmfEUfKtwSXg99w==" size="23325" csize="7846" />
+			<file name="BonusNegSpeed.mesh" check="OiRekGPTAlZ3cfjPwNWKsg==" size="23325" csize="7846" />
+			<file name="BonusNegTime.mesh" check="f5EbhIuEkX8X+wazObE7PA==" size="23324" csize="7844" />
+			<file name="BonusScore.mesh" check="JqMexwHiWsUw4LR4gqCUSw==" size="23322" csize="7841" />
+			<file name="BonusSpeed.mesh" check="O8NxjWquiZiPF63qsNYkJw==" size="23322" csize="7841" />
+			<file name="BonusTime.mesh" check="0ybhaDNX17UDIV3ytscaXw==" size="23321" csize="7842" />
+			<file name="Clock.jpg" check="87Cc6/f/rKSNR7iXNrTEjw==" size="55831" csize="37190" />
+			<file name="Hourglass_Empty_alt.jpg" check="FWn8X9yqL64CvfEXHSCBKQ==" size="64636" csize="46279" />
+			<file name="Negative_alt.jpg" check="WWlbDp2a33cLJaZoPIbSAQ==" size="67601" csize="48551" />
+			<file name="Ogre.log" check="qWAe9SB9dtRtBKzlKDrPBg==" size="9900" csize="2551" />
+			<file name="Positive.jpg" check="dbAu9royHRmgpCOdlwQw7Q==" size="60322" csize="40891" />
+			<file name="Sandsniper_alt.jpg" check="dEL8S81lflq3NtLhoRUn0w==" size="80967" csize="62333" />
+			<file name="Turnfin.jpg" check="GpDaLt0rVtlLP71G02zu8A==" size="69212" csize="50702" />
+			<file name="Voxfruit.jpg" check="qOORYPzjY1MwAnf/TOZwQQ==" size="88715" csize="69489" />
+			<file name="Wrench.jpg" check="aj/6aeQX9M0V7avMfEU3vg==" size="70050" csize="51641" />
+			<file name="Wrench_Broken_alt.jpg" check="+rKIECs+wvVEy4/id/SZyQ==" size="68963" csize="50726" />
+		</directory>
+		<directory name="BookPlane">
+			<file name="book.jpg" check="iRcA2TPKGz5YRBZsubYvyw==" size="854752" csize="854753" />
+			<file name="book.material" check="ppG3E+pbvS5ESZHSSNTmYQ==" size="189" csize="143" />
+			<file name="book.mesh" check="FSCAjgEte8R1ufav8v6sew==" size="424" csize="213" />
+		</directory>
+		<directory name="Cube">
+			<file name="Cube - Copy.jpg" check="biJJUoQAeUm733RaNol4iA==" size="47431" csize="36374" />
+			<file name="Cube.jpg" check="D0tYNIJlRv5ckDorjCr62g==" size="48627" csize="44956" />
+			<file name="Cube.material" check="hRw9kTVW8ywbKWfMNlWD1Q==" size="204" csize="144" />
+			<file name="Cube.mesh" check="cCqTiWe3nSaNvDk+foa3DQ==" size="2115" csize="516" />
+		</directory>
+		<directory name="EnemyFirePlane">
+			<file name="EnemyFirePlane.mesh" check="bXiNoGR+ArPH/4c/AxY2YQ==" size="428" csize="217" />
+			<file name="flaretrail.png" check="TraRM4bfesDrF5wWDrkmyA==" size="5803" csize="5610" />
+			<file name="Plane.material" check="wWkjUB9Uag7aqjsg08T9Ew==" size="186" csize="142" />
+		</directory>
+		<directory name="Level1Pieces">
+			<directory name="Desert_Skybox">
+				<file name="backdrop_City.mesh" check="MH9jfjYdBFam7TTzr/6WoQ==" size="1052" csize="495" />
+				<file name="Desert_Skybox.material" check="diOh89R16d2trwlAP08pkg==" size="1038" csize="284" />
+				<file name="Desert_Skybox.scene" check="/M/APfGe7i0+0s2AyvS5mA==" size="659" csize="318" />
+				<file name="NY_Cityscape_crumble.png" check="n7+yPKWsm8MW5FrIO/G8hg==" size="38089" csize="32049" />
+				<file name="Rings.mesh" check="NqVaXvXiqYa47oTbbVtpLg==" size="1396" csize="878" />
+				<file name="RingsOfSaturn.png" check="UbE+EEO8XNU5TmJNX8dKHg==" size="232834" csize="222263" />
+				<file name="SkyBox01.mesh" check="iEzPGPE7pNI6QsugXHyNUw==" size="41345" csize="10692" />
+				<file name="sky_02.jpg" check="Sf61cmmfJUy8jMOM26OUbQ==" size="58911" csize="43638" />
+			</directory>
+			<directory name="Desert_Track01">
+				<file name="DesertGrd01.mesh" check="ZqnLyJKMErfmzkuDaorzKw==" size="23488" csize="9015" />
+				<file name="DesertGroundTex_01.jpg" check="KbcavxJweoeMzNAsm2EM8g==" size="288971" csize="273628" />
+				<file name="Desert_Track01.material" check="g+T8ixGbUzPDHL19wO32XQ==" size="486" csize="237" />
+				<file name="Desert_Track01.scene" check="vWigEwkoYehwP9NXxJkWUw==" size="2658" csize="673" />
+				<file name="Ogre.log" check="njj4e0KAMzck0z9fbricaQ==" size="9626" csize="2538" />
+			</directory>
+			<directory name="Desert_Track02">
+				<file name="DesertGrd02.mesh" check="G6Xn7t6Gzj36FZd+wRzcAg==" size="23488" csize="9052" />
+				<file name="DesertGroundTex_02.jpg" check="YdyqtGGFL2R4uTqk7Bg+gA==" size="259229" csize="244407" />
+				<file name="Desert_Track02.material" check="ReVwedUCEat3s7jVCyi0zA==" size="794" csize="254" />
+				<file name="Desert_Track02.scene" check="kNjBjkha97QXxLyfIIZ3nA==" size="3187" csize="780" />
+				<file name="Ogre.log" check="W2w42aklKC9MNJ8zjiPgig==" size="9827" csize="2562" />
+				<file name="Rock_09.mesh" check="OKhPPE4gLLPmdWMxv/00Vw==" size="15811" csize="9813" />
+				<file name="Stone_03.jpg" check="nennGgMF4aAJuOTGLaSDsw==" size="733518" csize="711678" />
+			</directory>
+			<directory name="Desert_Track03">
+				<file name="DesertGrd03.mesh" check="T5qCFMyGVI5TYvKAyIPzfg==" size="23488" csize="9226" />
+				<file name="DesertGroundTex_03.jpg" check="CPJhFbl3dPhiusQdVS1A9A==" size="298181" csize="283047" />
+				<file name="Desert_Track03.material" check="9k4aGnaacoax2DtVUDxygA==" size="486" csize="237" />
+				<file name="Desert_Track03.scene" check="sgBrSxEJq5/hRSfYK+ZbHA==" size="2655" csize="696" />
+				<file name="Ogre.log" check="zJOYm7N+Wm8AAp8IS7UDaA==" size="9626" csize="2538" />
+			</directory>
+			<directory name="Desert_Track04">
+				<file name="DesertGrd04.mesh" check="USheFcu/nku3P4TEyQNcNw==" size="23488" csize="9090" />
+				<file name="DesertGroundTex_04.jpg" check="916qpchoJWlrK9jeF+vK2A==" size="280058" csize="265481" />
+				<file name="Desert_Track04.material" check="OppTdefpuoCMuwW4Jq2NnQ==" size="486" csize="237" />
+				<file name="Desert_Track04.scene" check="B21w8vUXioqJeHpCWlvkJA==" size="2640" csize="686" />
+				<file name="Ogre.log" check="4UYIrkPvNi+3QNwOybMHVQ==" size="9627" csize="2536" />
+			</directory>
+			<directory name="Desert_Track05">
+				<file name="DesertGrd05.mesh" check="hkGowvSd+OgT7jpwmHD7gQ==" size="23488" csize="8879" />
+				<file name="DesertGroundTex_05.jpg" check="6FMEGGduB+YamgxwskAK4Q==" size="289499" csize="274373" />
+				<file name="Desert_Track05.material" check="3H7RHjnm8h0DMBbYvxfjtQ==" size="486" csize="237" />
+				<file name="Desert_Track05.scene" check="BaknfYsoMS/NwUAEQC5jJQ==" size="2662" csize="675" />
+				<file name="Ogre.log" check="M0TV9y4ZhTxhiX5L/C7btg==" size="9627" csize="2537" />
+			</directory>
+			<directory name="Obstacle_11_Wall01">
+				<file name="Leaf_05.mesh" check="bRoX1+MOWcREHzBB4emD6A==" size="36253" csize="16208" />
+				<file name="Leaf_06.mesh" check="tlT1WV19DiPN56MbNIaPOw==" size="36253" csize="16286" />
+				<file name="Obstacle_11_Wall01.material" check="aqo9DxqHJ08mGGvxvsEi6w==" size="1542" csize="427" />
+				<file name="Obstacle_11_Wall01.scene" check="4CDD394clQEDgtfGPy24KQ==" size="3096" csize="642" />
+				<file name="Ogre.log" check="cbzHH+V68m5gT4198l5BCQ==" size="10539" csize="2731" />
+				<file name="Pillar_08.jpg" check="Wx3HheyMUwE3djELWLGrMw==" size="392388" csize="378841" />
+				<file name="Shadow05.mesh" check="ZwGu2nIuNSMcGgRh9n3JJg==" size="372" csize="263" />
+				<file name="SquareShadow.png" check="QGhlBSGwbDAquE9ZSvXvCg==" size="17005" csize="15950" />
+				<file name="StoneWall_01.mesh" check="MSIml4teJRZyy9aVNsSe3A==" size="19355" csize="11348" />
+				<file name="stone_03.jpg" check="wnkbeKQX3VTQ1PQwBFu2Nw==" size="108191" csize="95463" />
+				<file name="Stone_10.mesh" check="haY5RkM4bX2jErz4vb5fQQ==" size="9416" csize="6943" />
+				<file name="Stone_11.mesh" check="S3Tc+pAgcsFUx8qa6hmtPw==" size="9416" csize="6829" />
+				<file name="Stone_12.mesh" check="IeyP+Eq0Co7GDd6yXCRGQg==" size="9416" csize="7032" />
+			</directory>
+			<directory name="Obstacle_12_Stones02">
+				<file name="DesertGroundTexShadow_01.jpg" check="nXKRYBjcBNUOvXWtA1A9jw==" size="275485" csize="260202" />
+				<file name="DirtMound_02.mesh" check="LzRtmv/bLRYBC9I0c0xJ0w==" size="5946" csize="4783" />
+				<file name="Obstacle_12_Stones02.material" check="QRUuJCV7XnzLQ43+hPim2Q==" size="1007" csize="276" />
+				<file name="Obstacle_12_Stones02.scene" check="bu8QF2VNa6DWG61qfpTpew==" size="2608" csize="589" />
+				<file name="Ogre.log" check="L/LFt0nawg+hU2tZv4BuVA==" size="10064" csize="2589" />
+				<file name="stone_03.jpg" check="wnkbeKQX3VTQ1PQwBFu2Nw==" size="108191" csize="95463" />
+				<file name="Stone_06.mesh" check="z57D4KQS0nWFBKKRzGLjRw==" size="2546" csize="1898" />
+				<file name="Stone_07.mesh" check="iplD1ouos+o/SX3IZhvQ6w==" size="9418" csize="7013" />
+				<file name="Stone_08.mesh" check="4fWVVXMfHBepBtxNUbAkrQ==" size="9418" csize="6916" />
+			</directory>
+			<directory name="Obstacle_13_Stones01">
+				<file name="Leaf_07.mesh" check="O6GtvvlqUCW1kZ7jlInuPA==" size="36257" csize="16217" />
+				<file name="Obstacle_13_Stones01.material" check="lnYLLC8a4bQZCA60TBcHxg==" size="1558" csize="415" />
+				<file name="Obstacle_13_Stones01.scene" check="2d0PtBCEbgJCS5j6GT1+5w==" size="2443" csize="612" />
+				<file name="Ogre.log" check="YKmuycYb6IMK4f8SRxDXgw==" size="10297" csize="2689" />
+				<file name="Shadow01.mesh" check="34nkcGhdg40R65pSw4Eg1g==" size="367" csize="206" />
+				<file name="Shadow_01.png" check="QfOUGlF+yxxk0qLc8y0W7Q==" size="15799" csize="15694" />
+				<file name="Stone_01.mesh" check="CJ2hz1XH4LDEh1s+d7GFsw==" size="2514" csize="1849" />
+				<file name="stone_03.jpg" check="wnkbeKQX3VTQ1PQwBFu2Nw==" size="108191" csize="95463" />
+				<file name="Stone_04.mesh" check="Db1lwQZqyuHCP+qLZc189Q==" size="9418" csize="6993" />
+				<file name="Stone_05.mesh" check="bmgdIeNQ40aqkhKbvMQ3oA==" size="9418" csize="7025" />
+			</directory>
+			<directory name="Obstacle_14_Column01">
+				<file name="DesertGroundTexShadow_02.jpg" check="s/1t+KjMo7bXIuln899MVg==" size="283803" csize="267523" />
+				<file name="DirtMound_01.mesh" check="B3Bz9Dm+MsP3jjQZUXDUvg==" size="5948" csize="4758" />
+				<file name="Leaf_08.mesh" check="zNdYbBpEWW9AtqN/6CY+Ug==" size="36257" csize="16326" />
+				<file name="Leaf_09.mesh" check="wFCgBydavt11b28eHXBWsw==" size="36257" csize="16175" />
+				<file name="Obstacle_14_Column01.material" check="q3RQvLnJDFvIMZVFFp8TEA==" size="1182" csize="376" />
+				<file name="Obstacle_14_Column01.scene" check="KrB9lhWtFx47PilNTeqjXQ==" size="1890" csize="538" />
+				<file name="Pillar01.mesh" check="Fo9gbVPBUJ2J7ubHPUZlmw==" size="25282" csize="18040" />
+				<file name="Pillar_09.jpg" check="/kG+YPDzpDTybD8to+YEhQ==" size="460348" csize="446461" />
+			</directory>
+			<directory name="Obstacle_15_Wall03">
+				<file name="GrittyStone_03.jpg" check="NPI7PfA2O7tCd9CEkPe7jA==" size="340001" csize="324802" />
+				<file name="Obstacle_15_Wall03.material" check="HE+bUE3kZbszRmQPQD4EWQ==" size="695" csize="278" />
+				<file name="Obstacle_15_Wall03.scene" check="bNAdkQJBJ9YQtuoF3Vdeow==" size="554" csize="312" />
+				<file name="Ogre.log" check="hXcErN6wfQWJ1sLapYXHKg==" size="10183" csize="2683" />
+				<file name="Shadow07.mesh" check="HOyVQLRQkFw9cHE42FExyQ==" size="372" csize="225" />
+				<file name="SquareShadow.png" check="QGhlBSGwbDAquE9ZSvXvCg==" size="17005" csize="15950" />
+				<file name="_Wall03.mesh" check="ccoSUwQPjjuAJnK13BmwBQ==" size="32653" csize="8497" />
+			</directory>
+			<directory name="Obstacle_16_Column02">
+				<file name="Column02_GRP_ColumnBase_02.mesh" check="1q8/2qn+RXsXR7SIzaYqDA==" size="4813" csize="1717" />
+				<file name="ColumnMid_01.mesh" check="Z7i265D/0eeJkrpMHCelSQ==" size="88489" csize="39659" />
+				<file name="ColumnTop_03.mesh" check="ZZSBsZ6ekUY+Gj3HeQjoFQ==" size="59537" csize="18878" />
+				<file name="Obstacle_16_Column02.material" check="zpPYN2k44qgjf80jJnoy/Q==" size="702" csize="277" />
+				<file name="Obstacle_16_Column02.scene" check="ybzXAaWbPpfA4GTsm8l+fw==" size="2336" csize="516" />
+				<file name="Pillar_10.jpg" check="mzz9pjvAg9xHd9dMAERR3A==" size="319371" csize="306531" />
+				<file name="Shadow02.mesh" check="VNPHWMmGTJzTTheanubs9g==" size="367" csize="221" />
+				<file name="Shadow_01.png" check="QfOUGlF+yxxk0qLc8y0W7Q==" size="15799" csize="15694" />
+			</directory>
+			<directory name="Obstacle_17_Plant01">
+				<file name="LichenTex02.jpg" check="iB74IW3VB7r4J6RlWVVluw==" size="356014" csize="346015" />
+				<file name="Obstacle_17_Plant01.material" check="blTA3vD9idUbic6QcznFKw==" size="317" csize="212" />
+				<file name="Obstacle_17_Plant01.scene" check="B7u7d830HPxdqMd6O3MdVQ==" size="1239" csize="376" />
+				<file name="Ogre.log" check="H/KXefVjXdm6MFSJqEHO+A==" size="10174" csize="2664" />
+				<file name="Plant02.mesh" check="9ey8KYu9utQsp03oNb86Ow==" size="17329" csize="8916" />
+				<file name="Plant03.mesh" check="Nx0QqyuWrrk8klHj8rFEPA==" size="17105" csize="8884" />
+				<file name="Plant04.mesh" check="jq56j+KOFfpML7XEyiimkA==" size="17521" csize="9001" />
+				<file name="Plant07.mesh" check="HG+/cNflhAVKNat0+s8Fhg==" size="16945" csize="8639" />
+				<file name="Plant08.mesh" check="4c/ArNgLbIZMCZfvTN7hUQ==" size="13297" csize="7242" />
+				<file name="Plant09.mesh" check="3YpHTA0oDu84EeCDtfPNWg==" size="13073" csize="7260" />
+			</directory>
+			<directory name="Obstacle_18_Column03">
+				<file name="Column03_GRP_ColumnBase_02.mesh" check="CNh5h9V7xK9KUGx+FNjMPQ==" size="4813" csize="1543" />
+				<file name="ColumnMid_02.mesh" check="3dhDKemImP44ZnK/i4X+3Q==" size="92225" csize="35633" />
+				<file name="ColumnTop_02.mesh" check="u9eouWoSIz8I99FcOxcclw==" size="29649" csize="11226" />
+				<file name="LichenTex02.jpg" check="iB74IW3VB7r4J6RlWVVluw==" size="356014" csize="346015" />
+				<file name="Obstacle_18_Column03.material" check="hB1urrZv9daricRPkrzL2Q==" size="1020" csize="294" />
+				<file name="Obstacle_18_Column03.scene" check="QDwugGAH3GhIQBsrRXTaOA==" size="2817" csize="593" />
+				<file name="Ogre.log" check="WTVH9HSXbp2T9vHEEYLc3Q==" size="11148" csize="2686" />
+				<file name="Pillar_10.jpg" check="mzz9pjvAg9xHd9dMAERR3A==" size="319371" csize="306531" />
+				<file name="Plant010.mesh" check="73mu0IrZqkCDe9jCsDiCEQ==" size="17523" csize="10390" />
+				<file name="Plant011.mesh" check="uahXfD2k4hzcAZy/x6W3Sg==" size="13075" csize="7283" />
+				<file name="Plant012.mesh" check="MpROoOLcLWvOQqcNNJ73/Q==" size="16947" csize="10157" />
+				<file name="Shadow03.mesh" check="zuRhQU5g2zNkzbt5+uOHdQ==" size="367" csize="239" />
+				<file name="Shadow_01.png" check="QfOUGlF+yxxk0qLc8y0W7Q==" size="15799" csize="15694" />
+			</directory>
+			<directory name="Obstacle_19_Column05">
+				<file name="Column05.mesh" check="QJAKitL6sEEB/5E6vjF1JA==" size="96334" csize="53160" />
+				<file name="Obstacle_19_Column05.material" check="97grpG+f4vPDLQPSrBAoSg==" size="685" csize="269" />
+				<file name="Obstacle_19_Column05.scene" check="lnNBrBNnmPVzbQxXL9GSfw==" size="521" csize="290" />
+				<file name="Pillar_09.jpg" check="/kG+YPDzpDTybD8to+YEhQ==" size="460348" csize="446461" />
+				<file name="Shadow04.mesh" check="h8hOz+47anIbuf38XXEELg==" size="367" csize="230" />
+				<file name="Shadow_01.png" check="QfOUGlF+yxxk0qLc8y0W7Q==" size="15799" csize="15694" />
+			</directory>
+			<directory name="Obstacle_20_DirtMound">
+				<file name="DesertGroundTexShadow_01.jpg" check="nXKRYBjcBNUOvXWtA1A9jw==" size="275485" csize="260202" />
+				<file name="DirtMound_03.mesh" check="VcdzylYdocFAlIVWn6B48Q==" size="5947" csize="4771" />
+				<file name="Obstacle_20_DirtMound.material" check="E5WdOLwsfGmFNfwr6r+6uA==" size="339" csize="229" />
+				<file name="Obstacle_20_DirtMound.scene" check="NcUcI/uOwE3KwtcyjqV66A==" size="770" csize="336" />
+			</directory>
+			<directory name="Obstacle_21_Wall02">
+				<file name="BrickWall01.png" check="8Zl+VSbWOH0fKIwfpbu5jA==" size="689358" csize="659803" />
+				<file name="BrickWall02.png" check="z4YsfRSAgEbb8QjGO/3uJQ==" size="622088" csize="594057" />
+				<file name="LichenTex02.jpg" check="iB74IW3VB7r4J6RlWVVluw==" size="356014" csize="346015" />
+				<file name="Obstacle_21_Wall02.material" check="PLdJrZDxvQcqa/G9z1W5SA==" size="1428" csize="297" />
+				<file name="Obstacle_21_Wall02.scene" check="4i+vayJT3lEHQqSXH8hnEQ==" size="2828" csize="677" />
+				<file name="Ogre.log" check="JtXdyuPRNVQ4/JU4G2k5CQ==" size="16916" csize="2983" />
+				<file name="Plant013.mesh" check="OzNHngJY7nR+W+APCPOKtw==" size="17329" csize="8929" />
+				<file name="Plant014.mesh" check="5hSydKWQZwzGMe3P4m9q1w==" size="17105" csize="8876" />
+				<file name="Plant015.mesh" check="KxCnNzqVbNRvgqUMG5dfLA==" size="17521" csize="8999" />
+				<file name="Plant016.mesh" check="KP+G9vw1K8PGGXizkVER0w==" size="16945" csize="8638" />
+				<file name="Plant017.mesh" check="iHeEmvjzb4F5+YHKl4sN3Q==" size="13297" csize="7246" />
+				<file name="Plant018.mesh" check="5fyLBM1H21uoNT5Sti/vag==" size="13073" csize="7272" />
+				<file name="Shadow06.mesh" check="rgXmAfXx4PysWahvBLcWnA==" size="372" csize="247" />
+				<file name="SquareShadow.png" check="QGhlBSGwbDAquE9ZSvXvCg==" size="17005" csize="15950" />
+				<file name="Wall02_GRP_Wall03.mesh" check="HJNKli34Vp50oc8TONVJXg==" size="365" csize="262" />
+				<file name="Wall04.mesh" check="To14m8aoeV+k8uxVMfd6cg==" size="365" csize="268" />
+			</directory>
+			<directory name="Obstacle_22_Plants01">
+				<file name="LichenTex02.jpg" check="iB74IW3VB7r4J6RlWVVluw==" size="356014" csize="346015" />
+				<file name="Obstacle_22_Plants01.material" check="8gcvGKeqRWBkg7cFErxVgQ==" size="318" csize="212" />
+				<file name="Obstacle_22_Plants01.scene" check="dEfa7eTM2W5GUAwITztkFg==" size="779" csize="321" />
+				<file name="Ogre.log" check="kDzm/kFw68Dx03VRmIjuqg==" size="10062" csize="2673" />
+				<file name="Plant019.mesh" check="0aY+S+XsEe31xnneht5N2Q==" size="13715" csize="9598" />
+				<file name="Plant020.mesh" check="v1Xxxnqwt5os7mXDsiG8pA==" size="12435" csize="8601" />
+				<file name="Plant021.mesh" check="FCW1BF4MMkd2Xd8WE7anZA==" size="12915" csize="8760" />
+			</directory>
+			<directory name="SandSniper">
+				<file name="Arm_Low_Lf.mesh" check="sXcEuXXO+VUq2nn6M3aJFw==" size="4303" csize="1279" />
+				<file name="Arm_Low_Rt.mesh" check="3YjoS73HUKsi2EZie2xdbQ==" size="4303" csize="1275" />
+				<file name="Arm_Up_Lf.mesh" check="oAglwP+yhHUcNUDQ2I2oHw==" size="4302" csize="1274" />
+				<file name="Arm_Up_Rt.mesh" check="qXITXwXO9p4ifEKgWJYhaw==" size="4302" csize="1276" />
+				<file name="CanyonHoleTexDark.jpg" check="owTqMSyV8t0V9RJ82f1FRw==" size="423519" csize="411504" />
+				<file name="Claw_Base_Lf.mesh" check="n6a96YR+0g+VO03kl8YgSA==" size="5817" csize="1659" />
+				<file name="Claw_Base_Rt.mesh" check="XtIRCscWAqv069BMTzXDWg==" size="5817" csize="1636" />
+				<file name="Claw_Tip_Lf.mesh" check="g+tqBH5n2xksMBz9eboocw==" size="4304" csize="1273" />
+				<file name="Claw_Tip_Rt.mesh" check="x1aZH9xGOppjW0Ab1sZeEg==" size="4304" csize="1266" />
+				<file name="DesertGroundTexShadow_01.jpg" check="nXKRYBjcBNUOvXWtA1A9jw==" size="275485" csize="260202" />
+				<file name="Ogre.log" check="m+csd5QZSyHkNHQBGIZfiA==" size="10285" csize="2612" />
+				<file name="SandSniper.material" check="edJkEqVC8BWi8IZW9Ln76w==" size="646" csize="247" />
+				<file name="SandSniper.scene" check="0W/aX0gEj5fnNIBUJo82kQ==" size="37853" csize="4950" />
+				<file name="SandSniperBody.mesh" check="CyRby7H65nmpSKagw9DrsQ==" size="57851" csize="12158" />
+				<file name="SandsniperDirt.mesh" check="wbrck9S/SMiVLxkicfL50w==" size="7206" csize="5291" />
+				<file name="SandSniper_Body02.jpg" check="RgyjqRCjEXQf/apO0KojYw==" size="123848" csize="96350" />
+			</directory>
+		</directory>
+		<directory name="Level2Pieces">
+			<directory name="Canyon_End">
+				<file name="CanyonCity.png" check="Z76Qlhy8gqS8gZ0Q2HKemA==" size="57099" csize="48054" />
+				<file name="CanyonHoleTex.jpg" check="owTqMSyV8t0V9RJ82f1FRw==" size="423519" csize="411504" />
+				<file name="Canyon_End.material" check="lHmqv+RO9qg2y4bTrUzmjg==" size="1067" csize="302" />
+				<file name="Canyon_End.scene" check="OrM/1k1pMV2xCrfFV5Nw4w==" size="1565" csize="503" />
+				<file name="Canyon_End_CanyonCityscape.mesh" check="HB4BITPAp7rAonfAU22MOg==" size="677" csize="369" />
+				<file name="Canyon_End_Ground_Hole.mesh" check="xSGe+mZRE4BmCGilwJUftw==" size="22592" csize="15527" />
+				<file name="DomeLight.png" check="8WK5FWbKt3WM988dFIgO7Q==" size="323982" csize="323983" />
+				<file name="Ground_DomeGlow.mesh" check="ocKa8QzZC2GoECreHh7Elg==" size="41355" csize="15122" />
+				<file name="Ogre.log" check="9fkmfmLsVInI527rHXjpQw==" size="10196" csize="2575" />
+			</directory>
+			<directory name="Canyon_Searchlight01">
+				<file name="Canyon_Searchlight01.scene" check="diGVsBmuL9zaM4gbiaXUsQ==" size="8682" csize="1385" />
+				<file name="Canyon_Searchlight03.material" check="OLtg34RgDHguk4SikUFwmA==" size="402" csize="252" />
+				<file name="Canyon_Searchlight03_SearchlightPlane_01.mesh" check="54GjHDSEu2lG27fryX05UA==" size="383" csize="235" />
+				<file name="Searchlight_faded.png" check="lbArk+08/bUMDUhbr1qx3g==" size="30211" csize="29739" />
+			</directory>
+			<directory name="Canyon_Searchlight02">
+				<file name="Canyon_Searchlight02.scene" check="jxaISABGXpySNdL2Qf0VDA==" size="8679" csize="1381" />
+				<file name="Canyon_Searchlight03.material" check="1Tl18L7yLc+VPoEZVTYrVg==" size="405" csize="251" />
+				<file name="Canyon_Searchlight03_SearchlightPlane_02.mesh" check="ORji1Fb2K5i5OkAmcVy/zw==" size="383" csize="235" />
+				<file name="Searchlight_faded.png" check="lbArk+08/bUMDUhbr1qx3g==" size="30211" csize="29739" />
+			</directory>
+			<directory name="Canyon_Skybox">
+				<file name="CanyonSky_NoStars.jpg" check="Ix0SVp2sHw8rwpeYC67hSQ==" size="54617" csize="25532" />
+				<file name="Canyon_Skybox.scene" check="TcC5CTv1xk4HgFlCEpwsKQ==" size="20061" csize="2439" />
+				<file name="Canyon_Skybox02.material" check="CXQZyRC4U9IpO73d71nYBw==" size="1082" csize="291" />
+				<file name="Canyon_Skybox02_Rings.mesh" check="nyvXwOYJn6RrNB/T3xOzuA==" size="1106" csize="713" />
+				<file name="Canyon_Skybox02_SkyBox_Canyon01.mesh" check="AWfhsqpYCf5FY+6unQ3VPw==" size="41354" csize="10585" />
+				<file name="Canyon_Skybox02_Star01.mesh" check="rXcl1SuQpyG/4A+1YQ2+CQ==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star02.mesh" check="MtzKPk2kz0jqyh0l+2zyqQ==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star03.mesh" check="+u1GXtIDIRmQYZOxTBeteQ==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star04.mesh" check="icfgJqpNL70+CQ5oHMkONQ==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star05.mesh" check="n00P8Z1H7gF0ntFWxXlE/w==" size="358" csize="209" />
+				<file name="Canyon_Skybox02_Star06.mesh" check="oO3vOGpnEKqYzdJ5AwDXcg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star07.mesh" check="wXL475cWS1Q6vA0KsfIE7g==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star08.mesh" check="5rM2ebLhl6P4jVMKqnTyWg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star09.mesh" check="W61R8br1qCzDWDwiVzwMKg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star10.mesh" check="c0bRuECAN9U1V8QnVBZDdg==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star11.mesh" check="lqVrHE8Qq7YNqfehjuhHUQ==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star12.mesh" check="+rYC1hW6g5puy57tEiWtDA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star13.mesh" check="jKccfF98f7N12KRYShD4GQ==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star14.mesh" check="6F5jUbJHZr4Nj9dcTJt8vQ==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star15.mesh" check="9kNiSm75wHc8MTXYgaGSgg==" size="358" csize="201" />
+				<file name="Canyon_Skybox02_Star16.mesh" check="w2y1CbRrkk+WuHipPHB+qQ==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star17.mesh" check="+FR6EskTq1ZVo/ZEzvNTWg==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star18.mesh" check="Sca6M0HJSUqip90tQwKruA==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star19.mesh" check="7kXYMM6NW2kCaCLnjalY3Q==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star20.mesh" check="vTlOUj1+73nPMSiDaMJY/g==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star21.mesh" check="6Pl1TXUpXljYWGdUV+PJyA==" size="358" csize="206" />
+				<file name="Canyon_Skybox02_Star22.mesh" check="TcGqGZTRUQTNfnbEQbv5XQ==" size="358" csize="201" />
+				<file name="Canyon_Skybox02_Star23.mesh" check="mNs1/6svlo7593F7mdfgGA==" size="358" csize="206" />
+				<file name="Canyon_Skybox02_Star24.mesh" check="buHgSMK39EOSHMhT5WHgxA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star25.mesh" check="kQWVRUlTcvTZcqHs2hpgXg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star26.mesh" check="MC8XQjvvZ8XmQuHUJpxW/Q==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star27.mesh" check="RvlgpLfAiTT4RpOAkhhqAg==" size="358" csize="206" />
+				<file name="Canyon_Skybox02_Star28.mesh" check="ngtp0ORZXkI0rBv4XCDVbg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star29.mesh" check="33h14lwL6vHx5i4XaMFn5Q==" size="358" csize="204" />
+				<file name="Canyon_Skybox02_Star30.mesh" check="RuP3x9fOAcW52hvL0gogBA==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star31.mesh" check="H/BT13oIxpD1B+5Wnfs61A==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star32.mesh" check="PLA2WpxF57M3tmxWQJWBig==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star33.mesh" check="+H8iUN7OABLjYQAzj8IdvA==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star34.mesh" check="jVecePs+/IeV4HTa1dCBhw==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star35.mesh" check="2nm+xFovMtZoKoiRo8mdjw==" size="358" csize="206" />
+				<file name="Canyon_Skybox02_Star36.mesh" check="F6QIb8tm5xSyxnXPcGbx6w==" size="358" csize="206" />
+				<file name="Canyon_Skybox02_Star37.mesh" check="YvR1WLHdrdBm9u5+hBFllQ==" size="358" csize="204" />
+				<file name="Canyon_Skybox02_Star38.mesh" check="nmIC6EWJtUCZm/qNMJ0Beg==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star39.mesh" check="8rGta8R78JVPrlvjYoH8/Q==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star40.mesh" check="UOKWV3kjDvawDXsy0Nxxkg==" size="358" csize="207" />
+				<file name="Canyon_Skybox02_Star41.mesh" check="ZbpPqB4BAKr5ZoRI2uynFQ==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star42.mesh" check="CovJCz76PhZfARkg5R0TgA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star43.mesh" check="V4K1ZH2KEjAwan59DfKG+g==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star44.mesh" check="owT1bI1qWDtWXxVTPMLCrw==" size="358" csize="209" />
+				<file name="Canyon_Skybox02_Star45.mesh" check="O2v/Z8LUqROvV4Ltxl+EYQ==" size="358" csize="207" />
+				<file name="Canyon_Skybox02_Star46.mesh" check="Vd65+wRDsdyCFOFG5i+qOQ==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star47.mesh" check="LJ6E5jm5QZcy7cp2phDJRA==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star48.mesh" check="LHRNEBEeW4Wz5JIGlZa29g==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star49.mesh" check="/fs5vww6Rm4Reb3DRR9WoQ==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star50.mesh" check="/WsKr+0mble7A3Q2gYbxkQ==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star51.mesh" check="eXc1+OQvdHTPQXy3suAHTg==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star52.mesh" check="iMnCLlGOU96iZK1r+PTK1A==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star53.mesh" check="HGtThiLSLYQfiyoxRFNJpg==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star54.mesh" check="w9KmItNZiSlUA/F0en4WYg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star55.mesh" check="/dE/8drY1l1gTfqZWNBC5g==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star56.mesh" check="SkCiA6e+enVJYz3qV6+5Zw==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star57.mesh" check="x8lUGPkWTvXF2ryaphbf0A==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star58.mesh" check="F01xSVSWbGbyfTMfWCobgg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star59.mesh" check="pAnvW0HrQTu2BoEmtltwpw==" size="358" csize="204" />
+				<file name="Canyon_Skybox02_Star60.mesh" check="WWJ0JC3yF3WlfROXMCiYgA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star61.mesh" check="MXpPcP2OirHkK2BZ2N7HVw==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star62.mesh" check="43eMXD+n0Ry1YA/9EwVIFQ==" size="358" csize="204" />
+				<file name="Canyon_Skybox02_Star63.mesh" check="KM80BU7cEfLPFOehKn3NqQ==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star64.mesh" check="7WSsQWej8wECtfNXsptmPQ==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star65.mesh" check="tZBiuVjsOBfXDaMXHNiRxA==" size="358" csize="203" />
+				<file name="Canyon_Skybox02_Star66.mesh" check="uleTUnoziWNL49ZWcpRGZA==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star67.mesh" check="dPrS6rATyhRMxGomhRB2Vg==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star68.mesh" check="QvVkGJ2z3bVYBsUZyv6K8g==" size="358" csize="208" />
+				<file name="Canyon_Skybox02_Star69.mesh" check="/nJhWFB1MYG7xkW8BnjBIw==" size="358" csize="209" />
+				<file name="Canyon_Skybox02_Star70.mesh" check="nqmjnX1S21YsDyXON+0b9w==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star71.mesh" check="50qUsGCY1mOHNHbRdoweIw==" size="358" csize="209" />
+				<file name="Canyon_Skybox02_Star72.mesh" check="dar6+MruK/ERJdjp3WzIFA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star73.mesh" check="gJbJIzw9LTKy1ZSvkFhBHw==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star74.mesh" check="eKXX1SVJXkwptvt4qbeFvA==" size="358" csize="205" />
+				<file name="Canyon_Skybox02_Star75.mesh" check="siPd9V5G0EXTuW1XVS9fIw==" size="358" csize="205" />
+				<file name="RingsOfSaturn.png" check="UbE+EEO8XNU5TmJNX8dKHg==" size="232834" csize="222263" />
+				<file name="StarTex.png" check="LR7I/Ayc1Z8PFOBozBrASw==" size="10925" csize="10790" />
+			</directory>
+			<directory name="Canyon_Track01">
+				<file name="CanyonTex.jpg" check="5zglhH4H45NqFLOBnVQYxQ==" size="541318" csize="526086" />
+				<file name="Canyon_Track01.material" check="rFUd2BZj7bWhKyGUfO4OPg==" size="635" csize="236" />
+				<file name="Canyon_Track01.scene" check="bZiz75+o3OPiou8mzo0QVw==" size="6143" csize="1204" />
+				<file name="Canyon_Track01_DesertGrd_01.mesh" check="5+ACzQ890CKRuE9sv2tGpA==" size="73217" csize="49149" />
+				<file name="Ogre.log" check="AovcLJBN3l/6zoJI05Qb4A==" size="10145" csize="2601" />
+			</directory>
+			<directory name="Canyon_Track02">
+				<file name="CanyonTex.jpg" check="5zglhH4H45NqFLOBnVQYxQ==" size="541318" csize="526086" />
+				<file name="Canyon_Track01_Track01_Lf_EdgeLoc.mesh" check="KOfpRGBPvpVmsOTHi6Khng==" size="3352" csize="878" />
+				<file name="Canyon_Track01_Track01_Rt_EdgeLoc.mesh" check="Uk/Uqw/bRXqN6L1aYYKsFw==" size="3352" csize="878" />
+				<file name="Canyon_Track02.material" check="1xKEElRYkqYbZz8Dj7lU4A==" size="635" csize="236" />
+				<file name="Canyon_Track02.scene" check="zOAWwELLRnBn+9GrXhdIVg==" size="6151" csize="1201" />
+				<file name="Canyon_Track02_DesertGrd_02.mesh" check="vPmBDCmsDynAuHC55yp5ew==" size="73217" csize="47352" />
+				<file name="Ogre.log" check="AovcLJBN3l/6zoJI05Qb4A==" size="10145" csize="2601" />
+			</directory>
+			<directory name="Canyon_Track03">
+				<file name="CanyonTex.jpg" check="5zglhH4H45NqFLOBnVQYxQ==" size="541318" csize="526086" />
+				<file name="Canyon_Track03.material" check="Gm5dzzsINzrLO+xnigLLgw==" size="635" csize="236" />
+				<file name="Canyon_Track03.scene" check="EbOC0r9FEXDaSC6JVGNbjg==" size="6123" csize="1177" />
+				<file name="Canyon_Track03_DesertGrd_03.mesh" check="DK2fDgIuaYAGCwZ8ESjmrA==" size="73217" csize="46797" />
+			</directory>
+			<directory name="Canyon_Track04">
+				<file name="CanyonTex.jpg" check="5zglhH4H45NqFLOBnVQYxQ==" size="541318" csize="526086" />
+				<file name="Canyon_Track04.material" check="yNOXVobpL5otfBpuFpZ88Q==" size="635" csize="236" />
+				<file name="Canyon_Track04.scene" check="qUXk9kPxYTuB0/j8evxFBQ==" size="6144" csize="1210" />
+				<file name="Canyon_Track04_DesertGrd_04.mesh" check="oCkQS+FTJKRHSEmV3uL42w==" size="73217" csize="46589" />
+			</directory>
+			<directory name="Canyon_Track05">
+				<file name="CanyonTex.jpg" check="5zglhH4H45NqFLOBnVQYxQ==" size="541318" csize="526086" />
+				<file name="Canyon_Track05.material" check="iH4fKjIgXOKoLyNSthMH5Q==" size="635" csize="236" />
+				<file name="Canyon_Track05.scene" check="AHAoNs60uyyQPmg0QIxctw==" size="8785" csize="1406" />
+				<file name="Canyon_Track05_DesertGrd_05.mesh" check="R7fPnZbmmuZlGGO889NWBQ==" size="73217" csize="44468" />
+				<file name="Canyon_Track05_DesertGrd_05_median.mesh" check="w5kZMWzQozJCIarvsiaHsA==" size="22076" csize="13899" />
+			</directory>
+			<directory name="SandsniperOnly_Canyon">
+				<file name="SandSniperCanyonBody.mesh" check="7Fdv2eGrOyPrY23Cxm46sA==" size="57868" csize="12140" />
+				<file name="SandsniperOnly_Canyon.material" check="7SsZ1snP5F+g0vwgZO4dzA==" size="329" csize="217" />
+				<file name="SandsniperOnly_Canyon.scene" check="ulUAhpEB9Jfu0UPOAPhKTQ==" size="33708" csize="4438" />
+				<file name="SandSniper_Body02.jpg" check="RgyjqRCjEXQf/apO0KojYw==" size="123848" csize="96350" />
+				<file name="SSCanyonArm_Low_Lf.mesh" check="G+ARAIV1G6wAwt/nn8wXlA==" size="4322" csize="1294" />
+				<file name="SSCanyonArm_Low_Rt.mesh" check="OHRxCpWhcLpvSfhLFiY7HA==" size="4322" csize="1290" />
+				<file name="SSCanyonArm_Up_Lf.mesh" check="6C+wzc5mMEqzQJSzdQhFtQ==" size="4321" csize="1288" />
+				<file name="SSCanyonArm_Up_Rt.mesh" check="5YbrJXJ4wFoJ+0a5qJ5p3Q==" size="4321" csize="1290" />
+				<file name="SSCanyonClaw_Base_Lf.mesh" check="gED/PQW8NWQs8yJ0mEwf0g==" size="5836" csize="1675" />
+				<file name="SSCanyonClaw_Base_Rt.mesh" check="h3irt9n/1SNmtziLtmVoqA==" size="5836" csize="1649" />
+				<file name="SSCanyonClaw_Tip_Lf.mesh" check="QSP3M1B9FGDl7INpWSJTig==" size="4323" csize="1286" />
+				<file name="SSCanyonClaw_Tip_Rt.mesh" check="GiodTu544mGYDFwQFAAYGw==" size="4323" csize="1279" />
+			</directory>
+		</directory>
+		<directory name="Level3Pieces">
+			<directory name="AirWhale">
+				<file name="AirWhale.material" check="VIuRS8bCCYRl3RCmuiJpJg==" size="321" csize="212" />
+				<file name="AirWhale.scene" check="U0ISJpah/GXBsPbxYBzegQ==" size="547" csize="306" />
+				<file name="AirwhaleMesh.mesh" check="AGZ07rrpbRQKfPzVw0HbGA==" size="89969" csize="37041" />
+				<file name="AirwhaleMesh.skeleton" check="tFhJlxERjzQjVMfBggXAJw==" size="42207" csize="5864" />
+				<file name="AirwhaleTex3.jpg" check="PU+1HGjSxkLb4YJqLYXHiQ==" size="202691" csize="175478" />
+				<file name="Ogre.log" check="lUcd2Xrf/cEkSXmy4CS1Gg==" size="9655" csize="2538" />
+			</directory>
+			<directory name="Cloud_Skybox">
+				<file name="Cloud_Skybox.material" check="BnoM9AtZabsYv42AgN/MaA==" size="680" csize="266" />
+				<file name="Cloud_Skybox.scene" check="92ViZvO0gek5m2vC1kcnQw==" size="597" csize="335" />
+				<file name="Cloud_SkyBox01.mesh" check="lACDfXZGkLqb5FYftjBVsQ==" size="41350" csize="10583" />
+				<file name="Rings.mesh" check="lCKZvBdyaxDkTNa0JG4hmg==" size="1395" csize="877" />
+				<file name="RingsOfSaturn.png" check="UbE+EEO8XNU5TmJNX8dKHg==" size="232834" csize="222263" />
+				<file name="SkyTex.jpg" check="CSS2v2/CgFfkNrVUOG6+Lw==" size="49177" csize="8305" />
+			</directory>
+			<directory name="Cloud_Track01">
+				<file name="Cloud01.mesh" check="eJpeX8c6YTOg+pChwduaPw==" size="362" csize="201" />
+				<file name="Cloud01.png" check="wEbzUTX2Y1wpCDhSsgkA1g==" size="192470" csize="192471" />
+				<file name="Cloud02.mesh" check="MMvd7/onPtwNqB5fsGYUuA==" size="362" csize="202" />
+				<file name="Cloud02.png" check="r1J+ToSGX0UKmCf7pZQiRw==" size="305914" csize="305915" />
+				<file name="Cloud03.mesh" check="5+FBfRk8TFN1B3JcXCuRlg==" size="362" csize="204" />
+				<file name="Cloud03.png" check="4J/hvvwO2HjtMj5aCDKsIQ==" size="275938" csize="275939" />
+				<file name="Cloud04.mesh" check="u4FaE5imlEpN/0SNypRFlg==" size="362" csize="203" />
+				<file name="Cloud04.png" check="L2oaIVVNoot4EeoeNin25Q==" size="234358" csize="234359" />
+				<file name="Cloud05.mesh" check="zE/H6bchdiY+b7ZJAwT6jw==" size="362" csize="201" />
+				<file name="Cloud05.png" check="HvNhACBo8t6ZMNTe9r0tdQ==" size="218340" csize="218341" />
+				<file name="Cloud06.mesh" check="IyaSQL58gV689pr2leRkJA==" size="362" csize="200" />
+				<file name="Cloud06.png" check="55Nbd92bI90bm0boJLPVng==" size="304258" csize="304259" />
+				<file name="Cloud07.mesh" check="xQz5hUNuYks5UXQUuj+GGw==" size="362" csize="200" />
+				<file name="Cloud08.mesh" check="Am2W6FtmXgsBzF7YoFqZAw==" size="362" csize="202" />
+				<file name="Cloud09.mesh" check="FA1jSUu/q/v7P7qqlJZ8zw==" size="362" csize="203" />
+				<file name="Cloud10.mesh" check="/QdQ017djXPeNyob1aYGaA==" size="362" csize="203" />
+				<file name="Cloud11.mesh" check="rZjbh21++sIA+Puzj1BFng==" size="362" csize="200" />
+				<file name="Cloud12.mesh" check="ja0IijC0FVEl0A9CPrk4QA==" size="362" csize="204" />
+				<file name="CloudGround01.mesh" check="lXyzOvNs19ade4IOXxFaiQ==" size="5304" csize="3081" />
+				<file name="CloudTex_01.jpg" check="7927T9Hqr0VkJh2teYUPBg==" size="192761" csize="177043" />
+				<file name="Cloud_Track01.material" check="1OG3OT4HPxA6/0790iCBRg==" size="2605" csize="305" />
+				<file name="Cloud_Track01.scene" check="APCNxi28aMDVfzk4eNX19A==" size="3054" csize="588" />
+				<file name="Ogre.log" check="rKzn5hWUooubYZQz6rI5lg==" size="13088" csize="2684" />
+			</directory>
+		</directory>
+		<directory name="Plane">
+			<file name="Plane.material" check="cKMXESzak2F3Lxxv/vfBPg==" size="210" csize="147" />
+			<file name="Plane.mesh" check="OvSi8TAY/vEzYYNbXrfhuQ==" size="428" csize="217" />
+		</directory>
+		<directory name="TextPlane">
+			<file name="Level_1_Finish_Text.png" check="MDSeuJpDb8bDVRFwsOE/bA==" size="118400" csize="111465" />
+			<file name="Level_1_Intro_Text.png" check="xjzhpGQffecP3W4nr8vmlQ==" size="221315" csize="213412" />
+			<file name="Level_2_Finish_Text.png" check="4zwvT+D7Yw3TpTbcVLFoew==" size="119655" csize="112877" />
+			<file name="Level_2_Intro_Text.png" check="vcf8VBjQkfn5u1/aEM7hLg==" size="111157" csize="104923" />
+			<file name="Level_3_Finish_Text.png" check="PrW4kvmaHiJCqVaN3jROng==" size="89868" csize="82910" />
+			<file name="Level_3_Intro_Text.png" check="Xhw4tccH/xkATVIPP2Cr9Q==" size="97197" csize="90673" />
+			<file name="PnG_list_BG_Alpha - Copy.tga" check="uUmlRKptG8QhTezPAjlRsQ==" size="3686444" csize="399370" />
+			<file name="PnG_list_BG_Alpha.PNG" check="O3O6FYgzAcMx0gr9763b1Q==" size="446986" csize="446987" />
+			<file name="PnG_list_BG_Alpha.tga" check="f26Pqs4ySSaQ7QK3FXRzPw==" size="1386687" csize="284772" />
+			<file name="TextPlane.material" check="HXgg2DwAISZFa3sqXyLZcA==" size="566" csize="286" />
+			<file name="TextPlane.mesh" check="BQru7oQehnfFfXKM6mqUkQ==" size="432" csize="218" />
+		</directory>
+		<directory name="TopUIPlane">
+			<file name="Light_Interface.png" check="qylxt41B4nVwZi3+P/UdtQ==" size="21395" csize="18581" />
+			<file name="Plane.material" check="CjZU2qgWeVUq3D5MudyIMA==" size="234" csize="166" />
+			<file name="TopUIPlane.mesh" check="JlLFUITFfqXE2jt/lRSj/g==" size="425" csize="215" />
+		</directory>
+		<directory name="VideoBorder">
+			<file name="LightVideo_Window.png" check="a7Ycxmh9HzM6vJKzVyZIHg==" size="15195" csize="14557" />
+			<file name="VideoBorder.material" check="RZeqCGOUEaUB7/YtUSO7zg==" size="242" csize="171" />
+			<file name="VideoBorder.mesh" check="iyQOTiy1l0rwfSt0siGDUQ==" size="431" csize="219" />
+		</directory>
+	</directory>
+	<directory name="Audio">
+		<file name="airWhale1.ogg" check="NblJ1kuRuCyYvGk0Rg17WQ==" size="53291" csize="50002" />
+		<file name="airWhale2.ogg" check="g6TDxFCPl6/eBaVonLQCQA==" size="57682" csize="53852" />
+		<file name="airWhale3.ogg" check="jVdGw8CQibET/UjqibD+2A==" size="35528" csize="32777" />
+		<file name="alert_01.ogg" check="pmzIOZjrQoLTb9nEW14Oug==" size="26921" csize="24827" />
+		<file name="BadBonus.ogg" check="eyfyHSXhu7Zlu/D2su4K2Q==" size="10995" csize="9021" />
+		<file name="BijouHit.ogg" check="goFWt/DIxG5cCXSW2sPgDw==" size="26831" csize="24962" />
+		<file name="CloseCall.ogg" check="fORIOlRfj+29zeuegXSntQ==" size="16363" csize="14497" />
+		<file name="countdownBlip1.ogg" check="sLx5JbakVHqGUM56924zbA==" size="10873" csize="8986" />
+		<file name="countdownBlip2.ogg" check="TYbNwXRg1tR9s2OYdwjTyg==" size="9037" csize="7151" />
+		<file name="EnemyFire.ogg" check="lb0y/QnJvsq5Od8JzfEN4g==" size="17630" csize="15683" />
+		<file name="Engine.ogg" check="CiOPUq57KVoPFoS5yGMfrw==" size="227994" csize="219780" />
+		<file name="GameTrigger.ogg" check="mGvTPnaH8A1V4KEd8JmWXA==" size="31955" csize="29707" />
+		<file name="gamoveOver.ogg" check="qgAvoe1ixJBiiCM+j2NZkQ==" size="71551" csize="67379" />
+		<file name="InvincibleBonus.ogg" check="A9XLR2/IwuW28Ybk3qlIng==" size="32690" csize="30457" />
+		<file name="music.ogg" check="lC+2SIf0kM36rh9W2YACsw==" size="884779" csize="867861" />
+		<file name="NegSpeedBonus.ogg" check="ko4okPmnVvF9L9AOs+zp3g==" size="32670" csize="30558" />
+		<file name="PointsBonus.ogg" check="Bynnoyim5Eaj9ySVd6k1Hg==" size="29452" csize="26227" />
+		<file name="SandSniper.ogg" check="/CK6mfRs8RT2QqKAu/htYw==" size="33055" csize="31161" />
+		<file name="SpeedBonus.ogg" check="ZlVleLdpprKWUf1pRxPs6g==" size="19329" csize="17453" />
+		<file name="TimeBonus.ogg" check="T13zYZSe/qhPxCuIaNdZeg==" size="18727" csize="14858" />
+		<file name="wallHit.ogg" check="SOsMKFMYhTS/qkEG1FTrwQ==" size="48442" csize="46559" />
+	</directory>
+	<directory name="Fonts">
+		<file name="scoreboard.fontdef" check="FkO05z284RM8RPNj4F9I8A==" size="113" csize="114" />
+		<file name="scoreboard.ttf" check="tpKKbmZJ0TUjM1NA5v4z7A==" size="49532" csize="7503" />
+	</directory>
+	<directory name="Particles">
+		<directory name="CloudParticle">
+			<file name="cloud.png" check="QQYTnp4m0m08bff+G8CgVg==" size="270169" csize="270170" />
+			<file name="Clouds.particle" check="FU5VEagSxteRK7PWddtBwA==" size="1156" csize="535" />
+			<file name="particles2.material" check="VUTPi8pat1pr+3KXP2/r+A==" size="187" csize="143" />
+		</directory>
+		<file name="dust.png" check="4htZhz5/gcT/jPQX677jwA==" size="13331" csize="13160" />
+		<directory name="EngineFlame">
+			<file name="bigflame.png" check="1+eC+pKBwFLkUvQu+EDrrA==" size="12297" csize="11155" />
+			<file name="EngineFlame.material" check="mwVQxMWR1gWfOSuMdWITrQ==" size="188" csize="146" />
+			<file name="EngineFlame.particle" check="XX+YxIdRDR5JN/xhVLCqUg==" size="1267" csize="585" />
+		</directory>
+		<directory name="Level3Particles">
+			<file name="explosion.png" check="YK2OXrMYYeWEDenIxgeKhg==" size="4478" csize="4463" />
+			<file name="flaretrail.png" check="TraRM4bfesDrF5wWDrkmyA==" size="5803" csize="5610" />
+			<file name="Level3Particles.particle" check="TdBEcwIQ3H3GkSxybNkadA==" size="4818" csize="953" />
+			<file name="particles.material" check="NCZX98ecPL68F8U2XSGODw==" size="831" csize="256" />
+			<file name="smoke.png" check="tpri2HGQXjxwCLTHtdQo0Q==" size="33931" csize="33582" />
+		</directory>
+		<file name="particles.material" check="bJMWxxfFdkO+nJ7BvMp9FA==" size="177" csize="139" />
+		<file name="Wondla2.particle" check="g9ucrPJWnFEKu8ENK9SdKw==" size="1467" csize="618" />
+	</directory>
+	<file name="project.dpd" check="2Ml7Yv4Y8wcbLFibiPt0zg==" size="156642" csize="7908" />
+	<file name="project.dpd.dfk" check="DkkRac6/Q/DqsLIFHsOOZw==" size="58408" csize="40866" />
+	<directory name="Script">
+		<file name="AirWhaleControl.lua" check="VAk4xho98tBVR8nKZBhQpg==" size="7304" csize="2053" />
+		<file name="BijouControl.lua" check="w/4NNcVmcpT5E/6pRalrRw==" size="24601" csize="4957" />
+		<file name="BonusesControl.lua" check="S1LAZW40QfnKWL52ObgRNA==" size="9662" csize="2203" />
+		<file name="CameraShake.lua" check="r7lTPSfOtB/0S3cakbR+PA==" size="1429" csize="515" />
+		<file name="CollisionDetection.lua" check="AgXj55kRBKRXeDZoaspVgw==" size="30666" csize="7043" />
+		<file name="CollisionProperties.lua" check="2lh/QYA5NBXcdPVKVpl7cw==" size="2005" csize="894" />
+		<file name="EnemyFire.lua" check="yhtIaZaXuAVzr9oJFsNRrQ==" size="3644" csize="1127" />
+		<file name="GameControl.lua" check="CU17aYoIgZvXzHpuWyhfiQ==" size="5208" csize="1396" />
+		<file name="globals.lua" check="hWidTGaEPUOsSFhtVxxEZQ==" size="4411" csize="1294" />
+		<file name="LevelBuilder.lua" check="oPJQ4BXg3kyw/qvOegOIug==" size="50141" csize="9185" />
+		<file name="Metrics.lua" check="IRhT3OCqzl05SfChNj73pw==" size="800" csize="377" />
+		<file name="OverlayControl.lua" check="/P90NiqbdCAT91TI+NWqXA==" size="3790" csize="749" />
+		<file name="SandSniperControl.lua" check="KwbblK5WGLgbcfGdv42SJw==" size="2946" csize="1018" />
+		<file name="ScrollText.lua" check="HppNI10m1/Fd3Uhlur9bsA==" size="2905" csize="800" />
+		<file name="SearchLightsControl.lua" check="moasr9JOzUTG2ZH2MVueTg==" size="3375" csize="833" />
+		<file name="SoundManager.lua" check="WlCq0fSsej85c09U7c1p7g==" size="5723" csize="982" />
+		<file name="trackingManager.lua" check="rkbB6Vky0i+UJbGMfsvhfA==" size="4096" csize="1302" />
+	</directory>
+	<directory name="Tracking">
+		<file name="cameraCalib.xml" check="ZFiek7liN2eHyvNRgwEEmQ==" size="508" csize="209" />
+		<file name="cameraConfig.xml" check="KndOy1PrWnTvezoa4H5tUA==" size="1605" csize="425" />
+		<file name="object_1_keyframe_1.jpg" check="hquWu1Wr44yHsiHol40hcA==" size="7816" csize="6845" />
+		<file name="object_2_keyframe_1.jpg" check="TT8Spc4gpw40twfv1SK+RA==" size="13975" csize="13429" />
+		<file name="object_3_keyframe_1.jpg" check="bb+KW8tAp+EV0CARqY/HgA==" size="11793" csize="11213" />
+		<file name="object_4_keyframe_1.jpg" check="tapGdRRG8EL4D7jR4K+urQ==" size="8301" csize="7615" />
+		<file name="tracker.xml" check="zgCqMx/ONvLzfbVMSr1tiQ==" size="88764" csize="4766" />
+	</directory>
+<links>
+</links>
+</DFusionUpdate>

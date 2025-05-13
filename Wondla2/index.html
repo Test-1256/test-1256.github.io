@@ -1,0 +1,79 @@
+<html>
+
+<head>
+<title>WondLa-Vision</title>
+<script src="./plugin/totalimmersion_dfusion_web_plugin.js"></script>
+<script src="./plugin/totalimmersion_dfusion_web_pluginMac.js"></script>
+<script src="./js/javascript_browser_sniffer.js"></script>
+<script src="./js/totalimmersion_dfusion_web_config.js"></script>
+<script src="./js/totalimmersion_dfusion_web.js"></script>
+<script src="./js/totalimmersion_dfusion_web_custom.js"></script>
+<script src="./js/totalimmersion_metrics.js"></script>
+<script type="text/javascript">
+	var gacode = 'UA-15831816-2'
+</script>
+<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', gacode]);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+</head>
+<style type="text/css">
+<!--
+body {
+	background-color: #698ba5;
+}
+-->
+</style>
+<body style="margin: 0px">
+
+<!-- div used to display the camera selection if necessary -->
+<!-- see ChooseCamera and CamSelected in totalimmersion_dfusion_web_custom.js -->
+<div id="InteractionCell" align="center"></div>
+
+<!-- div which contains the plugin instance (and only the plugin instance). -->
+<!-- the div is updated by different fuctions from totalimmersion_dfusion_web.js and totalimmersion_dfusion_web_custom.js -->
+<!-- if you rename it plesase rename the variable g_tiDivPluginName from totalimmersion_dfusion_web_custom.js -->
+<div id="plugin_dfusion" align="center" >
+
+ 
+  <script language="JavaScript">
+  if(tiMacOSXSupported()==false) {
+  tiGenerateDFusionWebHTML(
+  "plugin_dfusion_instance",
+  800,600,
+  "DFusionWebPlayer/DFusionWebPlayer",
+  "Wondla2/project.dpd",
+  "ChooseCamera",
+  "ReadyToStart",
+  "true"
+ );
+ } else {
+  // MacOSX version
+  tiGenerateDFusionWebHTML(
+   "plugin_dfusion_instance",
+   800,600,
+   "DFusionWebPlayerMacOSX/DFusionWebPlayer",
+   "Wondla2Mac/project.dpd",
+   "ChooseCamera",
+   "ReadyToStart",
+   "true"
+  );
+ } 
+  </script>  
+  
+</div align="center">
+
+
+</body>
+	
+
+</html>

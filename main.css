@@ -1,0 +1,367 @@
+BODY {
+	font-family: Arial, Helvetica, Sans-serif;
+	font-size: 8pt;
+
+	
+}
+
+
+TABLE.main {
+	margin-top: 6px;
+	color: #000000;
+	margin-left: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12pt;
+        width: 800;
+	
+}
+TABLE.main TR {
+	vertical-align: top;
+        horizontal-align: left;
+}
+
+
+TD.leftmenu {
+	padding: 0px;
+	width: 300px;
+	font-size: 8pt;
+	vertical-align: top; /* Opera 7 */
+}
+
+TD.rightmenu {
+	padding: 0px;
+	width: 215px;
+	vertical-align: top; /* Opera 7 */
+}
+
+TD.content {
+        padding-left: 32px;
+	width:583px;
+}
+
+
+
+/* SIDE TABLES */
+
+.border-sides {
+	background-color: #000000;
+	width: 160px;
+}
+
+.leftal {
+	margin-left: 5px;
+}
+
+.rightal {
+	margin-left: 10px;
+}
+
+.headline-sides {
+	background-image: url(/web/20130429231219im_/http://www.smbhq.com/template/menutop2.png);
+	width: 160px;
+	height: 24px;
+	background-color: #800000;
+	text-align: left;
+	color : #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.headline-sides-2 {
+	background-image: url(/web/20130429231219im_/http://www.smbhq.com/template/menutop2.png);
+	width: 160px;
+	height: 18px;
+	background-color: #800000;
+	text-align: left;
+	color : #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+
+.subtitle-sides {
+	width: 160px;
+	height: 18px;
+	background-color: #151515;
+	text-align: left;
+	color : #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.subtitle-sides-2 {
+	width: 160px;
+	height: 12px;
+	background-color: #151515;
+	text-align: left;
+	color : #FFFFFF;
+	font-family: Arial;
+	font-size: 10px;
+}
+
+.content-sides {
+	width: 160px;
+	background-color: #ffffff;
+	text-align: left;
+	color : #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+
+
+
+
+
+TABLE.oNavbar {
+	width:800px;
+	border: 0px;
+	font-size: 8pt;
+	padding: 0px;
+	background-color:white;
+        border:0px solid black;
+        padding:0px
+	margin-left: 0px;
+}
+
+TABLE.iNavbar {
+        width:756px;
+	border: 0px;
+	font-size: 10pt;
+	padding: 0px;
+	background-color:white;
+        border:0px solid black;
+        padding:0px
+	margin-left: 0px;
+}
+
+  #generalTabImage
+   {
+      background-image: url(/web/20130429231219im_/http://www.smbhq.com/general.gif);
+   }
+
+   #erasTabImage
+   {
+      background-image: url(/web/20130429231219im_/http://www.smbhq.com/eras-on.gif);
+   }
+
+   #specialtyTabImage
+   {
+      background-image: url(/web/20130429231219im_/http://www.smbhq.com/specialty.gif);
+   }
+
+UL.generalnav  {
+      float: left;
+      list-style-type: none;
+      font: 10px "Arial", "Helvetica", sans-serif;
+      color: #666666; 
+      margin: 0px 0px 0px 0px;
+      padding: 5px 0px 0px 2px;
+   }
+
+UL.generalnav a:link, ul.generalnav a:visited  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+      font-weight: normal;
+      color: red;
+      padding: 0px 10px 0px 10px;
+   }
+   
+UL.generalnav a:hover  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+   }
+   
+UL.generalnav li  {
+      display: inline;
+   }
+
+UL.erasnav  {
+      float: left;
+      list-style-type: none;
+      font: 10px "Arial", "Helvetica", sans-serif;
+      color: #666666; 
+      margin: 0px 0px 0px 0px;
+      padding: 5px 0px 0px 2px;
+   }
+
+UL.erasnav a:link, ul.erasnav a:visited  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+      font-weight: normal;
+      color: black;
+      padding: 0px 10px 0px 10px;
+   }
+   
+UL.erasnav a:hover  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+   }
+   
+UL.erasnav li  {
+      display: inline;
+   }
+
+UL.specialtynav  {
+      float: left;
+      list-style-type: none;
+      font: 10px "Arial", "Helvetica", sans-serif;
+      color: #666666; 
+      margin: 0px 0px 0px 0px;
+      padding: 5px 0px 0px 2px;
+   }
+
+UL.specialtynav a:link, ul.specialtynav a:visited  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+      font-weight: normal;
+      color: blue;
+      padding: 0px 10px 0px 10px;
+   }
+   
+UL.specialtynav a:hover  {
+      font: 10px "Arial", "Helvetica", sans-serif; 
+      text-decoration: none;
+   }
+
+UL.specialtynav li  {
+      display: inline;
+   }
+   
+
+
+
+TABLE.updates {
+	margin-top: 6px;
+	color: #000000;
+	margin-left: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12pt;
+
+}
+
+
+TABLE.legal {
+	width:650px;
+        margin-top: 6px;
+	color: #000000;
+	margin-left: 0px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 12pt;
+
+}
+
+
+TABLE.ticker {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 8pt;
+	width:350px;
+	border: 0px;
+	padding: 0px;
+        margin-left: 0px;
+
+}
+
+TABLE.buttons {
+	font-family: arial, helvetica, sans-serif;
+        align: center;
+	font-size: 8pt;
+	width:583px;
+	border: 0px;
+	padding: 0px;
+        margin-left: 0px;
+
+}
+
+TABLE.staff {
+	font-family: arial, helvetica, sans-serif;
+        align: center;
+	font-size: 8pt;
+	width:700px;
+	border: 0px;
+	padding: 0px;
+        margin-left: 0px;
+
+}
+
+TD.staffprofile {
+	padding: 0px;
+	width: 465px;
+	vertical-align: top; /* Opera 7 */
+}
+
+
+a{
+position:relative; 
+z-index:24;
+}
+ 
+a:hover{z-index:25;}
+
+a span{display: none}
+
+a:hover span{
+    display:block;
+    position:absolute;
+    top:2em; left:2em; width:15em;
+    border:1px solid #000000;
+    background-color:#FFFFFF; color:#000000;
+    text-align: center}
+}
+
+
+.staffmember td {
+	font-size: 10pt;
+}
+td.staffinfo {
+	vertical-align: top;
+	padding-left: .6em;
+	padding-bottom: .5em;
+}
+td.staffpic {
+	text-align: center;
+	background: #FFFFFF;
+	padding: .3em;
+}
+
+.staffmember h3 {
+	margin-top:0;margin-bottom:0;
+}
+
+p.duties { margin-top:0; margin-bottom: 1.1em; }
+
+
+.whatsnew {color:Purple; text-decoration:none}
+.reference {color: Green; text-decoration:none}
+.fans {color: Red; text-decoration:none}
+.other {color: Blue; text-decoration:none}
+.eras-head {font-size:18px; color: Green;}
+.general-head {font-size:18px; color: Red;}
+.specialty-head {font-size:18px; color: Blue;}
+.eras {color: Black; text-decoration:none}
+.general {color: Red; text-decoration:none}
+.specialty {color: Blue; text-decoration:none}
+.past_updates {text-decoration:none}
+.navlink {color: Red; text-decoration:none}
+
+
+/*
+     FILE ARCHIVED ON 23:12:19 Apr 29, 2013 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:08:13 Sep 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 74.484
+  exclusion.robots: 0.06
+  exclusion.robots.policy: 0.054
+  cdx.remote: 0.045
+  esindex: 0.007
+  LoadShardBlock: 36.535 (3)
+  PetaboxLoader3.datanode: 86.017 (5)
+  load_resource: 221.204 (2)
+  PetaboxLoader3.resolve: 88.754 (2)
+*/

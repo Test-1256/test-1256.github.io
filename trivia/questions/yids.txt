@@ -1,0 +1,126 @@
+<q>
+Baby Wario is FIRST playable in World:
+<a>
+<wa>1
+<wa>2
+<ca>3
+<wa>4
+<wa>5
+</a>
+Baby Wario first appears in World 3 and returns in the final stage.
+</q>
+<q>
+Which Baby Allows you to Climb?
+<a>
+<wa>Baby Mario
+<ca>Baby DK
+<wa>Baby Peach
+</a>
+Baby DK can climb.
+</q>
+<q>
+How many flowers are hidden in each level?
+<a>
+<wa>1
+<wa>3
+<ca>5
+</a>
+There are 5 flowers in each level.
+</q>
+<q>
+What DON'T you need to collect to add to your score?
+<a>
+<wa>Flowers
+<wa>Character Coins
+<ca>Gold Coins
+<wa>Red Coins
+<wa>Stars
+</a>
+Gold Coins don't contribute to your score.
+</q>
+<q>
+Who is the boss of level 4-8?
+<a>
+<wa>Six-Face Sal
+<ca>Big Guy the Stilted
+<wa>Big Burt Bros
+</a>
+Big guy the Stilted is the boss
+</q>
+<q>
+Which baby causes eggs to explode when thrown?
+<a>
+<wa>Baby Mario
+<wa>Baby Wario
+<ca>Baby DK
+<wa>Baby Bower
+<wa>Baby Peach
+</a>
+Baby DK causes eggs to explode.
+</q>
+<q>
+The color Yoshi in World 3-3 is:
+<a>
+<wa>Green
+<ca>Blue
+<wa>Yed
+</a>
+The Yoshi is Blue in World 3-3.
+</q>
+
+
+
+<q>
+Yoshi is white during all the secret stages.
+<a>
+<wa>True
+<ca>False
+</a>
+Yoshi is black during the secret stages.  He is white for the extra stages.
+</q>
+
+<q>
+How many points do you need in a world to unlock an extra stage.
+<a>
+<wa>600
+<wa>700
+<ca>800
+</a>
+You need 800 
+</q>
+
+<q>
+(Tough Question)Which baby has the most character coins?
+<a>
+<wa>Baby Mario
+<wa>Baby Peach
+<ca>Baby DK
+<wa>Baby Wario
+<wa>Baby Bowser
+
+</a>
+You unlock the hard Bouncy Maze by getting all the 
+</q>
+<s>
+You have <score> questions out of <total> questions correct.
+That gives you <percentage>%.
+</s><!--
+     FILE ARCHIVED ON 05:06:02 Aug 08, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 14:23:19 Sep 25, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 110.956
+  exclusion.robots: 0.1
+  exclusion.robots.policy: 0.088
+  cdx.remote: 0.077
+  esindex: 0.012
+  LoadShardBlock: 46.852 (3)
+  PetaboxLoader3.datanode: 55.289 (4)
+  load_resource: 64.113
+  PetaboxLoader3.resolve: 27.193
+-->
